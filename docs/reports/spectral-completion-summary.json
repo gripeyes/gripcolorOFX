@@ -1,0 +1,4642 @@
+{
+  "schema_version": 1,
+  "baseline": "Existing 0.3 432 comparisons retained unchanged",
+  "grid": "360\u2013830 nm / 1 nm",
+  "semantics": "Nonunique plausible metamers; signed residual has no physical interpretation. No spectrum recovery claim. Quantitative data pre-DRT scene-linear Rec.2020.",
+  "production_equations_changed": false,
+  "machine": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "reconstruction": [
+    {
+      "family": "red",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252882395241e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223053,
+      "residual_fraction": 8.337252882395241e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 1.716599945211783e-05
+    },
+    {
+      "family": "red",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 2.5382195292507316e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008988796882033686,
+      "residual_fraction": 3.6579636645384335e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 7.029200060060248e-05
+    },
+    {
+      "family": "red",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.05640341126831603,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 1.1018283968332378e-06,
+      "residual_fraction": 0.05640341126831591,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0007925840000098106
+    },
+    {
+      "family": "red",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 6.014768757259058e-16,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0039925492160724045,
+      "residual_fraction": 6.014768757259058e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0027980830000160495
+    },
+    {
+      "family": "red",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.19757905930590683,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0004018931986310212,
+      "residual_fraction": 0.19757905930590683,
+      "double_exposure_error": 0.0,
+      "seconds": 9.708999641588889e-06
+    },
+    {
+      "family": "red",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 3.351526933711044e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0006609760246007668,
+      "residual_fraction": 3.575202825130867e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.749999996216502e-05
+    },
+    {
+      "family": "red",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.05079405234074853,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0013885687910010127,
+      "residual_fraction": 0.05079405234074842,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006935000001249136
+    },
+    {
+      "family": "red",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 2.00796696528898e-14,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00543118510540789,
+      "residual_fraction": 2.00796696528898e-14,
+      "double_exposure_error": 0.0,
+      "seconds": 0.003967749998992076
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 0.5978168750793995,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0003803119709083917,
+      "residual_fraction": 0.5978168750793995,
+      "double_exposure_error": 0.0,
+      "seconds": 9.790999683900736e-06
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.00914865958247301,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0005413191946060463,
+      "residual_fraction": 0.009148659582473092,
+      "double_exposure_error": 0.0,
+      "seconds": 3.9667000237386674e-05
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.0632303897150892,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0015617061005649276,
+      "residual_fraction": 0.06323038971508929,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006652080010098871
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.06978242764523794,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.08952816166991256,
+      "residual_fraction": 0.06978242764523794,
+      "double_exposure_error": 0.0,
+      "seconds": 0.029339499998968677
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.8280751585586125,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0003758464732716869,
+      "residual_fraction": 0.8280751585586125,
+      "double_exposure_error": 0.0,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.17669288160768043,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0005411737668657195,
+      "residual_fraction": 0.17669288160768043,
+      "double_exposure_error": 0.0,
+      "seconds": 3.908300095645245e-05
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.22896877269224536,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.001561706100564932,
+      "residual_fraction": 0.2289687726922453,
+      "double_exposure_error": 0.0,
+      "seconds": 0.000673542001095484
+    },
+    {
+      "family": "red",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.2055145009650329,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.08238359884455553,
+      "residual_fraction": 0.2055145009650329,
+      "double_exposure_error": 0.0,
+      "seconds": 0.025229165999917313
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252875037237e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223053,
+      "residual_fraction": 8.337252875037237e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.584000508766621e-06
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.194574629475529e-15,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0008988796882033685,
+      "residual_fraction": 1.2535582234671613e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 3.8207999750738963e-05
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.05640341126831581,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 1.10182839682547e-06,
+      "residual_fraction": 0.05640341126831574,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006635000008827774
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.5989758108919762e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00399254921607248,
+      "residual_fraction": 1.5989758108919762e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.002605875000881497
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 7.975721387887398e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00020413359804278349,
+      "residual_fraction": 7.975721387887398e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.708999641588889e-06
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.0015679050447539e-15,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0007740080953367728,
+      "residual_fraction": 9.082233870118903e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.787499917962123e-05
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.034415351880873565,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.00038799974819943176,
+      "residual_fraction": 0.0344153518808734,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0007027089995972347
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.2941009776129662e-13,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.002746181099775558,
+      "residual_fraction": 1.2941009776129662e-13,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0028922920009790687
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 0.07452457907680492,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002387201949098904,
+      "residual_fraction": 0.07452457907680492,
+      "double_exposure_error": 0.0,
+      "seconds": 9.707999197416939e-06
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 7.343609987316803e-16,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0006400764747056124,
+      "residual_fraction": 7.243702890852165e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.787499917962123e-05
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.12076061663034246,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0006776290574463374,
+      "residual_fraction": 0.12076061663034245,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006607499999518041
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.9911241253240514e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.001716114346490975,
+      "residual_fraction": 1.9911241253240514e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0042920840005535865
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.45486431190780047,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00023380057316004508,
+      "residual_fraction": 0.45486431190780047,
+      "double_exposure_error": 0.0,
+      "seconds": 9.542000043438748e-06
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.3594658910442387,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0006178728128918468,
+      "residual_fraction": 0.35946589104423865,
+      "double_exposure_error": 0.0,
+      "seconds": 3.7959000110276975e-05
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.4729718837728158,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0007124377375251535,
+      "residual_fraction": 0.47297188377281574,
+      "double_exposure_error": 0.0,
+      "seconds": 0.000652917000479647
+    },
+    {
+      "family": "yellow",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.34318495293030926,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.1620171264608342,
+      "residual_fraction": 0.34318495293030926,
+      "double_exposure_error": 0.0,
+      "seconds": 0.031565374998535844
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252878072063e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00029529776782230533,
+      "residual_fraction": 8.337252878072063e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.583000064594671e-06
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 8.310089424238352e-16,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0008988796882033683,
+      "residual_fraction": 8.932010631189168e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 5.2167000831104815e-05
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.056403411268315905,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 1.1018283968306766e-06,
+      "residual_fraction": 0.056403411268315766,
+      "double_exposure_error": 0.0,
+      "seconds": 0.000660540999888326
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.5456827379509531e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0039925492160724375,
+      "residual_fraction": 1.5456827379509531e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0025888749987643678
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.1157148613838375,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0003936379149482074,
+      "residual_fraction": 0.1157148613838375,
+      "double_exposure_error": 0.0,
+      "seconds": 9.915998816723004e-06
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.5868954078883817e-15,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0005853050142245502,
+      "residual_fraction": 1.5796437534572181e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 3.874999856634531e-05
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.03088985651299509,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0021920090942291826,
+      "residual_fraction": 0.0308898565129951,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006620419990213122
+    },
+    {
+      "family": "green",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 9.663406963696867e-16,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0015852139321187605,
+      "residual_fraction": 9.663406963696867e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0037104589991940884
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 0.8359551175755413,
+      "recombined_xyz_error": 1.3877787807814457e-17,
+      "normalized_curvature": 0.0004908845876882734,
+      "residual_fraction": 0.8359551175755413,
+      "double_exposure_error": 0.0,
+      "seconds": 1.0834000931936316e-05
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.2145077493022951,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0007563843716137839,
+      "residual_fraction": 0.21450774930229502,
+      "double_exposure_error": 0.0,
+      "seconds": 4.2083000153070316e-05
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.2717558753835022,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0029908903026534695,
+      "residual_fraction": 0.27175587538350215,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006690410009468906
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.011323614412455309,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.1809722537553984,
+      "residual_fraction": 0.011323614412455309,
+      "double_exposure_error": 0.0,
+      "seconds": 0.051156333000108134
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 1.6893304553299595,
+      "recombined_xyz_error": 2.0816681711721685e-17,
+      "normalized_curvature": 0.000490885342846607,
+      "residual_fraction": 1.6893304553299595,
+      "double_exposure_error": 0.0,
+      "seconds": 9.332999979960732e-06
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.6984667030259194,
+      "recombined_xyz_error": 6.938893903907228e-18,
+      "normalized_curvature": 0.0006216111576282813,
+      "residual_fraction": 0.6984667030259194,
+      "double_exposure_error": 0.0,
+      "seconds": 3.6499999623629265e-05
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.7295805375712162,
+      "recombined_xyz_error": 6.938893903907228e-18,
+      "normalized_curvature": 0.0029908903026534765,
+      "residual_fraction": 0.7295805375712162,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006390830003510928
+    },
+    {
+      "family": "green",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.5193364684698991,
+      "recombined_xyz_error": 6.938893903907228e-18,
+      "normalized_curvature": 0.013112034949028382,
+      "residual_fraction": 0.5193364684698991,
+      "double_exposure_error": 0.0,
+      "seconds": 0.04924241700064158
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252878163847e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223053,
+      "residual_fraction": 8.337252878163847e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.666999176261015e-06
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 5.399047544402435e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008988796882033686,
+      "residual_fraction": 5.44312213320554e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.862500125251245e-05
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.05640341126831656,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 1.1018283968214592e-06,
+      "residual_fraction": 0.0564034112683165,
+      "double_exposure_error": 0.0,
+      "seconds": 0.000659416000416968
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.1587917493968114e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003992549216072394,
+      "residual_fraction": 1.1587917493968114e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 1.904099917737767e-05
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.05240687326715666,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00036027857035753037,
+      "residual_fraction": 0.05240687326715666,
+      "double_exposure_error": 0.0,
+      "seconds": 9.749999662744813e-06
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 4.736225775398508e-16,
+      "recombined_xyz_error": 2.220446049250313e-16,
+      "normalized_curvature": 0.0006880706377987142,
+      "residual_fraction": 5.783682340379308e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.8207999750738963e-05
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.04271746595314632,
+      "recombined_xyz_error": 2.220446049250313e-16,
+      "normalized_curvature": 0.001449815384000482,
+      "residual_fraction": 0.042717465953146204,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006625420010095695
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 7.916278299979337e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.002647030501908171,
+      "residual_fraction": 7.916278299979337e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0032382500012317905
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 0.32032869278597415,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0003553231264741211,
+      "residual_fraction": 0.32032869278597415,
+      "double_exposure_error": 0.0,
+      "seconds": 9.750001481734216e-06
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 2.816279971013207e-16,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0005791882070340882,
+      "residual_fraction": 2.7753633171521355e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.9000000469968654e-05
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.188784800898758,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0014741128225034177,
+      "residual_fraction": 0.188784800898758,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006624580000789138
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 3.709689835569447e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0020015397488169946,
+      "residual_fraction": 3.709689835569447e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.004118499999094638
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.5188578804027798,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0003526344329227044,
+      "residual_fraction": 0.5188578804027798,
+      "double_exposure_error": 0.0,
+      "seconds": 9.749999662744813e-06
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.09305853311625586,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008001433939817863,
+      "residual_fraction": 0.09305853311625584,
+      "double_exposure_error": 0.0,
+      "seconds": 3.8207999750738963e-05
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.31165272570692665,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0014308674714223477,
+      "residual_fraction": 0.31165272570692665,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006620829990424681
+    },
+    {
+      "family": "cyan",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.03269206578228355,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.1313551444316657,
+      "residual_fraction": 0.03269206578228355,
+      "double_exposure_error": 0.0,
+      "seconds": 0.051167082998290425
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252883135965e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223053,
+      "residual_fraction": 8.337252883135965e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 1.0457999451318756e-05
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 9.733731232175689e-16,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0008988796882033682,
+      "residual_fraction": 8.654136620092808e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 4.2333000237704255e-05
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.056403411268316425,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 1.1018283968220542e-06,
+      "residual_fraction": 0.05640341126831623,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0007287499993253732
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.6259923986282847e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00399254921607248,
+      "residual_fraction": 1.6259923986282847e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 8.749999324209057e-06
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 1.6621839571835477e-05,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0005878530449857359,
+      "residual_fraction": 1.6621839571835477e-05,
+      "double_exposure_error": 0.0,
+      "seconds": 9.457999112783e-06
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 3.509747542732542e-16,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0009048021840364934,
+      "residual_fraction": 3.1058167960344673e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.733300036401488e-05
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.015635750641097557,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0010953690202151348,
+      "residual_fraction": 0.015635750641097484,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006602909998036921
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 4.433284996684419e-14,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0052766880647013206,
+      "residual_fraction": 4.433284996684419e-14,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0035774580010183854
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 0.041815370737412316,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0005947417899874348,
+      "residual_fraction": 0.041815370737412316,
+      "double_exposure_error": 0.0,
+      "seconds": 9.500001397100277e-06
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.011785783080512717,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0007769902268489897,
+      "residual_fraction": 0.01178578308051266,
+      "double_exposure_error": 0.0,
+      "seconds": 3.908299913746305e-05
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.03809400996680172,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0011703271486345908,
+      "residual_fraction": 0.03809400996680166,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0007039580013952218
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.833575565499216e-13,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003156169484779487,
+      "residual_fraction": 1.833575565499216e-13,
+      "double_exposure_error": 0.0,
+      "seconds": 0.005945875000179512
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.0688708074700437,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0005943857201389723,
+      "residual_fraction": 0.0688708074700437,
+      "double_exposure_error": 0.0,
+      "seconds": 9.625000529922545e-06
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.03446298937825839,
+      "recombined_xyz_error": 2.220446049250313e-16,
+      "normalized_curvature": 0.000902965352790375,
+      "residual_fraction": 0.03446298937825834,
+      "double_exposure_error": 0.0,
+      "seconds": 3.7667001379304565e-05
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.049062371177892604,
+      "recombined_xyz_error": 2.220446049250313e-16,
+      "normalized_curvature": 0.0012017026238867446,
+      "residual_fraction": 0.049062371177892534,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006690000009257346
+    },
+    {
+      "family": "blue",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.013998215377023815,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.2851108245703397,
+      "residual_fraction": 0.013998215377023815,
+      "double_exposure_error": 0.0,
+      "seconds": 0.051134166000338155
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252882266978e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223054,
+      "residual_fraction": 8.337252882266978e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.540999599266797e-06
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 9.38989445304731e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008988796882033682,
+      "residual_fraction": 8.519508830181854e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.841600118903443e-05
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.05640341126831619,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 1.1018283968392988e-06,
+      "residual_fraction": 0.056403411268316106,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006695829997624969
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 2.273417062407327e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003992549216072471,
+      "residual_fraction": 2.273417062407327e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 7.99999907030724e-06
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.1589910826397189,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0004977036756831728,
+      "residual_fraction": 0.1589910826397189,
+      "double_exposure_error": 0.0,
+      "seconds": 9.542000043438748e-06
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 5.694149952383119e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008203854052081976,
+      "residual_fraction": 5.694149952383119e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.741699947568122e-05
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.09731934102050485,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0013253128623414534,
+      "residual_fraction": 0.09731934102050474,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006597499996132683
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.0072946730109018e-13,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.005467150155665751,
+      "residual_fraction": 1.0072946730109018e-13,
+      "double_exposure_error": 0.0,
+      "seconds": 0.003701125000588945
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 0.41314785172934726,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0004839883445219061,
+      "residual_fraction": 0.41314785172934726,
+      "double_exposure_error": 0.0,
+      "seconds": 9.708001016406342e-06
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 8.265241959114049e-16,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0011861720687677,
+      "residual_fraction": 9.284721071871467e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.854200076602865e-05
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.1477178242781876,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.001514137926804719,
+      "residual_fraction": 0.1477178242781875,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006604999998671701
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 3.503225231472248e-13,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.005922745189591704,
+      "residual_fraction": 3.503225231472248e-13,
+      "double_exposure_error": 0.0,
+      "seconds": 0.004561499999908847
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.5531236465910025,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0004779859916539375,
+      "residual_fraction": 0.5531236465910025,
+      "double_exposure_error": 0.0,
+      "seconds": 1.2415999663062394e-05
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.024398561478751808,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0008889282028553627,
+      "residual_fraction": 0.024398561478751808,
+      "double_exposure_error": 0.0,
+      "seconds": 3.866599945467897e-05
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.2069621532688706,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0015135014277184338,
+      "residual_fraction": 0.2069621532688706,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006551660007971805
+    },
+    {
+      "family": "magenta",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.031799406403030354,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.10911093524361465,
+      "residual_fraction": 0.031799406403030354,
+      "double_exposure_error": 0.0,
+      "seconds": 0.051321291999556706
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252875355162e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00029529776782230533,
+      "residual_fraction": 8.337252875355162e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.707999197416939e-06
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 9.640823479777362e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008988796882033683,
+      "residual_fraction": 9.916331024314178e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.858299896819517e-05
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.05640341126831585,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 1.1018283968195798e-06,
+      "residual_fraction": 0.05640341126831574,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006642079988523619
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 9.464559557026843e-16,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003992549216072467,
+      "residual_fraction": 9.464559557026843e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0027687080000760034
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 9.756808403509044e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00029919692931745367,
+      "residual_fraction": 9.756808403509044e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.584000508766621e-06
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 7.702764692352483e-16,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0007647177374037492,
+      "residual_fraction": 7.702764692352483e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.80000001314329e-05
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.053055871799517894,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0007004036519488758,
+      "residual_fraction": 0.053055871799517894,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006599999996979022
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.3951337496266197e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.005232357388714575,
+      "residual_fraction": 1.3951337496266197e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0030080420001468156
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 2.656897413786406e-06,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00035425318399831096,
+      "residual_fraction": 2.656897413786406e-06,
+      "double_exposure_error": 0.0,
+      "seconds": 9.458000931772403e-06
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 6.265749520014878e-16,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0009094566685593466,
+      "residual_fraction": 6.5343014192725e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.5291999665787444e-05
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.03839381891750612,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0010808249275963675,
+      "residual_fraction": 0.03839381891750609,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006779169998480938
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 4.3367542176803226e-14,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00523803206089407,
+      "residual_fraction": 4.3367542176803226e-14,
+      "double_exposure_error": 0.0,
+      "seconds": 0.003390708001461462
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.05306698874896048,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00038472281399981975,
+      "residual_fraction": 0.05306698874896048,
+      "double_exposure_error": 0.0,
+      "seconds": 9.999999747378752e-06
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.1134659237618876e-15,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0007166793257425242,
+      "residual_fraction": 9.712522476977179e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.845900027954485e-05
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.019180414938758772,
+      "recombined_xyz_error": 1.1102230246251565e-16,
+      "normalized_curvature": 0.0012949752419569927,
+      "residual_fraction": 0.01918041493875868,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006874999999126885
+    },
+    {
+      "family": "skin",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 5.081535166905146e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.005156960861881744,
+      "residual_fraction": 5.081535166905146e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0035735839992412366
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252878625928e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223052,
+      "residual_fraction": 8.337252878625928e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.583000064594671e-06
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.3188732354453097e-15,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0008988796882033683,
+      "residual_fraction": 1.3597028195107625e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 3.9040998672135174e-05
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.056403411268316266,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 1.1018283968308475e-06,
+      "residual_fraction": 0.05640341126831621,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0007106249995558755
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.1226322253905497e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003992549216072474,
+      "residual_fraction": 1.1226322253905497e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 7.95900086814072e-06
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 8.14222957328702e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00023249350085234697,
+      "residual_fraction": 8.14222957328702e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.625000529922545e-06
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.0035975724495127e-15,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008865394359553077,
+      "residual_fraction": 1.0420098871341693e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 3.7125000744708814e-05
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.038149633681143456,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0003779784732750788,
+      "residual_fraction": 0.03814963368114337,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006845000007160706
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.910471196972593e-12,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.002115985919366459,
+      "residual_fraction": 1.910471196972593e-12,
+      "double_exposure_error": 0.0,
+      "seconds": 0.002867042001525988
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 1.750112193268195e-06,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002954522428710266,
+      "residual_fraction": 1.750112193268195e-06,
+      "double_exposure_error": 0.0,
+      "seconds": 9.624998710933141e-06
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.4144295583722175e-15,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0008843709497497612,
+      "residual_fraction": 1.5370258401407677e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 3.749999996216502e-05
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.04413081216097138,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0008377371113104193,
+      "residual_fraction": 0.04413081216097137,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006603749989153584
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 5.882856618947699e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0015493883520522468,
+      "residual_fraction": 5.882856618947699e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0032941669996944256
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.21191230175277564,
+      "recombined_xyz_error": 1.734723475976807e-18,
+      "normalized_curvature": 0.0003789618165095601,
+      "residual_fraction": 0.21191230175277564,
+      "double_exposure_error": 0.0,
+      "seconds": 9.749999662744813e-06
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.08170572804990461,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.000914244028614075,
+      "residual_fraction": 0.08170572804990459,
+      "double_exposure_error": 0.0,
+      "seconds": 3.841699981421698e-05
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.23292360731942374,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0011552871495029953,
+      "residual_fraction": 0.2329236073194237,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006659579994447995
+    },
+    {
+      "family": "olive",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.056274403889760696,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.14487108262835643,
+      "residual_fraction": 0.056274403889760696,
+      "double_exposure_error": 0.0,
+      "seconds": 0.05171775000053458
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252887864804e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223052,
+      "residual_fraction": 8.337252887864804e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.457999112783e-06
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 9.65571831171224e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008988796882033682,
+      "residual_fraction": 8.92045815831895e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.870799992000684e-05
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.05640341126831602,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 1.1018283968227388e-06,
+      "residual_fraction": 0.05640341126831603,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006624999987252522
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.106033729796246e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003992549216072459,
+      "residual_fraction": 1.106033729796246e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 8.500001058564521e-06
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 8.921864175423094e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00023907895723438238,
+      "residual_fraction": 8.921864175423094e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.792000128072686e-06
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 9.935351415629126e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0007173306033759077,
+      "residual_fraction": 9.079994099026424e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.8624999433523044e-05
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.03847728346100923,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0006539161582385912,
+      "residual_fraction": 0.03847728346100923,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006852919996163109
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.298328500581179e-13,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.005083948214406408,
+      "residual_fraction": 1.298328500581179e-13,
+      "double_exposure_error": 0.0,
+      "seconds": 0.002983832999234437
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 1.228236353847327e-05,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002795978233237114,
+      "residual_fraction": 1.228236353847327e-05,
+      "double_exposure_error": 0.0,
+      "seconds": 9.583000064594671e-06
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 4.816964035883392e-16,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.0008717524423618373,
+      "residual_fraction": 3.705327402260673e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.820899837592151e-05
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.050104909370254434,
+      "recombined_xyz_error": 5.551115123125783e-17,
+      "normalized_curvature": 0.001027831630402011,
+      "residual_fraction": 0.05010490937025435,
+      "double_exposure_error": 0.0,
+      "seconds": 0.000658958000713028
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 7.393331793837111e-14,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003202826993263274,
+      "residual_fraction": 7.393331793837111e-14,
+      "double_exposure_error": 0.0,
+      "seconds": 0.003584457999750157
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.27259930563494805,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00033416721375113193,
+      "residual_fraction": 0.27259930563494805,
+      "double_exposure_error": 0.0,
+      "seconds": 9.540999599266797e-06
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 0.24235590722188932,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0009611368683786905,
+      "residual_fraction": 0.24235590722188927,
+      "double_exposure_error": 0.0,
+      "seconds": 3.7709000025643036e-05
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.32579035964950004,
+      "recombined_xyz_error": 2.7755575615628914e-17,
+      "normalized_curvature": 0.0011938863182379262,
+      "residual_fraction": 0.3257903596495,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006600420001632301
+    },
+    {
+      "family": "ochre",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 0.23964111073107314,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.15567218688993073,
+      "residual_fraction": 0.23964111073107314,
+      "double_exposure_error": 0.0,
+      "seconds": 0.022925790999579476
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0,
+      "method": "compact_basis",
+      "base_xyz_error": 8.337252886878189e-07,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0002952977678223053,
+      "residual_fraction": 8.337252886878189e-07,
+      "double_exposure_error": 0.0,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.203359740618104e-15,
+      "recombined_xyz_error": 1.734723475976807e-18,
+      "normalized_curvature": 0.0008988796882033685,
+      "residual_fraction": 1.2473995736320917e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 3.825000021606684e-05
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0,
+      "method": "smits_residual",
+      "base_xyz_error": 0.056403411268315544,
+      "recombined_xyz_error": 1.734723475976807e-18,
+      "normalized_curvature": 1.1018283968153978e-06,
+      "residual_fraction": 0.05640341126831541,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006568749995494727
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 1.751296699504763e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003992549216072472,
+      "residual_fraction": 1.751296699504763e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 8.166998668457381e-06
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0.5,
+      "method": "compact_basis",
+      "base_xyz_error": 3.8197246282403465e-06,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00039872338269890243,
+      "residual_fraction": 3.8197246282403465e-06,
+      "double_exposure_error": 0.0,
+      "seconds": 9.749999662744813e-06
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 1.0016709845402854e-15,
+      "recombined_xyz_error": 1.734723475976807e-18,
+      "normalized_curvature": 0.0008203259458565558,
+      "residual_fraction": 9.934716298378519e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.762499909498729e-05
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.050384164069431386,
+      "recombined_xyz_error": 1.734723475976807e-18,
+      "normalized_curvature": 0.0009433211826312105,
+      "residual_fraction": 0.05038416406943134,
+      "double_exposure_error": 0.0,
+      "seconds": 0.000654290999591467
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 0.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 7.005472570189689e-16,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0037211505694927953,
+      "residual_fraction": 7.005472570189689e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0029966669990244554
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1,
+      "method": "compact_basis",
+      "base_xyz_error": 0.10840639877517556,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00042832305481368835,
+      "residual_fraction": 0.10840639877517556,
+      "double_exposure_error": 0.0,
+      "seconds": 9.666999176261015e-06
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1,
+      "method": "nnls_residual",
+      "base_xyz_error": 5.09746836300933e-16,
+      "recombined_xyz_error": 3.469446951953614e-18,
+      "normalized_curvature": 0.0007442706911647904,
+      "residual_fraction": 6.17516260834593e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.7583999073831365e-05
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1,
+      "method": "smits_residual",
+      "base_xyz_error": 0.09186283156795713,
+      "recombined_xyz_error": 3.469446951953614e-18,
+      "normalized_curvature": 0.0011655179995760604,
+      "residual_fraction": 0.09186283156795706,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006664580014330568
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 2.0659843913948774e-12,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.003080184657235152,
+      "residual_fraction": 2.0659843913948774e-12,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0032610419984848704
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1.5,
+      "method": "compact_basis",
+      "base_xyz_error": 0.2028879260852304,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.00044072695422170394,
+      "residual_fraction": 0.2028879260852304,
+      "double_exposure_error": 0.0,
+      "seconds": 9.666999176261015e-06
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1.5,
+      "method": "nnls_residual",
+      "base_xyz_error": 4.326800060111886e-16,
+      "recombined_xyz_error": 6.938893903907228e-18,
+      "normalized_curvature": 0.000753724372899626,
+      "residual_fraction": 5.01096182348747e-16,
+      "double_exposure_error": 0.0,
+      "seconds": 3.908299913746305e-05
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1.5,
+      "method": "smits_residual",
+      "base_xyz_error": 0.16004180221208134,
+      "recombined_xyz_error": 6.938893903907228e-18,
+      "normalized_curvature": 0.0011079100922341382,
+      "residual_fraction": 0.16004180221208122,
+      "double_exposure_error": 0.0,
+      "seconds": 0.0006898339997860603
+    },
+    {
+      "family": "deep_chromatic_shadow",
+      "chroma_scale": 1.5,
+      "method": "sigmoid_d65_pilot",
+      "base_xyz_error": 2.0617659230504126e-15,
+      "recombined_xyz_error": 0.0,
+      "normalized_curvature": 0.0022456007451087195,
+      "residual_fraction": 2.0617659230504126e-15,
+      "double_exposure_error": 0.0,
+      "seconds": 0.004481416999624344
+    }
+  ],
+  "conditioning": {
+    "three_basis_xyz_matrix": 5.440909998479604,
+    "eight_basis_xyz_mapping": 4.148253884796134
+  },
+  "strip_controls": [
+    {
+      "case": "default",
+      "parameters": {
+        "separation": 0.75
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 1.383611355598724e-05
+    },
+    {
+      "case": "default",
+      "parameters": {
+        "separation": 0.75
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.3617521845769904
+    },
+    {
+      "case": "default",
+      "parameters": {
+        "separation": 0.75
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.22903750894039795
+    },
+    {
+      "case": "default",
+      "parameters": {
+        "separation": 0.75
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.3658158590076737
+    },
+    {
+      "case": "leakage",
+      "parameters": {
+        "separation": 0.8,
+        "leakage": 0.8
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 1.2158937514994417e-05
+    },
+    {
+      "case": "leakage",
+      "parameters": {
+        "separation": 0.8,
+        "leakage": 0.8
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.3997972578565043
+    },
+    {
+      "case": "leakage",
+      "parameters": {
+        "separation": 0.8,
+        "leakage": 0.8
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.30013412625284186
+    },
+    {
+      "case": "leakage",
+      "parameters": {
+        "separation": 0.8,
+        "leakage": 0.8
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.4041891828544222
+    },
+    {
+      "case": "two_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 1
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 1.2372669776605782e-05
+    },
+    {
+      "case": "two_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 1
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.4176659237206823
+    },
+    {
+      "case": "two_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 1
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.33241119263751223
+    },
+    {
+      "case": "two_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 1
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.4177936924740149
+    },
+    {
+      "case": "custom_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 2,
+        "m01": 0.15,
+        "m12": -0.1
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 1.3825242712706132e-05
+    },
+    {
+      "case": "custom_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 2,
+        "m01": 0.15,
+        "m12": -0.1
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.3876244776906339
+    },
+    {
+      "case": "custom_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 2,
+        "m01": 0.15,
+        "m12": -0.1
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.2944176048291219
+    },
+    {
+      "case": "custom_record",
+      "parameters": {
+        "separation": 0.8,
+        "mode": 2,
+        "m01": 0.15,
+        "m12": -0.1
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.39190303986543684
+    },
+    {
+      "case": "palette",
+      "parameters": {
+        "separation": 0.8,
+        "palette": 0.7
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 1.4635512178728938e-05
+    },
+    {
+      "case": "palette",
+      "parameters": {
+        "separation": 0.8,
+        "palette": 0.7
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.3847106447172698
+    },
+    {
+      "case": "palette",
+      "parameters": {
+        "separation": 0.8,
+        "palette": 0.7
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.24553780971056224
+    },
+    {
+      "case": "palette",
+      "parameters": {
+        "separation": 0.8,
+        "palette": 0.7
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.3885201104793202
+    },
+    {
+      "case": "recombination",
+      "parameters": {
+        "separation": 0.8,
+        "rWeight": 0.7,
+        "bWeight": 1.4,
+        "gContribution": 0.7
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 1.1615440689560774e-05
+    },
+    {
+      "case": "recombination",
+      "parameters": {
+        "separation": 0.8,
+        "rWeight": 0.7,
+        "bWeight": 1.4,
+        "gContribution": 0.7
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.43326704652673187
+    },
+    {
+      "case": "recombination",
+      "parameters": {
+        "separation": 0.8,
+        "rWeight": 0.7,
+        "bWeight": 1.4,
+        "gContribution": 0.7
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.272999944117359
+    },
+    {
+      "case": "recombination",
+      "parameters": {
+        "separation": 0.8,
+        "rWeight": 0.7,
+        "bWeight": 1.4,
+        "gContribution": 0.7
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.43528082511687577
+    },
+    {
+      "case": "anchor",
+      "parameters": {
+        "separation": 1,
+        "redAnchor": 1
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 7.687352795250624e-06
+    },
+    {
+      "case": "anchor",
+      "parameters": {
+        "separation": 1,
+        "redAnchor": 1
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.5183262922722797
+    },
+    {
+      "case": "anchor",
+      "parameters": {
+        "separation": 1,
+        "redAnchor": 1
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.3312508696561766
+    },
+    {
+      "case": "anchor",
+      "parameters": {
+        "separation": 1,
+        "redAnchor": 1
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.5231348253015259
+    },
+    {
+      "case": "depth",
+      "parameters": {
+        "separation": 0.8,
+        "density": 1
+      },
+      "method": "compact_basis",
+      "oracle_production_max_rgb_error": 4.938468613907565e-06
+    },
+    {
+      "case": "depth",
+      "parameters": {
+        "separation": 0.8,
+        "density": 1
+      },
+      "method": "nnls_residual",
+      "oracle_production_max_rgb_error": 0.4335374726190283
+    },
+    {
+      "case": "depth",
+      "parameters": {
+        "separation": 0.8,
+        "density": 1
+      },
+      "method": "smits_residual",
+      "oracle_production_max_rgb_error": 0.28245662868672994
+    },
+    {
+      "case": "depth",
+      "parameters": {
+        "separation": 0.8,
+        "density": 1
+      },
+      "method": "sigmoid_d65_pilot",
+      "oracle_production_max_rgb_error": 0.43665895676782535
+    }
+  ],
+  "strip_baselines": [
+    {
+      "case": "default",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.0752958887202966,
+      "held_out_matrix_curves_rmse": 0.06713511489227567,
+      "held_out_compact_rmse": 6.22330432963354e-06,
+      "matrix": [
+        [
+          0.5815293988460489,
+          -0.11957990632229536,
+          -0.12209805622399422
+        ],
+        [
+          -0.06941087074319702,
+          0.5956435958344584,
+          0.0052115026662565385
+        ],
+        [
+          -0.1146574359426645,
+          -0.08127288701881702,
+          0.6529670586464267
+        ]
+      ]
+    },
+    {
+      "case": "default",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.04950833642044509,
+      "held_out_matrix_curves_rmse": 0.047814138176430064,
+      "held_out_compact_rmse": 0.07189984303442076,
+      "matrix": [
+        [
+          0.5246430320336435,
+          -0.04228039243735492,
+          -0.09444747439598328
+        ],
+        [
+          -0.00014333045925200066,
+          0.5562749433086278,
+          -0.018786281848314587
+        ],
+        [
+          -0.05341569506932861,
+          -0.045527102563797155,
+          0.6698014346245609
+        ]
+      ]
+    },
+    {
+      "case": "default",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.0507253380524867,
+      "held_out_matrix_curves_rmse": 0.0502220610628797,
+      "held_out_compact_rmse": 0.05850994446031551,
+      "matrix": [
+        [
+          0.5797261551086305,
+          -0.03895525304193956,
+          -0.08411924293333703
+        ],
+        [
+          -0.03707284027408936,
+          0.5851198710679661,
+          -0.037795018059396085
+        ],
+        [
+          -0.13451932678788195,
+          -0.06791250325437342,
+          0.7006838374374723
+        ]
+      ]
+    },
+    {
+      "case": "default",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.04916297823050761,
+      "held_out_matrix_curves_rmse": 0.0475174637570699,
+      "held_out_compact_rmse": 0.07290993243694872,
+      "matrix": [
+        [
+          0.5557906278146013,
+          -0.05601417088757077,
+          -0.08771748584916142
+        ],
+        [
+          -0.0081076084380316,
+          0.5556954487299088,
+          -0.01849573635572089
+        ],
+        [
+          -0.05670446172559343,
+          -0.033054415536129964,
+          0.6666921759975478
+        ]
+      ]
+    },
+    {
+      "case": "leakage",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.08495880908903285,
+      "held_out_matrix_curves_rmse": 0.07282061181549615,
+      "held_out_compact_rmse": 6.115019622060881e-06,
+      "matrix": [
+        [
+          0.48805910978041017,
+          -0.115113006266313,
+          -0.08932394696855497
+        ],
+        [
+          -0.06575834089205831,
+          0.4883278729177699,
+          0.02237256838098495
+        ],
+        [
+          -0.09327996119513791,
+          -0.055136539528578006,
+          0.5131891524580288
+        ]
+      ]
+    },
+    {
+      "case": "leakage",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.05252694711261679,
+      "held_out_matrix_curves_rmse": 0.05146262964719027,
+      "held_out_compact_rmse": 0.08836374017805909,
+      "matrix": [
+        [
+          0.44447952896219706,
+          -0.06326261957842685,
+          -0.02808213629048949
+        ],
+        [
+          0.0067888719944386505,
+          0.5048478076354793,
+          -0.047087542034462505
+        ],
+        [
+          -0.04166701795910844,
+          -0.025823364157781113,
+          0.5801586814568932
+        ]
+      ]
+    },
+    {
+      "case": "leakage",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.05541402790542078,
+      "held_out_matrix_curves_rmse": 0.055062872059298607,
+      "held_out_compact_rmse": 0.07638297872246788,
+      "matrix": [
+        [
+          0.502594618595273,
+          -0.0454668304146547,
+          -0.03790809108766611
+        ],
+        [
+          -0.02290490310588311,
+          0.5394846457602644,
+          -0.0607381412303757
+        ],
+        [
+          -0.13716729225534038,
+          -0.062279953404941454,
+          0.6214903924689186
+        ]
+      ]
+    },
+    {
+      "case": "leakage",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.05419291049456898,
+      "held_out_matrix_curves_rmse": 0.053644119194642605,
+      "held_out_compact_rmse": 0.0889515145263525,
+      "matrix": [
+        [
+          0.4817634615782031,
+          -0.07903955413462103,
+          -0.004917971679975404
+        ],
+        [
+          0.006203818769406705,
+          0.5127604198375839,
+          -0.056454458593471896
+        ],
+        [
+          -0.050958475796578986,
+          -0.011789573379000795,
+          0.5597006312601969
+        ]
+      ]
+    },
+    {
+      "case": "two_record",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.08797834810023665,
+      "held_out_matrix_curves_rmse": 0.0768368539368169,
+      "held_out_compact_rmse": 5.216638347348243e-06,
+      "matrix": [
+        [
+          0.5483898541485658,
+          -0.06639177655333439,
+          -0.18482577550705925
+        ],
+        [
+          -0.0853083226860103,
+          0.35655772406019864,
+          0.0690422468290272
+        ],
+        [
+          -0.12289052584174172,
+          -0.07915810166280099,
+          0.6644344654823678
+        ]
+      ]
+    },
+    {
+      "case": "two_record",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.053171589825477865,
+      "held_out_matrix_curves_rmse": 0.050779525689106375,
+      "held_out_compact_rmse": 0.09376093189391245,
+      "matrix": [
+        [
+          0.46091519010037774,
+          -0.011795365831041403,
+          -0.08375426684962423
+        ],
+        [
+          -0.011469687419110185,
+          0.3770621345593429,
+          -0.03261258073628387
+        ],
+        [
+          -0.033217791043022825,
+          -0.05290907824835252,
+          0.7143059190129268
+        ]
+      ]
+    },
+    {
+      "case": "two_record",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.05570456374572519,
+      "held_out_matrix_curves_rmse": 0.05540438940093029,
+      "held_out_compact_rmse": 0.07899997525008946,
+      "matrix": [
+        [
+          0.5411410597385506,
+          -0.012196462917579068,
+          -0.09360425182607529
+        ],
+        [
+          -0.039544618430056924,
+          0.4199334676986067,
+          -0.046541439609693085
+        ],
+        [
+          -0.1385367986327629,
+          -0.07820978527955011,
+          0.7386462699158597
+        ]
+      ]
+    },
+    {
+      "case": "two_record",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.05165571448752035,
+      "held_out_matrix_curves_rmse": 0.050128640112439254,
+      "held_out_compact_rmse": 0.09291349597494572,
+      "matrix": [
+        [
+          0.513778202903628,
+          -0.02703396684322537,
+          -0.05203942758809947
+        ],
+        [
+          -0.01653109454343493,
+          0.37573741670136823,
+          -0.05651481882951587
+        ],
+        [
+          -0.039957568313179564,
+          -0.03975844140006987,
+          0.6828054061867738
+        ]
+      ]
+    },
+    {
+      "case": "custom_record",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.08502407065775192,
+      "held_out_matrix_curves_rmse": 0.07485070554198275,
+      "held_out_compact_rmse": 6.026498732419388e-06,
+      "matrix": [
+        [
+          0.5354657818966708,
+          -0.12456762095528272,
+          -0.12875111403781928
+        ],
+        [
+          -0.07267242522318117,
+          0.5518757847409594,
+          -0.012785629356778502
+        ],
+        [
+          -0.12402895953506164,
+          -0.08913828605414462,
+          0.6403568344073708
+        ]
+      ]
+    },
+    {
+      "case": "custom_record",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.053517307258465055,
+      "held_out_matrix_curves_rmse": 0.0516343698135944,
+      "held_out_compact_rmse": 0.08087123024890247,
+      "matrix": [
+        [
+          0.48399376376529896,
+          -0.011711848223579045,
+          -0.0756912544378626
+        ],
+        [
+          -0.009734035743279752,
+          0.4798434155944267,
+          -0.06976450760176547
+        ],
+        [
+          -0.05257857105018966,
+          -0.04884749026608035,
+          0.6743935599100792
+        ]
+      ]
+    },
+    {
+      "case": "custom_record",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.05483664535010279,
+      "held_out_matrix_curves_rmse": 0.05438277214853017,
+      "held_out_compact_rmse": 0.06793948369794789,
+      "matrix": [
+        [
+          0.5437132180366159,
+          -0.0025597816481442476,
+          -0.06882042512465328
+        ],
+        [
+          -0.04637808311402714,
+          0.5137235537665275,
+          -0.08209168554941008
+        ],
+        [
+          -0.142565907821441,
+          -0.07398459860007613,
+          0.7024762666208703
+        ]
+      ]
+    },
+    {
+      "case": "custom_record",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.05211254183939663,
+      "held_out_matrix_curves_rmse": 0.050607346655837354,
+      "held_out_compact_rmse": 0.08192023831396962,
+      "matrix": [
+        [
+          0.5210546625841148,
+          -0.021139329401806156,
+          -0.05720696361348261
+        ],
+        [
+          -0.01970997068215047,
+          0.47668929883980027,
+          -0.07812514840564902
+        ],
+        [
+          -0.05707555134689558,
+          -0.03546566537664653,
+          0.662213076526781
+        ]
+      ]
+    },
+    {
+      "case": "palette",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.0807896007777431,
+      "held_out_matrix_curves_rmse": 0.07215468862724438,
+      "held_out_compact_rmse": 6.14582642740399e-06,
+      "matrix": [
+        [
+          0.5544849610218081,
+          -0.12500333873614403,
+          -0.1399293424247731
+        ],
+        [
+          -0.07403384921996604,
+          0.5711558447456774,
+          -0.0033625537529877575
+        ],
+        [
+          -0.13658140976378388,
+          -0.1002957828960838,
+          0.645989942261038
+        ]
+      ]
+    },
+    {
+      "case": "palette",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.05398122660896661,
+      "held_out_matrix_curves_rmse": 0.051327413155150145,
+      "held_out_compact_rmse": 0.0751913269566489,
+      "matrix": [
+        [
+          0.4954896787139612,
+          -0.027245861923620444,
+          -0.14167656667948006
+        ],
+        [
+          -0.00206470488921696,
+          0.5103373765235685,
+          0.0011820443307856141
+        ],
+        [
+          -0.06421145514044,
+          -0.06374613888648643,
+          0.6583131463397891
+        ]
+      ]
+    },
+    {
+      "case": "palette",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.05478362637302604,
+      "held_out_matrix_curves_rmse": 0.0538563363732483,
+      "held_out_compact_rmse": 0.06065601682598937,
+      "matrix": [
+        [
+          0.5571795515237158,
+          -0.03408030247638622,
+          -0.12311264569804155
+        ],
+        [
+          -0.04737909708542429,
+          0.5419699736297232,
+          -0.021568107349283466
+        ],
+        [
+          -0.1504075570652321,
+          -0.08012867706495229,
+          0.6926704934886825
+        ]
+      ]
+    },
+    {
+      "case": "palette",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.05298526203549824,
+      "held_out_matrix_curves_rmse": 0.050172861258173856,
+      "held_out_compact_rmse": 0.0765294149339983,
+      "matrix": [
+        [
+          0.5269197474785358,
+          -0.04060484207906134,
+          -0.13621444710248234
+        ],
+        [
+          -0.014222890904858251,
+          0.5031879044601384,
+          0.003924002957630623
+        ],
+        [
+          -0.06589363704420045,
+          -0.05161409597300568,
+          0.66458963701976
+        ]
+      ]
+    },
+    {
+      "case": "recombination",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.08430691696816572,
+      "held_out_matrix_curves_rmse": 0.07122965204211923,
+      "held_out_compact_rmse": 5.214431628904192e-06,
+      "matrix": [
+        [
+          0.4281804734657618,
+          -0.14541831446239759,
+          -0.15443300360879997
+        ],
+        [
+          -0.051436299705375145,
+          0.49259760855985874,
+          -0.025950550288935795
+        ],
+        [
+          -0.10007164040074344,
+          -0.06502746813599805,
+          0.7691608449833645
+        ]
+      ]
+    },
+    {
+      "case": "recombination",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.052837335437293846,
+      "held_out_matrix_curves_rmse": 0.04938207878661116,
+      "held_out_compact_rmse": 0.08441613923021217,
+      "matrix": [
+        [
+          0.3562327828029856,
+          -0.06754991911539729,
+          -0.12207526721649424
+        ],
+        [
+          0.043803742191501405,
+          0.467625829153599,
+          -0.05162853208102711
+        ],
+        [
+          -0.03404652932852016,
+          -0.0282608415941415,
+          0.787248531309156
+        ]
+      ]
+    },
+    {
+      "case": "recombination",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.05479379729957347,
+      "held_out_matrix_curves_rmse": 0.053088342826770565,
+      "held_out_compact_rmse": 0.06767079703842394,
+      "matrix": [
+        [
+          0.4007193257912333,
+          -0.07216956813348033,
+          -0.11311209883698223
+        ],
+        [
+          0.002453407322296689,
+          0.5063545219369372,
+          -0.06522050843356716
+        ],
+        [
+          -0.12626648128561135,
+          -0.05527494378133681,
+          0.8090236750537637
+        ]
+      ]
+    },
+    {
+      "case": "recombination",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.052218314613363244,
+      "held_out_matrix_curves_rmse": 0.048845713847373406,
+      "held_out_compact_rmse": 0.08576603833304361,
+      "matrix": [
+        [
+          0.3746844600899737,
+          -0.08600503741645103,
+          -0.10751579363386404
+        ],
+        [
+          0.044683031843612574,
+          0.46872565583148645,
+          -0.05747925136415884
+        ],
+        [
+          -0.03688786231705013,
+          -0.01539782385022111,
+          0.7817914306104145
+        ]
+      ]
+    },
+    {
+      "case": "anchor",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.11996188698996275,
+      "held_out_matrix_curves_rmse": 0.11762792673684637,
+      "held_out_compact_rmse": 2.724006845486353e-06,
+      "matrix": [
+        [
+          0.9743697401937023,
+          0.1920118398116384,
+          0.1340872949966884
+        ],
+        [
+          -0.28456349195606795,
+          0.2815625095131733,
+          -0.08037379304571766
+        ],
+        [
+          -0.3115939271495587,
+          -0.19161879212618096,
+          0.40984832767338913
+        ]
+      ]
+    },
+    {
+      "case": "anchor",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.11762406664584901,
+      "held_out_matrix_curves_rmse": 0.10295966285544175,
+      "held_out_compact_rmse": 0.09427468201020216,
+      "matrix": [
+        [
+          0.840241242170935,
+          0.18428714537077234,
+          0.14943274759825592
+        ],
+        [
+          -0.14998539523463608,
+          0.29311974889105424,
+          -0.09769168754412787
+        ],
+        [
+          -0.21526960980437426,
+          -0.12335396812182402,
+          0.43251219402609176
+        ]
+      ]
+    },
+    {
+      "case": "anchor",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.11370922273488675,
+      "held_out_matrix_curves_rmse": 0.10181503895865714,
+      "held_out_compact_rmse": 0.07406692655377442,
+      "matrix": [
+        [
+          0.9231192780871792,
+          0.18623588593967322,
+          0.1352792983691095
+        ],
+        [
+          -0.20977476031593953,
+          0.33655517801504875,
+          -0.11699720111239374
+        ],
+        [
+          -0.32731648215747794,
+          -0.15385196459990025,
+          0.48592383596372507
+        ]
+      ]
+    },
+    {
+      "case": "anchor",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.11600981020451383,
+      "held_out_matrix_curves_rmse": 0.10118615845645774,
+      "held_out_compact_rmse": 0.09599295746011244,
+      "matrix": [
+        [
+          0.8603110193172772,
+          0.172818837927698,
+          0.15160372213425424
+        ],
+        [
+          -0.1554802035172718,
+          0.2893531419767524,
+          -0.09447854132958515
+        ],
+        [
+          -0.21675343967649896,
+          -0.10756009425261505,
+          0.43080026430719887
+        ]
+      ]
+    },
+    {
+      "case": "depth",
+      "method": "compact_basis",
+      "held_out_matrix_rmse": 0.08915767142821483,
+      "held_out_matrix_curves_rmse": 0.077685872923682,
+      "held_out_compact_rmse": 2.0959845933947684e-06,
+      "matrix": [
+        [
+          0.4265136377273542,
+          -0.10833786576640936,
+          -0.10324447029253198
+        ],
+        [
+          -0.06201256622169184,
+          0.4281970092906648,
+          0.020590849795828144
+        ],
+        [
+          -0.12859358896693263,
+          -0.08103494178081846,
+          0.47228521585870104
+        ]
+      ]
+    },
+    {
+      "case": "depth",
+      "method": "nnls_residual",
+      "held_out_matrix_rmse": 0.05062987189016989,
+      "held_out_matrix_curves_rmse": 0.04990638948500271,
+      "held_out_compact_rmse": 0.08432210018317093,
+      "matrix": [
+        [
+          0.3624483289124658,
+          -0.022263591288562954,
+          -0.07282460885342579
+        ],
+        [
+          0.015566867339576726,
+          0.3813932421188714,
+          -0.0018800574480785557
+        ],
+        [
+          -0.05166492834599753,
+          -0.0359220138967803,
+          0.4853597301615167
+        ]
+      ]
+    },
+    {
+      "case": "depth",
+      "method": "smits_residual",
+      "held_out_matrix_rmse": 0.05629115201281761,
+      "held_out_matrix_curves_rmse": 0.056021426235232014,
+      "held_out_compact_rmse": 0.0707842412986382,
+      "matrix": [
+        [
+          0.4100396491873468,
+          -0.021726753652782833,
+          -0.06073884317855489
+        ],
+        [
+          -0.016707288267287915,
+          0.4267717495495971,
+          -0.02926082686347158
+        ],
+        [
+          -0.15284981117706495,
+          -0.06478070932806482,
+          0.5321982981217347
+        ]
+      ]
+    },
+    {
+      "case": "depth",
+      "method": "sigmoid_d65_pilot",
+      "held_out_matrix_rmse": 0.05032035610197655,
+      "held_out_matrix_curves_rmse": 0.049686999485288486,
+      "held_out_compact_rmse": 0.08569383156346141,
+      "matrix": [
+        [
+          0.3876094346926418,
+          -0.03359368280991909,
+          -0.06683934075428696
+        ],
+        [
+          0.014493902699485695,
+          0.3775032830655854,
+          -0.002939208798542065
+        ],
+        [
+          -0.057193186944516215,
+          -0.022158523809474945,
+          0.4852402310145989
+        ]
+      ]
+    }
+  ],
+  "signed_hdr": [
+    {
+      "effect": "Density",
+      "method": "compact_basis",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9999999999999996,
+          -2.0,
+          -2.9999999999999996
+        ],
+        [
+          -0.0920912070506027,
+          0.1304629686393584,
+          1.4521737803754726
+        ],
+        [
+          7878.996322059801,
+          1446.2999528001374,
+          -78.27395066021099
+        ],
+        [
+          9.999999999999996e-11,
+          -9.999999999999999e-11,
+          1.9999999999999998e-10
+        ]
+      ],
+      "double_exposure_relative_error": 0.0008759124166950642,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 1.2217231322747546e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 1.5725238373922675e-08,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.23177293133120053,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    },
+    {
+      "effect": "Density",
+      "method": "nnls_residual",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9999999999999996,
+          -2.0,
+          -2.9999999999999996
+        ],
+        [
+          -0.13792562475017012,
+          0.20617866178212896,
+          1.5277642166223977
+        ],
+        [
+          8671.830256251373,
+          1550.4116834357328,
+          -102.65740279010686
+        ],
+        [
+          9.999999999999996e-11,
+          -9.999999999999999e-11,
+          1.9999999999999998e-10
+        ]
+      ],
+      "double_exposure_relative_error": 0.0005484952157923544,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 2.9812416145025278e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 1.0000000000000698e-08,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.1438088120077346,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    },
+    {
+      "effect": "Density",
+      "method": "smits_residual",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9999999999999996,
+          -2.0,
+          -2.9999999999999996
+        ],
+        [
+          -0.08096286259689167,
+          0.11375799089829836,
+          1.4101366738097485
+        ],
+        [
+          8653.232031474388,
+          1594.6586692415704,
+          -157.07447385971602
+        ],
+        [
+          9.999999999999996e-11,
+          -9.999999999999999e-11,
+          1.9999999999999998e-10
+        ]
+      ],
+      "double_exposure_relative_error": 0.0005561757380753989,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 1.1270710559677793e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 1.0000000000000698e-08,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.1501493534122088,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    },
+    {
+      "effect": "Density",
+      "method": "sigmoid_d65_pilot",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.9999999999999996,
+          -2.0,
+          -2.9999999999999996
+        ],
+        [
+          -0.1610958017265941,
+          0.20418934287443985,
+          2.48300764059729
+        ],
+        [
+          8639.72020420076,
+          1549.708174064242,
+          -115.24914110606812
+        ],
+        [
+          9.999999999999996e-11,
+          -9.999999999999999e-11,
+          1.9999999999999998e-10
+        ]
+      ],
+      "double_exposure_relative_error": 0.0005617557271169062,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 2.910094267891128e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 1.0000201748776224e-08,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.177100104686023,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    },
+    {
+      "effect": "Strip",
+      "method": "compact_basis",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0214910102013781,
+          -2.009543351358178,
+          -2.999942071652134
+        ],
+        [
+          -0.24894859885514742,
+          0.09116281332468065,
+          2.5542317149901232
+        ],
+        [
+          4355.165973071842,
+          -519.1890066204136,
+          -217.09240879247076
+        ],
+        [
+          -7.956657694126643e-12,
+          -1.6483721020159126e-10,
+          9.174688903459944e-11
+        ]
+      ],
+      "double_exposure_relative_error": 5.456968210637569e-16,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 5.7507854617000476e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 9.99887670566554e-09,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.020657558020065414,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    },
+    {
+      "effect": "Strip",
+      "method": "nnls_residual",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0000000000000002,
+          -1.9999999999999991,
+          -2.9999999999999996
+        ],
+        [
+          -0.24115083099444973,
+          0.20976259943565495,
+          2.6020618963878
+        ],
+        [
+          5148.690071288207,
+          779.0146179184794,
+          -23.794645603294203
+        ],
+        [
+          7.859076270580354e-11,
+          -9.319030369793172e-11,
+          1.2345973605178198e-10
+        ]
+      ],
+      "double_exposure_relative_error": 2.7284841053187845e-16,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 2.8102603425145256e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 1.0000000000000116e-08,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.01926284867001571,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    },
+    {
+      "effect": "Strip",
+      "method": "smits_residual",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0000000000000002,
+          -1.9999999999999991,
+          -2.9999999999999996
+        ],
+        [
+          -0.3784829315481869,
+          0.08642210310863876,
+          2.6234713729889014
+        ],
+        [
+          5273.013259564545,
+          856.9432905989141,
+          -269.98930094476725
+        ],
+        [
+          3.462782554202353e-11,
+          -1.1194460187120874e-10,
+          1.3146423213421155e-10
+        ]
+      ],
+      "double_exposure_relative_error": 7.275957614183426e-16,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 4.7972292349027224e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 1.0000000000000116e-08,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.0192574152425945,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    },
+    {
+      "effect": "Strip",
+      "method": "sigmoid_d65_pilot",
+      "probes": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          -0.2,
+          0.3,
+          4.0
+        ],
+        [
+          10000.0,
+          2000.0,
+          -50.0
+        ],
+        [
+          1e-10,
+          -1e-10,
+          2e-10
+        ]
+      ],
+      "reference": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0000002479554495,
+          -2.0000002814305384,
+          -3.000000233634951
+        ],
+        [
+          -0.17302397019809623,
+          0.219558636156982,
+          2.7166221945303755
+        ],
+        [
+          4848.304731303765,
+          843.4704290767397,
+          -21.906882036224403
+        ],
+        [
+          7.832905944242493e-11,
+          -9.17821752640538e-11,
+          1.2179821088080407e-10
+        ]
+      ],
+      "double_exposure_relative_error": 3.637978807091713e-16,
+      "transitions": {
+        "mixed_sign": {
+          "max_adjacent_rgb_step": 2.5329568638834954e-05,
+          "input_max_step": 5.000000000000013e-05,
+          "finite": true
+        },
+        "through_zero": {
+          "max_adjacent_rgb_step": 1.0000007181969818e-08,
+          "input_max_step": 1.0000000000000063e-08,
+          "finite": true
+        },
+        "saturated_boundary": {
+          "max_adjacent_rgb_step": 0.030790260198686914,
+          "input_max_step": 0.0012500000000000011,
+          "finite": true
+        }
+      }
+    }
+  ],
+  "neutral_checks": [
+    {
+      "effect": "Density",
+      "method": "compact_basis",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.19999999999999993,
+          -0.2,
+          -0.19999999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999436351013615,
+          0.1799943634824795,
+          0.17999436434133306
+        ],
+        [
+          9.999865211819202,
+          9.999865211157832,
+          9.999865231696027
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.20000000298023224,
+          -0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1799944043159485,
+          0.1799943596124649,
+          0.1799943745136261
+        ],
+        [
+          9.999866485595703,
+          9.99986457824707,
+          9.999865531921387
+        ]
+      ],
+      "relative_magnitude_drift": 1.3478884216766573e-05,
+      "max_axis_difference": 2.053819514458155e-08
+    },
+    {
+      "effect": "Density",
+      "method": "nnls_residual",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.19999999999999993,
+          -0.2,
+          -0.19999999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999433881831198,
+          0.17999433848431476,
+          0.17999433938969056
+        ],
+        [
+          9.99986462135135,
+          9.999864613364311,
+          9.99986463501501
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.20000000298023224,
+          -0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1799944043159485,
+          0.1799943596124649,
+          0.1799943745136261
+        ],
+        [
+          9.999866485595703,
+          9.99986457824707,
+          9.999865531921387
+        ]
+      ],
+      "relative_magnitude_drift": 1.3538663568901654e-05,
+      "max_axis_difference": 2.1650699011388497e-08
+    },
+    {
+      "effect": "Density",
+      "method": "smits_residual",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.19999999999999993,
+          -0.2,
+          -0.19999999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999420586527906,
+          0.17999420672178224,
+          0.17999420685640488
+        ],
+        [
+          9.999861441979458,
+          9.999861462461439,
+          9.999861465680743
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.20000000298023224,
+          -0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1799944043159485,
+          0.1799943596124649,
+          0.1799943745136261
+        ],
+        [
+          9.999866485595703,
+          9.99986457824707,
+          9.999865531921387
+        ]
+      ],
+      "relative_magnitude_drift": 1.3855802054152377e-05,
+      "max_axis_difference": 2.048198055604189e-08
+    },
+    {
+      "effect": "Density",
+      "method": "sigmoid_d65_pilot",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.19999999999999993,
+          -0.2,
+          -0.19999999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999437014482858,
+          0.17999437017031372,
+          0.1799943710132647
+        ],
+        [
+          9.999865370477895,
+          9.999865371087333,
+          9.999865391245242
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.20000000298023224,
+          -0.20000000298023224
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1799944043159485,
+          0.1799943596124649,
+          0.1799943745136261
+        ],
+        [
+          9.999866485595703,
+          9.99986457824707,
+          9.999865531921387
+        ]
+      ],
+      "relative_magnitude_drift": 1.3462952210474555e-05,
+      "max_axis_difference": 2.0157909119689066e-08
+    },
+    {
+      "effect": "Strip",
+      "method": "compact_basis",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.20000000000160545,
+          -0.20000000000172255,
+          -0.20000000000137222
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999763990849815,
+          0.17999770652336922,
+          0.17999854818806565
+        ],
+        [
+          9.999868883805457,
+          9.99987258463162,
+          9.999919343781425
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.19999997317790985,
+          -0.20000001788139343
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999765276908875,
+          0.17999768257141113,
+          0.17999856173992157
+        ],
+        [
+          9.999868392944336,
+          9.999871253967285,
+          9.999918937683105
+        ]
+      ],
+      "relative_magnitude_drift": 1.3111619454342361e-05,
+      "max_axis_difference": 4.675914980545315e-05
+    },
+    {
+      "effect": "Strip",
+      "method": "nnls_residual",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.19999999999999993,
+          -0.2,
+          -0.19999999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999767898346436,
+          0.17999764579191718,
+          0.17999863422326332
+        ],
+        [
+          9.999871054636907,
+          9.999869210662059,
+          9.999924123514631
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.19999997317790985,
+          -0.20000001788139343
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999765276908875,
+          0.17999768257141113,
+          0.17999856173992157
+        ],
+        [
+          9.999868392944336,
+          9.999871253967285,
+          9.999918937683105
+        ]
+      ],
+      "relative_magnitude_drift": 1.3078933794119507e-05,
+      "max_axis_difference": 5.491285257264167e-05
+    },
+    {
+      "effect": "Strip",
+      "method": "smits_residual",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.19999999999999993,
+          -0.2,
+          -0.19999999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1799973427676499,
+          0.17999775887768024,
+          0.17999866654646743
+        ],
+        [
+          9.999852375980554,
+          9.999875493204454,
+          9.999925919248192
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.19999997317790985,
+          -0.20000001788139343
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999765276908875,
+          0.17999768257141113,
+          0.17999856173992157
+        ],
+        [
+          9.999868392944336,
+          9.999871253967285,
+          9.999918937683105
+        ]
+      ],
+      "relative_magnitude_drift": 1.4762401944601323e-05,
+      "max_axis_difference": 5.042604373706183e-05
+    },
+    {
+      "effect": "Strip",
+      "method": "sigmoid_d65_pilot",
+      "source": [
+        [
+          -0.2,
+          -0.2,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.18,
+          0.18,
+          0.18
+        ],
+        [
+          10.0,
+          10.0,
+          10.0
+        ]
+      ],
+      "reference": [
+        [
+          -0.20000000000011997,
+          -0.20000000000015253,
+          -0.20000000000017248
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1799976346208003,
+          0.17999771651497243,
+          0.17999854765171977
+        ],
+        [
+          9.999868590044462,
+          9.99987313972069,
+          9.999919313984432
+        ]
+      ],
+      "production": [
+        [
+          -0.20000000298023224,
+          -0.19999997317790985,
+          -0.20000001788139343
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.17999765276908875,
+          0.17999768257141113,
+          0.17999856173992157
+        ],
+        [
+          9.999868392944336,
+          9.999871253967285,
+          9.999918937683105
+        ]
+      ],
+      "relative_magnitude_drift": 1.3140995553762024e-05,
+      "max_axis_difference": 4.61742637423157e-05
+    }
+  ],
+  "timing": [
+    {
+      "effect": "Density",
+      "method": "compact_basis",
+      "pixels": 64,
+      "compact_batch_seconds": 3.633300002547912e-05,
+      "oracle_cold_seconds": 0.012396041998727014,
+      "oracle_warm_seconds": 0.01225841700033925,
+      "warm_runtime_ratio": 337.3907189536463,
+      "cold_runtime_ratio": 341.1785976944949
+    },
+    {
+      "effect": "Density",
+      "method": "nnls_residual",
+      "pixels": 64,
+      "compact_batch_seconds": 3.633300002547912e-05,
+      "oracle_cold_seconds": 0.013679666999451001,
+      "oracle_warm_seconds": 0.013683291001143516,
+      "warm_runtime_ratio": 376.6077943342933,
+      "cold_runtime_ratio": 376.50805025343095
+    },
+    {
+      "effect": "Density",
+      "method": "smits_residual",
+      "pixels": 64,
+      "compact_batch_seconds": 3.633300002547912e-05,
+      "oracle_cold_seconds": 0.05388916700030677,
+      "oracle_warm_seconds": 0.05381666600078461,
+      "warm_runtime_ratio": 1481.2062302327022,
+      "cold_runtime_ratio": 1483.2016888920841
+    },
+    {
+      "effect": "Density",
+      "method": "sigmoid_d65_pilot",
+      "pixels": 64,
+      "compact_batch_seconds": 3.633300002547912e-05,
+      "oracle_cold_seconds": 0.27147579200027394,
+      "oracle_warm_seconds": 0.011638083000434563,
+      "warm_runtime_ratio": 320.3171494859539,
+      "cold_runtime_ratio": 7471.879333110313
+    },
+    {
+      "effect": "Strip",
+      "method": "compact_basis",
+      "pixels": 64,
+      "compact_batch_seconds": 3.975000072387047e-05,
+      "oracle_cold_seconds": 0.013036125001235632,
+      "oracle_warm_seconds": 0.013097832999847014,
+      "warm_runtime_ratio": 329.50522670007325,
+      "cold_runtime_ratio": 327.9528242475539
+    },
+    {
+      "effect": "Strip",
+      "method": "nnls_residual",
+      "pixels": 64,
+      "compact_batch_seconds": 3.975000072387047e-05,
+      "oracle_cold_seconds": 0.015867124999203952,
+      "oracle_warm_seconds": 0.015825124999537366,
+      "warm_runtime_ratio": 398.1163449396906,
+      "cold_runtime_ratio": 399.1729486856463
+    },
+    {
+      "effect": "Strip",
+      "method": "smits_residual",
+      "pixels": 64,
+      "compact_batch_seconds": 3.975000072387047e-05,
+      "oracle_cold_seconds": 0.0576845420000609,
+      "oracle_warm_seconds": 0.05672220800079231,
+      "warm_runtime_ratio": 1426.9737601974375,
+      "cold_runtime_ratio": 1451.1834201155239
+    },
+    {
+      "effect": "Strip",
+      "method": "sigmoid_d65_pilot",
+      "pixels": 64,
+      "compact_batch_seconds": 3.975000072387047e-05,
+      "oracle_cold_seconds": 0.2743181249988993,
+      "oracle_warm_seconds": 0.013886790999094956,
+      "warm_runtime_ratio": 349.35322631970996,
+      "cold_runtime_ratio": 6901.084779959945
+    }
+  ],
+  "images": [
+    {
+      "file": "density-0005.png",
+      "effect": "Density",
+      "source": "aces-0005",
+      "parameters": {
+        "density": 0.75,
+        "chromaCoupling": 0.3
+      },
+      "sampling": "Every fifteenth pixel of approved Rec.2020 fixture; nearest enlarged, not full-resolution spatial acceptance",
+      "view": "External Flawed Emulsion 2 / sRGB; quantitative EXRs pre-DRT"
+    },
+    {
+      "file": "strip-0005.png",
+      "effect": "Strip",
+      "source": "aces-0005",
+      "parameters": {
+        "separation": 0.8,
+        "density": 0.7,
+        "palette": 0.4,
+        "redAnchor": 0.6
+      },
+      "sampling": "Every fifteenth pixel of approved Rec.2020 fixture; nearest enlarged, not full-resolution spatial acceptance",
+      "view": "External Flawed Emulsion 2 / sRGB; quantitative EXRs pre-DRT"
+    },
+    {
+      "file": "density-0060.png",
+      "effect": "Density",
+      "source": "aces-0060",
+      "parameters": {
+        "density": 0.75,
+        "chromaCoupling": 0.3
+      },
+      "sampling": "Every fifteenth pixel of approved Rec.2020 fixture; nearest enlarged, not full-resolution spatial acceptance",
+      "view": "External Flawed Emulsion 2 / sRGB; quantitative EXRs pre-DRT"
+    },
+    {
+      "file": "strip-0060.png",
+      "effect": "Strip",
+      "source": "aces-0060",
+      "parameters": {
+        "separation": 0.8,
+        "density": 0.7,
+        "palette": 0.4,
+        "redAnchor": 0.6
+      },
+      "sampling": "Every fifteenth pixel of approved Rec.2020 fixture; nearest enlarged, not full-resolution spatial acceptance",
+      "view": "External Flawed Emulsion 2 / sRGB; quantitative EXRs pre-DRT"
+    }
+  ],
+  "matched_sweep_max_relative_rgb_error": 1.9308424371301313e-05,
+  "matched_strip_controls_max_rgb_error": 1.4635512178728938e-05,
+  "decision": {
+    "Density": "keep current production model",
+    "Strip": "keep current production model"
+  },
+  "artist_acceptance": "Not established by numerical difference. Visual review recorded separately; no validated missing artist behavior, no v2 fit justified.",
+  "stop": "Broad spectral development stopped. Future work requires a concrete artist-observed or numerical failure.",
+  "boundary_convergence": [
+    {
+      "effect": "Density",
+      "method": "compact_basis",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.23177293133120053,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.1700070944948373,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.14403798942402274,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Density",
+      "method": "nnls_residual",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.1438088120077346,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.10772999973261366,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.09086625264924669,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Density",
+      "method": "smits_residual",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.1501493534122088,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.11182605154752662,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.09439130308198418,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Density",
+      "method": "sigmoid_d65_pilot",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.177100104686023,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.1329624204886906,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.11232103261921167,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Density",
+      "method": "production",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.23177355527877808,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.17000770568847656,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.14403840899467468,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Strip",
+      "method": "compact_basis",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.020657558020065414,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.017224672364296145,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.013269628381153198,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Strip",
+      "method": "nnls_residual",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.01926284867001571,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.016055104487272542,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.012365643243711144,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Strip",
+      "method": "smits_residual",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.0192574152425945,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.016049263515040213,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.012360565350159947,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Strip",
+      "method": "sigmoid_d65_pilot",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.030790260198686914,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.025670503004270984,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.019774733930183586,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    },
+    {
+      "effect": "Strip",
+      "method": "production",
+      "samples": [
+        {
+          "samples": 81,
+          "input_step": 0.00125,
+          "max_output_step": 0.020656943321228027,
+          "at_source_r": -0.03875000000000001
+        },
+        {
+          "samples": 161,
+          "input_step": 0.000625,
+          "max_output_step": 0.01722431182861328,
+          "at_source_r": -0.038125000000000006
+        },
+        {
+          "samples": 321,
+          "input_step": 0.0003125,
+          "max_output_step": 0.013269364833831787,
+          "at_source_r": -0.038125000000000006
+        }
+      ]
+    }
+  ],
+  "sweep_count": 8000,
+  "physical_reference_count": 200,
+  "sigmoid_fit_count": 2386,
+  "rank_deficient_sigmoid_fits": 1,
+  "reproduction_examples": [
+    {
+      "family": "red",
+      "model": "KM",
+      "amount": 0,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.9504707649452458,
+        1.0000000000000002,
+        1.0888284224364935
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Beer-Lambert",
+      "amount": 0,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.9504707649452458,
+        1.0000000000000002,
+        1.0888284224364935
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Neugebauer",
+      "amount": 0,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.9504707649452458,
+        1.0000000000000002,
+        1.0888284224364935
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Yule-Nielsen",
+      "amount": 0,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.9504707649452458,
+        1.0000000000000002,
+        1.0888284224364935
+      ]
+    },
+    {
+      "family": "red",
+      "model": "KM",
+      "amount": 0.25,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.5175864912887405,
+        0.5958038599897015,
+        0.8215279888860131
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Beer-Lambert",
+      "amount": 0.25,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.5857731950536724,
+        0.6949476472541803,
+        0.962929465814667
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Neugebauer",
+      "amount": 0.25,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.8725747544662582,
+        0.9270307966345875,
+        1.0515740470964607
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Yule-Nielsen",
+      "amount": 0.25,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.8306127605605841,
+        0.895460874400921,
+        1.046894846435742
+      ]
+    },
+    {
+      "family": "red",
+      "model": "KM",
+      "amount": 0.5,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.41373138766113016,
+        0.4901054971806207,
+        0.7322103222739068
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Beer-Lambert",
+      "amount": 0.5,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.3879705477972156,
+        0.5057710134004378,
+        0.8519030507853852
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Neugebauer",
+      "amount": 0.5,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.7950323869604337,
+        0.8544453823147091,
+        1.0145045717305023
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Yule-Nielsen",
+      "amount": 0.5,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.7205957072358562,
+        0.7983921695647324,
+        1.0059731589834187
+      ]
+    },
+    {
+      "family": "red",
+      "model": "KM",
+      "amount": 1,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.3103860712799558,
+        0.3793834414314449,
+        0.6238021458900048
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Beer-Lambert",
+      "amount": 1,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.2050859103183285,
+        0.29703095768769505,
+        0.6674348907380502
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Neugebauer",
+      "amount": 1,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.6410071781964427,
+        0.7104240105861055,
+        0.9409189147148506
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Yule-Nielsen",
+      "amount": 1,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.5297413570455797,
+        0.6263565892013405,
+        0.9271274840970929
+      ]
+    },
+    {
+      "family": "red",
+      "model": "KM",
+      "amount": 2,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.21764105132784314,
+        0.27396166390382737,
+        0.5005486029065441
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Beer-Lambert",
+      "amount": 2,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.08891696660067797,
+        0.1300222473260466,
+        0.4111088774491682
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Neugebauer",
+      "amount": 2,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.3371850469562775,
+        0.42696572319535336,
+        0.7959509321068913
+      ]
+    },
+    {
+      "family": "red",
+      "model": "Yule-Nielsen",
+      "amount": 2,
+      "semantics": "appearance-referred D65 synthetic surface/reference, not directly comparable scene operator",
+      "xyz": [
+        0.262369591153038,
+        0.36854761421180826,
+        0.7811640320998897
+      ]
+    }
+  ]
+}

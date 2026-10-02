@@ -12,3 +12,5 @@
 The runtime bundles derived basis response matrices and chart XYZ values only. It does not bundle Python, CMFs, illuminant tables, or proprietary spectral measurements. All synthetic curves are deliberately nonhistorical and must not be marketed as measured dyes, pigment identities, film stocks, or Technicolor records.
 
 Measured Munsell, pigment, filter, or dye datasets are not yet integrated. Their access rights and spectral ranges must be recorded before packaging. Every generated physical reference dataset records appearance-referred semantics; no RGB reconstruction is claimed unique.
+
+Focused completion reuses the existing observer, illuminant, synthetic material and reconstruction datasets. The new sigmoid/D65 pilot uses independently fitted coefficients; no external spectral tables or measured material data were added. Coefficients and rank/conditioning diagnostics are generated offline. Neugebauer/Yule–Nielsen overprints use synthetic dye attenuation as a white-substrate reflectance surrogate, not measured printing data. See `docs/FULL_SPECTRAL_COMPLETION.md` for physical-class and signed-residual boundaries.

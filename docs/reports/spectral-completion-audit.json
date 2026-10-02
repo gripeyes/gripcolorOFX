@@ -1,0 +1,110 @@
+[
+  {
+    "requirement": "1 nm integration, observer and original-gamut return",
+    "baseline_status": "satisfied",
+    "final_status": "satisfied",
+    "evidence": "Existing Lab/FullReference retained; CIE integration tests retained. Completion numerical sweeps are Rec.2020; AP1/709 use the baseline path."
+  },
+  {
+    "requirement": "Materially different RGB reconstruction assumptions",
+    "baseline_status": "satisfied",
+    "final_status": "satisfied",
+    "evidence": "Three existing methods retained; nonlinear sigmoid/D65 pilot adds a distinct bounded-reflectance assumption, no optimized rgb2spec implementation claimed."
+  },
+  {
+    "requirement": "Reconstruction reproduction, shape, saturation, boundary, exposure and conditioning comparisons",
+    "baseline_status": "partially satisfied",
+    "final_status": "satisfied",
+    "evidence": "160 family/chroma/method reconstruction records, shape plots, matrix/fit conditioning and signed-boundary refinement."
+  },
+  {
+    "requirement": "Jakob/Hanika-style investigation",
+    "baseline_status": "missing",
+    "final_status": "satisfied",
+    "evidence": "Targeted paper-family pilot only; retained offline because bounded D65 spectral shapes provide a distinct metamer sensitivity reference. Poorly conditioned extreme fits are explicitly qualified."
+  },
+  {
+    "requirement": "Production use of Jakob/Hanika optimized tables",
+    "baseline_status": "intentionally deferred",
+    "final_status": "intentionally deferred",
+    "evidence": "No measured production need; no table/code import or runtime plugin change."
+  },
+  {
+    "requirement": "KM versus Beer-Lambert versus Neugebauer/Yule-Nielsen semantics",
+    "baseline_status": "partially satisfied",
+    "final_status": "satisfied",
+    "evidence": "200 synthetic physical-reference records, distinct classes and appearance semantics below."
+  },
+  {
+    "requirement": "Density ten-family exposure/chroma/depth trajectories",
+    "baseline_status": "partially satisfied",
+    "final_status": "satisfied",
+    "evidence": "4000 Density rows; RGB, hue, chroma, XYZ/Y and exposure plots."
+  },
+  {
+    "requirement": "Strip full separation, interaction, leakage, recombination and anchors",
+    "baseline_status": "partially satisfied",
+    "final_status": "satisfied",
+    "evidence": "4000 Strip rows plus eight control configurations; independent 1 nm integration matches compact record contract."
+  },
+  {
+    "requirement": "Strip versus matrix and matrix-plus-curves baselines",
+    "baseline_status": "missing",
+    "final_status": "satisfied",
+    "evidence": "180 training / 90 held-out colours, unrestricted matrix followed by independent cubic channel curves; image examples included."
+  },
+  {
+    "requirement": "Signed physical component, residual and HDR decomposition",
+    "baseline_status": "partially satisfied",
+    "final_status": "satisfied",
+    "evidence": "Extraction formulas, zero/mixed-sign/HDR probes, 2x exposure and boundary refinement recorded; residual is algebraic, not physical."
+  },
+  {
+    "requirement": "Runtime ratio and reconstruction-method variation",
+    "baseline_status": "missing",
+    "final_status": "satisfied",
+    "evidence": "Same-machine 64-pixel batches, cold/warm timings; Python/C++ implementation overhead explicitly included."
+  },
+  {
+    "requirement": "Consolidated scene-linear report and viewed examples",
+    "baseline_status": "missing",
+    "final_status": "satisfied",
+    "evidence": "This report + HTML environment + EXRs; PNGs alone use external Flawed Emulsion 2."
+  },
+  {
+    "requirement": "Useful artist behavior missing from compact verified by artist",
+    "baseline_status": "missing",
+    "final_status": "partially satisfied",
+    "evidence": "Targeted visual inspection and model differences recorded; small examples do not establish artist superiority or user acceptance."
+  },
+  {
+    "requirement": "Full-resolution authored-shot/general artist acceptance",
+    "baseline_status": "intentionally deferred",
+    "final_status": "intentionally deferred",
+    "evidence": "Approved sample previews are deliberately small; next artist recipe phase uses Base/Palette/Material, with failure-driven follow-up only."
+  },
+  {
+    "requirement": "Density v2 / Strip v2 fitting or per-pixel runtime replacement",
+    "baseline_status": "intentionally deferred",
+    "final_status": "intentionally deferred",
+    "evidence": "No established useful missing behavior; retaining production v1 equations/IDs/parameters is the recommendation."
+  },
+  {
+    "requirement": "All expert selectors, custom gamuts and arbitrary production parameters matched by oracle",
+    "baseline_status": "partially satisfied",
+    "final_status": "partially satisfied",
+    "evidence": "Record mode/custom matrix/palette/contributions/weights added; custom selector/domain/config combinations not exhaustively matched."
+  },
+  {
+    "requirement": "Measured pigments/dyes, fluorescence, finite-layer scattering or film stocks",
+    "baseline_status": "intentionally deferred",
+    "final_status": "intentionally deferred",
+    "evidence": "Outside completion scope; synthetic curves and reference classes are not universal or film identities."
+  },
+  {
+    "requirement": "Explicit final recommendations, reproducibility and stop",
+    "baseline_status": "missing",
+    "final_status": "satisfied",
+    "evidence": "Keep current Density and Strip; no production source changes. Broad spectral expansion stops here."
+  }
+]
