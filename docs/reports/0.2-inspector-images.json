@@ -1,0 +1,845 @@
+{
+  "schema_version": 1,
+  "gates": [
+    "M6",
+    "M7",
+    "M8/M10"
+  ],
+  "palette_analysis": "Offline reference assistance only; compact scene palettes, stable log-domain balanced entropic transport and sliced 1D W1 projections",
+  "structure_analysis": "Linear luminance/opponent spatial derivative diagnostics only; no filtering or processing in core operators",
+  "soft_bridge": "Experimental Gaussian overlapping guide fields + explicit signed residual; future Pigment consumer handles spatial operations",
+  "cases": [
+    {
+      "source_frame": 5,
+      "effect": "Density",
+      "parameters": {
+        "density": 0.9,
+        "chromaCoupling": 0.7,
+        "highlightProtection": 0,
+        "shadowWeight": 0
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.13537482322482194,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.04527838693601425,
+          "p50": 0.13401531050979426,
+          "p95": 0.2312615607929457,
+          "max": 0.23728498532358483
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.07402110840271908,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.011573560495882132,
+          "p50": 0.07030339294812425,
+          "p95": 0.1281642795067827,
+          "max": 0.1313685926058718
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.11714674457368884,
+        "epsilon": 0.0296762035878182,
+        "marginal_max_error": 1.0249245896432058e-11,
+        "iterations": 51,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.00014102594175456555,
+        "edge_pixels": 229187,
+        "luminance_gradient_ratio": {
+          "finite": 229187,
+          "nonfinite": 0,
+          "min": 0.0012078534020046685,
+          "p50": 0.5606269945185985,
+          "p95": 4.080385633511588,
+          "max": 211.48226322307173
+        },
+        "luminance_direction_cosine": {
+          "finite": 229187,
+          "nonfinite": 0,
+          "min": -0.9999999997956277,
+          "p50": 0.8722921664507421,
+          "p95": 0.9995827713915503,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 39645,
+        "lost_edge_pixels": 522,
+        "chromatic_direction_cosine": {
+          "finite": 229401,
+          "nonfinite": 0,
+          "min": -0.9773166358878029,
+          "p50": 0.9882021099901603,
+          "p95": 0.9993025276846613,
+          "max": 1.0
+        },
+        "flat_source_pixels": 214,
+        "new_edge_pixels": 203
+      },
+      "view": "density-0005-view.png",
+      "palette_plot": "density-0005-palette.png",
+      "structure_plot": "density-0005-structure.png"
+    },
+    {
+      "source_frame": 5,
+      "effect": "Crossover",
+      "parameters": {
+        "hue": 195,
+        "width": 150,
+        "darkHue": 100,
+        "darkChroma": 0.05,
+        "darkDensity": 1.2,
+        "midHue": -20,
+        "midChroma": 1.5,
+        "brightHue": -90,
+        "brightChroma": 2,
+        "transition": 0.5
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.06690428036383149,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.034822530141563654,
+          "p50": 0.06553398245234544,
+          "p95": 0.10916846509637565,
+          "max": 0.11130346741357347
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.002361554204700515,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.0012834592119938656,
+          "p50": 0.002186563184925044,
+          "p95": 0.0036462716598803986,
+          "max": 0.004035966427102984
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.050663071122758,
+        "epsilon": 0.025282531179606233,
+        "marginal_max_error": 2.9558186454003987e-10,
+        "iterations": 71,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.00014102594175456555,
+        "edge_pixels": 229187,
+        "luminance_gradient_ratio": {
+          "finite": 229187,
+          "nonfinite": 0,
+          "min": 0.003532977948507833,
+          "p50": 1.0,
+          "p95": 1.103794104218485,
+          "max": 39.536402694114436
+        },
+        "luminance_direction_cosine": {
+          "finite": 229187,
+          "nonfinite": 0,
+          "min": -0.999999998730807,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 3504,
+        "lost_edge_pixels": 95,
+        "chromatic_direction_cosine": {
+          "finite": 229401,
+          "nonfinite": 0,
+          "min": -0.9496592580169972,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "flat_source_pixels": 214,
+        "new_edge_pixels": 70
+      },
+      "view": "crossover-0005-view.png",
+      "palette_plot": "crossover-0005-palette.png",
+      "structure_plot": "crossover-0005-structure.png"
+    },
+    {
+      "source_frame": 5,
+      "effect": "Strip",
+      "parameters": {
+        "separation": 1,
+        "palette": 0.8,
+        "density": 0.8,
+        "leakage": 0.6,
+        "redAnchor": 0.7
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.10505097289632286,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.022327291747409325,
+          "p50": 0.10429004603615755,
+          "p95": 0.18240820082716058,
+          "max": 0.18594913732795992
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.04927521703899553,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.0075378464961299175,
+          "p50": 0.04584972079416313,
+          "p95": 0.0863559744820958,
+          "max": 0.08929062849698821
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.07803558992712636,
+        "epsilon": 0.0302025595020421,
+        "marginal_max_error": 1.3929350071442085e-08,
+        "iterations": 12000,
+        "converged": false
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.00014102594175456555,
+        "edge_pixels": 229187,
+        "luminance_gradient_ratio": {
+          "finite": 229187,
+          "nonfinite": 0,
+          "min": 0.0007350165594774402,
+          "p50": 0.7783176785963397,
+          "p95": 3.243625220620583,
+          "max": 76.85477699741118
+        },
+        "luminance_direction_cosine": {
+          "finite": 229187,
+          "nonfinite": 0,
+          "min": -0.9999999998553843,
+          "p50": 0.9608412725620304,
+          "p95": 0.9999515133499479,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 33813,
+        "lost_edge_pixels": 583,
+        "chromatic_direction_cosine": {
+          "finite": 229401,
+          "nonfinite": 0,
+          "min": -0.996671988085325,
+          "p50": 0.9880313568392698,
+          "p95": 0.9997905373748772,
+          "max": 0.9999998391892729
+        },
+        "flat_source_pixels": 214,
+        "new_edge_pixels": 212
+      },
+      "view": "strip-0005-view.png",
+      "palette_plot": "strip-0005-palette.png",
+      "structure_plot": "strip-0005-structure.png"
+    },
+    {
+      "source_frame": 7,
+      "effect": "Density",
+      "parameters": {
+        "density": 0.9,
+        "chromaCoupling": 0.7,
+        "highlightProtection": 0,
+        "shadowWeight": 0
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.05276441430637524,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.007856090709922077,
+          "p50": 0.054316731191061396,
+          "p95": 0.09363007778220814,
+          "max": 0.09622359695838235
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.0801061271638683,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.009895010825136667,
+          "p50": 0.07749540860998028,
+          "p95": 0.14087494338993933,
+          "max": 0.1468653603834418
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.034568062357812415,
+        "epsilon": 0.016035857195970223,
+        "marginal_max_error": 4.506766071443735e-10,
+        "iterations": 161,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.0005424579429319918,
+        "edge_pixels": 226186,
+        "luminance_gradient_ratio": {
+          "finite": 226186,
+          "nonfinite": 0,
+          "min": 8.383034431330544e-05,
+          "p50": 0.5745960638393217,
+          "p95": 10.404539067402816,
+          "max": 1645.072153297194
+        },
+        "luminance_direction_cosine": {
+          "finite": 226186,
+          "nonfinite": 0,
+          "min": -1.0,
+          "p50": 0.8454589818193752,
+          "p95": 0.9996902642921847,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 52189,
+        "lost_edge_pixels": 10834,
+        "chromatic_direction_cosine": {
+          "finite": 229305,
+          "nonfinite": 0,
+          "min": -0.9836213042027434,
+          "p50": 0.9778489013287716,
+          "p95": 0.9991518601797119,
+          "max": 0.9999999963732794
+        },
+        "flat_source_pixels": 3215,
+        "new_edge_pixels": 2394
+      },
+      "view": "density-0007-view.png",
+      "palette_plot": "density-0007-palette.png",
+      "structure_plot": "density-0007-structure.png"
+    },
+    {
+      "source_frame": 7,
+      "effect": "Crossover",
+      "parameters": {
+        "hue": 195,
+        "width": 150,
+        "darkHue": 100,
+        "darkChroma": 0.05,
+        "darkDensity": 1.2,
+        "midHue": -20,
+        "midChroma": 1.5,
+        "brightHue": -90,
+        "brightChroma": 2,
+        "transition": 0.5
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.051444045394027915,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.014525252079144022,
+          "p50": 0.05318459582387177,
+          "p95": 0.08697200101486376,
+          "max": 0.08987941997676868
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.0002978136108522727,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 6.95421695753049e-05,
+          "p50": 0.00032219489285232293,
+          "p95": 0.00048719942155791776,
+          "max": 0.0004979880335039867
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.02172003075185136,
+        "epsilon": 0.013843005475840733,
+        "marginal_max_error": 6.4793376219896e-10,
+        "iterations": 301,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.0005424579429319918,
+        "edge_pixels": 226186,
+        "luminance_gradient_ratio": {
+          "finite": 226186,
+          "nonfinite": 0,
+          "min": 0.02084501510964244,
+          "p50": 1.0,
+          "p95": 1.547016705560536,
+          "max": 18.327454765141564
+        },
+        "luminance_direction_cosine": {
+          "finite": 226186,
+          "nonfinite": 0,
+          "min": -0.9999994726914295,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 3083,
+        "lost_edge_pixels": 426,
+        "chromatic_direction_cosine": {
+          "finite": 229305,
+          "nonfinite": 0,
+          "min": -0.9969669407068658,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "flat_source_pixels": 3215,
+        "new_edge_pixels": 781
+      },
+      "view": "crossover-0007-view.png",
+      "palette_plot": "crossover-0007-palette.png",
+      "structure_plot": "crossover-0007-structure.png"
+    },
+    {
+      "source_frame": 7,
+      "effect": "Strip",
+      "parameters": {
+        "separation": 1,
+        "palette": 0.8,
+        "density": 0.8,
+        "leakage": 0.6,
+        "redAnchor": 0.7
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.030654026487540058,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.009339447910702195,
+          "p50": 0.03057276353892127,
+          "p95": 0.04309691613466207,
+          "max": 0.044631728978576715
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.04401936273885995,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.002641091574169776,
+          "p50": 0.044002194744179185,
+          "p95": 0.07855433736981006,
+          "max": 0.08132154721792989
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.02076834691427434,
+        "epsilon": 0.013392295913273209,
+        "marginal_max_error": 5.273789425996878e-10,
+        "iterations": 231,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.0005424579429319918,
+        "edge_pixels": 226186,
+        "luminance_gradient_ratio": {
+          "finite": 226186,
+          "nonfinite": 0,
+          "min": 0.0007884293200462087,
+          "p50": 1.2784516833416388,
+          "p95": 10.82448416347756,
+          "max": 2007.0919000876486
+        },
+        "luminance_direction_cosine": {
+          "finite": 226186,
+          "nonfinite": 0,
+          "min": -1.0,
+          "p50": 0.7963653859997214,
+          "p95": 0.99987310621064,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 61770,
+        "lost_edge_pixels": 6328,
+        "chromatic_direction_cosine": {
+          "finite": 229305,
+          "nonfinite": 0,
+          "min": -0.996049712341308,
+          "p50": 0.9573801674506276,
+          "p95": 0.9991146338754245,
+          "max": 0.9999997644477917
+        },
+        "flat_source_pixels": 3215,
+        "new_edge_pixels": 2689
+      },
+      "view": "strip-0007-view.png",
+      "palette_plot": "strip-0007-palette.png",
+      "structure_plot": "strip-0007-structure.png"
+    },
+    {
+      "source_frame": 60,
+      "effect": "Density",
+      "parameters": {
+        "density": 0.9,
+        "chromaCoupling": 0.7,
+        "highlightProtection": 0,
+        "shadowWeight": 0
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.07421471565282522,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.012977577835002651,
+          "p50": 0.08029964655691357,
+          "p95": 0.10018068747144411,
+          "max": 0.10280343352499377
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.08123822220300708,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.005366899006156342,
+          "p50": 0.08081621504645549,
+          "p95": 0.14348341400918424,
+          "max": 0.1454117972784012
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.04551199667335812,
+        "epsilon": 0.0373698336235167,
+        "marginal_max_error": 2.940320920769013e-10,
+        "iterations": 121,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.02331429075452053,
+        "edge_pixels": 63142,
+        "luminance_gradient_ratio": {
+          "finite": 63142,
+          "nonfinite": 0,
+          "min": 0.003920285436641187,
+          "p50": 0.3430669708217904,
+          "p95": 0.7314763297371558,
+          "max": 13.440041744110562
+        },
+        "luminance_direction_cosine": {
+          "finite": 63142,
+          "nonfinite": 0,
+          "min": -0.9999999781340625,
+          "p50": 0.9995756325523526,
+          "p95": 0.999999359775947,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 1793,
+        "lost_edge_pixels": 31503,
+        "chromatic_direction_cosine": {
+          "finite": 169638,
+          "nonfinite": 0,
+          "min": -0.6550056342556511,
+          "p50": 0.976937729331778,
+          "p95": 0.9987066575683615,
+          "max": 1.0
+        },
+        "flat_source_pixels": 166259,
+        "new_edge_pixels": 1017
+      },
+      "view": "density-0060-view.png",
+      "palette_plot": "density-0060-palette.png",
+      "structure_plot": "density-0060-structure.png"
+    },
+    {
+      "source_frame": 60,
+      "effect": "Crossover",
+      "parameters": {
+        "hue": 195,
+        "width": 150,
+        "darkHue": 100,
+        "darkChroma": 0.05,
+        "darkDensity": 1.2,
+        "midHue": -20,
+        "midChroma": 1.5,
+        "brightHue": -90,
+        "brightChroma": 2,
+        "transition": 0.5
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.10704079113475894,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.01012469346469707,
+          "p50": 0.11632172520076596,
+          "p95": 0.19497523103880657,
+          "max": 0.20061391694660158
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.000264119973055955,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.00010924181640802958,
+          "p50": 0.00024517354056134303,
+          "p95": 0.000457020488444374,
+          "max": 0.00047163856040701585
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.07475190868322146,
+        "epsilon": 0.042806824612276036,
+        "marginal_max_error": 7.612185881633593e-10,
+        "iterations": 141,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.02331429075452053,
+        "edge_pixels": 63142,
+        "luminance_gradient_ratio": {
+          "finite": 63142,
+          "nonfinite": 0,
+          "min": 0.6702482508651164,
+          "p50": 1.0,
+          "p95": 1.0011373747839958,
+          "max": 1.2504020667765778
+        },
+        "luminance_direction_cosine": {
+          "finite": 63142,
+          "nonfinite": 0,
+          "min": 0.9595175555744098,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 0,
+        "lost_edge_pixels": 36,
+        "chromatic_direction_cosine": {
+          "finite": 169638,
+          "nonfinite": 0,
+          "min": -0.8862776125136487,
+          "p50": 1.0,
+          "p95": 1.0,
+          "max": 1.0
+        },
+        "flat_source_pixels": 166259,
+        "new_edge_pixels": 68
+      },
+      "view": "crossover-0060-view.png",
+      "palette_plot": "crossover-0060-palette.png",
+      "structure_plot": "crossover-0060-structure.png"
+    },
+    {
+      "source_frame": 60,
+      "effect": "Strip",
+      "parameters": {
+        "separation": 1,
+        "palette": 0.8,
+        "density": 0.8,
+        "leakage": 0.6,
+        "redAnchor": 0.7
+      },
+      "source_encoding": "Explicit scene-linear Rec.2020/D65, RGB as supplied",
+      "reference_frame": 4,
+      "reference_role": "Approved independent reference; content differs. Distribution distance does not establish reference look quality",
+      "sliced_distribution": {
+        "mean_sliced_W1": 0.0678978341089566,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.008303346885854731,
+          "p50": 0.06927480275882082,
+          "p95": 0.09891513015172113,
+          "max": 0.10261919096066341
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "candidate_vs_source_distribution": {
+        "mean_sliced_W1": 0.06463213078720545,
+        "projection_distances": {
+          "finite": 64,
+          "nonfinite": 0,
+          "min": 0.0030263269609453287,
+          "p50": 0.06726852890811341,
+          "p95": 0.1138492814226554,
+          "max": 0.11745243882763132
+        },
+        "directions": 64,
+        "seed": 606,
+        "metric": "Euclidean signed-algebraic Oklab coordinates; not a guaranteed perceptual metric for arbitrary signed/HDR scene RGB"
+      },
+      "transport": {
+        "transport_cost": 0.03980103445639388,
+        "epsilon": 0.03428037220137926,
+        "marginal_max_error": 2.9608016732796116e-10,
+        "iterations": 111,
+        "converged": true
+      },
+      "transport_limit": "Entropic coupling cost is regularization-dependent and self-biased, not a metric or an automatic grading transform",
+      "structure": {
+        "definition": "Forward spatial differences, linear Rec.2020 luminance and signed Oklab opponent edges; no spatial processing. Contrast ratio uses gradient magnitude, not a perceptual local-contrast model.",
+        "source_shape": [
+          360,
+          640,
+          3
+        ],
+        "edge_threshold": 0.02331429075452053,
+        "edge_pixels": 63142,
+        "luminance_gradient_ratio": {
+          "finite": 63142,
+          "nonfinite": 0,
+          "min": 0.0018174425122422654,
+          "p50": 0.3997442962400928,
+          "p95": 1.0988743814854092,
+          "max": 11.037432727271796
+        },
+        "luminance_direction_cosine": {
+          "finite": 63142,
+          "nonfinite": 0,
+          "min": -1.0,
+          "p50": 0.9954522336030478,
+          "p95": 0.9999983740692185,
+          "max": 1.0
+        },
+        "gradient_reversal_pixels": 5977,
+        "lost_edge_pixels": 25595,
+        "chromatic_direction_cosine": {
+          "finite": 169638,
+          "nonfinite": 0,
+          "min": -0.9996513627038803,
+          "p50": 0.9330408996174742,
+          "p95": 0.999840132685322,
+          "max": 0.9999999363072682
+        },
+        "flat_source_pixels": 166259,
+        "new_edge_pixels": 2551
+      },
+      "view": "strip-0060-view.png",
+      "palette_plot": "strip-0060-palette.png",
+      "structure_plot": "strip-0060-structure.png"
+    }
+  ],
+  "acceptance": "Diagnostic facts only; no palette matching grade or automatic artist acceptance"
+}

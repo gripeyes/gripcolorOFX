@@ -8,7 +8,7 @@ from PIL import Image
 import _rendition as core
 
 ROOT=Path(__file__).resolve().parents[1]
-NAMES=['Scene','Tone','Volume','Density','Crossover','Crosstalk','Strip','Inspector']
+NAMES=['Scene','Tone','Volume','Density','Crossover','Crosstalk','Strip','Inspector','Primaries']
 SPEC=json.loads((ROOT/'artist/targets.json').read_text())
 
 def rgba(rgb):

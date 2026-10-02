@@ -1,0 +1,94 @@
+{
+  "host": "17.0v1",
+  "phase": "Artist Primaries v1 CPU",
+  "checks": [
+    {
+      "task": "Default identity",
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Cool the blacks",
+      "passed": true,
+      "values": [
+        -0.10000033676624298,
+        0.19999955594539642,
+        4.000006675720215,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Warm the shadows",
+      "passed": true,
+      "values": [
+        -0.09979798644781113,
+        0.1999557614326477,
+        3.9996109008789062,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Creamier whites",
+      "passed": true,
+      "values": [
+        0.006425745785236359,
+        0.23454149067401886,
+        3.133631706237793,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Hold highlights down",
+      "passed": true,
+      "values": [
+        -0.08957777917385101,
+        0.17915570735931396,
+        3.583113670349121,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Keep colour alive deeper into toe",
+      "passed": true,
+      "values": [
+        -0.10228712111711502,
+        0.1988082081079483,
+        4.012684345245361,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Let colour die smoothly into black",
+      "passed": true,
+      "values": [
+        -0.09687213599681854,
+        0.20102638006210327,
+        3.9744091033935547,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Pale green skin highlights",
+      "passed": true,
+      "values": [
+        0.1521446257829666,
+        0.2977658808231354,
+        1.7652665376663208,
+        0.30000001192092896
+      ]
+    },
+    {
+      "task": "Animation / model save-reload",
+      "passed": true
+    },
+    {
+      "task": "Native float CPU render two frames",
+      "passed": true
+    }
+  ]
+}

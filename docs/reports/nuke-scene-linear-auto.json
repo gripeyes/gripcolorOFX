@@ -3,9 +3,14 @@
   "date": "2026-10-02",
   "behavior": "Nuke Auto resolves the active OCIO scene_linear role; manual interpretation overrides; unknown roles fail explicitly",
   "bridge": "hidden nonanimated nonpersistent OFX hostSceneLinear parameter, refreshed by Nuke startup callbacks",
-  "supported": ["Linear Rec.2020", "ACEScg/AP1", "Linear Rec.709"],
-  "automated_role_and_callback_tests": "6 passed; real PyOpenColorIO configs, simulated Nuke callbacks",
-  "host_retest": "Pending; -t and -ti launches failed with Foundry license-server communication / missing token errors",
+  "supported": [
+    "Linear Rec.2020",
+    "ACEScg/AP1",
+    "Linear Rec.709"
+  ],
+  "automated_role_and_callback_tests": "7 passed; real PyOpenColorIO configs, simulated Nuke callbacks, detached-node shutdown regression",
+  "host_retest": "Known user Rec.2020 scene_linear Auto exposure test passed in 0.2 native Nuke retest; full unknown-role/config-change/background matrix pending",
   "creative_math_changed": false,
-  "historical_reports": "Prior Nuke UI/smoke reports do not establish acceptance of the new Auto bridge"
+  "historical_reports": "Prior Nuke UI/smoke reports do not establish acceptance of the new Auto bridge",
+  "evidence": "0.2-nuke-inspector-geometry.json"
 }

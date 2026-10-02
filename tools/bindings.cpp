@@ -1,3 +1,4 @@
+#include "rendition/diagnostics.hpp"
 #include "rendition/operators.hpp"
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
@@ -80,6 +81,17 @@ PYBIND11_MODULE(_rendition, m) {
         x = inverse ? oklabInverse(x) : oklab(x);
         return std::array<float, 3>{x.x, x.y, x.z};
     });
+    m.def("differentials", [](int e,py::array_t<float,py::array::c_style|py::array::forcecast> samples,const Values &p,double step) {
+        auto b=samples.request();if(b.ndim!=2 || b.shape[1]!=3) throw std::invalid_argument("Expected Nx3 RGB");
+        Snapshot snapshot(static_cast<Effect>(e),p);py::array_t<double> output({b.shape[0],py::ssize_t(16)});
+        const float *src=static_cast<const float *>(b.ptr);double *dst=output.mutable_data();
+        {py::gil_scoped_release release;for(py::ssize_t n=0;n<b.shape[0];++n) {
+            auto d=differential(snapshot,{src[n*3],src[n*3+1],src[n*3+2]},step);
+            for(int k=0;k<9;++k) dst[n*16+k]=d.jacobian.v[k];
+            dst[n*16+9]=d.determinant;for(int k=0;k<3;++k)dst[n*16+10+k]=d.singularValues[k];
+            dst[n*16+13]=d.condition;dst[n*16+14]=d.stepDisagreement;dst[n*16+15]=d.reliable;
+        }}return output;
+    },py::arg("effect"),py::arg("rgb"),py::arg("values"),py::arg("relative_step")=.002);
     m.def("effective_matrix",
           [](int e, const Values &p) { return Snapshot(static_cast<Effect>(e), p).effectiveMatrix().v; });
 }

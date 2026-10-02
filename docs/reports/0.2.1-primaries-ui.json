@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-02",
+  "host": "Nuke 17.0v1 macOS arm64",
+  "effect": "org.gripcolor.rendition.Primaries",
+  "method": "Interactive main Rendition menu selection, native Properties panel editing and Save Comp As",
+  "normal_menu_creation": true,
+  "artist_groups": [
+    "MASTER",
+    "BLACK / TOE",
+    "MIDTONES",
+    "WHITE / SHOULDER",
+    "RANGE"
+  ],
+  "artist_controls_visible": 33,
+  "shadowTint_edited_to": 0.2,
+  "saved_native_node": "build/primaries/UI-created-Primaries-final.nk",
+  "initial_exposure_fix": "Normalize new group IDs separately from labels; open all five artist groups initially. Initially collapsed groups did not expose children reliably, including MIDTONES; exact host cause is not established.",
+  "pending": [
+    "Reliable expand/collapse behavior, including Expert/custom groups",
+    "Artist example graph GUI loading: Open attempt did not visibly replace current window; not claimed verified",
+    "Artist workflow speed, feel and acceptance"
+  ],
+  "scripted_smoke_report": "0.2.1-nuke-primaries.json"
+}

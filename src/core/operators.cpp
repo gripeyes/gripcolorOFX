@@ -1,3 +1,5 @@
+#include "rendition/diagnostics.hpp"
+#include "rendition/primaries.hpp"
 #include "rendition/operators.hpp"
 #include "rendition/kernel_bridge.hpp"
 #include <algorithm>
@@ -6,14 +8,14 @@
 namespace rendition {
 const char *name(Effect e) {
     static const char *n[] = {"Scene",     "Tone",      "Volume", "Density",
-                              "Crossover", "Crosstalk", "Strip",  "Inspector"};
+                              "Crossover", "Crosstalk", "Strip",  "Inspector", "Primaries"};
     int i = int(e);
-    if (i < 0 || i > 7)
+    if (i < 0 || i > 8)
         throw std::invalid_argument("Invalid effect");
     return n[i];
 }
 std::vector<Parameter> parameters(Effect e) {
-    if (int(e) < 0 || int(e) > int(Effect::Inspector))
+    if (int(e) < 0 || int(e) > int(Effect::Primaries))
         throw std::invalid_argument("Unknown effect identifier");
     std::vector<Parameter> p;
     auto add = [&](std::string id, std::string label, double v, double lo, double hi,
@@ -171,10 +173,17 @@ std::vector<Parameter> parameters(Effect e) {
         matrix("Custom basis");
     }
     if (e == Effect::Inspector) {
-        add("mode", "Diagnostic", 0, 0, 10, "Artist", "",
+        add("mode", "Diagnostic", 0, 0, 15, "Artist", "",
             {"Input", "Exposure ramp", "Neutral ramp", "RGB ramps", "Hue sweep", "Chroma sweep",
              "Reference chart", "Color cube slice", "Difference vs Reference", "Out of nominal RGB gamut",
-             "NaN / Inf"});
+             "NaN / Inf", "Volume determinant", "Volume conditioning", "Volume maximum stretch",
+             "Volume minimum stretch", "Volume step convergence"});
+        add("probeHue", "Probe family hue", 29, 0, 360, "Volume probe", "degrees");
+        add("probeWidth", "Probe hue width", 120, 1, 360, "Volume probe", "degrees");
+        add("probeHueShift", "Probe hue displacement", 30, -180, 180, "Volume probe", "degrees");
+        add("probeChroma", "Probe chroma scale", .7, 0, 4, "Volume probe", "factor");
+        add("probeDensity", "Probe density", 0, -2, 2, "Volume probe", "dimensionless");
+        add("probeStep", "Jacobian relative step", .002, .00001, .05, "Volume probe", "fraction of max(abs RGB, 0.18)");
         add("evMin", "Minimum exposure", -12, -30, 30, "Artist", "stops");
         add("evMax", "Maximum exposure", 12, -30, 30, "Artist", "stops");
         add("slice", "Cube slice blue", .5, 0, 4, "Artist", "linear RGB");
@@ -191,6 +200,8 @@ std::vector<Parameter> parameters(Effect e) {
                 d.group += " selection";
         }
     }
+    if(e==Effect::Primaries) {auto extra=primariesParameters();p.insert(p.end(),extra.begin(),extra.end());}
+    if(e==Effect::Primaries) for(auto &d:p) if(d.id=="modelVersion") d.choices={"Artist Primaries v1 CPU prototype"};
     return p;
 }
 namespace {
@@ -344,11 +355,29 @@ Snapshot::Snapshot(Effect e, const Values &v, const std::string &metadata)
     if (e == Effect::Strip) {
         identity = get("separation") == 0 || get("mix") == 0;
     }
+    if(e==Effect::Primaries) {
+        if(get("toeStart")>get("shoulderStart") || get("shadowRange")>get("highlightRange"))
+            throw std::invalid_argument("Primaries shadow/toe center exceeds highlight/shoulder center");
+        for(auto &p:primariesParameters()) {
+            if(p.id=="pivot" || p.id=="toeStart" || p.id=="toeSoftness" || p.id=="shoulderStart" || p.id=="shoulderSoftness" || p.id=="shadowRange" || p.id=="shadowSoftness" || p.id=="highlightRange" || p.id=="highlightSoftness" || p.id=="shadowHue" || p.id=="highlightHue" || p.id=="deathStart" || p.id=="deathSoftness") continue;
+            changed(p.id,p.value);
+        }
+        primaries=std::make_shared<const PrimariesModel>(*this);
+    }
     if (e == Effect::Inspector)
         identity = get("mode") == 0;
+    if(e==Effect::Inspector && get("mode")>=11) {
+        Values probe;
+        for(auto key : {"interpretation","rx","ry","gx","gy","bx","by","wx","wy"}) probe[key]=get(key);
+        probe["v0_hue"]=get("probeHue");probe["v0_width"]=get("probeWidth");
+        probe["v0_hueDelta"]=get("probeHueShift");probe["v0_chroma"]=get("probeChroma");probe["v0_density"]=get("probeDensity");
+        diagnosticProbe=std::make_shared<const Snapshot>(Effect::Volume,probe,metadata);
+    }
     kernel = std::make_shared<const rendition_kernel::Parameters>(kernelParameters(*this));
 }
 Vec3 Snapshot::apply(Vec3 rgb) const {
+    if(primaries) return isIdentity()?rgb:primaries->apply(rgb);
+    if(diagnosticProbe) return differentialView(differential(*diagnosticProbe,rgb,get("probeStep")),int(get("mode")));
     return kernelApply(*this, rgb);
 }
 std::array<float, 4> Snapshot::pixel(std::array<float, 4> p) const {
@@ -482,6 +511,15 @@ Semantic semantics(Effect e, const Values &v) {
         s.exposure = val("mode", 0) == 0 ? "Equivariant" : "Non-equivariant";
         s.hdr = val("mode", 0) == 0 ? "Scale-independent" : "Scale-dependent";
         s.status = "Research diagnostic";
+    }
+    if(e==Effect::Primaries) {
+        s.domain="Scene Linear / soft tonal coordinates";s.reference="Scene-compatible authored rendition; no display transform";
+        s.exposure="Conditioned";s.invertibility="Not claimed for combined grade";s.gamut="Unbounded";
+        s.negative="Signed magnitude tone gain + signed zero-Y residual";s.hdr="Exposure-conditioned";
+        s.neutralAxis="Preserved unless an explicit tint is active";s.neutralMagnitude="Only identity; tint alone preserves Y";
+        s.gamutDependence="Colorimetric D65 XYZ; fixed Rec.2020 artist tint directions";
+        s.status="Artist Primaries v1 CPU prototype";
+        s.limitations="Nonphysical density balance; aggressive zonal exposure/offset may reverse tone; magnitude-based signed selection; no global inverse or host Metal";
     }
     return s;
 }

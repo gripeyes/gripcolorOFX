@@ -15,4 +15,12 @@ No production gate is inferred solely from passing unit tests. The entire bundle
 
 ## First-class artist gate
 
-Normal eight-node Nuke UI exposure is verified. M15–M17 comparisons and approved ACES photographic/CG fixtures are available in the artist build. Human feedback/time/reuse and meaningful superiority over simple baselines remain pending, particularly for Density/Strip. See `FINAL_ADDENDUM_AUDIT.md` and `ARTIST_ACCEPTANCE.md`. Flame/host Metal do not block this evaluation. M18 stops broad literature expansion; future work is driven by recorded failures.
+Normal eight-node Nuke UI exposure is verified. M15–M17 comparisons and approved ACES photographic/CG fixtures are available in the artist build. The user accepts current eight-node basic usability. Aggressive-range feedback/time/reuse and meaningful superiority over simple baselines remain pending, particularly for Density/Strip. See `FINAL_ADDENDUM_AUDIT.md` and `ARTIST_ACCEPTANCE.md`. Flame/host Metal do not block this evaluation. M18 stops broad literature expansion; future work is driven by recorded failures.
+
+The targeted 0.2 phase implements differential Inspector modes, HK appearance experiments, fairer aggressive baselines, offline palette/structure analysis and experimental soft guide exports. Nuke CPU mode/animation/reload/render smoke checks pass; creative equations are unchanged. See `DEEP_VALIDATION_0_2.md`. This is ongoing development, not an acceptance freeze.
+
+## Dedicated Artist Primaries / Tonal Colour phase
+
+Option B adds a versioned ninth CPU prototype with shared core interpretation/CAT/alpha infrastructure and unchanged original operator equations. All requested master/toe/mid/shoulder/range controls are present. Six focused independent tests and 10 native Nuke checks pass; interactive menu creation/control exposure/edit/save passes. Seven task recipes on three approved frames are prepared for human review. See `ARTIST_PRIMARIES.md` and retained `0.2.1-*` reports.
+
+**Artist/prototype gate pending:** useful speed/feel, human preferences, reliable group collapse/Expert/custom expansion, wider real-media behavior and a targeted remedy for aggressive narrow zonal tone reversal. No full monotonicity, production or Metal parity claim applies to this new model. Flame and host Metal remain pending while Nuke artist evaluation continues.

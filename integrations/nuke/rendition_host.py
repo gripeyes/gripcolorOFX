@@ -60,9 +60,15 @@ def on_create():
 def on_knob_changed():
     node = nuke.thisNode()
     knob = nuke.thisKnob()
-    if node.Class() == 'Root' and knob.name() in ('colorManagement', 'OCIO_config', 'customOCIOConfigPath', 'OCIOConfigPath'):
+    # Nuke can notify knobChanged after detaching a node during shutdown.
+    try:
+        node_class = node.Class()
+        knob_name = knob.name()
+    except ValueError:
+        return
+    if node_class == 'Root' and knob_name in ('colorManagement', 'OCIO_config', 'customOCIOConfigPath', 'OCIOConfigPath'):
         refresh()
-    elif node.Class().startswith(PREFIX) and knob.name() == 'interpretation':
+    elif node_class.startswith(PREFIX) and knob_name == 'interpretation':
         refresh(node)
 
 nuke.addOnCreate(on_create)

@@ -75,3 +75,15 @@ Pending production requirements include Flame validation, real CG/photographic/a
 ## Portable early host fixtures
 
 `tools/nuke_fixtures.py` generates signed/HDR, exposure and alpha-band float EXRs, Scene/Tone/Crosstalk expected outputs, a Nuke graph and a JSON manifest under `build/fixtures`. Use these with the Flame checklist in `HOST_BEHAVIOR.md`; they do not claim Flame acceptance. `tools/package_candidate.py` archives the local signed CPU bundle, fixture set, documentation and retained reports with a SHA-256 manifest.
+
+## Targeted 0.2 diagnostics
+
+The current eight nodes are artistically usable; development continues through recorded gaps. [Inspector Lab](build/validation-0.2/index.html) collects Volume Jacobian/conditioning, Density HK experiments, aggressive baseline comparisons, palette/OT and structural maps plus experimental soft Pigment guides. The Nuke Rendition menu links this report after installation. New native Inspector modes 11–15 probe Volume geometry on CPU. [Findings and limitations](docs/DEEP_VALIDATION_0_2.md) explain the measured folds, close simple baselines and remaining artist questions. Creative equations are unchanged; Flame and host Metal remain pending.
+
+Run `PYTHONPATH=build .venv/bin/python -m diagnostics.run` with existing approved fixtures and the local user OCIO configuration. The packaged report can be browsed without running Python.
+
+## Artist Primaries / Tonal Colour prototype
+
+[Dedicated phase and control guide](docs/ARTIST_PRIMARIES.md) selects a new ninth native **Rendition Primaries** effect. All 33 artist controls are exposed in five initially open tonal groups; creation through the Nuke Rendition menu and an edited/saved native node were checked interactively. It shares interpretation/CAT/alpha infrastructure and leaves the original eight creative equations unchanged.
+
+[Seven direct-task examples](build/primaries/index.html) compare three approved frames under the external Flawed Emulsion 2 / sRGB view. Open `build/primaries/Rendition-Primaries-artist.nk` for editable single-node recipes; the user OCIO configuration remains an external prerequisite. Build: `build/Rendition-0.2.1-primaries-arm64.zip`. CPU prototype only; strong narrow zonal gains can reverse tone. Artist acceptance, reliable group collapse and host Metal/Flame remain pending. Feedback belongs in `build/primaries/artist-review.json`, which regeneration preserves.

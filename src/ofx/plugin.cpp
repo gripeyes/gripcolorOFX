@@ -219,6 +219,11 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     for (int n = 0; n < 5; ++n)
         checked(prop->propSetString(roleProps, kOfxParamPropChoiceOption, n, roles[n]));
     auto defs = parameters(e);
+    // Keep original eight group IDs stable; new prototype IDs use portable characters.
+    auto groupId=[&](std::string group) {
+        if(e==Effect::Primaries) for(char &c:group) if(c==' ' || c=='/') c='_';
+        return std::string("group_")+group;
+    };
     std::vector<std::string> groups;
     if (e == Effect::Volume) {
         for (auto family : {"Red", "Yellow", "Green", "Cyan", "Blue", "Magenta"}) {
@@ -234,21 +239,21 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
         if (std::find(groups.begin(), groups.end(), d.group) == groups.end()) {
             groups.push_back(d.group);
             OfxPropertySetHandle p;
-            checked(param->paramDefine(set, kOfxParamTypeGroup, ("group_" + d.group).c_str(), &p));
+            checked(param->paramDefine(set, kOfxParamTypeGroup, groupId(d.group).c_str(), &p));
             checked(prop->propSetString(p, kOfxPropLabel, 0, d.group.c_str()));
             if (e == Effect::Volume && (d.group.find(" matrix") != std::string::npos ||
                                         d.group.find(" selection") != std::string::npos)) {
                 auto family = d.group.substr(0, d.group.find(' '));
                 checked(prop->propSetString(p, kOfxParamPropParent, 0, ("group_" + family).c_str()));
             }
-            prop->propSetInt(p, kOfxParamPropGroupOpen, 0, d.group == "Artist" || d.group == "Input");
+            prop->propSetInt(p, kOfxParamPropGroupOpen, 0, d.group == "Artist" || d.group == "Input" || (e==Effect::Primaries && d.group!="Expert" && d.group!="Custom primaries"));
         }
     for (auto &d : defs) {
         OfxPropertySetHandle p;
         checked(param->paramDefine(set, d.choices.empty() ? kOfxParamTypeDouble : kOfxParamTypeChoice,
                                    d.id.c_str(), &p));
         checked(prop->propSetString(p, kOfxPropLabel, 0, d.label.c_str()));
-        checked(prop->propSetString(p, kOfxParamPropParent, 0, ("group_" + d.group).c_str()));
+        checked(prop->propSetString(p, kOfxParamPropParent, 0, groupId(d.group).c_str()));
         std::string hint = d.unit.empty() ? d.label : d.label + " (" + d.unit + ")";
         if (d.id == "interpretation")
             hint += ". Auto uses the Nuke OCIO scene_linear role; unresolved roles/metadata fail. Manual interpretation overrides and does not transform pixels.";
@@ -279,7 +284,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     prop->propSetInt(semanticProperty, kOfxParamPropAnimates, 0, 0);
     std::string summary = "Default model reference. Configuration-dependent details: docs/interfaces.json "
                           "and headless evaluator.\n";
-    for (int index = e == Effect::Inspector ? 0 : int(e); index <= (e == Effect::Inspector ? 7 : int(e));
+    for (int index = e == Effect::Inspector ? 0 : int(e); index <= (e == Effect::Inspector ? 8 : int(e));
          index++) {
         auto model = Effect(index);
         auto semantic = semantics(model);
@@ -602,11 +607,12 @@ OfxPlugin plugins[] = {
     {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Crossover", 1, 0, setHost, entry<4>},
     {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Crosstalk", 1, 0, setHost, entry<5>},
     {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Strip", 1, 0, setHost, entry<6>},
-    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Inspector", 1, 0, setHost, entry<7>}};
+    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Inspector", 1, 0, setHost, entry<7>},
+    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Primaries", 1, 0, setHost, entry<8>}};
 } // namespace
 extern "C" __attribute__((visibility("default"))) int OfxGetNumberOfPlugins() {
-    return 8;
+    return 9;
 }
 extern "C" __attribute__((visibility("default"))) OfxPlugin *OfxGetPlugin(int n) {
-    return n >= 0 && n < 8 ? &plugins[n] : nullptr;
+    return n >= 0 && n < 9 ? &plugins[n] : nullptr;
 }

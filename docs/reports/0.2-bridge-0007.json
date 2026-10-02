@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "Experimental offline Rendition/Pigment bridge; not a production node or spatial filter",
+  "coordinates": "Absolute signed Oklab extension, D65, explicit Linear Rec.2020; outside valid positive domain these are algebraic coordinates only",
+  "membership": "Gaussian softmax distance, row-normalized partition of unity; sigma in Oklab coordinate units",
+  "reference_semantics": "Scene-compatible signed RGB reconstruction; palette layers are guide fields, not physical reflectances/colorants",
+  "exposure_behavior": "Exposure-conditioned absolute-coordinate memberships; frozen palette required for comparative/temporal tests",
+  "invertibility": "Original RGB recovered with parallel signed residual; membership weights alone are non-invertible",
+  "spatial_processing": "None; a future Pigment consumer owns spatial operations and alpha/compositing policy",
+  "sigma": 0.15,
+  "layers": 8,
+  "partition_max_error": 4.440892098500626e-16,
+  "reconstruction_max_rgb_error": 0.0,
+  "signed_residual_range": [
+    -4.102861058330388,
+    2.5706840098211425
+  ],
+  "temporal_policy": "Do not refit palette independently each frame; freeze/version centers and record motion/lighting limitations",
+  "source_frame": 7,
+  "frozen_palette_second_content_reconstruction_error": 0.0,
+  "exposure_membership_changes": [
+    {
+      "stops": -2,
+      "mean_membership_change": 0.08452891715282301
+    },
+    {
+      "stops": 0,
+      "mean_membership_change": 0.0
+    },
+    {
+      "stops": 2,
+      "mean_membership_change": 0.144051270602088
+    }
+  ],
+  "exports": "NPZ preserves float64 residual; auxiliary EXR stores float32 data-only weights and unchanged alpha. No processed spatial image is produced."
+}

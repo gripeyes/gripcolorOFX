@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "scope": "Gap audit against current implementation, no model reset",
+  "ui_exposure": "All eight normally menu-discoverable and interactively created in Nuke 17; docs/reports/nuke-ui-discovery.json",
+  "artist_gate": "First-class and pending human evidence; CPU Nuke evaluation may proceed while Flame and host Metal remain pending",
+  "items": [
+    {
+      "id": "M1",
+      "title": "Perceptual colour geometry",
+      "status": "Partially satisfied",
+      "evidence": "Existing IPT/Oklab/JzAzBz/CAM16-UCS/Hellwig/opponent comparisons; signed production extension explicitly ours.",
+      "gap": "Hue-linearized CIELAB/Lissner reproductions and constant-perceived-hue data; Hellwig HK Density experiments incomplete.",
+      "next_action": "Retain signed Oklab candidate; target blue/cyan failure evidence before changing it."
+    },
+    {
+      "id": "M2",
+      "title": "Geometry validation",
+      "status": "Partially satisfied",
+      "evidence": "Coordinate round trips/domain diagnostics, structured hue/EV/neutral/skin/HDR targets and family/EV baseline errors.",
+      "gap": "Reference perceived-hue trajectories, local metric distortion and family-specific conditioning are incomplete.",
+      "next_action": "Extend diagnostics when artist comparison exposes geometry drift."
+    },
+    {
+      "id": "M3",
+      "title": "Continuous volume deformation",
+      "status": "Partially satisfied",
+      "evidence": "Continuous six-family engine; original-source selections; four accumulation modes and permutation tests.",
+      "gap": "No full tetrahedral/barycentric/RBF/polyharmonic/TPS reproduction comparison.",
+      "next_action": "Retain normalized original-source delta model; do not substitute untested mathematics."
+    },
+    {
+      "id": "M4",
+      "title": "Jacobian analysis",
+      "status": "Not implemented",
+      "evidence": "Continuity/overlap tests exist, but are not a Jacobian study.",
+      "gap": "No determinant/SVD/condition maps, folding report or Inspector Jacobian mode.",
+      "next_action": "Engineering follow-up: structured central differences with step-convergence checks; explicit supported-domain fold report."
+    },
+    {
+      "id": "M5",
+      "title": "Monotone curves",
+      "status": "Partially satisfied",
+      "evidence": "Analytical smooth Tone and continuous crossover; monotone PCHIP used for M17 baseline curves.",
+      "gap": "Full five-family interpolation comparison and exhaustive parameter-domain monotonicity proof incomplete.",
+      "next_action": "Investigate observed reversal or overshoot; PCHIP is a baseline, not an automatic replacement."
+    },
+    {
+      "id": "M6",
+      "title": "Distribution mapping / OT",
+      "status": "Not implemented",
+      "evidence": "M16 uses palette quantiles/covariance diagnostically; this is not optimal transport.",
+      "gap": "PDF/Monge-Kantorovich/temporal transfer tools absent.",
+      "next_action": "Keep outside production; add only for a specific palette-analysis failure."
+    },
+    {
+      "id": "M7",
+      "title": "Gradient / structure preservation",
+      "status": "Not implemented",
+      "evidence": "Pointwise CPU models and real-media contact sheets exist.",
+      "gap": "No luminance-gradient/chromatic-edge/local-contrast diagnostic report.",
+      "next_action": "Targeted offline diagnostics when spatial destruction is identified; do not make Volume spatial."
+    },
+    {
+      "id": "M8",
+      "title": "Spatial tone / Pigment",
+      "status": "Deferred",
+      "evidence": "Pointwise Tone remains separate; no spatial logic silently merged.",
+      "gap": "Reinhard/Fattal/WLS/local-Laplacian Pigment comparison is future work.",
+      "next_action": "Separate future Pigment scope, no v1 expansion."
+    },
+    {
+      "id": "M9",
+      "title": "Spectral / material mathematics",
+      "status": "Partially satisfied",
+      "evidence": "Spectral Lab integration/reconstruction/KM/Beer-Lambert/Neugebauer oracle and fit reports retained.",
+      "gap": "Jakob-Hanika reconstruction and Pigmento/print-model reproduction comparison incomplete.",
+      "next_action": "Use accepted existing trajectories; target additions to concrete Density/Strip failures."
+    },
+    {
+      "id": "M10",
+      "title": "Soft palette / layer geometry",
+      "status": "Deferred",
+      "evidence": "Continuous pointwise region membership retained.",
+      "gap": "Image-aware optimization, hull/RGBXY soft layers absent.",
+      "next_action": "Future image-aware/Pigment tooling; not v1."
+    },
+    {
+      "id": "M11",
+      "title": "Density formulation / HK",
+      "status": "Partially satisfied",
+      "evidence": "Material depth, separate chroma coupling, protection, signed/HDR adapter and M17 baselines.",
+      "gap": "Equal-luminance unequal-chroma perceived-brightness compensation experiments absent; no artist acceptance.",
+      "next_action": "Density stays research; test HK only to resolve a repeatable density-vs-darkness deficiency."
+    },
+    {
+      "id": "M12",
+      "title": "Continuous crossover",
+      "status": "Partially satisfied",
+      "evidence": "Continuous hue/EV opponent trajectories and smooth transitions; hard keys are comparison diagnostics only.",
+      "gap": "Dedicated trajectory plots and complete C1 parameter-boundary validation remain.",
+      "next_action": "Retain continuous candidate; evaluate cyan trajectory and threshold seams visually."
+    },
+    {
+      "id": "M13",
+      "title": "Strip formulation",
+      "status": "Partially satisfied",
+      "evidence": "Separation/nonlinear dye response/leakage/recombination; held-out spectral fits; matrix and matrix+PCHIP baselines now compared.",
+      "gap": "Complete tetrahedral/LUT and Neugebauer creative comparison absent; meaningful artist superiority unproved.",
+      "next_action": "Strip remains research. Simple baseline equivalence is grounds to simplify, not a failed marketing story."
+    },
+    {
+      "id": "M14",
+      "title": "Diagnostic metrics",
+      "status": "Partially satisfied",
+      "evidence": "Conversion/CAT, neutral, exposure, spectral and held-out trajectory errors; family/EV relative errors.",
+      "gap": "Jacobian/palette OT/perceived-hue and full appearance-distance reports incomplete.",
+      "next_action": "No scalar metric grants acceptance; add metrics relevant to recorded visual deficiencies."
+    },
+    {
+      "id": "M15",
+      "title": "Artist target suite",
+      "status": "Partially satisfied",
+      "evidence": "Six target recipes on structured and synthetic CG plus six user-approved ACES photographic/CG frames, fixed Flawed Emulsion 2 view.",
+      "gap": "Human evaluation of usefulness, coherence, all desired skin/black/contamination variants and continuity pending.",
+      "next_action": "Immediate artist session using editable graph and feedback form."
+    },
+    {
+      "id": "M16",
+      "title": "Reference reconstruction",
+      "status": "Partially satisfied",
+      "evidence": "Five approved independent sample-frame references; bounded fits using only existing rendition nodes plus fixed user DRT; recipes reused on second content.",
+      "gap": "Palette-descriptor fitting cannot establish visual-language reconstruction; human interaction time and reusable look-grammar judgement pending.",
+      "next_action": "Review references/candidates in Nuke; record controls, time, failures and reuse. Do not equate solver time with artist time."
+    },
+    {
+      "id": "M17",
+      "title": "Simplicity challenge",
+      "status": "Partially satisfied",
+      "evidence": "Density vs exposure+saturation (also matched selection), Strip vs matrix+monotone curves, Volume vs hue curves, Crossover vs smooth/hard luminance keys; held-out errors and visual comparisons.",
+      "gap": "Limited fit settings/distribution; signed/HDR/compositing baseline stress and human interaction/superiority judgements incomplete.",
+      "next_action": "Artist A/B now; Density/Strip cannot receive production status from numerical differences."
+    },
+    {
+      "id": "M18",
+      "title": "Research stop rule",
+      "status": "Satisfied",
+      "evidence": "Gap audit preserves models; broad literature expansion stopped; implementation/visual comparison/artist feedback become primary.",
+      "gap": "Future targeted research must cite a specific unresolved property or repeatable failure.",
+      "next_action": "Require an issue with stimulus, expected/observed behaviour, gate and evidence before adding literature."
+    }
+  ]
+}

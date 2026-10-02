@@ -4035,7 +4035,7 @@
           "unit": "",
           "default": 0.0,
           "min": 0.0,
-          "max": 10.0,
+          "max": 15.0,
           "choices": [
             "Input",
             "Exposure ramp",
@@ -4047,8 +4047,73 @@
             "Color cube slice",
             "Difference vs Reference",
             "Out of nominal RGB gamut",
-            "NaN / Inf"
+            "NaN / Inf",
+            "Volume determinant",
+            "Volume conditioning",
+            "Volume maximum stretch",
+            "Volume minimum stretch",
+            "Volume step convergence"
           ]
+        },
+        {
+          "id": "probeHue",
+          "label": "Probe family hue",
+          "group": "Volume probe",
+          "unit": "degrees",
+          "default": 29.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "probeWidth",
+          "label": "Probe hue width",
+          "group": "Volume probe",
+          "unit": "degrees",
+          "default": 120.0,
+          "min": 1.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "probeHueShift",
+          "label": "Probe hue displacement",
+          "group": "Volume probe",
+          "unit": "degrees",
+          "default": 30.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "probeChroma",
+          "label": "Probe chroma scale",
+          "group": "Volume probe",
+          "unit": "factor",
+          "default": 0.7,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "probeDensity",
+          "label": "Probe density",
+          "group": "Volume probe",
+          "unit": "dimensionless",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "probeStep",
+          "label": "Jacobian relative step",
+          "group": "Volume probe",
+          "unit": "fraction of max(abs RGB, 0.18)",
+          "default": 0.002,
+          "min": 1e-05,
+          "max": 0.05,
+          "choices": []
         },
         {
           "id": "evMin",
@@ -4094,6 +4159,501 @@
         "gamut_dependence": "Gamut-relative",
         "status": "Research diagnostic",
         "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Primaries": {
+      "identifier": "org.gripcolor.rendition.Primaries",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / scene_linear or metadata",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "Artist Primaries v1 CPU prototype"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "exposure",
+          "label": "Exposure",
+          "group": "MASTER",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "contrast",
+          "label": "Contrast",
+          "group": "MASTER",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.1,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "pivot",
+          "label": "Contrast pivot",
+          "group": "MASTER",
+          "unit": "stops relative to 0.18",
+          "default": 0.0,
+          "min": -12.0,
+          "max": 12.0,
+          "choices": []
+        },
+        {
+          "id": "saturation",
+          "label": "Saturation",
+          "group": "MASTER",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "colourBalance",
+          "label": "Density / colourfulness balance",
+          "group": "MASTER",
+          "unit": "artistic stops; not spectral density",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "blackLevel",
+          "label": "Black level",
+          "group": "BLACK / TOE",
+          "unit": "scene Y offset at full shadow weight",
+          "default": 0.0,
+          "min": -0.05,
+          "max": 0.05,
+          "choices": []
+        },
+        {
+          "id": "toeStart",
+          "label": "Toe start",
+          "group": "BLACK / TOE",
+          "unit": "stops relative to 0.18",
+          "default": -4.0,
+          "min": -20.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "toeSoftness",
+          "label": "Toe softness",
+          "group": "BLACK / TOE",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "shadowCompression",
+          "label": "Shadow compression",
+          "group": "BLACK / TOE",
+          "unit": "fraction; slope contribution 0 to 0.45",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "shadowHue",
+          "label": "Shadow hue",
+          "group": "BLACK / TOE",
+          "unit": "degrees; RGB artist hue circle",
+          "default": 240.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "shadowTint",
+          "label": "Shadow tint",
+          "group": "BLACK / TOE",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "shadowRetention",
+          "label": "Shadow chroma retention",
+          "group": "BLACK / TOE",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "colourDeath",
+          "label": "Colour death",
+          "group": "BLACK / TOE",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "deathStart",
+          "label": "Colour-death start",
+          "group": "BLACK / TOE",
+          "unit": "stops relative to 0.18",
+          "default": -6.0,
+          "min": -24.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "deathSoftness",
+          "label": "Colour-death softness",
+          "group": "BLACK / TOE",
+          "unit": "stops",
+          "default": 2.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "midBalance",
+          "label": "Midtone balance: cool / warm",
+          "group": "MIDTONES",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "midExposure",
+          "label": "Midtone exposure",
+          "group": "MIDTONES",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "midTint",
+          "label": "Midtone tint: magenta / green",
+          "group": "MIDTONES",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "midDensity",
+          "label": "Midtone density",
+          "group": "MIDTONES",
+          "unit": "stops of attenuation",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "midChroma",
+          "label": "Midtone chroma",
+          "group": "MIDTONES",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 3.0,
+          "choices": []
+        },
+        {
+          "id": "whiteLevel",
+          "label": "White level",
+          "group": "WHITE / SHOULDER",
+          "unit": "stops at full highlight weight; no white cap",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "shoulderStart",
+          "label": "Shoulder start",
+          "group": "WHITE / SHOULDER",
+          "unit": "stops relative to 0.18",
+          "default": 4.0,
+          "min": -4.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "shoulderSoftness",
+          "label": "Shoulder softness",
+          "group": "WHITE / SHOULDER",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "highlightCompression",
+          "label": "Highlight compression",
+          "group": "WHITE / SHOULDER",
+          "unit": "fraction; slope contribution 0 to 0.45",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "highlightHue",
+          "label": "Highlight hue",
+          "group": "WHITE / SHOULDER",
+          "unit": "degrees; RGB artist hue circle",
+          "default": 60.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "highlightTint",
+          "label": "Highlight tint",
+          "group": "WHITE / SHOULDER",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "highlightRetention",
+          "label": "Highlight chroma retention",
+          "group": "WHITE / SHOULDER",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "highlightBleach",
+          "label": "Highlight bleaching",
+          "group": "WHITE / SHOULDER",
+          "unit": "fraction; source chroma only, before tint",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "brillianceReduction",
+          "label": "Brilliance reduction",
+          "group": "WHITE / SHOULDER",
+          "unit": "stops weighted by highlight colourfulness",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "shadowRange",
+          "label": "Shadow range center",
+          "group": "RANGE",
+          "unit": "stops relative to 0.18",
+          "default": -3.0,
+          "min": -20.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "shadowSoftness",
+          "label": "Shadow range softness",
+          "group": "RANGE",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "highlightRange",
+          "label": "Highlight range center",
+          "group": "RANGE",
+          "unit": "stops relative to 0.18",
+          "default": 3.0,
+          "min": -4.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "highlightSoftness",
+          "label": "Highlight range softness",
+          "group": "RANGE",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Scene Linear / soft tonal coordinates",
+        "reference": "Scene-compatible authored rendition; no display transform",
+        "exposure": "Conditioned",
+        "invertibility": "Not claimed for combined grade",
+        "gamut": "Unbounded",
+        "negative": "Signed magnitude tone gain + signed zero-Y residual",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved unless an explicit tint is active",
+        "neutral_magnitude": "Only identity; tint alone preserves Y",
+        "gamut_dependence": "Colorimetric D65 XYZ; fixed Rec.2020 artist tint directions",
+        "status": "Artist Primaries v1 CPU prototype",
+        "limitations": "Nonphysical density balance; aggressive zonal exposure/offset may reverse tone; magnitude-based signed selection; no global inverse or host Metal"
       }
     }
   }

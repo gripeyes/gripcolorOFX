@@ -13,3 +13,7 @@
 12. Purpose: localized multidimensional color-volume editing through six artist families.
 All weights sample original source coordinates. Weighted deltas: sum(w_i*d_i). Normalized: sum(w_i*d_i)/max(1,sum(w_i)) with a continuous but derivative-kink normalization. Bounded: normalized direction with tanh-bounded magnitude. Shared field: accumulate weighted angular/log-chroma/exposure velocities, normalize, then apply one deformation. No region is applied sequentially. Unchanged regions do not dilute active regions. Cartesian deltas avoid discontinuous angular averaging across hue wrap. The retained comparison report supports normalized deltas as the development default; artist and wider parameter acceptance remain pending.
 References: Ottosson Oklab/Colour, independently designed region field. Tests: permutations, red/magenta overlaps, hue seams, adapters, near neutrals, cross-gamut, parameter sweeps.
+
+## 0.2 local geometry evidence
+
+The structured Jacobian study records reliable negative determinants in nonnegative RGB, including overlapping artist-range settings and bounded accumulation. Twelve selected positive witnesses persist under step refinement. Strong deformation remains available; there is no global inverse or no-fold guarantee. Intentional chroma collapse and unreliable near-zero derivatives are reported separately. See [M4 results](../DEEP_VALIDATION_0_2.md). No creative equation changed in this phase.

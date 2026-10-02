@@ -3,23 +3,23 @@
   "date": "2026-10-02",
   "scope": "Gap audit against current implementation, no model reset",
   "ui_exposure": "All eight normally menu-discoverable and interactively created in Nuke 17; docs/reports/nuke-ui-discovery.json",
-  "artist_gate": "First-class and pending human evidence; CPU Nuke evaluation may proceed while Flame and host Metal remain pending",
+  "artist_gate": "Basic eight-node usability accepted by user; aggressive superiority/reconstruction acceptance remains open. Flame/host Metal pending.",
   "items": [
     {
       "id": "M1",
       "title": "Perceptual colour geometry",
       "status": "Partially satisfied",
-      "evidence": "Existing IPT/Oklab/JzAzBz/CAM16-UCS/Hellwig/opponent comparisons; signed production extension explicitly ours.",
-      "gap": "Hue-linearized CIELAB/Lissner reproductions and constant-perceived-hue data; Hellwig HK Density experiments incomplete.",
-      "next_action": "Retain signed Oklab candidate; target blue/cyan failure evidence before changing it."
+      "evidence": "HK equal-Y experiments added to existing coordinate comparisons.",
+      "gap": "Hue-linearized CIELAB/Lissner and constant-perceived-hue reproduction remain incomplete.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M2",
       "title": "Geometry validation",
       "status": "Partially satisfied",
-      "evidence": "Coordinate round trips/domain diagnostics, structured hue/EV/neutral/skin/HDR targets and family/EV baseline errors.",
-      "gap": "Reference perceived-hue trajectories, local metric distortion and family-specific conditioning are incomplete.",
-      "next_action": "Extend diagnostics when artist comparison exposes geometry drift."
+      "evidence": "M4 RGB Jacobian/SVD family/exposure maps and signed/HDR conditioning added.",
+      "gap": "Perceptual metric distortion and constant-perceived-hue reference evidence remain incomplete.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M3",
@@ -32,10 +32,10 @@
     {
       "id": "M4",
       "title": "Jacobian analysis",
-      "status": "Not implemented",
-      "evidence": "Continuity/overlap tests exist, but are not a Jacobian study.",
-      "gap": "No determinant/SVD/condition maps, folding report or Inspector Jacobian mode.",
-      "next_action": "Engineering follow-up: structured central differences with step-convergence checks; explicit supported-domain fold report."
+      "status": "Partially satisfied",
+      "evidence": "Shared CPU differential core, 37,880 sample/configuration evaluations, independent SVD/determinant checks, step refinements, five native Inspector modes and saved maps. Native Nuke identity/active/animation/reload/render checks pass.",
+      "gap": "Finite sampling does not prove global injectivity. Full upstream multiregion native inspection remains pending; stable positive-RGB folds recorded.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M5",
@@ -48,26 +48,26 @@
     {
       "id": "M6",
       "title": "Distribution mapping / OT",
-      "status": "Not implemented",
-      "evidence": "M16 uses palette quantiles/covariance diagnostically; this is not optimal transport.",
-      "gap": "PDF/Monge-Kantorovich/temporal transfer tools absent.",
-      "next_action": "Keep outside production; add only for a specific palette-analysis failure."
+      "status": "Partially satisfied",
+      "evidence": "Compact palettes, log-domain balanced entropic OT, 64-direction sliced W1 and explicit solver residuals, in offline Inspector Lab only.",
+      "gap": "Full PDF/temporal analysis absent; one image coupling misses strict marginal tolerance; signed algebra is not a guaranteed perceptual metric. No automatic grade.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M7",
       "title": "Gradient / structure preservation",
-      "status": "Not implemented",
-      "evidence": "Pointwise CPU models and real-media contact sheets exist.",
-      "gap": "No luminance-gradient/chromatic-edge/local-contrast diagnostic report.",
-      "next_action": "Targeted offline diagnostics when spatial destruction is identified; do not make Volume spatial."
+      "status": "Partially satisfied",
+      "evidence": "Luminance/opponent gradient ratios, direction/reversal/lost/new-edge maps on approved frames; no spatial filtering in Rendition.",
+      "gap": "Multiscale/temporal/perceptual structure models and human judgement of flagged reversals remain open.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M8",
       "title": "Spatial tone / Pigment",
-      "status": "Deferred",
-      "evidence": "Pointwise Tone remains separate; no spatial logic silently merged.",
-      "gap": "Reinhard/Fattal/WLS/local-Laplacian Pigment comparison is future work.",
-      "next_action": "Separate future Pigment scope, no v1 expansion."
+      "status": "Partially satisfied",
+      "evidence": "Experimental frozen soft palette guide interface begins separate Pigment bridge; no spatial core changes.",
+      "gap": "Actual spatial Pigment consumer and local tone algorithms remain deferred.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M9",
@@ -80,26 +80,26 @@
     {
       "id": "M10",
       "title": "Soft palette / layer geometry",
-      "status": "Deferred",
-      "evidence": "Continuous pointwise region membership retained.",
-      "gap": "Image-aware optimization, hull/RGBXY soft layers absent.",
-      "next_action": "Future image-aware/Pigment tooling; not v1."
+      "status": "Partially satisfied",
+      "evidence": "Gaussian partition-of-unity layers, parallel signed residual, data EXR/NPZ exports, continuity/reconstruction/exposure tests.",
+      "gap": "Image-aware hull/RGBXY/temporal optimization and edited-layer semantics remain unimplemented.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M11",
       "title": "Density formulation / HK",
       "status": "Partially satisfied",
-      "evidence": "Material depth, separate chroma coupling, protection, signed/HDR adapter and M17 baselines.",
-      "gap": "Equal-luminance unequal-chroma perceived-brightness compensation experiments absent; no artist acceptance.",
-      "next_action": "Density stays research; test HK only to resolve a repeatable density-vs-darkness deficiency."
+      "evidence": "Equal-Y seven-family HK sweeps, current Density coupling experiments, neutral controls and viewing-condition sensitivity using pinned Hellwig oracle.",
+      "gap": "No psychophysical/human brightness-compensation acceptance or justified production HK correction; Density superiority still open.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M12",
       "title": "Continuous crossover",
       "status": "Partially satisfied",
-      "evidence": "Continuous hue/EV opponent trajectories and smooth transitions; hard keys are comparison diagnostics only.",
-      "gap": "Dedicated trajectory plots and complete C1 parameter-boundary validation remain.",
-      "next_action": "Retain continuous candidate; evaluate cyan trajectory and threshold seams visually."
+      "evidence": "\u221214 to +14 EV trajectory plots, aggressive transition sweeps, fair ACEScct keys with matched native selectors and held-out comparisons.",
+      "gap": "Exhaustive C1 parameter-domain proof and artist evaluation of seams/colour death remain open.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M13",
@@ -113,41 +113,43 @@
       "id": "M14",
       "title": "Diagnostic metrics",
       "status": "Partially satisfied",
-      "evidence": "Conversion/CAT, neutral, exposure, spectral and held-out trajectory errors; family/EV relative errors.",
-      "gap": "Jacobian/palette OT/perceived-hue and full appearance-distance reports incomplete.",
-      "next_action": "No scalar metric grants acceptance; add metrics relevant to recorded visual deficiencies."
+      "evidence": "Jacobian conditioning, OT/distribution, structure, HK and aggressive trajectory metrics now retained in Inspector Lab.",
+      "gap": "Full perceived-hue/appearance-distance and temporal diagnostics incomplete; metrics cannot grant artist acceptance.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M15",
       "title": "Artist target suite",
       "status": "Partially satisfied",
-      "evidence": "Six target recipes on structured and synthetic CG plus six user-approved ACES photographic/CG frames, fixed Flawed Emulsion 2 view.",
-      "gap": "Human evaluation of usefulness, coherence, all desired skin/black/contamination variants and continuity pending.",
-      "next_action": "Immediate artist session using editable graph and feedback form."
+      "evidence": "User accepts current eight nodes as artistically usable; nine aggressive recipes and approved viewed contact sheets expand evaluation.",
+      "gap": "Aggressive usefulness/coherence, continuity and interaction-time evidence still to record; development continues.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M16",
       "title": "Reference reconstruction",
       "status": "Partially satisfied",
-      "evidence": "Five approved independent sample-frame references; bounded fits using only existing rendition nodes plus fixed user DRT; recipes reused on second content.",
-      "gap": "Palette-descriptor fitting cannot establish visual-language reconstruction; human interaction time and reusable look-grammar judgement pending.",
-      "next_action": "Review references/candidates in Nuke; record controls, time, failures and reuse. Do not equate solver time with artist time."
+      "evidence": "Existing independent reference reconstruction retained; new palette-reference assistance preserves fixed DRT and source interpretation.",
+      "gap": "Actual human reconstruction time and reusable visual-language judgement remain unmeasured. Distribution distance is insufficient.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M17",
       "title": "Simplicity challenge",
       "status": "Partially satisfied",
-      "evidence": "Density vs exposure+saturation (also matched selection), Strip vs matrix+monotone curves, Volume vs hue curves, Crossover vs smooth/hard luminance keys; held-out errors and visual comparisons.",
-      "gap": "Limited fit settings/distribution; signed/HDR/compositing baseline stress and human interaction/superiority judgements incomplete.",
-      "next_action": "Artist A/B now; Density/Strip cannot receive production status from numerical differences."
+      "evidence": "Multistart bounded fits, 1,100 held-out samples, 1,705 signed/HDR stress samples, fair matched selectors/coordinates, frozen recipe photo reuse.",
+      "gap": "Some settings closely match simpler baselines; Density/Strip meaningful superiority and artist-tuned baselines remain open.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     },
     {
       "id": "M18",
       "title": "Research stop rule",
       "status": "Satisfied",
-      "evidence": "Gap audit preserves models; broad literature expansion stopped; implementation/visual comparison/artist feedback become primary.",
-      "gap": "Future targeted research must cite a specific unresolved property or repeatable failure.",
-      "next_action": "Require an issue with stimulus, expected/observed behaviour, gate and evidence before adding literature."
+      "evidence": "Targeted 0.2 implementation addresses named recorded gaps; production creative equation header unchanged; no broad literature restart.",
+      "gap": "Next work must identify a specific property or repeatable artist deficiency before expanding models.",
+      "next_action": "Use targeted 0.2 report/visual review; change creative equations only for measured or artist-observed improvement."
     }
-  ]
+  ],
+  "phase": "0.2 targeted deep validation",
+  "reports": "0.2-*.json and ../DEEP_VALIDATION_0_2.md"
 }

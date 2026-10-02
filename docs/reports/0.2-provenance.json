@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "phase": "0.2 targeted deep validation",
+  "creative_equations_changed": false,
+  "input": "Approved ACES fixtures explicitly converted to Rec.2020; external user view Flawed Emulsion 2/sRGB only for previews",
+  "modules": [
+    "M4 Volume differential",
+    "M11 HK oracle",
+    "M15\u2013M17 aggressive baselines",
+    "M6 palette/OT",
+    "M7 structure",
+    "M8/M10 guide bridge"
+  ],
+  "source_hashes": {
+    "include/rendition/kernel_math.hpp": "b8ee9c14addf23626a6611dd841f2c7c1dd53922f9c8af03c0afdf7f487220b6",
+    "src/core/diagnostics.cpp": "e5ff6983c320e07d2cb1a5b61f8d5bee7b48ad871319691901021a22ef78f89c",
+    "diagnostics/palette.py": "28eabca932e925395c4e0d6a41265941a48779da5f59c17255225377dbf53cdd",
+    "diagnostics/structure.py": "d223a7e2323cc32895f9d396eac7ef62cdd9f3feb60209131f33d522276acd25",
+    "diagnostics/hk.py": "905bb3bc67c2ce7e224591e4a65b42739d02c9cff8d48baf0ae5b83a2e3d79ae",
+    "diagnostics/bridge.py": "1599dcc6cee49f57f1f74a7034cd057ab9eb55366ae2708edea529c4d26813fa"
+  }
+}

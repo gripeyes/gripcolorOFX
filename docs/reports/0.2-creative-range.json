@@ -1,0 +1,3434 @@
+{
+  "gate": "M15\u2013M17 creative range",
+  "seed": 21717,
+  "train_samples": 400,
+  "heldout_samples": 1100,
+  "stress_samples": 1705,
+  "baseline_policy": "Multistart simple models selected on training loss; matched Density selection and adjustable smooth luminance keys prevent qualifier/threshold advantages masquerading as new colour math. Fits are bounded/local, not proof of irreducibility.",
+  "view": "User Flawed Emulsion 2 / sRGB",
+  "artist_status": "User reports current eight nodes usable; aggressive-range superiority and interaction timing remain to evaluate, not a reason to freeze development.",
+  "cases": [
+    {
+      "effect": "Density",
+      "name": "depth",
+      "parameters": {
+        "density": 0.9,
+        "chromaCoupling": 0.7,
+        "highlightProtection": 0,
+        "shadowWeight": 0
+      },
+      "nodes": 1,
+      "changed_creative_controls": 4,
+      "details": [
+        {
+          "effect": "Density",
+          "changed_controls": [
+            "density",
+            "chromaCoupling",
+            "highlightProtection",
+            "shadowWeight"
+          ],
+          "count": 4
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 5.493850882700244,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 0,
+      "trajectory_max_neighbor_relative_change": 0.04674867168068886,
+      "baselines": [
+        {
+          "name": "Exposure+saturation",
+          "parameters": [
+            -2.1616067472755254,
+            1.6355409815325905
+          ],
+          "parameter_count": 2,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.016900295505080393,
+                "evaluations": 7,
+                "converged": true,
+                "solver_seconds": 0.0019711250006366754
+              },
+              {
+                "train_normalized_mse": 0.016900295505080393,
+                "evaluations": 5,
+                "converged": true,
+                "solver_seconds": 0.0009129999998549465
+              },
+              {
+                "train_normalized_mse": 0.016900295505080393,
+                "evaluations": 8,
+                "converged": true,
+                "solver_seconds": 0.0018211249998785206
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.1477600927412069,
+            "max_relative_rgb_error": 0.8325679238039078,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.11279531539620394
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.114803594479419
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.14024240066875862
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.11454612464892978
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.15036918326930515
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.1598312787185715
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.12190302652031204
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.13010976622069595
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.14237117001541122
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.12629176880110843
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.13657184903267236
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.15688238419085015
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.18287990348049749
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.16533132235368866
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.17493116950944781
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.1333441943914374
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.15978947447077352
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.15180046905620237
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 2.236828749024614,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "density-depth-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "density-depth-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "density-depth-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Exposure+saturation matched selection",
+          "parameters": [
+            -2.1782442196006797,
+            1.652331052028157
+          ],
+          "parameter_count": 2,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.016630725894180506,
+                "evaluations": 7,
+                "converged": true,
+                "solver_seconds": 0.003801750000093307
+              },
+              {
+                "train_normalized_mse": 0.016630725894180506,
+                "evaluations": 5,
+                "converged": true,
+                "solver_seconds": 0.0026262909996148665
+              },
+              {
+                "train_normalized_mse": 0.016630725894180506,
+                "evaluations": 8,
+                "converged": true,
+                "solver_seconds": 0.004001500000413216
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.13631858255225587,
+            "max_relative_rgb_error": 0.8311439190307774,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.10647715569239133
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.11463953255807666
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.10619464439096081
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.113902887225509
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.14160196264370778
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.14698052283187413
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.11013077685850153
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.12224848860919633
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.13178251755693288
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.11298132274487868
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.1329263314179094
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.13583925006065836
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.15708893754995884
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.15417858686306246
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.16130567881635197
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.1329500695786139
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.15811741057584727
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.146810078341226
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 2.225768062491253,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "density-depth-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "density-depth-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "density-depth-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Independent chroma-coupled depth and hue-selective protection beyond one gain/saturation pair"
+    },
+    {
+      "effect": "Density",
+      "name": "thin",
+      "parameters": {
+        "density": -0.8,
+        "chromaCoupling": -0.7,
+        "highlightProtection": 0,
+        "shadowWeight": 0
+      },
+      "nodes": 1,
+      "changed_creative_controls": 4,
+      "details": [
+        {
+          "effect": "Density",
+          "changed_controls": [
+            "density",
+            "chromaCoupling",
+            "highlightProtection",
+            "shadowWeight"
+          ],
+          "count": 4
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 3.070235207062192,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 0,
+      "trajectory_max_neighbor_relative_change": 0.18306474387645721,
+      "baselines": [
+        {
+          "name": "Exposure+saturation",
+          "parameters": [
+            0.8041334452291121,
+            1.2695379293791003
+          ],
+          "parameter_count": 2,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.018989381843081698,
+                "evaluations": 6,
+                "converged": true,
+                "solver_seconds": 0.0012504169999374426
+              },
+              {
+                "train_normalized_mse": 0.018989381843081698,
+                "evaluations": 7,
+                "converged": true,
+                "solver_seconds": 0.001285833999645547
+              },
+              {
+                "train_normalized_mse": 0.018989381843081698,
+                "evaluations": 6,
+                "converged": true,
+                "solver_seconds": 0.001064916000359517
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.15115433875531553,
+            "max_relative_rgb_error": 0.7107532930481006,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.13989846814528098
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.12482065798856011
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.15103138069154592
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.12194914387800493
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.1466757391383053
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.1617534524651473
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.14615488685628206
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.16455436248007618
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.16582411341059267
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.1507306077938742
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.16554080428764326
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.17874664026639345
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.13171096957437778
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.12309139173424162
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.09444498376039465
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.14637199138091064
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.1690579085090907
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.15966898955030162
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.8091549610130175,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "density-thin-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "density-thin-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "density-thin-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Exposure+saturation matched selection",
+          "parameters": [
+            0.8061291256946264,
+            1.2681005973685546
+          ],
+          "parameter_count": 2,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.018739363785240635,
+                "evaluations": 6,
+                "converged": true,
+                "solver_seconds": 0.0031469999994442333
+              },
+              {
+                "train_normalized_mse": 0.018739363785240635,
+                "evaluations": 7,
+                "converged": true,
+                "solver_seconds": 0.0036015839996252907
+              },
+              {
+                "train_normalized_mse": 0.018739363785240635,
+                "evaluations": 6,
+                "converged": true,
+                "solver_seconds": 0.003152541000417841
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.1403179531829963,
+            "max_relative_rgb_error": 0.7096266080068565,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.13508343338350967
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.12469036798641171
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.12277868671104358
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.1212629107178989
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.13941171800027452
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.15022815022799532
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.13705217348706147
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.15957964244183442
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.15766206862916243
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.13990901541199474
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.16232624946172122
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.16184470942104992
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.09484689217754466
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.09932255491469409
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.06307410021593775
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.1460294086684867
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.16661203374374184
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.154587512275374
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.7487889959241267,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "density-thin-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "density-thin-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "density-thin-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Independent chroma-coupled depth and hue-selective protection beyond one gain/saturation pair"
+    },
+    {
+      "effect": "Density",
+      "name": "skin_depth",
+      "parameters": {
+        "hue": 65,
+        "width": 110,
+        "density": 0.9,
+        "chromaCoupling": 0.6,
+        "highlightProtection": 0.8,
+        "shadowWeight": 1
+      },
+      "nodes": 1,
+      "changed_creative_controls": 6,
+      "details": [
+        {
+          "effect": "Density",
+          "changed_controls": [
+            "hue",
+            "width",
+            "density",
+            "chromaCoupling",
+            "highlightProtection",
+            "shadowWeight"
+          ],
+          "count": 6
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 1.0000000031883387,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 0,
+      "trajectory_max_neighbor_relative_change": 0.09963355213403702,
+      "baselines": [
+        {
+          "name": "Exposure+saturation",
+          "parameters": [
+            -0.05764221348785451,
+            1.027497969142146
+          ],
+          "parameter_count": 2,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.006160580263513327,
+                "evaluations": 4,
+                "converged": true,
+                "solver_seconds": 0.00090108299991698
+              },
+              {
+                "train_normalized_mse": 0.006160580263513326,
+                "evaluations": 7,
+                "converged": true,
+                "solver_seconds": 0.0012834999997721752
+              },
+              {
+                "train_normalized_mse": 0.006160580263513326,
+                "evaluations": 6,
+                "converged": true,
+                "solver_seconds": 0.0011062500007028575
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.08822180142399907,
+            "max_relative_rgb_error": 0.8701958012917212,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.2004493499400147
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.17785528600584702
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.023717250534760825
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.17099911581456503
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.15614233412560632
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.031664904334710066
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.027024443898959655
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.03989479711072841
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.031101947464289674
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.025081882577534964
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.029426659672346984
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.02925009598128924
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.018522817381267653
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.022465592928507014
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.02068986437814407
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.02055080903241529
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.023584807931010376
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.02400309405253297
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.12889449702085956,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "density-skin_depth-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "density-skin_depth-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "density-skin_depth-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Exposure+saturation matched selection",
+          "parameters": [
+            -1.6175939584215349,
+            1.6626034926037891
+          ],
+          "parameter_count": 2,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.0002501010848750524,
+                "evaluations": 7,
+                "converged": true,
+                "solver_seconds": 0.004424042000209738
+              },
+              {
+                "train_normalized_mse": 0.00025010108487505243,
+                "evaluations": 5,
+                "converged": true,
+                "solver_seconds": 0.0026863749999392894
+              },
+              {
+                "train_normalized_mse": 0.00025010108487505243,
+                "evaluations": 8,
+                "converged": true,
+                "solver_seconds": 0.004022082999654231
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.017316297366796702,
+            "max_relative_rgb_error": 0.4023268556297882,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.040884380832247755
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.028252609168310593
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.002197125201328244
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.040154413086688205
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.03617598923065195
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.002202197279942482
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.004191472339546293
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.008110165677308618
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.00037772690419574117
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 1.642966189458771e-08
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 1.867143720460337e-08
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 1.980927358289662e-08
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 1.697807827138549e-08
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 1.632198737948406e-08
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 1.602936709676197e-08
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 1.6886338949455475e-08
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 1.9319344799897327e-08
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 1.983032906509413e-08
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.11277770440964568,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "density-skin_depth-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "density-skin_depth-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "density-skin_depth-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Independent chroma-coupled depth and hue-selective protection beyond one gain/saturation pair"
+    },
+    {
+      "effect": "Crossover",
+      "name": "cyan_death",
+      "parameters": {
+        "hue": 195,
+        "width": 150,
+        "darkHue": 100,
+        "darkChroma": 0.05,
+        "darkDensity": 1.2,
+        "midHue": -20,
+        "midChroma": 1.5,
+        "brightHue": -90,
+        "brightChroma": 2,
+        "transition": 0.5
+      },
+      "nodes": 1,
+      "changed_creative_controls": 9,
+      "details": [
+        {
+          "effect": "Crossover",
+          "changed_controls": [
+            "width",
+            "darkHue",
+            "darkChroma",
+            "darkDensity",
+            "midHue",
+            "midChroma",
+            "brightHue",
+            "brightChroma",
+            "transition"
+          ],
+          "count": 9
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 12.3310504619207,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 0,
+      "trajectory_max_neighbor_relative_change": 0.14720599353313446,
+      "baselines": [
+        {
+          "name": "Three fixed smooth keys, matched selector",
+          "parameters": [
+            88.74189015306102,
+            -20.003314506359704,
+            -90.8168523437064,
+            -1.1376343665934217,
+            0.466360242007866,
+            0.7077224472099806,
+            -0.31600440886895337,
+            0.007514029602741852,
+            9.349060072359778e-05
+          ],
+          "parameter_count": 9,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.0015673016360654968,
+                "evaluations": 13,
+                "converged": true,
+                "solver_seconds": 0.06332070900043618
+              },
+              {
+                "train_normalized_mse": 0.0015673016363660455,
+                "evaluations": 9,
+                "converged": true,
+                "solver_seconds": 0.04312416700031463
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.036358778083629674,
+            "max_relative_rgb_error": 0.3012000857449506,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 1.6458157096835322e-08
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 1.7981251375382663e-08
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 1.7886677630669458e-08
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.029019284206431677
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.0317869041181632
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.008033734370425698
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.06659850361627398
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.07450758721077098
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.0214521903974247
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.07078217508207342
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.08454374315514653
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.029818602884098634
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.020621583488949533
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.029117355962327642
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.010824857700978468
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 1.688633893630855e-08
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 1.931934488743019e-08
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 1.983032902087518e-08
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.23623664567702407,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "crossover-cyan_death-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "crossover-cyan_death-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "crossover-cyan_death-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Three movable smooth keys, matched selector",
+          "parameters": [
+            129.1291011696673,
+            -18.848825515788874,
+            -89.82518281023694,
+            -1.309180012612382,
+            0.4088183558873793,
+            0.6943296670294581,
+            -0.3134145356576504,
+            -0.002216133485932652,
+            0.00022882597516581392,
+            -3.2050167030617387,
+            1.8211338500994145,
+            1.302651558969559
+          ],
+          "parameter_count": 12,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.0001228158232026985,
+                "evaluations": 8,
+                "converged": true,
+                "solver_seconds": 0.04885724999985541
+              },
+              {
+                "train_normalized_mse": 0.0001228158232067528,
+                "evaluations": 12,
+                "converged": true,
+                "solver_seconds": 0.07260374999987107
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.016750733202528352,
+            "max_relative_rgb_error": 0.20509633642855557,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 1.6458157096835322e-08
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 1.7981251375382663e-08
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 1.7886677630669458e-08
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.024733882791150526
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.009065969971097139
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.0010461322173893415
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.04252646772237268
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.018924668185604954
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.004093769013106155
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.038656943769260016
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.022952921413592602
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.005242331856061658
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.01822517902445174
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.007682498840991334
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.002458325246618348
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 1.688633893630855e-08
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 1.931934488743019e-08
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 1.983032902087518e-08
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.027968969470092045,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "crossover-cyan_death-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "crossover-cyan_death-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "crossover-cyan_death-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Smooth hue/chroma/depth grammar through EV with compact authoring controls"
+    },
+    {
+      "effect": "Crossover",
+      "name": "global_trajectory",
+      "parameters": {
+        "width": 360,
+        "darkHue": 120,
+        "darkChroma": 0.15,
+        "darkDensity": 1,
+        "midHue": -20,
+        "brightHue": -70,
+        "brightChroma": 2,
+        "brightDensity": -0.6,
+        "transition": 1
+      },
+      "nodes": 1,
+      "changed_creative_controls": 9,
+      "details": [
+        {
+          "effect": "Crossover",
+          "changed_controls": [
+            "width",
+            "darkHue",
+            "darkChroma",
+            "darkDensity",
+            "midHue",
+            "brightHue",
+            "brightChroma",
+            "brightDensity",
+            "transition"
+          ],
+          "count": 9
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 12.882968744780714,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 0,
+      "trajectory_max_neighbor_relative_change": 0.29206785559654236,
+      "baselines": [
+        {
+          "name": "Three fixed smooth keys, matched selector",
+          "parameters": [
+            122.05231634086243,
+            -17.65820813421271,
+            -69.39763518200101,
+            -1.22828422944713,
+            0.08172444502003885,
+            0.6240578051199549,
+            -0.22541116846075235,
+            -0.003694030064440786,
+            0.1370473302358493
+          ],
+          "parameter_count": 9,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.0005567825376491968,
+                "evaluations": 10,
+                "converged": true,
+                "solver_seconds": 0.04897691600035614
+              },
+              {
+                "train_normalized_mse": 0.0005567825376493915,
+                "evaluations": 8,
+                "converged": true,
+                "solver_seconds": 0.03894366699933016
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.024022834592406568,
+            "max_relative_rgb_error": 0.2854216243106613,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.011516809232731504
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.026287347105687305
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.03724575547124461
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.021247371942911146
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.021861410638562
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.016587833379355495
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.02169840650818673
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.021262644273948323
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.02007483270997746
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.01558229820910633
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.01946469592203328
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.016517226374579284
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.011796842621982299
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.030242839567701872
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.010574935631277486
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.012857957783579422
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.04012339963451779
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.03737808475086005
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.10912870094499236,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "crossover-global_trajectory-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "crossover-global_trajectory-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "crossover-global_trajectory-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Three movable smooth keys, matched selector",
+          "parameters": [
+            151.3663365689337,
+            -12.11870821155786,
+            -69.34642246247513,
+            -1.4507791729076058,
+            0.009444690827989153,
+            0.6258441703135503,
+            -0.2690526456050314,
+            -0.01522793268795363,
+            0.1365734684282694,
+            -3.6018809381900123,
+            1.8326080485782241,
+            1.9580931456629258
+          ],
+          "parameter_count": 12,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.00027571432283424706,
+                "evaluations": 11,
+                "converged": true,
+                "solver_seconds": 0.0694257919994925
+              },
+              {
+                "train_normalized_mse": 0.00027571432286487506,
+                "evaluations": 13,
+                "converged": true,
+                "solver_seconds": 0.08334416700017755
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.02030478407291691,
+            "max_relative_rgb_error": 0.26195440970408523,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.020628441929188886
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.01133795062480308
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.02960672221956134
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.0226799670644194
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.011392074426288834
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.014661635100038806
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.02400456452727935
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.01118120098889773
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.017543429123382616
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.024635340478959954
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.010684705533785244
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.014707122284079395
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.020261834815678986
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.010830078817104996
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.008501158303102517
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.020863297764360265
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.01745455379189999
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.02967422123544759
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.09025582609016833,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "crossover-global_trajectory-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "crossover-global_trajectory-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "crossover-global_trajectory-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Smooth hue/chroma/depth grammar through EV with compact authoring controls"
+    },
+    {
+      "effect": "Crossover",
+      "name": "narrow_transition",
+      "parameters": {
+        "width": 360,
+        "darkHue": -150,
+        "darkChroma": 0,
+        "brightHue": 150,
+        "brightChroma": 4,
+        "transition": 0.1
+      },
+      "nodes": 1,
+      "changed_creative_controls": 6,
+      "details": [
+        {
+          "effect": "Crossover",
+          "changed_controls": [
+            "width",
+            "darkHue",
+            "darkChroma",
+            "brightHue",
+            "brightChroma",
+            "transition"
+          ],
+          "count": 6
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 459.97572330533643,
+      "trajectory_hue_unobservable_samples": 1177,
+      "trajectory_luminance_reversals": 18,
+      "trajectory_max_neighbor_relative_change": 5.103559494018555,
+      "baselines": [
+        {
+          "name": "Three fixed smooth keys, matched selector",
+          "parameters": [
+            -7.680947284463963,
+            -5.7021907567752175,
+            152.43253003011105,
+            -2.2808043250770895,
+            0.24515307834873326,
+            1.4257971684028419,
+            0.013861287326601896,
+            -0.03649805098504534,
+            -0.01460241274438567
+          ],
+          "parameter_count": 9,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.20235840227466148,
+                "evaluations": 12,
+                "converged": true,
+                "solver_seconds": 0.058561291000842175
+              },
+              {
+                "train_normalized_mse": 1.835121317634004,
+                "evaluations": 24,
+                "converged": true,
+                "solver_seconds": 0.11239820799983136
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.38556437905364516,
+            "max_relative_rgb_error": 10.66779998319691,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.04805049878508422
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.13070697028770634
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.24101034396597734
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.05982441855580021
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.2618249681371118
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.8101466598771014
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.05779358169601396
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.4849643567277649
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.6822231927405994
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.052870079207302086
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.5612680052243448
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.5172839323097403
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.04939010425801754
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.18541832623197907
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.12926516481240996
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.04766619792722325
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.2875396794672663
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.2419281219762567
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 19.477867978658473,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "crossover-narrow_transition-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "crossover-narrow_transition-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "crossover-narrow_transition-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Three movable smooth keys, matched selector",
+          "parameters": [
+            -179.99999999999997,
+            -2.8026694768525746,
+            149.94987599488758,
+            -2.7198355808930104,
+            0.1678333303913371,
+            1.3874255749546271,
+            -0.00022589334649606712,
+            -0.003878175187469804,
+            0.0006962379529737633,
+            -3.0601086344498585,
+            1.800218405080722,
+            -0.2561920847411169
+          ],
+          "parameter_count": 12,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.0039019461677323596,
+                "evaluations": 29,
+                "converged": true,
+                "solver_seconds": 0.17681212499974208
+              },
+              {
+                "train_normalized_mse": 0.00390194615696974,
+                "evaluations": 43,
+                "converged": true,
+                "solver_seconds": 0.26218433400026697
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.04369689343951126,
+            "max_relative_rgb_error": 0.7032650302879933,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.016081795675411237
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.053148947960386016
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.01535089939420548
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.02418922256597158
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.05416023099133752
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.0557073703944886
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.021620730318710618
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.06446550450401166
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.057457883266399404
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.018187516538504676
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.0603552236208271
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.03445001678677951
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.015812516383608154
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.07810381905999074
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.012693059856334642
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.016126630422756107
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.08380972046344741
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.011974264202510939
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 1.6929791597214041,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "crossover-narrow_transition-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "crossover-narrow_transition-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "crossover-narrow_transition-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Smooth hue/chroma/depth grammar through EV with compact authoring controls"
+    },
+    {
+      "effect": "Strip",
+      "name": "three_records",
+      "parameters": {
+        "separation": 1,
+        "palette": 0.8,
+        "density": 0.8,
+        "leakage": 0.6,
+        "redAnchor": 0.7
+      },
+      "nodes": 1,
+      "changed_creative_controls": 5,
+      "details": [
+        {
+          "effect": "Strip",
+          "changed_controls": [
+            "separation",
+            "palette",
+            "density",
+            "leakage",
+            "redAnchor"
+          ],
+          "count": 5
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 1.666646314474664,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 840,
+      "trajectory_max_neighbor_relative_change": 0.05661796033382416,
+      "baselines": [
+        {
+          "name": "3x3 matrix",
+          "parameters": [
+            0.7796398288320265,
+            -0.3186961991241844,
+            -0.23127068701411926,
+            0.1893145041816178,
+            0.10109229830753275,
+            -0.14046415015094807,
+            0.09378074865153549,
+            -0.06180895018157555,
+            0.2733636968427342
+          ],
+          "parameter_count": 9,
+          "fit": {
+            "closed_form": true,
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.1574268784073042,
+            "max_relative_rgb_error": 0.809000645806682,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.21038527707516502
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.20284447125127902
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.22338512073547717
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.11186899332006457
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.12847583307042817
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.12288390207114777
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.11661095314027914
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.12431496100212804
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.1195825759642546
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.1137952892069153
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.10513892522196891
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.13604221127454325
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.14225281528689526
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.15892566530541066
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.13293081304941184
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.16429589639753073
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.1889475065134924
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.17846118362675437
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.33878147707878453,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "strip-three_records-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "strip-three_records-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "strip-three_records-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Matrix+monotone curves",
+          "parameters": [
+            0.7905926544345393,
+            -0.3155399094787663,
+            -0.2002326751483496,
+            0.2490463671756785,
+            0.13305320230664042,
+            -0.1848246869733406,
+            0.1001298192148014,
+            -0.05846671733102295,
+            0.262602815601595,
+            -0.21233506657137452,
+            -0.0006109916908644691,
+            -0.032810450431513295,
+            0.14442032198577961,
+            -0.03633521001958296,
+            -0.05104601604342315,
+            0.05631449561228143,
+            0.15499568665510746,
+            0.07293722752195991,
+            -0.10290492208445728,
+            -0.0858055362402105,
+            -0.21670724555364426,
+            -0.0328219041628361,
+            0.16405953992959837,
+            -0.02945069291952233,
+            -0.05154654459512609,
+            -0.04068428300307016,
+            0.16116502585205505,
+            -0.009104851061239141,
+            -0.032440604545054486,
+            0.05861253019939275
+          ],
+          "parameter_count": 30,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.01704436558007652,
+                "evaluations": 45,
+                "converged": false,
+                "solver_seconds": 0.46558366699991893
+              },
+              {
+                "train_normalized_mse": 0.01704570470404865,
+                "evaluations": 45,
+                "converged": false,
+                "solver_seconds": 0.4773464999998396
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.16034349662983513,
+            "max_relative_rgb_error": 0.8266398216188869,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.21958010061330518
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.19351789910705613
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.23308631258964896
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.11699155560489613
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.13131449756518404
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.12600695888483854
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.1209407002916534
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.12272909569471754
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.1149918924038869
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.12703905335986437
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.10130268205528759
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.1332293928237977
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.15660540207656085
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.15614290059121322
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.1299970218787838
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.1680904693747215
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.19507911448910906
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.17323405936418604
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.3247143706476018,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "strip-three_records-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "strip-three_records-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "strip-three_records-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Coherent record/palette/anchor interaction beyond fixed channel coefficients"
+    },
+    {
+      "effect": "Strip",
+      "name": "two_records",
+      "parameters": {
+        "mode": 1,
+        "separation": 1,
+        "palette": -0.8,
+        "density": -0.5,
+        "leakage": 0.05,
+        "redAnchor": 0.8
+      },
+      "nodes": 1,
+      "changed_creative_controls": 6,
+      "details": [
+        {
+          "effect": "Strip",
+          "changed_controls": [
+            "mode",
+            "separation",
+            "palette",
+            "density",
+            "leakage",
+            "redAnchor"
+          ],
+          "count": 6
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 1.5649152520204712,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 280,
+      "trajectory_max_neighbor_relative_change": 0.0686548501253128,
+      "baselines": [
+        {
+          "name": "3x3 matrix",
+          "parameters": [
+            0.9308021176220933,
+            -0.3192698910418671,
+            -0.1931015709778472,
+            0.2460084163228752,
+            0.07369060200538179,
+            -0.13679449159829674,
+            -0.018189355078475064,
+            0.003384685400510587,
+            0.5756934665687957
+          ],
+          "parameter_count": 9,
+          "fit": {
+            "closed_form": true,
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.14696323064499223,
+            "max_relative_rgb_error": 0.7783976795640647,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.19418001390189465
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.19288394151697097
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.20552603466754685
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.11415130664347724
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.1309355086781722
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.1331214385620398
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.1095679630678558
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.12300733883663165
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.12061088899176514
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.10315956776062109
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.09989079227723456
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.12411573820241477
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.130942310600349
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.14090602279671555
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.12135980649021248
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.1515204489303047
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.1724864563852542
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.16215083601012997
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.2925131941547421,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "strip-two_records-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "strip-two_records-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "strip-two_records-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Matrix+monotone curves",
+          "parameters": [
+            0.8666143760475726,
+            -0.29151165801139495,
+            -0.1606778679300528,
+            0.3359272644157679,
+            0.09759525174650566,
+            -0.18827636012307156,
+            -0.01441953713718592,
+            0.006960995334796279,
+            0.6473952689607633,
+            -0.2982816025663759,
+            0.016123697668396046,
+            -0.05515510396251721,
+            0.17969449668736012,
+            0.04034127293934221,
+            -0.04766776956587461,
+            0.034871121068448155,
+            0.15939759973598566,
+            0.1152645653804837,
+            -0.12408213097853336,
+            -0.16142539567291733,
+            -0.18461181455801323,
+            -0.07953519434936289,
+            0.16117855970982373,
+            0.008835696823377977,
+            0.02133326613578557,
+            0.016532548960372463,
+            -0.07555603605369904,
+            -0.07727873580540502,
+            -0.0063510331840103875,
+            0.013105528406435057
+          ],
+          "parameter_count": 30,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.015499898847891573,
+                "evaluations": 45,
+                "converged": false,
+                "solver_seconds": 0.4920286659998965
+              },
+              {
+                "train_normalized_mse": 0.015500621105206995,
+                "evaluations": 45,
+                "converged": false,
+                "solver_seconds": 0.47560833399984404
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.14946999702580294,
+            "max_relative_rgb_error": 0.802695692716295,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.2005319636767949
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.1823564218914915
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.21447029441487048
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.11620166998608064
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.13510671427803844
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.1385784036569028
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.11144262232626512
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.12444507677324877
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.1195842930488025
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.11217666599861338
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.09843496979920952
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.12465475157130787
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.13931936383960664
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.1376986735581256
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.11664818019507009
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.15581482483633508
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.17981086657875392
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.15521114852622883
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.28582026271916916,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "strip-two_records-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "strip-two_records-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "strip-two_records-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Coherent record/palette/anchor interaction beyond fixed channel coefficients"
+    },
+    {
+      "effect": "Strip",
+      "name": "contamination",
+      "parameters": {
+        "separation": 0.9,
+        "palette": -0.6,
+        "density": 1,
+        "leakage": 0.9,
+        "neutralAnchor": 0.4,
+        "rContribution": 2,
+        "bWeight": 0.5
+      },
+      "nodes": 1,
+      "changed_creative_controls": 7,
+      "details": [
+        {
+          "effect": "Strip",
+          "changed_controls": [
+            "separation",
+            "palette",
+            "density",
+            "leakage",
+            "neutralAnchor",
+            "rContribution",
+            "bWeight"
+          ],
+          "count": 7
+        }
+      ],
+      "stress_nonfinite": 0,
+      "output_max_abs_vs_input": 1.579831496950536,
+      "trajectory_hue_unobservable_samples": 0,
+      "trajectory_luminance_reversals": 0,
+      "trajectory_max_neighbor_relative_change": 0.037190187722444534,
+      "baselines": [
+        {
+          "name": "3x3 matrix",
+          "parameters": [
+            0.5212957320123933,
+            -0.1438840860469022,
+            -0.19852817221807312,
+            -0.014296095931063544,
+            0.23877800579959146,
+            -0.10967890208463318,
+            -0.05149947207686788,
+            0.02736817395297857,
+            0.19412203341311057
+          ],
+          "parameter_count": 9,
+          "fit": {
+            "closed_form": true,
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.13063090187215418,
+            "max_relative_rgb_error": 0.6790188324004607,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.15363589062139335
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.14554001281019624
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.15899047754884132
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.1327644340476881
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.15600411813213275
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.17481072951669246
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.12192208128563943
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.15353952551279693
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.1499039382526016
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.0994024905761397
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.11118789786788179
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.11918474704210635
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.09413428294989838
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.09922854738193675
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.09214910600182377
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.1204946137153872
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.14423647696509306
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.12481555819384439
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.3484695060366781,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "strip-contamination-b0-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "strip-contamination-b0-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "strip-contamination-b0-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        },
+        {
+          "name": "Matrix+monotone curves",
+          "parameters": [
+            1.1875320816325443,
+            -0.41512605085842613,
+            -0.15497704493446074,
+            -0.12242767551871699,
+            0.5003268746773345,
+            -0.0873405279007851,
+            -0.05294995563458936,
+            0.028350358645425403,
+            0.19518310509670567,
+            -0.16968145041348903,
+            0.017157931731101857,
+            -0.06829384135675572,
+            0.1382786881087779,
+            -0.9975611855022597,
+            -0.030741720162977205,
+            0.030739536513167718,
+            -0.13783878221451695,
+            -0.18290417140533413,
+            -0.028229154775362187,
+            0.36778335354907793,
+            -0.9995534141746543,
+            0.13360472886517197,
+            -0.03091615702555308,
+            0.008917389766680947,
+            0.013183756402083554,
+            -0.022005635387388516,
+            0.0016570436856870887,
+            -0.013317124407936684,
+            -0.012310511190516852,
+            0.043236298917742576
+          ],
+          "parameter_count": 30,
+          "fit": {
+            "attempts": [
+              {
+                "train_normalized_mse": 0.011316062251717541,
+                "evaluations": 45,
+                "converged": false,
+                "solver_seconds": 0.46589570800006186
+              },
+              {
+                "train_normalized_mse": 0.011434697462577505,
+                "evaluations": 45,
+                "converged": false,
+                "solver_seconds": 0.46248470800037467
+              }
+            ],
+            "selection": "Lowest training loss only; held-out samples never used to select parameters",
+            "human_interaction_seconds": null
+          },
+          "heldout": {
+            "relative_rgb_rms": 0.13891426894886885,
+            "max_relative_rgb_error": 0.6532783918072806,
+            "nonfinite": 0,
+            "by_family_and_exposure": [
+              {
+                "family": "red",
+                "exposure_region": "dark",
+                "samples": 71,
+                "relative_rgb_rms": 0.18868641184018667
+              },
+              {
+                "family": "red",
+                "exposure_region": "middle",
+                "samples": 56,
+                "relative_rgb_rms": 0.12011880786141504
+              },
+              {
+                "family": "red",
+                "exposure_region": "HDR",
+                "samples": 75,
+                "relative_rgb_rms": 0.10507343204326551
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "dark",
+                "samples": 60,
+                "relative_rgb_rms": 0.19681942581884548
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "middle",
+                "samples": 52,
+                "relative_rgb_rms": 0.16947124338383732
+              },
+              {
+                "family": "yellow",
+                "exposure_region": "HDR",
+                "samples": 103,
+                "relative_rgb_rms": 0.21800637207182302
+              },
+              {
+                "family": "green",
+                "exposure_region": "dark",
+                "samples": 110,
+                "relative_rgb_rms": 0.1653890557335381
+              },
+              {
+                "family": "green",
+                "exposure_region": "middle",
+                "samples": 74,
+                "relative_rgb_rms": 0.14418397887328002
+              },
+              {
+                "family": "green",
+                "exposure_region": "HDR",
+                "samples": 150,
+                "relative_rgb_rms": 0.15042199338579873
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "dark",
+                "samples": 109,
+                "relative_rgb_rms": 0.14167513313846253
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "middle",
+                "samples": 70,
+                "relative_rgb_rms": 0.09495444367157467
+              },
+              {
+                "family": "cyan",
+                "exposure_region": "HDR",
+                "samples": 136,
+                "relative_rgb_rms": 0.08767325430799211
+              },
+              {
+                "family": "blue",
+                "exposure_region": "dark",
+                "samples": 55,
+                "relative_rgb_rms": 0.1340901818286149
+              },
+              {
+                "family": "blue",
+                "exposure_region": "middle",
+                "samples": 32,
+                "relative_rgb_rms": 0.06398802913904844
+              },
+              {
+                "family": "blue",
+                "exposure_region": "HDR",
+                "samples": 52,
+                "relative_rgb_rms": 0.06278900935723732
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "dark",
+                "samples": 111,
+                "relative_rgb_rms": 0.1615379641494008
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "middle",
+                "samples": 96,
+                "relative_rgb_rms": 0.11808986756807628
+              },
+              {
+                "family": "magenta",
+                "exposure_region": "HDR",
+                "samples": 123,
+                "relative_rgb_rms": 0.07611317568228848
+              }
+            ]
+          },
+          "signed_hdr_scaled_error": 0.2790272041657326,
+          "signed_hdr_nonfinite": 0,
+          "photographic_reuse": [
+            {
+              "frame": 5,
+              "preview": "strip-contamination-b1-photo-0005.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 7,
+              "preview": "strip-contamination-b1-photo-0007.png",
+              "refit": false,
+              "artist_preference": null
+            },
+            {
+              "frame": 60,
+              "preview": "strip-contamination-b1-photo-0060.png",
+              "refit": false,
+              "artist_preference": null
+            }
+          ]
+        }
+      ],
+      "human_artist_range_evaluation": null,
+      "useful_behavior_hypothesis": "Coherent record/palette/anchor interaction beyond fixed channel coefficients"
+    }
+  ]
+}

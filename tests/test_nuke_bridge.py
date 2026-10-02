@@ -62,3 +62,11 @@ def test_unresolved_role_is_explicit_and_never_rec2020(host,kind):
     root['customOCIOConfigPath'].setValue(config);callbacks['addBeforeRender']()
     assert all(n['hostSceneLinear'].value()==1 for n in nodes)
 
+
+def test_detached_shutdown_node_does_not_refresh_or_raise(host):
+    module,root,nodes,callbacks,state,path=host
+    class Detached:
+        def Class(self):raise ValueError('A PythonObject is not attached to a node')
+    state['node']=Detached()
+    callbacks['addKnobChanged']()
+    assert all(n['hostSceneLinear'].value()==0 for n in nodes)

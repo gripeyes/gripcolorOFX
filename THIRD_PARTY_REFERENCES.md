@@ -29,3 +29,11 @@ Record exact new files/commits, licensing and any reused code before additional 
 ## Artist fixtures and offline IO
 
 User approved any frames from the local ACES_ODT_SampleFrames-main dataset. Six AP0/D60 files are explicitly converted through the user OCIO config for artist fixtures. Retain the dataset MIT license (Alex Fry, 2022) and embedded contributor credits; original filenames/hashes are in approved-assets.json. User-authored DRT/config is referenced locally, not copied into the bundle. OpenEXR 3.5.1 is pinned for offline EXR IO only (BSD-3-Clause); its installed license is packaged. No OpenEXR Python dependency enters the OFX runtime.
+
+## Targeted 0.2 diagnostic work
+
+The user-required Hellwig/HK brightness experiments use the already pinned Colour 0.4.7 `XYZ_to_Hellwig2022` J_HK/Q_HK implementation (BSD-3-Clause), with published references DOI 10.1002/col.22793 and 10.1002/col.22792. No new model is copied into the OFX runtime. NumPy/SciPy/Matplotlib remain offline dependencies with retained licenses. Gaussian soft memberships, central differences, a 3×3 Jacobi eigensolver, log-domain entropic coupling and forward-gradient diagnostics are original implementations of standard mathematical constructions; no third-party solver source was copied. No broad literature expansion was undertaken. HK appearance data do not relabel scene Density output as appearance or insert a viewing transform.
+
+## Artist Primaries interaction references
+
+User-requested targeted UI study: FilmLight Base Grade (https://www.filmlight.ltd.uk/store/news_articles/lowepost-base-grade-and-the-evolution-of-grading-tools/), X Grade and Chromogen (https://www.filmlight.ltd.uk/pdf/datasheets/FL-BL-DS-1039-Baselight60.pdf), Autodesk MasterGrade (https://help.autodesk.com/cloudhelp/2022/ENU/Flame-EffectsandToolsReference/files/GUID-3A5D8228-E8BC-48CB-8737-B71C6F0934BA.htm), Blackmagic HDR zones (https://documents.blackmagicdesign.com/UserManuals/DaVinci-Resolve-17-Colorist-Guide.pdf). Consulted public control descriptions only on 2026-10-02. No proprietary equations, code, presets or assets reused; implementation is independently specified. Scope is the requested primary-control interaction gap, not renewed broad research. Source comparison and boundaries: docs/ARTIST_PRIMARIES.md.

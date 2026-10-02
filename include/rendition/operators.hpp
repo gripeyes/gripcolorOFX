@@ -6,7 +6,7 @@ namespace rendition_kernel {
 struct Parameters;
 }
 namespace rendition {
-enum class Effect { Scene, Tone, Volume, Density, Crossover, Crosstalk, Strip, Inspector };
+enum class Effect { Scene, Tone, Volume, Density, Crossover, Crosstalk, Strip, Inspector, Primaries };
 using Values = std::map<std::string, double>;
 struct Parameter {
     std::string id, label, group, unit;
@@ -22,6 +22,7 @@ struct Semantic {
 Semantic semantics(Effect effect, const Values &values = {});
 Vec3 oklab(Vec3 xyz);
 Vec3 oklabInverse(Vec3 lab);
+class PrimariesModel;
 class Snapshot {
     Effect effect;
     ColorSpace space;
@@ -29,6 +30,8 @@ class Snapshot {
     LookDomain look;
     Mat3 toD65, fromD65, matrix;
     bool identity;
+    std::shared_ptr<const Snapshot> diagnosticProbe;
+    std::shared_ptr<const PrimariesModel> primaries;
     std::shared_ptr<const rendition_kernel::Parameters> kernel;
 
   public:

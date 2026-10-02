@@ -1,0 +1,321 @@
+{
+  "stimuli": 972,
+  "policy": "Float signed/HDR samples, alpha bit checks, numerical exceptions retained as failures; no clipping or pixel repair. Reversal/order effects are diagnostics, not automatically bugs.",
+  "individual": [
+    {
+      "effect": "Scene",
+      "parameters": {
+        "exposure": 3,
+        "rExposure": 1,
+        "gExposure": -1,
+        "temperature": 18000,
+        "tint": 0.015,
+        "rOffset": 0.02,
+        "rPower": 1.8
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 461781568.0,
+      "semantics": {
+        "domain": "Scene Linear",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    {
+      "effect": "Tone",
+      "parameters": {
+        "contrast": 1.9,
+        "toe": 0.8,
+        "shoulder": 0.8,
+        "shadowDensity": 0.7,
+        "highlightDensity": -0.4
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 818.4320068359375,
+      "semantics": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    {
+      "effect": "Volume",
+      "parameters": {
+        "v0_width": 240,
+        "v0_hueDelta": 120,
+        "v0_chroma": 0.1,
+        "v0_density": 0.7,
+        "v5_width": 240,
+        "v5_hueDelta": -120,
+        "v5_chroma": 3,
+        "v5_density": -0.5
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 15177.5693359375,
+      "semantics": {
+        "domain": "Perceptual / Opponent",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Our real-cube-root signed extension",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Protected continuously",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric; local matrices / channel crossover gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    {
+      "effect": "Density",
+      "parameters": {
+        "density": 0.9,
+        "chromaCoupling": 0.7,
+        "highlightProtection": 0,
+        "shadowWeight": 0
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 5026.31689453125,
+      "semantics": {
+        "domain": "Spectral-derived",
+        "reference": "Scene-compatible radiance-base attenuation + signed residual",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Smooth positive emitted base + explicit signed XYZ residual",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Explicit anchor / distance protection",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric spectral basis; explicit custom record basis",
+        "status": "Spectral basis research candidate; artist/host acceptance pending",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    {
+      "effect": "Crossover",
+      "parameters": {
+        "hue": 195,
+        "width": 150,
+        "darkHue": 100,
+        "darkChroma": 0.05,
+        "darkDensity": 1.2,
+        "midHue": -20,
+        "midChroma": 1.5,
+        "brightHue": -90,
+        "brightChroma": 2,
+        "transition": 0.5
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 8473.6171875,
+      "semantics": {
+        "domain": "Perceptual / Opponent",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Our real-cube-root signed extension",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Protected continuously",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric; local matrices / channel crossover gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    {
+      "effect": "Crosstalk",
+      "parameters": {
+        "mode": 0,
+        "m01": 0.8,
+        "m02": -0.4,
+        "m10": -0.5,
+        "m20": 0.2
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 9436.783203125,
+      "semantics": {
+        "domain": "Scene Linear",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Native",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Not promised",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    {
+      "effect": "Strip",
+      "parameters": {
+        "separation": 0.9,
+        "palette": -0.6,
+        "density": 1,
+        "leakage": 0.9,
+        "neutralAnchor": 0.4,
+        "rContribution": 2,
+        "bWeight": 0.5
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 2017.723388671875,
+      "semantics": {
+        "domain": "Spectral-derived",
+        "reference": "Scene-compatible radiance-base attenuation + signed residual",
+        "exposure": "Equivariant",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Smooth positive emitted base + explicit signed XYZ residual",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Explicit anchor / distance protection",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric spectral basis; explicit custom record basis",
+        "status": "Spectral basis research candidate; artist/host acceptance pending",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    {
+      "effect": "Inspector",
+      "parameters": {
+        "mode": 12
+      },
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 1.0,
+      "semantics": {
+        "domain": "Custom / diagnostic",
+        "reference": "Mode-dependent diagnostic, input mode scene-linear",
+        "exposure": "Non-equivariant",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Native",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research diagnostic",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order": [
+        "Scene",
+        "Volume",
+        "Density",
+        "Crossover",
+        "Strip"
+      ],
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 12343.3076171875,
+      "source_scaled_order_difference_rms": 0.0,
+      "neutral_axis_max_channel_spread": 57.8114013671875,
+      "neutral_magnitude_change_max": 32.17333984375
+    },
+    {
+      "order": [
+        "Scene",
+        "Volume",
+        "Density",
+        "Strip",
+        "Crossover"
+      ],
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 16421.533203125,
+      "source_scaled_order_difference_rms": 0.45502206683158875,
+      "neutral_axis_max_channel_spread": 57.87738037109375,
+      "neutral_magnitude_change_max": 32.27545166015625
+    },
+    {
+      "order": [
+        "Scene",
+        "Volume",
+        "Crossover",
+        "Density",
+        "Strip"
+      ],
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 15509.376953125,
+      "source_scaled_order_difference_rms": 0.6558821797370911,
+      "neutral_axis_max_channel_spread": 57.95245361328125,
+      "neutral_magnitude_change_max": 32.39154052734375
+    },
+    {
+      "order": [
+        "Scene",
+        "Volume",
+        "Crossover",
+        "Strip",
+        "Density"
+      ],
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 14448.548828125,
+      "source_scaled_order_difference_rms": 1.3587557077407837,
+      "neutral_axis_max_channel_spread": 45.5548095703125,
+      "neutral_magnitude_change_max": 282.254638671875
+    },
+    {
+      "order": [
+        "Scene",
+        "Volume",
+        "Strip",
+        "Density",
+        "Crossover"
+      ],
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 14448.548828125,
+      "source_scaled_order_difference_rms": 1.2389081716537476,
+      "neutral_axis_max_channel_spread": 45.587738037109375,
+      "neutral_magnitude_change_max": 283.1636657714844
+    },
+    {
+      "order": [
+        "Scene",
+        "Volume",
+        "Strip",
+        "Crossover",
+        "Density"
+      ],
+      "finite": true,
+      "alpha_bit_exact": true,
+      "max_abs_rgb": 14448.548828125,
+      "source_scaled_order_difference_rms": 1.2767637968063354,
+      "neutral_axis_max_channel_spread": 45.587738037109375,
+      "neutral_magnitude_change_max": 283.1636657714844
+    }
+  ]
+}

@@ -16,6 +16,12 @@ shutil.copytree(bundle,installed,dirs_exist_ok=True)
 nuke_dir=args.home/'.nuke';folder=nuke_dir/'Rendition';folder.mkdir(parents=True,exist_ok=True)
 for source in (root/'integrations/nuke').glob('*.py'):
     shutil.copy2(source,folder/source.name)
+lab=root/'build/validation-0.2/index.html'
+if not lab.exists():lab=root/'validation-0.2/index.html'
+(folder/'inspector-lab-path.txt').write_text(str(lab)+'\n')
+primary=root/'build/primaries/index.html'
+if not primary.exists():primary=root/'primaries/index.html'
+(folder/'primaries-path.txt').write_text(str(primary)+'\n')
 # init.py also adds the bundle's parent to Nuke's plugin path. Native OFX search
 # path handling varies by host; this registration is verified in the GUI.
 init=nuke_dir/'init.py';old=init.read_text() if init.exists() else ''

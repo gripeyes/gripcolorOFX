@@ -1,0 +1,26 @@
+{
+  "phase": "0.2 targeted deep validation",
+  "creative_equations_changed": false,
+  "ctest": "4/4 suites passed",
+  "nuke_checks": 22,
+  "new_inspector_modes": "CPU only; five appended geometry modes",
+  "artist_basic_usability": "Accepted by user",
+  "superiority_gate": "Still open for Density/Strip and aggressive-range comparisons",
+  "pending_hosts": [
+    "Flame",
+    "OFX host Metal"
+  ],
+  "package": "Rendition-0.2.0-diagnostics-arm64.zip",
+  "manifest_files": 459,
+  "sha256": "c4c72a365583c3df79b2c0fc9871f18761e6dac6f35b6add38f9142d02c9b7f8",
+  "reports": "Inspector Lab, 0.2-*.json",
+  "retained_deficiencies": [
+    "Stable nonnegative RGB Volume fold witnesses",
+    "Uncertain finite differences near low/signed geometry",
+    "Some Density/Crossover settings closely matched by simple baselines",
+    "Aggressive luminance gradient reversals need visual judgement",
+    "Strip/frame5 OT marginal error 1.39294e-8 exceeds strict 1e-9 target",
+    "Frozen palette memberships change with exposure; future spatial Pigment consumer unimplemented"
+  ],
+  "package_validation": "459 file SHA256 checks; ad-hoc signature verification; extracted-package installer preserves existing startup and is idempotent; Inspector Lab pointer resolves"
+}
