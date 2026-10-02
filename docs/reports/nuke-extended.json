@@ -1,0 +1,115 @@
+{
+  "host": "17.0v1",
+  "checks": [
+    {
+      "name": "Unknown Auto fails rendering",
+      "passed": true,
+      "details": "Rendition Scene1: Unspecified / Interpretation Required: select source primaries and white point manually"
+    },
+    {
+      "name": "Premult explicit workflow",
+      "passed": true,
+      "details": [
+        0.1599999964237213,
+        0.03999999910593033,
+        0.019999999552965164,
+        0.4000000059604645
+      ]
+    },
+    {
+      "name": "Zero alpha preserves RGB",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Volume active CPU / alpha",
+      "passed": true,
+      "details": [
+        0.20467780530452728,
+        0.48674625158309937,
+        0.6752516627311707,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Density active CPU / alpha",
+      "passed": true,
+      "details": [
+        0.09805915504693985,
+        0.29293978214263916,
+        0.38617274165153503,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Crossover active CPU / alpha",
+      "passed": true,
+      "details": [
+        0.2020844966173172,
+        0.49244439601898193,
+        0.6455290913581848,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Strip active CPU / alpha",
+      "passed": true,
+      "details": [
+        0.06876273453235626,
+        0.31870710849761963,
+        0.47814980149269104,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Inspector cube slice",
+      "passed": true,
+      "details": [
+        0.392578125,
+        0.607421875,
+        0.5,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Inspector Reference difference and source alpha",
+      "passed": true,
+      "details": [
+        0.10000000149011612,
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Inspector disconnected procedural source",
+      "passed": true,
+      "details": [
+        0.05234374850988388,
+        0.9069444537162781,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "name": "Custom OCIO config-2020.ocio",
+      "passed": true,
+      "details": [
+        0.4000000059604645,
+        1.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Custom OCIO config-acescg-ocio2.4.ocio",
+      "passed": true,
+      "details": [
+        0.4000000059604645,
+        1.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ]
+    }
+  ]
+}

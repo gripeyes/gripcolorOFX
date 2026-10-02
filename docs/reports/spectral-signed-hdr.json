@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "strategies": {
+    "nnls_residual/max/residual": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0020871315882955432,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/max/signed auxiliary": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0020871315882955432,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/max/smooth participation": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0021367101937430633,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/max/smooth bypass": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.023061930131582087,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/norm/residual": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0020871315882955432,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/norm/signed auxiliary": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0020871315882955432,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/norm/smooth participation": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0021367101937430633,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/norm/smooth bypass": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.02306193013158203,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/luminance/residual": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0020871315882955432,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/luminance/signed auxiliary": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0020871315882955432,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/luminance/smooth participation": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0021367101937430633,
+      "adjacent_input_step": 0.002
+    },
+    "nnls_residual/luminance/smooth bypass": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.02306193013158203,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/max/residual": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0019870045886586016,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/max/signed auxiliary": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0019870045886586016,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/max/smooth participation": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.002238654799838813,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/max/smooth bypass": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.021967233578784662,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/norm/residual": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0019870045886586085,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/norm/signed auxiliary": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0019870045886586085,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/norm/smooth participation": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0022386547998386463,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/norm/smooth bypass": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.021967233578784717,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/luminance/residual": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.001987004588658553,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/luminance/signed auxiliary": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.001987004588658553,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/luminance/smooth participation": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.0022386547998386463,
+      "adjacent_input_step": 0.002
+    },
+    "smits_residual/luminance/smooth bypass": {
+      "active_nonfinite": 0,
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "near_negative_boundary_adjacent_delta": 0.021967233578784662,
+      "adjacent_input_step": 0.002
+    }
+  },
+  "semantics": "Attenuation of positive scene-radiance component plus retained signed information; material appearance oracle is separate.",
+  "selected_runtime_candidate": "Smooth positive three-basis coefficients + signed XYZ residual, native homogeneous coefficient-norm shape/scale decomposition.",
+  "reason": "No hard RGB clamp or residual loss; scale-separated continuous algebra shared with Metal. NNLS and Smits are oracle comparisons, not runtime requirements.",
+  "auxiliary_equivalence": "Parallel signed XYZ storage and residual restoration are algebraically identical in this experiment.",
+  "limits": [
+    "Luminance scaling must handle signed cancellation explicitly.",
+    "Smooth bypass can suppress useful looks on signed edges.",
+    "Residual dominance can attenuate chromatic influence for extreme colors.",
+    "Real compositing/visual acceptance and reconstruction-native methods remain pending."
+  ]
+}

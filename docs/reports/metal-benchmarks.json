@@ -1,0 +1,23 @@
+{"device":"Apple M2","method":"Offline contiguous RGBA buffers; command GPU time excludes upload, allocation, validation, and OFX host overhead. No host FPS claim.","measurements":[
+{"effect":"Scene","width":1920,"height":1080,"gpu_seconds":0.00263771,"megapixels_per_second":786.137},
+{"effect":"Tone","width":1920,"height":1080,"gpu_seconds":0.0152242,"megapixels_per_second":136.204},
+{"effect":"Volume","width":1920,"height":1080,"gpu_seconds":0.0187081,"megapixels_per_second":110.84},
+{"effect":"Density","width":1920,"height":1080,"gpu_seconds":0.00872367,"megapixels_per_second":237.698},
+{"effect":"Crossover","width":1920,"height":1080,"gpu_seconds":0.00443558,"megapixels_per_second":467.492},
+{"effect":"Crosstalk","width":1920,"height":1080,"gpu_seconds":0.000871958,"megapixels_per_second":2378.1},
+{"effect":"Strip","width":1920,"height":1080,"gpu_seconds":0.0050295,"megapixels_per_second":412.288},
+{"effect":"Scene","width":3840,"height":2160,"gpu_seconds":0.00412325,"megapixels_per_second":2011.62},
+{"effect":"Tone","width":3840,"height":2160,"gpu_seconds":0.0228311,"megapixels_per_second":363.294},
+{"effect":"Volume","width":3840,"height":2160,"gpu_seconds":0.0445474,"megapixels_per_second":186.193},
+{"effect":"Density","width":3840,"height":2160,"gpu_seconds":0.0285922,"megapixels_per_second":290.093},
+{"effect":"Crossover","width":3840,"height":2160,"gpu_seconds":0.0176641,"megapixels_per_second":469.562},
+{"effect":"Crosstalk","width":3840,"height":2160,"gpu_seconds":0.00334538,"megapixels_per_second":2479.36},
+{"effect":"Strip","width":3840,"height":2160,"gpu_seconds":0.0199802,"megapixels_per_second":415.132},
+{"effect":"Scene","width":7680,"height":4320,"gpu_seconds":0.0153601,"megapixels_per_second":2159.99},
+{"effect":"Tone","width":7680,"height":4320,"gpu_seconds":0.0762838,"megapixels_per_second":434.923},
+{"effect":"Volume","width":7680,"height":4320,"gpu_seconds":0.150651,"megapixels_per_second":220.228},
+{"effect":"Density","width":7680,"height":4320,"gpu_seconds":0.116819,"megapixels_per_second":284.008},
+{"effect":"Crossover","width":7680,"height":4320,"gpu_seconds":0.0716976,"megapixels_per_second":462.743},
+{"effect":"Crosstalk","width":7680,"height":4320,"gpu_seconds":0.0135536,"megapixels_per_second":2447.88},
+{"effect":"Strip","width":7680,"height":4320,"gpu_seconds":0.0813785,"megapixels_per_second":407.695}
+]}

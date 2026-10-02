@@ -1,0 +1,2690 @@
+{
+  "schema_version": 1,
+  "stops": [
+    -10,
+    -8,
+    -6,
+    -4,
+    -2,
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "configurations": [
+    {
+      "effect": 0,
+      "parameters": {
+        "exposure": 0.7
+      },
+      "metadata": {
+        "domain": "Scene Linear",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 0,
+      "parameters": {
+        "rPower": 1.2
+      },
+      "metadata": {
+        "domain": "Scene Linear",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.7500000596046448,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.6701231002807617,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.5647248029708862,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.4256508946418762,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.24214178323745728,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.3195079565048218,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.7411013841629028,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 1.297397255897522,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 2.0314338207244873,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 3.0000011920928955,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 1,
+      "parameters": {
+        "contrast": 1.15,
+        "toe": 0.2,
+        "shoulder": 0.2
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.99609375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 2,
+      "parameters": {
+        "v0_width": 360,
+        "v0_hueDelta": 10
+      },
+      "metadata": {
+        "domain": "Perceptual / Opponent",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Our real-cube-root signed extension",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Protected continuously",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric; local matrices / channel crossover gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 6.514631536447268e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 5.79489551455481e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 4.531917454642098e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 4.531917454642098e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 9.934105946740601e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 6.62273748730513e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 6.62273748730513e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 3.9692278619440913e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 9.106263973990281e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 7.450579460055451e-07,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 3,
+      "parameters": {
+        "density": 0.4
+      },
+      "metadata": {
+        "domain": "Spectral-derived",
+        "reference": "Scene-compatible radiance-base attenuation + signed residual",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Smooth positive emitted base + explicit signed XYZ residual",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Explicit anchor / distance protection",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric spectral basis; explicit custom record basis",
+        "status": "Spectral basis research candidate; artist/host acceptance pending",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.5642412304878235,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.5626171231269836,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.555666446685791,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.5191693902015686,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.35964009165763855,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.627731204032898,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 1.3579177856445312,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 1.8909422159194946,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 2.1624293327331543,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 2.276371479034424,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 4,
+      "parameters": {
+        "width": 360,
+        "darkHue": -10,
+        "brightHue": 15
+      },
+      "metadata": {
+        "domain": "Perceptual / Opponent",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Our real-cube-root signed extension",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Protected continuously",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric; local matrices / channel crossover gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.1590031236410141,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.1579878032207489,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.15373508632183075,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.13361208140850067,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.07316551357507706,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.07973062992095947,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.16524603962898254,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.23609808087348938,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.27710413932800293,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.29558509588241577,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 5,
+      "parameters": {
+        "rg": 0.08
+      },
+      "metadata": {
+        "domain": "Scene Linear",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Native",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 6,
+      "parameters": {
+        "separation": 0.6,
+        "palette": 0.3
+      },
+      "metadata": {
+        "domain": "Spectral-derived",
+        "reference": "Scene-compatible radiance-base attenuation + signed residual",
+        "exposure": "Equivariant",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Smooth positive emitted base + explicit signed XYZ residual",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Explicit anchor / distance protection",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric spectral basis; explicit custom record basis",
+        "status": "Spectral basis research candidate; artist/host acceptance pending",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1.6556934667733003e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 1.4432814054998744e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 2.1649222503583587e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 1.4432814054998744e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 1.4432814054998744e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 2.886562810999749e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 2.886562810999749e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 1.4432814054998744e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 2.886562810999749e-07,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 7,
+      "parameters": {
+        "mode": 0
+      },
+      "metadata": {
+        "domain": "Custom / diagnostic",
+        "reference": "Mode-dependent diagnostic, input mode scene-linear",
+        "exposure": "Equivariant",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Native",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research diagnostic",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 7,
+      "parameters": {
+        "mode": 9
+      },
+      "metadata": {
+        "domain": "Custom / diagnostic",
+        "reference": "Mode-dependent diagnostic, input mode scene-linear",
+        "exposure": "Non-equivariant",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Native",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research diagnostic",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 100000000.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 100000000.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 100000000.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 100000000.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 100000000.0,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 0,
+      "parameters": {
+        "rPower": 1.05,
+        "cdlDomain": 1,
+        "lookDomain": 0
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.5707718729972839,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.4553333520889282,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.3227974772453308,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.18044859170913696,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.04771169647574425,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.11147397756576538,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.31426626443862915,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.6081233620643616,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 1.0156883001327515,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 1.5742920637130737,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 1,
+      "parameters": {
+        "contrast": 1.1,
+        "lookDomain": 0
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.5000002980232239,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.4256508946418762,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.34024620056152344,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.24214178323745728,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.1294495314359665,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.14869853854179382,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.3195084035396576,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.5157173275947571,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.741101861000061,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 1.0000005960464478,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 4,
+      "parameters": {
+        "mode": 1,
+        "darkr": 0.15,
+        "brightb": -0.1,
+        "lookDomain": 0
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Only with equal channel trajectories",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative RGB",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.08950170874595642,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.08224862813949585,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.06826715171337128,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.04681396484375,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.020493628457188606,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.016564512625336647,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.031183436512947083,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.04172993451356888,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.04855339974164963,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.05151776596903801,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 5,
+      "parameters": {
+        "domain": 1,
+        "rg": 0.03,
+        "lookDomain": 0
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 6.622738055739319e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 1.521426753470223e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 1.1920928955078125e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 8.940696716308594e-08,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 1.0142844786287242e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 1.0142844786287242e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 3.042853506940446e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 3.042853506940446e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 1.1920928955078125e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 7.45058002848964e-07,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 0,
+      "parameters": {
+        "rPower": 1.05,
+        "cdlDomain": 1,
+        "lookDomain": 1
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.99609375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 1,
+      "parameters": {
+        "contrast": 1.1,
+        "lookDomain": 1
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 254.99998474121094,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.9960936903953552,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 1.0000026226043701,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 4,
+      "parameters": {
+        "mode": 1,
+        "darkr": 0.15,
+        "brightb": -0.1,
+        "lookDomain": 1
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Only with equal channel trajectories",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative RGB",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.00001525878906,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.000000953674316,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375000596046448,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.9960938096046448,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 5,
+      "parameters": {
+        "domain": 1,
+        "rg": 0.03,
+        "lookDomain": 1
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.005696524865925312,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.005697133485227823,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.005697133485227823,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.005450747907161713,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.0026484988629817963,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.0011494867503643036,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.0015587098896503448,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.0016914643347263336,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.0017322711646556854,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.0017443783581256866,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 0,
+      "parameters": {
+        "rPower": 1.05,
+        "cdlDomain": 1,
+        "lookDomain": 2
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.99609375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 1,
+      "parameters": {
+        "contrast": 1.1,
+        "lookDomain": 2
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 254.99998474121094,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.000003814697266,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.9843750596046448,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.9960936903953552,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 4,
+      "parameters": {
+        "mode": 1,
+        "darkr": 0.15,
+        "brightb": -0.1,
+        "lookDomain": 2
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Only with equal channel trajectories",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative RGB",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 254.99998474121094,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.000003814697266,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.9843750596046448,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.9960936903953552,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 5,
+      "parameters": {
+        "domain": 1,
+        "rg": 0.03,
+        "lookDomain": 2
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.006575181148946285,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.006509548984467983,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.0062575144693255424,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.005354441702365875,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.002861486515030265,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.000536664214450866,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.0006910248193889856,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.0007306538755074143,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.0007396742585115135,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.0007406878285109997,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 0,
+      "parameters": {
+        "rPower": 1.05,
+        "cdlDomain": 1,
+        "lookDomain": 3
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.10880085825920105,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.056181665509939194,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.010629803873598576,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.007329107262194157,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.0037915040738880634,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.017248990014195442,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.05231790617108345,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.10491371154785156,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.1750122755765915,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.2633526921272278,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 1,
+      "parameters": {
+        "contrast": 1.1,
+        "lookDomain": 3
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 254.99998474121094,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.9960936903953552,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 4,
+      "parameters": {
+        "mode": 1,
+        "darkr": 0.15,
+        "brightb": -0.1,
+        "lookDomain": 3
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Only with equal channel trajectories",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative RGB",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1022.9999389648438,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.99609375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990233778953552,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 5,
+      "parameters": {
+        "domain": 1,
+        "rg": 0.03,
+        "lookDomain": 3
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.005503777880221605,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.005503777880221605,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.005503777880221605,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.004643805790692568,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.0021151716355234385,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.001068495330400765,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.0014870988670736551,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.0016308093909174204,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.0016765783075243235,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.0016904922667890787,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 0,
+      "parameters": {
+        "rPower": 1.05,
+        "cdlDomain": 1,
+        "lookDomain": 4
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.15751561522483826,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.027903499081730843,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.03963026776909828,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.045291878283023834,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.030825559049844742,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.045663606375455856,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.10586480796337128,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.18110886216163635,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.27252450585365295,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.38179370760917664,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 1,
+      "parameters": {
+        "contrast": 1.1,
+        "lookDomain": 4
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.5000003576278687,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.4256508946418762,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.34024620056152344,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.24214178323745728,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.12944990396499634,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.14869891107082367,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.3195084035396576,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.5157178044319153,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.7411024570465088,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 1.000001311302185,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 4,
+      "parameters": {
+        "mode": 1,
+        "darkr": 0.15,
+        "brightb": -0.1,
+        "lookDomain": 4
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Only with equal channel trajectories",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative RGB",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.08950117230415344,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.08224771171808243,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.06826654076576233,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.046813368797302246,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.020493049174547195,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.01656506210565567,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.031183743849396706,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.041729748249053955,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.048552803695201874,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.051518142223358154,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 5,
+      "parameters": {
+        "domain": 1,
+        "rg": 0.03,
+        "lookDomain": 4
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 7.099986305547645e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 7.099986305547645e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 6.5565143358981e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 7.099986305547645e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 6.5565143358981e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 6.5565143358981e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 7.099986305547645e-07,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 1.3185689340389217e-06,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 1.3185689340389217e-06,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 1.3185689340389217e-06,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 0,
+      "parameters": {
+        "rPower": 1.05,
+        "cdlDomain": 1,
+        "lookDomain": 5
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.00001525878906,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.000000953674316,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375000596046448,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 1.0156883001327515,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 1.5742920637130737,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 1,
+      "parameters": {
+        "contrast": 1.1,
+        "lookDomain": 5
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 255.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.000003814697266,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 15.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.9843750596046448,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.99609375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 1.0000005960464478,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 4,
+      "parameters": {
+        "mode": 1,
+        "darkr": 0.15,
+        "brightb": -0.1,
+        "lookDomain": 5
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Only with equal channel trajectories",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative RGB",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 1023.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 254.99998474121094,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 63.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 14.999999046325684,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 3.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.75,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9374999403953552,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.9960936903953552,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    },
+    {
+      "effect": 5,
+      "parameters": {
+        "domain": 1,
+        "rg": 0.03,
+        "lookDomain": 5
+      },
+      "metadata": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Non-equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Scale-dependent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      },
+      "sweeps": [
+        {
+          "stops": -10,
+          "max_relative_equivariance_error": 0.11630163341760635,
+          "nonfinite": 0
+        },
+        {
+          "stops": -8,
+          "max_relative_equivariance_error": 0.11596057564020157,
+          "nonfinite": 0
+        },
+        {
+          "stops": -6,
+          "max_relative_equivariance_error": 0.11459632962942123,
+          "nonfinite": 0
+        },
+        {
+          "stops": -4,
+          "max_relative_equivariance_error": 0.10913936793804169,
+          "nonfinite": 0
+        },
+        {
+          "stops": -2,
+          "max_relative_equivariance_error": 0.08731149137020111,
+          "nonfinite": 0
+        },
+        {
+          "stops": 0,
+          "max_relative_equivariance_error": 0.0,
+          "nonfinite": 0
+        },
+        {
+          "stops": 2,
+          "max_relative_equivariance_error": 0.34924596548080444,
+          "nonfinite": 0
+        },
+        {
+          "stops": 4,
+          "max_relative_equivariance_error": 0.9375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 6,
+          "max_relative_equivariance_error": 0.984375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 8,
+          "max_relative_equivariance_error": 0.99609375,
+          "nonfinite": 0
+        },
+        {
+          "stops": 10,
+          "max_relative_equivariance_error": 0.9990234375,
+          "nonfinite": 0
+        }
+      ]
+    }
+  ]
+}

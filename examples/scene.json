@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "effect": "Scene",
+  "parameters": {"interpretation": 1, "modelVersion": 0, "adapterVersion": 0, "exposure": 1},
+  "samples": [[0.18, 0.18, 0.18, 1], [-0.1, 0.2, 4, 0.3]]
+}

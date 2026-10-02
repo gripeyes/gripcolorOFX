@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "domains": [
+    {
+      "domain": "Pure stops",
+      "valid_samples": 6000,
+      "nonfinite": 0,
+      "max_absolute_error": 0.5625,
+      "max_tolerance_ratio": 0.03648788516026085,
+      "gray_code": 0.0,
+      "normal_stop_slope": 1.0000791735365056,
+      "reference_encoding_error": null,
+      "negative_support": false
+    },
+    {
+      "domain": "ACEScct",
+      "valid_samples": 8001,
+      "nonfinite": 0,
+      "max_absolute_error": 2.0,
+      "max_tolerance_ratio": 0.1588625566206513,
+      "gray_code": 0.41358840465545654,
+      "normal_stop_slope": 0.057220458984375,
+      "reference_encoding_error": 0.0048823906981851906,
+      "negative_support": true
+    },
+    {
+      "domain": "LogC4",
+      "valid_samples": 8001,
+      "nonfinite": 0,
+      "max_absolute_error": 1.3125,
+      "max_tolerance_ratio": 0.103106023096098,
+      "gray_code": 0.2783958315849304,
+      "normal_stop_slope": 0.05558133125305176,
+      "reference_encoding_error": 0.010992807525326498,
+      "negative_support": true
+    },
+    {
+      "domain": "DaVinci Intermediate",
+      "valid_samples": 8001,
+      "nonfinite": 0,
+      "max_absolute_error": 0.6875,
+      "max_tolerance_ratio": 0.05420241877411579,
+      "gray_code": 0.3360432982444763,
+      "normal_stop_slope": 0.07018446922302246,
+      "reference_encoding_error": 0.006698477693134919,
+      "negative_support": true
+    },
+    {
+      "domain": "AgX unclamped stops",
+      "valid_samples": 6000,
+      "nonfinite": 0,
+      "max_absolute_error": 1.875,
+      "max_tolerance_ratio": 0.09594478588634989,
+      "gray_code": 0.6060606241226196,
+      "normal_stop_slope": 0.06079673767089844,
+      "reference_encoding_error": null,
+      "negative_support": false
+    },
+    {
+      "domain": "LookLog candidate",
+      "valid_samples": 8001,
+      "nonfinite": 0,
+      "max_absolute_error": 0.5625,
+      "max_tolerance_ratio": 0.03648788516026085,
+      "gray_code": 0.0,
+      "normal_stop_slope": 1.0000791735365056,
+      "reference_encoding_error": null,
+      "negative_support": true
+    }
+  ],
+  "custom_ocio_max_encoding_error": 0.5,
+  "selection": "ACEScct scalar encoding for first Tone/Crossover candidates; retain all candidates for research",
+  "rationale": "ACEScct provides an established C1 tangent toe, exact constant stop increments above the toe, negative extension, and accepted float32 round trips. Custom LookLog shows no required unique behavior after artist controls are expressed in normalized stops. Only scalar encoding is reused; AP1 primaries are not imposed.",
+  "limitations": "Pure stops and unclamped AgX stop coordinates exclude zero/negative values. AgX entry is the documented log normalization only, not full AgX, inset, clipping or display rendering. Appearance/artist acceptance remains separate from numerical comparison."
+}

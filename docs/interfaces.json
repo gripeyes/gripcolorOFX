@@ -1,0 +1,4100 @@
+{
+  "schema_version": 1,
+  "effects": {
+    "Scene": {
+      "identifier": "org.gripcolor.rendition.Scene",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "lookDomain",
+          "label": "Look coordinate encoding",
+          "group": "Expert",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 5.0,
+          "choices": [
+            "Pure stops (positive only)",
+            "ACEScct scalar encoding",
+            "LogC4 scalar encoding",
+            "DaVinci Intermediate scalar encoding",
+            "AgX unclamped stops (positive only)",
+            "LookLog candidate"
+          ]
+        },
+        {
+          "id": "exposure",
+          "label": "Exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "rExposure",
+          "label": "r exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "gExposure",
+          "label": "g exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "bExposure",
+          "label": "b exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "temperature",
+          "label": "Illuminant estimate (daylight)",
+          "group": "Artist",
+          "unit": "K",
+          "default": 6504.0,
+          "min": 4000.0,
+          "max": 25000.0,
+          "choices": []
+        },
+        {
+          "id": "tint",
+          "label": "Illuminant tint",
+          "group": "Artist",
+          "unit": "CIE v offset",
+          "default": 0.0,
+          "min": -0.05,
+          "max": 0.05,
+          "choices": []
+        },
+        {
+          "id": "adaptation",
+          "label": "Chromatic adaptation",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": [
+            "Bradford",
+            "CAT16",
+            "XYZ scaling"
+          ]
+        },
+        {
+          "id": "m00",
+          "label": "M11",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m01",
+          "label": "M12",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m02",
+          "label": "M13",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m10",
+          "label": "M21",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m11",
+          "label": "M22",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m12",
+          "label": "M23",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m20",
+          "label": "M31",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m21",
+          "label": "M32",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m22",
+          "label": "M33",
+          "group": "Custom matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "matrixMix",
+          "label": "Matrix mix",
+          "group": "Custom matrix",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "cdlDomain",
+          "label": "SOP / saturation domain",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Scene Linear",
+            "Selected look coordinate"
+          ]
+        },
+        {
+          "id": "rSlope",
+          "label": "r slope",
+          "group": "SOP",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "rOffset",
+          "label": "r offset",
+          "group": "SOP",
+          "unit": "domain units",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "rPower",
+          "label": "r signed power",
+          "group": "SOP",
+          "unit": "exponent",
+          "default": 1.0,
+          "min": 0.05,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "gSlope",
+          "label": "g slope",
+          "group": "SOP",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "gOffset",
+          "label": "g offset",
+          "group": "SOP",
+          "unit": "domain units",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "gPower",
+          "label": "g signed power",
+          "group": "SOP",
+          "unit": "exponent",
+          "default": 1.0,
+          "min": 0.05,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "bSlope",
+          "label": "b slope",
+          "group": "SOP",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "bOffset",
+          "label": "b offset",
+          "group": "SOP",
+          "unit": "domain units",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "bPower",
+          "label": "b signed power",
+          "group": "SOP",
+          "unit": "exponent",
+          "default": 1.0,
+          "min": 0.05,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "saturation",
+          "label": "Saturation",
+          "group": "SOP",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Scene Linear",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Equivariant",
+        "invertibility": "Conditional exact",
+        "gamut": "Unbounded",
+        "negative": "Native / signed-power extension",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric CAT/exposure; gamut-relative RGB/SOP",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Tone": {
+      "identifier": "org.gripcolor.rendition.Tone",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "lookDomain",
+          "label": "Look coordinate encoding",
+          "group": "Expert",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 5.0,
+          "choices": [
+            "Pure stops (positive only)",
+            "ACEScct scalar encoding",
+            "LogC4 scalar encoding",
+            "DaVinci Intermediate scalar encoding",
+            "AgX unclamped stops (positive only)",
+            "LookLog candidate"
+          ]
+        },
+        {
+          "id": "exposure",
+          "label": "Exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "contrast",
+          "label": "Contrast",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.05,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "pivot",
+          "label": "Pivot relative to 0.18",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -12.0,
+          "max": 12.0,
+          "choices": []
+        },
+        {
+          "id": "toe",
+          "label": "Toe strength",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.8,
+          "choices": []
+        },
+        {
+          "id": "toeExtent",
+          "label": "Toe extent",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 4.0,
+          "min": 0.1,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "shoulder",
+          "label": "Shoulder strength",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.8,
+          "choices": []
+        },
+        {
+          "id": "shoulderExtent",
+          "label": "Shoulder extent",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 4.0,
+          "min": 0.1,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "shadowDensity",
+          "label": "Shadow density",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "highlightDensity",
+          "label": "Highlight density",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "preserveGray",
+          "label": "Preserve middle gray (excluding exposure)",
+          "group": "Artist",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Off",
+            "On"
+          ]
+        },
+        {
+          "id": "linked",
+          "label": "Channel mode",
+          "group": "Artist",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Linked coordinate displacement",
+            "Per-channel"
+          ]
+        },
+        {
+          "id": "rContrast",
+          "label": "r contrast",
+          "group": "Channels",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.05,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "gContrast",
+          "label": "g contrast",
+          "group": "Channels",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.05,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "bContrast",
+          "label": "b contrast",
+          "group": "Channels",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.05,
+          "max": 4.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Look / Log",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Equivariant",
+        "invertibility": "Monotonic scalar, approximate inverse; linked inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Selected encoder domain",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Preserved with linked/equal per-channel settings",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Volume": {
+      "identifier": "org.gripcolor.rendition.Volume",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "v0_hue",
+          "label": "Hue center",
+          "group": "Red",
+          "unit": "degrees",
+          "default": 29.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v0_width",
+          "label": "Hue width",
+          "group": "Red",
+          "unit": "degrees",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v0_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Red selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Red selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_evMin",
+          "label": "Minimum exposure",
+          "group": "Red selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v0_evMax",
+          "label": "Maximum exposure",
+          "group": "Red selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v0_softness",
+          "label": "Selection softness",
+          "group": "Red selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v0_neutral",
+          "label": "Neutral protection",
+          "group": "Red",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "v0_hueDelta",
+          "label": "Hue displacement",
+          "group": "Red",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "v0_chroma",
+          "label": "Chroma scale",
+          "group": "Red",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Red",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "v0_exposure",
+          "label": "Exposure displacement",
+          "group": "Red",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m00",
+          "label": "Local M11",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m01",
+          "label": "Local M12",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m02",
+          "label": "Local M13",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m10",
+          "label": "Local M21",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m11",
+          "label": "Local M22",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m12",
+          "label": "Local M23",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m20",
+          "label": "Local M31",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m21",
+          "label": "Local M32",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_m22",
+          "label": "Local M33",
+          "group": "Red matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v0_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Red matrix",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v1_hue",
+          "label": "Hue center",
+          "group": "Yellow",
+          "unit": "degrees",
+          "default": 110.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v1_width",
+          "label": "Hue width",
+          "group": "Yellow",
+          "unit": "degrees",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v1_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Yellow selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Yellow selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_evMin",
+          "label": "Minimum exposure",
+          "group": "Yellow selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v1_evMax",
+          "label": "Maximum exposure",
+          "group": "Yellow selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v1_softness",
+          "label": "Selection softness",
+          "group": "Yellow selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v1_neutral",
+          "label": "Neutral protection",
+          "group": "Yellow",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "v1_hueDelta",
+          "label": "Hue displacement",
+          "group": "Yellow",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "v1_chroma",
+          "label": "Chroma scale",
+          "group": "Yellow",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Yellow",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "v1_exposure",
+          "label": "Exposure displacement",
+          "group": "Yellow",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m00",
+          "label": "Local M11",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m01",
+          "label": "Local M12",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m02",
+          "label": "Local M13",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m10",
+          "label": "Local M21",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m11",
+          "label": "Local M22",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m12",
+          "label": "Local M23",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m20",
+          "label": "Local M31",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m21",
+          "label": "Local M32",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_m22",
+          "label": "Local M33",
+          "group": "Yellow matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v1_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Yellow matrix",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v2_hue",
+          "label": "Hue center",
+          "group": "Green",
+          "unit": "degrees",
+          "default": 145.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v2_width",
+          "label": "Hue width",
+          "group": "Green",
+          "unit": "degrees",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v2_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Green selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Green selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_evMin",
+          "label": "Minimum exposure",
+          "group": "Green selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v2_evMax",
+          "label": "Maximum exposure",
+          "group": "Green selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v2_softness",
+          "label": "Selection softness",
+          "group": "Green selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v2_neutral",
+          "label": "Neutral protection",
+          "group": "Green",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "v2_hueDelta",
+          "label": "Hue displacement",
+          "group": "Green",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "v2_chroma",
+          "label": "Chroma scale",
+          "group": "Green",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Green",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "v2_exposure",
+          "label": "Exposure displacement",
+          "group": "Green",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m00",
+          "label": "Local M11",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m01",
+          "label": "Local M12",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m02",
+          "label": "Local M13",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m10",
+          "label": "Local M21",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m11",
+          "label": "Local M22",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m12",
+          "label": "Local M23",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m20",
+          "label": "Local M31",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m21",
+          "label": "Local M32",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_m22",
+          "label": "Local M33",
+          "group": "Green matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v2_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Green matrix",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v3_hue",
+          "label": "Hue center",
+          "group": "Cyan",
+          "unit": "degrees",
+          "default": 195.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v3_width",
+          "label": "Hue width",
+          "group": "Cyan",
+          "unit": "degrees",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v3_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Cyan selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Cyan selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_evMin",
+          "label": "Minimum exposure",
+          "group": "Cyan selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v3_evMax",
+          "label": "Maximum exposure",
+          "group": "Cyan selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v3_softness",
+          "label": "Selection softness",
+          "group": "Cyan selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v3_neutral",
+          "label": "Neutral protection",
+          "group": "Cyan",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "v3_hueDelta",
+          "label": "Hue displacement",
+          "group": "Cyan",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "v3_chroma",
+          "label": "Chroma scale",
+          "group": "Cyan",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Cyan",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "v3_exposure",
+          "label": "Exposure displacement",
+          "group": "Cyan",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m00",
+          "label": "Local M11",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m01",
+          "label": "Local M12",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m02",
+          "label": "Local M13",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m10",
+          "label": "Local M21",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m11",
+          "label": "Local M22",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m12",
+          "label": "Local M23",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m20",
+          "label": "Local M31",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m21",
+          "label": "Local M32",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_m22",
+          "label": "Local M33",
+          "group": "Cyan matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v3_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Cyan matrix",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v4_hue",
+          "label": "Hue center",
+          "group": "Blue",
+          "unit": "degrees",
+          "default": 265.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v4_width",
+          "label": "Hue width",
+          "group": "Blue",
+          "unit": "degrees",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v4_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Blue selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Blue selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_evMin",
+          "label": "Minimum exposure",
+          "group": "Blue selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v4_evMax",
+          "label": "Maximum exposure",
+          "group": "Blue selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v4_softness",
+          "label": "Selection softness",
+          "group": "Blue selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v4_neutral",
+          "label": "Neutral protection",
+          "group": "Blue",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "v4_hueDelta",
+          "label": "Hue displacement",
+          "group": "Blue",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "v4_chroma",
+          "label": "Chroma scale",
+          "group": "Blue",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Blue",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "v4_exposure",
+          "label": "Exposure displacement",
+          "group": "Blue",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m00",
+          "label": "Local M11",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m01",
+          "label": "Local M12",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m02",
+          "label": "Local M13",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m10",
+          "label": "Local M21",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m11",
+          "label": "Local M22",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m12",
+          "label": "Local M23",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m20",
+          "label": "Local M31",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m21",
+          "label": "Local M32",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_m22",
+          "label": "Local M33",
+          "group": "Blue matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v4_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Blue matrix",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v5_hue",
+          "label": "Hue center",
+          "group": "Magenta",
+          "unit": "degrees",
+          "default": 325.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v5_width",
+          "label": "Hue width",
+          "group": "Magenta",
+          "unit": "degrees",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "v5_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Magenta selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Magenta selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_evMin",
+          "label": "Minimum exposure",
+          "group": "Magenta selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v5_evMax",
+          "label": "Maximum exposure",
+          "group": "Magenta selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "v5_softness",
+          "label": "Selection softness",
+          "group": "Magenta selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "v5_neutral",
+          "label": "Neutral protection",
+          "group": "Magenta",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "v5_hueDelta",
+          "label": "Hue displacement",
+          "group": "Magenta",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "v5_chroma",
+          "label": "Chroma scale",
+          "group": "Magenta",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Magenta",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "v5_exposure",
+          "label": "Exposure displacement",
+          "group": "Magenta",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m00",
+          "label": "Local M11",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m01",
+          "label": "Local M12",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m02",
+          "label": "Local M13",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m10",
+          "label": "Local M21",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m11",
+          "label": "Local M22",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m12",
+          "label": "Local M23",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m20",
+          "label": "Local M31",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m21",
+          "label": "Local M32",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_m22",
+          "label": "Local M33",
+          "group": "Magenta matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "v5_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Magenta matrix",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "overlap",
+          "label": "Overlap composition",
+          "group": "Expert",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 3.0,
+          "choices": [
+            "Weighted deltas",
+            "Normalized weighted deltas",
+            "Bounded vector accumulation",
+            "Shared field"
+          ]
+        },
+        {
+          "id": "debug",
+          "label": "Selection view",
+          "group": "Diagnostic",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 7.0,
+          "choices": [
+            "Off",
+            "Combined weight",
+            "Red",
+            "Yellow",
+            "Green",
+            "Cyan",
+            "Blue",
+            "Magenta"
+          ]
+        }
+      ],
+      "semantics": {
+        "domain": "Perceptual / Opponent",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Our real-cube-root signed extension",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Protected continuously",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric; local matrices / channel crossover gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Density": {
+      "identifier": "org.gripcolor.rendition.Density",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "hue",
+          "label": "Hue center",
+          "group": "Selection",
+          "unit": "degrees",
+          "default": 195.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "width",
+          "label": "Hue width",
+          "group": "Selection",
+          "unit": "degrees",
+          "default": 360.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "evMin",
+          "label": "Minimum exposure",
+          "group": "Selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "evMax",
+          "label": "Maximum exposure",
+          "group": "Selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "softness",
+          "label": "Selection softness",
+          "group": "Selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "neutral",
+          "label": "Neutral protection",
+          "group": "Selection",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "density",
+          "label": "Density",
+          "group": "Artist",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "chromaCoupling",
+          "label": "Chroma-density coupling",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "highlightProtection",
+          "label": "Highlight protection",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "shadowWeight",
+          "label": "Shadow weighting",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "debug",
+          "label": "Density-only view",
+          "group": "Diagnostic",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Off",
+            "Weight"
+          ]
+        }
+      ],
+      "semantics": {
+        "domain": "Spectral-derived",
+        "reference": "Scene-compatible radiance-base attenuation + signed residual",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Smooth positive emitted base + explicit signed XYZ residual",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Explicit anchor / distance protection",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric spectral basis; explicit custom record basis",
+        "status": "Spectral basis research candidate; artist/host acceptance pending",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Crossover": {
+      "identifier": "org.gripcolor.rendition.Crossover",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "lookDomain",
+          "label": "Look coordinate encoding",
+          "group": "Expert",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 5.0,
+          "choices": [
+            "Pure stops (positive only)",
+            "ACEScct scalar encoding",
+            "LogC4 scalar encoding",
+            "DaVinci Intermediate scalar encoding",
+            "AgX unclamped stops (positive only)",
+            "LookLog candidate"
+          ]
+        },
+        {
+          "id": "mode",
+          "label": "Crossover mode",
+          "group": "Artist",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Hue trajectories",
+            "Channel trajectories"
+          ]
+        },
+        {
+          "id": "hue",
+          "label": "Hue center",
+          "group": "Selection",
+          "unit": "degrees",
+          "default": 195.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "width",
+          "label": "Hue width",
+          "group": "Selection",
+          "unit": "degrees",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Selection",
+          "unit": "C / |L|",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Selection",
+          "unit": "C / |L|",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "evMin",
+          "label": "Minimum exposure",
+          "group": "Selection",
+          "unit": "stops",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "evMax",
+          "label": "Maximum exposure",
+          "group": "Selection",
+          "unit": "stops",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "softness",
+          "label": "Selection softness",
+          "group": "Selection",
+          "unit": "fraction",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "neutral",
+          "label": "Neutral protection",
+          "group": "Selection",
+          "unit": "C / |L|",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "darkPivot",
+          "label": "Dark transition center",
+          "group": "Artist",
+          "unit": "stops",
+          "default": -3.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "brightPivot",
+          "label": "Bright transition center",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 3.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "transition",
+          "label": "Transition width",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 2.0,
+          "min": 0.1,
+          "max": 10.0,
+          "choices": []
+        },
+        {
+          "id": "darkHue",
+          "label": "dark hue displacement",
+          "group": "Artist",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "darkChroma",
+          "label": "dark chroma scale",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "darkDensity",
+          "label": "dark density",
+          "group": "Artist",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "darkr",
+          "label": "dark r displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "darkg",
+          "label": "dark g displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "darkb",
+          "label": "dark b displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "midHue",
+          "label": "mid hue displacement",
+          "group": "Artist",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "midChroma",
+          "label": "mid chroma scale",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "midDensity",
+          "label": "mid density",
+          "group": "Artist",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "midr",
+          "label": "mid r displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "midg",
+          "label": "mid g displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "midb",
+          "label": "mid b displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "brightHue",
+          "label": "bright hue displacement",
+          "group": "Artist",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "brightChroma",
+          "label": "bright chroma scale",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "brightDensity",
+          "label": "bright density",
+          "group": "Artist",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "brightr",
+          "label": "bright r displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "brightg",
+          "label": "bright g displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "brightb",
+          "label": "bright b displacement",
+          "group": "Channels",
+          "unit": "normalized look stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Perceptual / Opponent",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Conditioned",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Our real-cube-root signed extension",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Protected continuously",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric; local matrices / channel crossover gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Crosstalk": {
+      "identifier": "org.gripcolor.rendition.Crosstalk",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "lookDomain",
+          "label": "Look coordinate encoding",
+          "group": "Expert",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 5.0,
+          "choices": [
+            "Pure stops (positive only)",
+            "ACEScct scalar encoding",
+            "LogC4 scalar encoding",
+            "DaVinci Intermediate scalar encoding",
+            "AgX unclamped stops (positive only)",
+            "LookLog candidate"
+          ]
+        },
+        {
+          "id": "m00",
+          "label": "M11",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m01",
+          "label": "M12",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m02",
+          "label": "M13",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m10",
+          "label": "M21",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m11",
+          "label": "M22",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m12",
+          "label": "M23",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m20",
+          "label": "M31",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m21",
+          "label": "M32",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m22",
+          "label": "M33",
+          "group": "Matrix",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "mode",
+          "label": "Matrix constraints",
+          "group": "Artist",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 3.0,
+          "choices": [
+            "Unrestricted",
+            "Neutral-preserving (row sums = 1)",
+            "Row-sum locked",
+            "Luminance preserving"
+          ]
+        },
+        {
+          "id": "domain",
+          "label": "Processing domain",
+          "group": "Artist",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Scene Linear",
+            "Selected look coordinate"
+          ]
+        },
+        {
+          "id": "rowSum",
+          "label": "Locked row sum",
+          "group": "Expert",
+          "unit": "factor",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "mix",
+          "label": "Mix",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "rg",
+          "label": "rg interaction",
+          "group": "Artist",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "rb",
+          "label": "rb interaction",
+          "group": "Artist",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "gr",
+          "label": "gr interaction",
+          "group": "Artist",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "gb",
+          "label": "gb interaction",
+          "group": "Artist",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "br",
+          "label": "br interaction",
+          "group": "Artist",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "bg",
+          "label": "bg interaction",
+          "group": "Artist",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Scene Linear",
+        "reference": "Scene-compatible rendition",
+        "exposure": "Equivariant",
+        "invertibility": "Exact if effective matrix nonsingular",
+        "gamut": "Unbounded",
+        "negative": "Native",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Preserved",
+        "neutral_magnitude": "Preserved",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research candidate",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Strip": {
+      "identifier": "org.gripcolor.rendition.Strip",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "mode",
+          "label": "Separation system",
+          "group": "Artist",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": [
+            "Three-channel",
+            "Two-channel",
+            "Custom basis"
+          ]
+        },
+        {
+          "id": "separation",
+          "label": "Separation",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "leakage",
+          "label": "Leakage",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.1,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "density",
+          "label": "Dye density coupling",
+          "group": "Artist",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "palette",
+          "label": "Palette compression / expansion",
+          "group": "Artist",
+          "unit": "artistic units",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "neutralAnchor",
+          "label": "Neutral anchor",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "redAnchor",
+          "label": "Red / skin anchor",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "mix",
+          "label": "Global mix",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "rContribution",
+          "label": "r separation contribution",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "rWeight",
+          "label": "r recombination weight",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "gContribution",
+          "label": "g separation contribution",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "gWeight",
+          "label": "g recombination weight",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "bContribution",
+          "label": "b separation contribution",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "bWeight",
+          "label": "b recombination weight",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "m00",
+          "label": "M11",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m01",
+          "label": "M12",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m02",
+          "label": "M13",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m10",
+          "label": "M21",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m11",
+          "label": "M22",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m12",
+          "label": "M23",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m20",
+          "label": "M31",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m21",
+          "label": "M32",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "m22",
+          "label": "M33",
+          "group": "Custom basis",
+          "unit": "coefficient",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Spectral-derived",
+        "reference": "Scene-compatible radiance-base attenuation + signed residual",
+        "exposure": "Equivariant",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Smooth positive emitted base + explicit signed XYZ residual",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Explicit anchor / distance protection",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Colorimetric spectral basis; explicit custom record basis",
+        "status": "Spectral basis research candidate; artist/host acceptance pending",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    },
+    "Inspector": {
+      "identifier": "org.gripcolor.rendition.Inspector",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / interpretation required",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 research candidate"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "mode",
+          "label": "Diagnostic",
+          "group": "Artist",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 10.0,
+          "choices": [
+            "Input",
+            "Exposure ramp",
+            "Neutral ramp",
+            "RGB ramps",
+            "Hue sweep",
+            "Chroma sweep",
+            "Reference chart",
+            "Color cube slice",
+            "Difference vs Reference",
+            "Out of nominal RGB gamut",
+            "NaN / Inf"
+          ]
+        },
+        {
+          "id": "evMin",
+          "label": "Minimum exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": -12.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "evMax",
+          "label": "Maximum exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 12.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "slice",
+          "label": "Cube slice blue",
+          "group": "Artist",
+          "unit": "linear RGB",
+          "default": 0.5,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Custom / diagnostic",
+        "reference": "Mode-dependent diagnostic, input mode scene-linear",
+        "exposure": "Equivariant",
+        "invertibility": "Non-invertible",
+        "gamut": "Unbounded",
+        "negative": "Native",
+        "hdr": "Scale-independent",
+        "neutral_axis": "Configuration-dependent",
+        "neutral_magnitude": "Not promised",
+        "gamut_dependence": "Gamut-relative",
+        "status": "Research diagnostic",
+        "limitations": "No production host/artist acceptance; float overflow reports error"
+      }
+    }
+  }
+}

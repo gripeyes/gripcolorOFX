@@ -1,0 +1,92 @@
+{
+  "IPT": {
+    "roundtrip_max_xyz_error": 1.4432899320127035e-15,
+    "nonfinite": 0,
+    "seconds_3000_forward_inverse": 0.0004796249995706603,
+    "exposure_hue_drift_degrees": [
+      5.088887490341627e-14,
+      7.63333123551244e-14,
+      7.63333123551244e-14,
+      7.63333123551244e-14,
+      4.134721085902572e-14,
+      1.6538884343610288e-13
+    ],
+    "native_negative_claim": false
+  },
+  "Oklab": {
+    "roundtrip_max_xyz_error": 1.887379141862766e-15,
+    "nonfinite": 0,
+    "seconds_3000_forward_inverse": 0.00047745800111442804,
+    "exposure_hue_drift_degrees": [
+      9.54166404439055e-14,
+      5.088887490341627e-14,
+      1.1449996853268662e-13,
+      1.0177774980683254e-13,
+      6.043053894780682e-14,
+      2.7988881196878945e-13
+    ],
+    "native_negative_claim": false
+  },
+  "JzAzBz": {
+    "roundtrip_max_xyz_error": 8.537615059367454e-14,
+    "nonfinite": 0,
+    "seconds_3000_forward_inverse": 0.0007774589976179413,
+    "exposure_hue_drift_degrees": [
+      14.728492144183383,
+      2.739097184221594,
+      20.511369421471564,
+      7.4315843791216345,
+      0.723015111639661,
+      17.857101387517005
+    ],
+    "native_negative_claim": false
+  },
+  "CAM16-UCS": {
+    "roundtrip_max_xyz_error": 4.218847493575595e-15,
+    "nonfinite": 0,
+    "seconds_3000_forward_inverse": 0.0018398749962216243,
+    "exposure_hue_drift_degrees": [
+      1.5505873395115901,
+      1.0374133081158643,
+      2.9608345126050204,
+      0.5559329919085068,
+      0.35561551596878815,
+      3.6910374690361603
+    ],
+    "native_negative_claim": false
+  },
+  "Hellwig JMh": {
+    "roundtrip_max_xyz_error": 2.9976021664879227e-15,
+    "nonfinite": 0,
+    "seconds_3000_forward_inverse": 0.0018284170000697486,
+    "exposure_hue_drift_degrees": [
+      2.2291409542726006,
+      1.4666334765028701,
+      4.1340932261073355,
+      0.7498641081045354,
+      0.48027694719334757,
+      5.181219645256781
+    ],
+    "native_negative_claim": false
+  },
+  "Simple XYZ opponent": {
+    "roundtrip_max_xyz_error": 1.1102230246251565e-16,
+    "nonfinite": 0,
+    "seconds_3000_forward_inverse": 2.300000051036477e-05,
+    "exposure_hue_drift_degrees": [
+      3.81666561775622e-14,
+      0.0,
+      0.0,
+      2.5444437451708134e-14,
+      2.5444437451708134e-14,
+      3.81666561775622e-14
+    ],
+    "native_negative_claim": false
+  },
+  "adapter_selection": {
+    "candidate": "Oklab real-cube-root algebraic signed extension",
+    "max_scaled_roundtrip_error": 2.6237053754375194e-15,
+    "rationale": "Reversible unbounded algebra, D65 colorimetric basis, exposure hue stability, no viewing-condition parameters; perceptual meaning is restricted to valid positive stimuli. Other models remain viable with positive-base residual adapters.",
+    "status": "research candidate; perceptual and artist acceptance pending"
+  }
+}

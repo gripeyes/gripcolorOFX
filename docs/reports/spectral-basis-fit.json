@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "method": "Three emitted Gaussian spectral basis coefficients + exact signed XYZ residual; preintegrated KM/Beer-Lambert response matrices, linear density interpolation",
+  "reference_grid": "360\u2013830 nm / 1 nm",
+  "basis_parameters_nm": [
+    [
+      450,
+      38
+    ],
+    [
+      545,
+      42
+    ],
+    [
+      625,
+      48
+    ]
+  ],
+  "fit": {
+    "KM": {
+      "heldout_matrix_max_error": 5.279531184621877e-05,
+      "rms_matrix_error": 1.659082999730849e-05,
+      "table_levels": 129
+    },
+    "BeerLambert": {
+      "heldout_matrix_max_error": 0.0003784801424211563,
+      "rms_matrix_error": 7.64604811560085e-05,
+      "table_levels": 129
+    }
+  },
+  "scene_semantics": "Relative attenuation of reconstructed scene radiance plus unchanged signed residual. Does not simulate a rendered print, viewing illuminant, observer appearance, or a display transform. Spectral reflectance supplies an attenuation trajectory only.",
+  "physical_properties_retained": [
+    "nonnegative emitted base",
+    "spectral wavelength-dependent attenuation",
+    "radiometric exposure scaling for fixed selection"
+  ],
+  "physical_properties_not_claimed": [
+    "unique spectrum recovery",
+    "real pigment/film-stock identity",
+    "literal material appearance",
+    "historical print accuracy"
+  ],
+  "limitations": [
+    "Only three reconstruction basis functions; residual may dominate extreme colors",
+    "Neutral/red anchoring and chroma coupling are creative controls, not physical laws",
+    "Scene-relative fitting and visual acceptance still require structured and image validation"
+  ]
+}

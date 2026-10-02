@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "platform": "macOS arm64 / Apple M2",
+  "python_tests_passed": 129,
+  "ctest_suites_passed": [
+    "independent_core",
+    "native_image_contract",
+    "operator_contract",
+    "metal_parity"
+  ],
+  "metal_cases": 33,
+  "metal_samples_per_case": 8192,
+  "metal_candidate_passed": true,
+  "metal_original_component_failures": 24,
+  "metal_tolerance_policy": "docs/NUMERICS.md; cancellation amendment only. Original failures retained. Production parity acceptance pending.",
+  "nuke_smoke_checks_passed": 18,
+  "nuke_extended_checks_passed": 12,
+  "production_accepted": false,
+  "pending": [
+    "Flame access and smoke/full acceptance",
+    "OFX host Metal buffers/queue/error integration",
+    "Remaining scientific and behavioral comparisons",
+    "Measured material and real compositing/artist/media validation",
+    "Full saved-model compatibility and production freeze",
+    "Distribution signing/notarization"
+  ]
+}

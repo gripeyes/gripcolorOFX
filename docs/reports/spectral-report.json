@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "integration": {
+    "D65": {
+      "max_xyz_error": 1.2212453270876722e-15,
+      "white_xyz": [
+        0.9504707649452458,
+        1.0000000000000002,
+        1.0888284224364935
+      ]
+    },
+    "D60": {
+      "max_xyz_error": 1.7763568394002505e-15,
+      "white_xyz": [
+        0.9526116697467584,
+        1.0000000000000004,
+        1.0091863148234201
+      ]
+    },
+    "D50": {
+      "max_xyz_error": 1.3322676295501878e-15,
+      "white_xyz": [
+        0.9642406540802786,
+        1.0000000000000002,
+        0.8251277649703397
+      ]
+    },
+    "A": {
+      "max_xyz_error": 1.1102230246251565e-15,
+      "white_xyz": [
+        1.0984938308370527,
+        0.9999999999999992,
+        0.35590794619172084
+      ]
+    }
+  },
+  "reconstruction": {
+    "nnls_residual/max": {
+      "identity_max_xyz_error": 1.1102230246251565e-16,
+      "max_relative_residual": 1.0,
+      "exposure_spectral_shape_error": 0.0,
+      "semantics": "scene radiance base plus explicit signed XYZ residual; physical material outputs remain appearance references"
+    },
+    "nnls_residual/norm": {
+      "identity_max_xyz_error": 1.1102230246251565e-16,
+      "max_relative_residual": 1.0,
+      "exposure_spectral_shape_error": 0.0,
+      "semantics": "scene radiance base plus explicit signed XYZ residual; physical material outputs remain appearance references"
+    },
+    "nnls_residual/luminance": {
+      "identity_max_xyz_error": 1.1102230246251565e-16,
+      "max_relative_residual": 1.0,
+      "exposure_spectral_shape_error": 0.0,
+      "semantics": "scene radiance base plus explicit signed XYZ residual; physical material outputs remain appearance references"
+    },
+    "smits_residual/max": {
+      "identity_max_xyz_error": 2.1316282072803006e-14,
+      "max_relative_residual": 1.0,
+      "exposure_spectral_shape_error": 0.0,
+      "semantics": "scene radiance base plus explicit signed XYZ residual; physical material outputs remain appearance references"
+    },
+    "smits_residual/norm": {
+      "identity_max_xyz_error": 2.1316282072803006e-14,
+      "max_relative_residual": 1.0,
+      "exposure_spectral_shape_error": 0.0,
+      "semantics": "scene radiance base plus explicit signed XYZ residual; physical material outputs remain appearance references"
+    },
+    "smits_residual/luminance": {
+      "identity_max_xyz_error": 2.1316282072803006e-14,
+      "max_relative_residual": 1.0,
+      "exposure_spectral_shape_error": 0.0,
+      "semantics": "scene radiance base plus explicit signed XYZ residual; physical material outputs remain appearance references"
+    }
+  },
+  "reduced_grid_errors": {
+    "2nm": 1.939726182148549e-06,
+    "5nm": 1.403675860590925e-05,
+    "10nm": 1.950163316490061e-05
+  },
+  "negative_strategy": "NNLS positive emitted base + explicit signed XYZ residual is an exact identity candidate. Active material operation acceptance additionally needs adapter transition and image behavior tests.",
+  "hdr_strategy": "Max-absolute-channel shape/scale decomposition selected for initial oracle; doubling input doubles base and residual without changing spectral shape. Norm alternatives also tested; luminance cancellation explicitly falls back to norm.",
+  "gate_status": "S0/S2/S3 numerical reference experiments complete; signed/HDR active-operator and scene-fit acceptance pending; appearance models are not production nodes"
+}

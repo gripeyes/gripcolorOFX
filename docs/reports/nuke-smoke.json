@@ -1,0 +1,263 @@
+{
+  "host": "17.0v1",
+  "platform": "macOS arm64",
+  "checks": [
+    {
+      "name": "Scene default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Tone default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Volume default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Density default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Crossover default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Crosstalk default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Strip default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Inspector default float identity",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Scene exposure",
+      "passed": true,
+      "expected": [
+        -0.2,
+        0.4,
+        8,
+        0.3
+      ],
+      "actual": [
+        -0.20000000298023224,
+        0.4000000059604645,
+        8.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Scene animation frame 1",
+      "passed": true,
+      "expected": [
+        -0.1,
+        0.2,
+        4.0,
+        0.3
+      ],
+      "actual": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Scene animation frame 2",
+      "passed": true,
+      "expected": [
+        -0.2,
+        0.4,
+        8.0,
+        0.3
+      ],
+      "actual": [
+        -0.20000000298023224,
+        0.4000000059604645,
+        8.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Scene animation frame 3",
+      "passed": true,
+      "expected": [
+        -0.4,
+        0.8,
+        16.0,
+        0.3
+      ],
+      "actual": [
+        -0.4000000059604645,
+        0.800000011920929,
+        16.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Tone signed/HDR finite",
+      "passed": true
+    },
+    {
+      "name": "Crosstalk matrix",
+      "passed": true,
+      "expected": [
+        -0.025,
+        0.2,
+        4,
+        0.3
+      ],
+      "actual": [
+        -0.02500000223517418,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Crosstalk neutral magnitude",
+      "passed": true,
+      "expected": [
+        0.18,
+        0.18,
+        0.18,
+        0.3
+      ],
+      "actual": [
+        0.18000000715255737,
+        0.18000000715255737,
+        0.18000000715255737,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Project reload preserves scene math",
+      "passed": true,
+      "expected": [
+        0.5091168880462646,
+        0.5091168880462646,
+        0.5091168880462646,
+        0.30000001192092896
+      ],
+      "actual": [
+        0.5091168880462646,
+        0.5091168880462646,
+        0.5091168880462646,
+        0.30000001192092896
+      ]
+    },
+    {
+      "name": "Project reload preserves look domain",
+      "passed": true
+    },
+    {
+      "name": "Multiframe CPU render to float EXR",
+      "passed": true
+    }
+  ],
+  "pending": [
+    "GUI interaction",
+    "extended OCIO checks recorded separately",
+    "Flame"
+  ]
+}

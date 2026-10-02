@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "seed": 117,
+  "probe": "0.08 rad opponent rotation at fixed first coordinate",
+  "warning": "Comparative synthetic probes only; view-condition models retain appearance semantics. No new signed extension is attributed to published models.",
+  "coordinate_pipelines": {
+    "IPT/positive base + residual": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.4281864396125864e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00019989334910972684,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0594112432912028
+    },
+    "IPT/positive-negative decomposition": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.7550237190334754e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020247987745434376,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0607431588778145
+    },
+    "IPT/smooth participation": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.3631289402020601e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00021013761680748616,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0487345438125697
+    },
+    "IPT/smooth bypass": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.2335811384723961e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00031026185312436633,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0380232322624803
+    },
+    "IPT/bounded chromatic reconstruction": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.4281864396125864e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00019995360510103102,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.053899414820569
+    },
+    "Oklab/positive base + residual": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 2.6213599192538418e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.0002039229184089067,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0653020761302248
+    },
+    "Oklab/positive-negative decomposition": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 2.8640481564305306e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020392557336811057,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0673553104650124
+    },
+    "Oklab/smooth participation": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 2.6213599192538418e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020475438361490517,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0608968828419787
+    },
+    "Oklab/smooth bypass": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 2.6213599192538418e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.0002928041665237746,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0459121627076313
+    },
+    "Oklab/bounded chromatic reconstruction": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 2.6213599192538418e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020534253060180974,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0485110125574866
+    },
+    "JzAzBz/positive base + residual": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.415644024867032e-13
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020145133801590526,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0357230128776667
+    },
+    "JzAzBz/positive-negative decomposition": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.4942085623727417e-13
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020140432235431216,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0312657889388182
+    },
+    "JzAzBz/smooth participation": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.2925977528310586e-13
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.0002084583757901784,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0291046217866924
+    },
+    "JzAzBz/smooth bypass": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.2925977528310586e-13
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.0002912825652469208,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0291046217866924
+    },
+    "JzAzBz/bounded chromatic reconstruction": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 1.415644024867032e-13
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020220234161652528,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.03309560138954
+    },
+    "CAM16-UCS/positive base + residual": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.550248824800271e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020539898354004701,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0662143415317828
+    },
+    "CAM16-UCS/positive-negative decomposition": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.550248824800271e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020529550223489373,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0662065546388575
+    },
+    "CAM16-UCS/smooth participation": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 2.428084176588729e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020539898354004701,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0617698736045735
+    },
+    "CAM16-UCS/smooth bypass": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 2.428084176588729e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00026937006015825826,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0469798555215766
+    },
+    "CAM16-UCS/bounded chromatic reconstruction": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.550248824800271e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020646761317436035,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0534466967184388
+    },
+    "Hellwig JMh/positive base + residual": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.28106561776019e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00021119945205196403,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0811260020759008
+    },
+    "Hellwig JMh/positive-negative decomposition": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.28106561776019e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00021099528864089792,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0813025498667814
+    },
+    "Hellwig JMh/smooth participation": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.28106561776019e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00021119945205196403,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0727123372157037
+    },
+    "Hellwig JMh/smooth bypass": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.28106561776019e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00027059349473633823,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.048349231711116
+    },
+    "Hellwig JMh/bounded chromatic reconstruction": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 3.28106561776019e-15
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00021301604900918897,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0605613275176415
+    },
+    "Simple XYZ opponent/positive base + residual": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 4.2848544292742275e-16
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.000205127645362152,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0673293476854946
+    },
+    "Simple XYZ opponent/positive-negative decomposition": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 4.2848544292742275e-16
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020523863191448943,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0847770846462501
+    },
+    "Simple XYZ opponent/smooth participation": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 4.2848544292742275e-16
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.000205127645362152,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.045271598271984
+    },
+    "Simple XYZ opponent/smooth bypass": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 4.2848544292742275e-16
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00025089464841864667,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.045271598271984
+    },
+    "Simple XYZ opponent/bounded chromatic reconstruction": {
+      "identity": {
+        "nonfinite": 0,
+        "max_relative_error": 4.2848544292742275e-16
+      },
+      "exposure_doubling": {
+        "nonfinite": 0,
+        "max_relative_error": 0.0
+      },
+      "active_nonfinite": 0,
+      "negative_boundary_max_adjacent_delta": 0.00020375177311346762,
+      "adjacent_input_step": 0.0002,
+      "maximum_output_growth": 1.0624488878955025
+    }
+  },
+  "our_signed_oklab_algebra": {
+    "identity": {
+      "nonfinite": 0,
+      "max_relative_error": 3.109607502043567e-15
+    },
+    "scope": "Real cube-root algebra; perceptual interpretation only in valid stimulus domain."
+  },
+  "selection": {
+    "initial_candidate": "Signed Oklab algebra",
+    "reason": "Exact algebraic reconstruction, scale-homogeneous coordinates, no viewing-condition state and inexpensive reversible matrices. Residual adapters keep other published models viable.",
+    "limitations": "Synthetic boundary/growth tests cannot establish artist usefulness. Positive/negative decomposition is an original comparison adapter, not a physical or perceptual claim. Wider gamut and real-image adapter tests remain."
+  }
+}

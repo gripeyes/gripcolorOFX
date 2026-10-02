@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "stimulus": "Continuous Oklab hue circle; six simultaneous wide original-coordinate families",
+  "models": {
+    "weighted deltas": {
+      "nonfinite": 0,
+      "permutation_max_rgb_error": 2.086162567138672e-07,
+      "hue_wrap_endpoint_error": 0.0,
+      "maximum_adjacent_rgb_delta": 0.005445599555969238,
+      "maximum_rgb_norm_growth": 1.4817866086959839,
+      "protected_neutral_relative_error": 1.3846233741787728e-06
+    },
+    "normalized deltas": {
+      "nonfinite": 0,
+      "permutation_max_rgb_error": 1.7881393432617188e-07,
+      "hue_wrap_endpoint_error": 0.0,
+      "maximum_adjacent_rgb_delta": 0.0032331347465515137,
+      "maximum_rgb_norm_growth": 1.1654812097549438,
+      "protected_neutral_relative_error": 1.3846233741787728e-06
+    },
+    "bounded vectors": {
+      "nonfinite": 0,
+      "permutation_max_rgb_error": 2.384185791015625e-07,
+      "hue_wrap_endpoint_error": 0.0,
+      "maximum_adjacent_rgb_delta": 0.005373597145080566,
+      "maximum_rgb_norm_growth": 1.4743410348892212,
+      "protected_neutral_relative_error": 1.3846233741787728e-06
+    },
+    "shared field": {
+      "nonfinite": 0,
+      "permutation_max_rgb_error": 1.1920928955078125e-07,
+      "hue_wrap_endpoint_error": 0.0,
+      "maximum_adjacent_rgb_delta": 0.003378763794898987,
+      "maximum_rgb_norm_growth": 1.1696162223815918,
+      "protected_neutral_relative_error": 1.4835250112810172e-06
+    }
+  },
+  "selection": {
+    "candidate": "Normalized weighted Cartesian deltas",
+    "equation": "q_out = q_source + sum_i w_i(q_source) [D_i(q_source)-q_source] / max(1,sum_active_i w_i(q_source)). Local RGB matrix deltas use the same normalization.",
+    "reason": "Independent region intent, original-source selections, hue-wrap continuity and bounded aggregate influence. Inactive regions never dilute active ones.",
+    "limitations": [
+      "Continuous with derivative kink at total weight 1; not a diffeomorphism guarantee.",
+      "Large individual deformations can still expand gamut or fold the mapping.",
+      "Artist overlap acceptance and wider parameter stress remain pending."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "heldout_matrix_errors": {
+    "KM": {
+      "polynomial degree 3": 0.01056451356196364,
+      "polynomial degree 5": 0.0001977230091062543,
+      "polynomial degree 9": 5.931776595469174e-07,
+      "linear table 17": 0.0034616767217745537,
+      "PCHIP 17": 0.00019227577960176379,
+      "linear table 33": 0.0008841243051839198,
+      "PCHIP 33": 3.705241747804788e-05,
+      "linear table 65": 0.00022368000498917961,
+      "PCHIP 65": 9.981296357194913e-06,
+      "linear table 129": 5.5749710509145345e-05,
+      "PCHIP 129": 1.9255362606121484e-06
+    },
+    "BeerLambert": {
+      "polynomial degree 3": 0.13972996898851298,
+      "polynomial degree 5": 0.014506808140475114,
+      "polynomial degree 9": 3.1690890782476444e-05,
+      "linear table 17": 0.025720531783974154,
+      "PCHIP 17": 0.0038596732566712477,
+      "linear table 33": 0.007116039636992477,
+      "PCHIP 33": 0.0005751553531023745,
+      "linear table 65": 0.001883731161431923,
+      "PCHIP 65": 0.00010444174873600054,
+      "linear table 129": 0.0004804089192769201,
+      "PCHIP 129": 1.3888123247401962e-05
+    }
+  },
+  "selected": "129-level linear response table / three emitted spectral basis coefficients",
+  "reason": "Simple shared CPU/Metal evaluator; convex interpolation retains nonnegative and concentration-monotone spectral response entries. Polynomial fits lack these guarantees without additional constraints. PCHIP is retained as a compact alternative, but requires more evaluator/coefficient logic. No opaque ML or runtime wavelength loop.",
+  "limits": "These are matrix-response error tests; they do not establish perceptual or artist acceptance."
+}
