@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'build/validation-0.2'
 SPACE=colour.RGB_COLOURSPACES['ITU-R BT.2020']
 M=SPACE.matrix_RGB_to_XYZ; INV=SPACE.matrix_XYZ_to_RGB; Y=M[1]
-NAMES=['Scene','Tone','Volume','Density','Crossover','Crosstalk','Strip','Inspector','Primaries']
+NAMES=['Scene','Tone','Volume','Density','Crossover','Crosstalk','Strip','Inspector','Primaries','Base','Palette','Material']
 def process(name,rgb,parameters=None):
     rgb=np.asarray(rgb,np.float32)
     a=np.concatenate([rgb,np.ones(rgb.shape[:-1]+(1,),np.float32)],axis=-1)

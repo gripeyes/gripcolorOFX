@@ -1,11 +1,13 @@
 #include "rendition/diagnostics.hpp"
 #include "rendition/operators.hpp"
+#include "rendition/artist_models.hpp"
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 namespace py = pybind11;
 using namespace rendition;
 PYBIND11_MODULE(_rendition, m) {
+    m.def("local_exposure",[](std::array<float,4> rgba,float coverage,const Values &v){return localExposure(Snapshot(Effect::Base,v),rgba,coverage);});
     m.def("encode", [](float x, int d) { return encode(x, static_cast<LookDomain>(d)); });
     m.def("decode", [](float x, int d) { return decode(x, static_cast<LookDomain>(d)); });
     m.def("matrix", [](int g) { return ColorSpace::make(static_cast<Gamut>(g)).toXYZ.v; });

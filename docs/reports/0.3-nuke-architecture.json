@@ -1,0 +1,220 @@
+{
+  "host": "17.0v1",
+  "checks": [
+    {
+      "effect": "Scene",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Tone",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Volume",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Density",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Crossover",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Crosstalk",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Strip",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Inspector",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Primaries",
+      "parameters": {
+        "midExposure": 4
+      },
+      "passed": true,
+      "values": [
+        -1.1088608503341675,
+        2.2177248001098633,
+        44.35449981689453,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Base",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Base",
+      "parameters": {
+        "midExposure": 4,
+        "shadowSoftness": 0.25,
+        "highlightSoftness": 0.25
+      },
+      "passed": true,
+      "values": [
+        -1.5988044738769531,
+        3.197610378265381,
+        63.95222091674805,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Palette",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Palette",
+      "parameters": {
+        "compression": 0.8,
+        "familyGreen": -30,
+        "contamination": 0.3
+      },
+      "passed": true,
+      "values": [
+        0.02544158324599266,
+        0.4131908416748047,
+        1.6699557304382324,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Material",
+      "parameters": {},
+      "passed": true,
+      "values": [
+        -0.10000000149011612,
+        0.20000000298023224,
+        4.0,
+        0.30000001192092896
+      ]
+    },
+    {
+      "effect": "Material",
+      "parameters": {
+        "density": 0.8,
+        "separation": 0.7,
+        "depth": 0.5
+      },
+      "passed": true,
+      "values": [
+        -0.06990495324134827,
+        0.01599847339093685,
+        0.7498934864997864,
+        0.30000001192092896
+      ]
+    },
+    {
+      "case": "Matte alpha .5 -> half-stop exposure",
+      "passed": true,
+      "values": [
+        -0.14142131805419922,
+        0.2828426957130432,
+        5.656854152679443,
+        0.30000001192092896
+      ]
+    },
+    {
+      "case": "Nuke Advanced links: write-through, rename and reload",
+      "passed": true
+    },
+    {
+      "case": "Original + new nodes, model choices and animation reload",
+      "passed": true
+    },
+    {
+      "case": "CPU matte two-frame float render",
+      "passed": true
+    },
+    {
+      "case": "Explicitly tagged Read, Raw disabled, Nuke OCIO to scene_linear Rec.2020",
+      "passed": true,
+      "values": [
+        0.01915072649717331,
+        0.015251458622515202,
+        0.005242929793894291
+      ]
+    },
+    {
+      "case": "Artist Base Auto scene_linear, source sample identity",
+      "passed": true
+    }
+  ],
+  "third_party": []
+}

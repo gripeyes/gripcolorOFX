@@ -5,6 +5,7 @@
 #include "ofxMultiThread.h"
 #include "ofxParam.h"
 #include "rendition/operators.hpp"
+#include "rendition/artist_models.hpp"
 #include <algorithm>
 #include <atomic>
 #include <cstdio>
@@ -119,7 +120,7 @@ struct Image {
     OfxPropertySetHandle handle = nullptr;
     ImageView view{};
     OfxRectD rod{};
-    Image(OfxImageClipHandle clip, double t) {
+    Image(OfxImageClipHandle clip, double t, bool matte=false) {
         checked(fx->clipGetImage(clip, t, nullptr, &handle));
         try {
             void *data = nullptr;
@@ -129,8 +130,8 @@ struct Image {
             if (str(handle, kOfxImageEffectPropPixelDepth) != kOfxBitDepthFloat)
                 throw std::runtime_error("Rendition requires 32-bit float images");
             auto components = str(handle, kOfxImageEffectPropComponents);
-            int n = components == kOfxImageComponentRGBA ? 4 : components == kOfxImageComponentRGB ? 3 : 0;
-            if (!n)
+            int n = components == kOfxImageComponentRGBA ? 4 : components == kOfxImageComponentRGB ? 3 : matte && components == kOfxImageComponentAlpha ? 1 : 0;
+            if (!n || (matte && n==3))
                 throw std::runtime_error("Rendition requires RGB or RGBA");
             int rect[4], bytes;
             checked(prop->propGetIntN(handle, kOfxImagePropBounds, 4, rect));
@@ -163,7 +164,7 @@ OfxStatus describe(Effect e, OfxImageEffectHandle h) {
     checked(fx->getPropertySet(h, &p));
     std::string label = "Rendition " + std::string(name(e));
     checked(prop->propSetString(p, kOfxPropLabel, 0, label.c_str()));
-    checked(prop->propSetString(p, kOfxImageEffectPluginPropGrouping, 0, "Rendition"));
+    checked(prop->propSetString(p, kOfxImageEffectPluginPropGrouping, 0, e>=Effect::Base || e==Effect::Inspector ? "Rendition" : "Rendition/Advanced"));
     checked(prop->propSetString(p, kOfxPropPluginDescription, 0,
                                 "Scene-compatible color rendition research suite. CPU reference. Production "
                                 "host/model gates are not yet accepted."));
@@ -204,8 +205,15 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     if (context != kOfxImageEffectContextGenerator) {
         clip(kOfxImageEffectSimpleSourceClipName,
              e == Effect::Inspector && context == kOfxImageEffectContextGeneral);
-        if (e == Effect::Inspector)
-            clip("Reference", true);
+        if (e == Effect::Inspector)clip("Reference", true);
+        if(e==Effect::Base) {
+            OfxPropertySetHandle p;checked(fx->clipDefine(h,"Matte",&p));
+            checked(prop->propSetString(p,kOfxImageEffectPropSupportedComponents,0,kOfxImageComponentAlpha));
+            checked(prop->propSetString(p,kOfxImageEffectPropSupportedComponents,1,kOfxImageComponentRGBA));
+            checked(prop->propSetInt(p,kOfxImageClipPropOptional,0,1));
+            checked(prop->propSetInt(p,kOfxImageClipPropIsMask,0,1));
+            checked(prop->propSetInt(p,kOfxImageEffectPropSupportsTiles,0,1));
+        }
     }
     OfxParamSetHandle set;
     checked(fx->getParamSet(h, &set));
@@ -221,7 +229,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     auto defs = parameters(e);
     // Keep original eight group IDs stable; new prototype IDs use portable characters.
     auto groupId=[&](std::string group) {
-        if(e==Effect::Primaries) for(char &c:group) if(c==' ' || c=='/') c='_';
+        if(e>=Effect::Primaries) for(char &c:group) if(c==' ' || c=='/') c='_';
         return std::string("group_")+group;
     };
     std::vector<std::string> groups;
@@ -284,7 +292,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     prop->propSetInt(semanticProperty, kOfxParamPropAnimates, 0, 0);
     std::string summary = "Default model reference. Configuration-dependent details: docs/interfaces.json "
                           "and headless evaluator.\n";
-    for (int index = e == Effect::Inspector ? 0 : int(e); index <= (e == Effect::Inspector ? 8 : int(e));
+    for (int index = e == Effect::Inspector ? 0 : int(e); index <= (e == Effect::Inspector ? 11 : int(e));
          index++) {
         auto model = Effect(index);
         auto semantic = semantics(model);
@@ -313,8 +321,8 @@ OfxStatus create(Effect e, OfxImageEffectHandle h) {
     checked(fx->clipGetHandle(h, kOfxImageEffectOutputClipName, &i->output, nullptr));
     if (!i->generator) {
         checked(fx->clipGetHandle(h, kOfxImageEffectSimpleSourceClipName, &i->source, &i->sourceProps));
-        if (e == Effect::Inspector)
-            checked(fx->clipGetHandle(h, "Reference", &i->reference, &i->referenceProps));
+        if (e == Effect::Inspector || e==Effect::Base)
+            checked(fx->clipGetHandle(h, e==Effect::Base?"Matte":"Reference", &i->reference, &i->referenceProps));
     }
     checked(prop->propSetPointer(p, kOfxPropInstanceData, 0, i.get()));
     i.release();
@@ -384,7 +392,12 @@ void worker(unsigned int tid, unsigned int n, void *opaque) {
                 if (j.snap.effectId() != Effect::Inspector) {
                     if (!j.src)
                         throw std::runtime_error("Missing Source");
-                    renderWindow(j.snap, *j.src, j.dst, x, y, x + 1, y + 1);
+                    if(j.snap.effectId()==Effect::Base && j.snap.get("localExposure")!=0) {
+                        auto a=j.src->at(x,y),b=j.dst.at(x,y);if(!a || !b)throw std::runtime_error("Missing source/output pixel");
+                        auto m=j.ref?j.ref->at(x,y):nullptr;
+                        float coverage=j.ref?(m?(j.ref->components==1?m[0]:m[3]):0):1;
+                        auto p=j.snap.pixel({a[0],a[1],a[2],j.src->components==4?a[3]:1},coverage);for(int c=0;c<j.dst.components;++c)b[c]=p[c];
+                    } else renderWindow(j.snap, *j.src, j.dst, x, y, x + 1, y + 1);
                     continue;
                 }
                 auto a = j.src ? j.src->at(x, y) : nullptr;
@@ -457,6 +470,7 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
             throw std::runtime_error("Reference color interpretation differs from Source");
         ref = std::make_unique<Image>(i.reference, t);
     }
+    if(i.effect==Effect::Base && s.get("localExposure")!=0 && connected(i.referenceProps))ref=std::make_unique<Image>(i.reference,t,true);
     double scale[2] = {1, 1}, par = 1;
     prop->propGetDoubleN(in, kOfxImageEffectPropRenderScale, 2, scale);
     prop->propGetDouble(dst.handle, kOfxImagePropPixelAspectRatio, 0, &par);
@@ -484,8 +498,14 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
         worker(0, 1, &job);
     if (job.failure)
         std::rethrow_exception(job.failure);
-    if (msg)
+    if (msg) {
         msg->clearPersistentMessage(h);
+        if(i.effect==Effect::Palette) {
+          bool risk=s.get("compression")>.7 || std::abs(s.get("separation"))>.7;
+          for(auto family:{"Red","Yellow","Green","Cyan","Blue","Magenta"})risk|=std::abs(s.get(std::string("family")+family)*s.get("trajectory"))>30;
+          if(risk)msg->setPersistentMessage(h,kOfxMessageWarning,"rendition.palette.geometry","%s","Strong Palette settings: possible Volume folds/poor conditioning. Controls remain unrestricted; inspect actual geometry in Inspector Lab. This threshold is a heuristic, not a measured fold diagnosis.");
+        }
+    }
     return kOfxStatOK;
 }
 OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHandle in,
@@ -608,11 +628,14 @@ OfxPlugin plugins[] = {
     {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Crosstalk", 1, 0, setHost, entry<5>},
     {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Strip", 1, 0, setHost, entry<6>},
     {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Inspector", 1, 0, setHost, entry<7>},
-    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Primaries", 1, 0, setHost, entry<8>}};
+    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Primaries", 1, 0, setHost, entry<8>},
+    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Base", 1, 0, setHost, entry<9>},
+    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Palette", 1, 0, setHost, entry<10>},
+    {kOfxImageEffectPluginApi, 1, "org.gripcolor.rendition.Material", 1, 0, setHost, entry<11>}};
 } // namespace
 extern "C" __attribute__((visibility("default"))) int OfxGetNumberOfPlugins() {
-    return 9;
+    return 12;
 }
 extern "C" __attribute__((visibility("default"))) OfxPlugin *OfxGetPlugin(int n) {
-    return n >= 0 && n < 9 ? &plugins[n] : nullptr;
+    return n >= 0 && n < 12 ? &plugins[n] : nullptr;
 }

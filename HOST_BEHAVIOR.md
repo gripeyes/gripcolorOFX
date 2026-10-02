@@ -54,3 +54,16 @@ A detached-node shutdown notification exposed a startup callback exception; the 
 Primaries appends a ninth native effect without changing the original eight IDs/models. Interactive main-menu creation, visibility of 33 controls in all five artist groups, shadow-tint editing and Save Comp As pass; see `docs/reports/0.2.1-primaries-ui.json`. Initially collapsed artist groups did not reliably expose children (MIDTONES as well as slash-containing labels). New group identifiers are normalized and artist groups open initially; this is an exposure workaround, not proof of the host root cause or correct collapse/Expert/custom expansion. Those UI paths remain pending.
 
 Native Nuke CPU smoke tests pass 10 checks: exact default identity, seven reference sample comparisons, animated saved-state reload and two-frame float EXR rendering (`docs/reports/0.2.1-nuke-primaries.json`). These are numerical tests, not artist acceptance. The generated seven-recipe graph uses explicit Rec.2020 fixtures and the external user view; an interactive Open attempt did not visibly replace the current test window, so its GUI loading is not claimed verified. Primaries has no Metal implementation or Flame validation.
+
+## 0.3 artist architecture
+
+Native CPU Nuke tests cover twelve IDs, reference samples, original/new model choices and animation reload, Base optional alpha Matte (half coverage -> half stop), two-frame float rendering, tagged AP0 source Read with Raw disabled, Nuke OCIO-to-scene_linear and downstream Auto identity. See `docs/reports/0.3-nuke-architecture.json`. Old equations/IDs remain, with new artist IDs appended and deep effects grouped Advanced. GUI menu acceptance is separately recorded, not inferred from scripts.
+
+Two installed SpektraFilm v0.2 plugins and Pigment effects were discovered through their native interfaces. Narrow constant probes show full Print simulation defaults produce display output; diffuse defaults approximately preserve tested signed/HDR values. Active/spatial/temporal semantics and appearance comparisons remain pending; see `docs/PIPELINE_CONTRACT.md`.
+
+
+### Nuke 0.3 presentation verification
+
+Fresh Nuke 17.0v1 interactive tests pass normal creation of Base, Palette, Material and Inspector from Rendition; the nine historical entries remain in Advanced. Base's 13 main controls, Advanced tonal controls (edited shadow hue) and five Dodge/Burn controls are accessible. Palette's nine controls and six family directions and Material's eight controls are visible. The native expandable-group issue persists; the Nuke adapter presents standard tabs with self-relative links to the original parameters instead. Native write-through, node rename and saved reload pass without duplicate processing state. See `docs/reports/0.3-nuke-ui.json` and the 21 native checks in `docs/reports/0.3-nuke-architecture.json`.
+
+The interactively created test was saved as `UI-created-artist.nk`. Opening the sample graph did not visibly replace that window, so interactive sample graph loading is not claimed accepted. Its native Read conversion and Auto identity tests pass. This is an artist candidate; human predictability, speed and cross-content acceptance remain open.

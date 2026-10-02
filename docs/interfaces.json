@@ -4655,6 +4655,1205 @@
         "status": "Artist Primaries v1 CPU prototype",
         "limitations": "Nonphysical density balance; aggressive zonal exposure/offset may reverse tone; magnitude-based signed selection; no global inverse or host Metal"
       }
+    },
+    "Base": {
+      "identifier": "org.gripcolor.rendition.Base",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / scene_linear or metadata",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "Base v1 CPU"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "exposure",
+          "label": "Exposure",
+          "group": "Artist",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "contrast",
+          "label": "Contrast",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.1,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "pivot",
+          "label": "Contrast pivot",
+          "group": "Artist",
+          "unit": "stops relative to 0.18",
+          "default": 0.0,
+          "min": -12.0,
+          "max": 12.0,
+          "choices": []
+        },
+        {
+          "id": "blackStops",
+          "label": "Black",
+          "group": "Artist",
+          "unit": "stops weighted by shadow range; zero stays zero",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "whiteLevel",
+          "label": "White",
+          "group": "Artist",
+          "unit": "stops at full highlight weight; no white cap",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "shadowCompression",
+          "label": "Toe",
+          "group": "Artist",
+          "unit": "fraction; slope contribution 0 to 0.45",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "highlightCompression",
+          "label": "Shoulder",
+          "group": "Artist",
+          "unit": "fraction; slope contribution 0 to 0.45",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "midBalance",
+          "label": "Warmth",
+          "group": "Artist",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "midTint",
+          "label": "Tint",
+          "group": "Artist",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "saturation",
+          "label": "Saturation",
+          "group": "Artist",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "colourBalance",
+          "label": "Density",
+          "group": "Artist",
+          "unit": "artistic stops; not spectral density",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "shadowTint",
+          "label": "Shadow Colour",
+          "group": "Artist",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "highlightTint",
+          "label": "Highlight Colour",
+          "group": "Artist",
+          "unit": "dimensionless Y-preserving colour amount",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "toeStart",
+          "label": "Toe start",
+          "group": "Advanced tonal colour",
+          "unit": "stops relative to 0.18",
+          "default": -4.0,
+          "min": -20.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "toeSoftness",
+          "label": "Toe softness",
+          "group": "Advanced tonal colour",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "shadowHue",
+          "label": "Shadow hue",
+          "group": "Advanced tonal colour",
+          "unit": "degrees; RGB artist hue circle",
+          "default": 240.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "shadowRetention",
+          "label": "Shadow chroma retention",
+          "group": "Advanced tonal colour",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "colourDeath",
+          "label": "Colour death",
+          "group": "Advanced tonal colour",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "deathStart",
+          "label": "Colour-death start",
+          "group": "Advanced tonal colour",
+          "unit": "stops relative to 0.18",
+          "default": -6.0,
+          "min": -24.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "deathSoftness",
+          "label": "Colour-death softness",
+          "group": "Advanced tonal colour",
+          "unit": "stops",
+          "default": 2.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "midExposure",
+          "label": "Midtone exposure",
+          "group": "Advanced tonal colour",
+          "unit": "stops",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "midDensity",
+          "label": "Midtone density",
+          "group": "Advanced tonal colour",
+          "unit": "stops of attenuation",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "midChroma",
+          "label": "Midtone chroma",
+          "group": "Advanced tonal colour",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 3.0,
+          "choices": []
+        },
+        {
+          "id": "shoulderStart",
+          "label": "Shoulder start",
+          "group": "Advanced tonal colour",
+          "unit": "stops relative to 0.18",
+          "default": 4.0,
+          "min": -4.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "shoulderSoftness",
+          "label": "Shoulder softness",
+          "group": "Advanced tonal colour",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "highlightHue",
+          "label": "Highlight hue",
+          "group": "Advanced tonal colour",
+          "unit": "degrees; RGB artist hue circle",
+          "default": 60.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "highlightRetention",
+          "label": "Highlight chroma retention",
+          "group": "Advanced tonal colour",
+          "unit": "factor",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "highlightBleach",
+          "label": "Highlight bleaching",
+          "group": "Advanced tonal colour",
+          "unit": "fraction; source chroma only, before tint",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "brillianceReduction",
+          "label": "Brilliance reduction",
+          "group": "Advanced tonal colour",
+          "unit": "stops weighted by highlight colourfulness",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "shadowRange",
+          "label": "Shadow range center",
+          "group": "Advanced tonal colour",
+          "unit": "stops relative to 0.18",
+          "default": -3.0,
+          "min": -20.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "shadowSoftness",
+          "label": "Shadow range softness",
+          "group": "Advanced tonal colour",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "highlightRange",
+          "label": "Highlight range center",
+          "group": "Advanced tonal colour",
+          "unit": "stops relative to 0.18",
+          "default": 3.0,
+          "min": -4.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "highlightSoftness",
+          "label": "Highlight range softness",
+          "group": "Advanced tonal colour",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "highlightBurn",
+          "label": "Highlight Burn",
+          "group": "Advanced tonal colour",
+          "unit": "coordinated compression/brilliance/chroma loss",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "localExposure",
+          "label": "Dodge / Burn",
+          "group": "Local exposure",
+          "unit": "stops through optional Matte alpha",
+          "default": 0.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "localProtection",
+          "label": "Range protection",
+          "group": "Local exposure",
+          "unit": "fraction protecting selected tail",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "localCenter",
+          "label": "Protection center",
+          "group": "Local exposure",
+          "unit": "stops relative to 0.18",
+          "default": 3.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "localSoftness",
+          "label": "Protection softness",
+          "group": "Local exposure",
+          "unit": "stops",
+          "default": 1.0,
+          "min": 0.25,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "localChroma",
+          "label": "Preserve chroma magnitude",
+          "group": "Local exposure",
+          "unit": "fraction; 0 scales RGB, 1 scales Y only",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        }
+      ],
+      "semantics": {
+        "domain": "Scene Linear / monotone stop tone",
+        "reference": "Scene-compatible authorship; no DRT",
+        "exposure": "Conditioned",
+        "invertibility": "Combined inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Existing signed adapters / residual preservation",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Configuration-dependent; explicit tint may colour neutrals",
+        "neutral_magnitude": "Identity only",
+        "gamut_dependence": "Colorimetric fixed D65 XYZ",
+        "status": "Base v1 CPU artist candidate",
+        "limitations": "Scalar tone monotone; no global chromatic inverse. No host Metal acceptance"
+      }
+    },
+    "Palette": {
+      "identifier": "org.gripcolor.rendition.Palette",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / scene_linear or metadata",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "Palette v1 CPU"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "separation",
+          "label": "Separation",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "compression",
+          "label": "Compression",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "contamination",
+          "label": "Contamination",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "accent",
+          "label": "Protected red accent",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bias",
+          "label": "Warm / Cool Bias",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "shadowHue",
+          "label": "Shadow Hue Bias",
+          "group": "Artist",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -90.0,
+          "max": 90.0,
+          "choices": []
+        },
+        {
+          "id": "highlightHue",
+          "label": "Highlight Hue Bias",
+          "group": "Artist",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -90.0,
+          "max": 90.0,
+          "choices": []
+        },
+        {
+          "id": "colourDeath",
+          "label": "Colour Death",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "trajectory",
+          "label": "Trajectory strength",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "familyRed",
+          "label": "Red direction",
+          "group": "Colour families",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -60.0,
+          "max": 60.0,
+          "choices": []
+        },
+        {
+          "id": "familyYellow",
+          "label": "Yellow direction",
+          "group": "Colour families",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -60.0,
+          "max": 60.0,
+          "choices": []
+        },
+        {
+          "id": "familyGreen",
+          "label": "Green direction",
+          "group": "Colour families",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -60.0,
+          "max": 60.0,
+          "choices": []
+        },
+        {
+          "id": "familyCyan",
+          "label": "Cyan direction",
+          "group": "Colour families",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -60.0,
+          "max": 60.0,
+          "choices": []
+        },
+        {
+          "id": "familyBlue",
+          "label": "Blue direction",
+          "group": "Colour families",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -60.0,
+          "max": 60.0,
+          "choices": []
+        },
+        {
+          "id": "familyMagenta",
+          "label": "Magenta direction",
+          "group": "Colour families",
+          "unit": "degrees",
+          "default": 0.0,
+          "min": -60.0,
+          "max": 60.0,
+          "choices": []
+        },
+        {
+          "id": "VolumeVersion",
+          "label": "Volume model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 historical equations"
+          ]
+        },
+        {
+          "id": "CrossoverVersion",
+          "label": "Crossover model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 historical equations"
+          ]
+        },
+        {
+          "id": "CrosstalkVersion",
+          "label": "Crosstalk model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 historical equations"
+          ]
+        },
+        {
+          "id": "PrimariesVersion",
+          "label": "Primaries model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 historical equations"
+          ]
+        }
+      ],
+      "semantics": {
+        "domain": "Shared Volume / Crossover / zero-Y tint",
+        "reference": "Scene-compatible authorship; no DRT",
+        "exposure": "Conditioned",
+        "invertibility": "Combined inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Existing signed adapters / residual preservation",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Configuration-dependent; explicit tint may colour neutrals",
+        "neutral_magnitude": "Identity only",
+        "gamut_dependence": "Colorimetric Volume/Crossover/spectral/tint; explicit Crosstalk gamut-relative",
+        "status": "Palette v1 CPU artist candidate",
+        "limitations": "Underlying Volume folds and Density/Strip baseline superiority unresolved; no automatic repair"
+      }
+    },
+    "Material": {
+      "identifier": "org.gripcolor.rendition.Material",
+      "effect_version": [
+        1,
+        0
+      ],
+      "model_versions": [
+        {
+          "id": 0,
+          "name": "v1 research candidate",
+          "frozen_production": false
+        }
+      ],
+      "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "parameters": [
+        {
+          "id": "interpretation",
+          "label": "Source interpretation",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": [
+            "Auto / scene_linear or metadata",
+            "Linear Rec.2020",
+            "ACEScg / AP1",
+            "Linear Rec.709",
+            "Custom xy primaries / white"
+          ]
+        },
+        {
+          "id": "alphaMode",
+          "label": "RGB / alpha handling",
+          "group": "Input",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "RGB as supplied",
+            "Unpremultiply / process / premultiply"
+          ]
+        },
+        {
+          "id": "rx",
+          "label": "rx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.708,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "ry",
+          "label": "ry",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.292,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gx",
+          "label": "gx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.17,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "gy",
+          "label": "gy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.797,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "bx",
+          "label": "bx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.131,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "by",
+          "label": "by",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.046,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wx",
+          "label": "wx",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.3127,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "wy",
+          "label": "wy",
+          "group": "Custom primaries",
+          "unit": "xy",
+          "default": 0.329,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "modelVersion",
+          "label": "Mathematical model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "Material v1 CPU"
+          ]
+        },
+        {
+          "id": "adapterVersion",
+          "label": "Signed adapter",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 documented per model"
+          ]
+        },
+        {
+          "id": "depth",
+          "label": "Depth",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "density",
+          "label": "Material Density",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "coupling",
+          "label": "Chroma Coupling",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "separation",
+          "label": "Separation",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "leakage",
+          "label": "Leakage",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.1,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "crosstalk",
+          "label": "Crosstalk",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "contamination",
+          "label": "Contamination",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "anchor",
+          "label": "Red / skin anchor",
+          "group": "Artist",
+          "unit": "fraction",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "DensityVersion",
+          "label": "Density model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 historical equations"
+          ]
+        },
+        {
+          "id": "StripVersion",
+          "label": "Strip model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 historical equations"
+          ]
+        },
+        {
+          "id": "CrosstalkVersion",
+          "label": "Crosstalk model",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "choices": [
+            "v1 historical equations"
+          ]
+        }
+      ],
+      "semantics": {
+        "domain": "Shared Density / Strip / Crosstalk",
+        "reference": "Scene-compatible authorship; no DRT",
+        "exposure": "Conditioned",
+        "invertibility": "Combined inverse not claimed",
+        "gamut": "Unbounded",
+        "negative": "Existing signed adapters / residual preservation",
+        "hdr": "Exposure-conditioned",
+        "neutral_axis": "Configuration-dependent; explicit tint may colour neutrals",
+        "neutral_magnitude": "Identity only",
+        "gamut_dependence": "Colorimetric Volume/Crossover/spectral/tint; explicit Crosstalk gamut-relative",
+        "status": "Material v1 CPU artist candidate",
+        "limitations": "Underlying Volume folds and Density/Strip baseline superiority unresolved; no automatic repair"
+      }
     }
   }
 }

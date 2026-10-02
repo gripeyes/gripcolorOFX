@@ -42,7 +42,7 @@ std::vector<Parameter> primariesParameters() {
     return p;
 }
 double PrimariesModel::get(const char *key) const { return v.at(key); }
-PrimariesModel::PrimariesModel(const Snapshot &s):v(s.parameterValues()) {
+PrimariesModel::PrimariesModel(const Snapshot &s, const Values &overrideValues, bool mono):v(overrideValues.empty()?s.parameterValues():overrideValues),monotonic(mono) {
     toReference=s.toReferenceWhite()*s.colorSpace().toXYZ;
     fromReference=s.colorSpace().fromXYZ*s.fromReferenceWhite();
     auto reference=ColorSpace::make(Gamut::Rec2020);
@@ -61,6 +61,36 @@ PrimariesModel::PrimariesModel(const Snapshot &s):v(s.parameterValues()) {
         Vec3 ray=mat*q;return ray-white*ray.y;
     };
     shadowAxis=hueVector(get("shadowHue"));highlightAxis=hueVector(get("highlightHue"));
+    if(monotonic) {
+        // Integrate a positive derivative in stop coordinates, anchored at Pivot.
+        // No output clamp and no hidden reduction of the parameter range.
+        auto desired=[&](double e,double q) {
+            double a=rendition_kernel::sigmoid(float((get("shadowRange")-e)/get("shadowSoftness")));
+            double b=rendition_kernel::sigmoid(float((e-get("highlightRange"))/get("highlightSoftness")));
+            double m=(1-a)*(1-b),total=a+b+m;a/=total;b/=total;m/=total;
+            auto tail=[&](double z) {return .45*get("shadowCompression")*get("toeSoftness")*rendition_kernel::softplus(float((get("toeStart")-z)/get("toeSoftness"))) -.45*get("highlightCompression")*get("shoulderSoftness")*rendition_kernel::softplus(float((z-get("shoulderStart"))/get("shoulderSoftness")));};
+            return get("pivot")+get("contrast")*(e-get("pivot")+tail(e)-tail(get("pivot"))) +m*(get("midExposure")-get("midDensity"))+b*get("whiteLevel")+a*get("blackStops")-q*(get("colourBalance")+b*get("brillianceReduction"));
+        };
+        auto slope=[&](double e,double q) {
+            double d=(desired(e+.01,q)-desired(e-.01,q))/.02;
+            // C1 positive rectifier: preserve slopes >= .1 exactly.
+            return d>=.1?d: .000001+.099999*std::exp((d-.1)/.099999);
+        };
+        for(int q=0;q<=1;++q) {
+          auto &map=q?colourToneMap:toneMap;map.resize(16385);map[0]=0;
+          for(size_t i=1;i<map.size();++i)map[i]=map[i-1]+slope(-64+(double(i)-.5)/128,q)/128;
+          double anchor=mappedTone(get("pivot"),q!=0);
+          for(auto &x:map)x+=desired(get("pivot"),q)-anchor;
+        }
+    }
+
+}
+double PrimariesModel::mappedTone(double e,bool colourful) const {
+    const auto &map=colourful?colourToneMap:toneMap;
+    double z=(e+64)*128;
+    if(z<=0)return map[0]+z*(map[1]-map[0]);
+    if(z>=16384)return map.back()+(z-16384)*(map.back()-map[16383]);
+    size_t i=size_t(z);return map[i]+(z-i)*(map[i+1]-map[i]);
 }
 Vec3 PrimariesModel::apply(Vec3 rgb) const {
     if(!finite(rgb)) throw std::domain_error("Nonfinite source RGB: use Inspector NaN / Inf mode");
@@ -81,8 +111,9 @@ Vec3 PrimariesModel::apply(Vec3 rgb) const {
     double scale=std::pow((std::abs(y)+epsilon)/(pivot+epsilon),get("contrast")-1);
     scale*=std::exp2(get("contrast")*(tail(e)-tail(get("pivot"))) + m*(get("midExposure")-get("midDensity"))+h*get("whiteLevel"));
     double c=std::sqrt(double(residual.x)*residual.x+double(residual.z)*residual.z);
-    double colourful=c/std::sqrt(c*c+y*y+epsilon*epsilon);
-    scale*=std::exp2(-colourful*(get("colourBalance")+h*get("brillianceReduction")));
+    double colourful=monotonic?(c==0 && y==0?0:c/std::sqrt(c*c+y*y)):c/std::sqrt(c*c+y*y+epsilon*epsilon);
+    if(monotonic)scale=std::exp2((1-colourful)*mappedTone(e)+colourful*mappedTone(e,true)-e);
+    else scale*=std::exp2(-colourful*(get("colourBalance")+h*get("brillianceReduction")));
     double shapedY=y*scale+get("blackLevel")*s;
     double chroma=get("saturation")*std::exp2(.25*get("colourBalance")*colourful);
     chroma*=s*get("shadowRetention")+m*get("midChroma")+h*get("highlightRetention");

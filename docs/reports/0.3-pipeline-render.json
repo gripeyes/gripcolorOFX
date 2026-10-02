@@ -1,0 +1,78 @@
+[
+  {
+    "class": "OFXorg.spektrafilm_v0",
+    "input": [
+      0.18,
+      0.18,
+      0.18,
+      1
+    ],
+    "outputRole": "Display Out SDR",
+    "process": "Print simulation",
+    "sample": [
+      0.4898291826248169,
+      0.4856904149055481,
+      0.4848838150501251,
+      1.0
+    ],
+    "finite": true,
+    "semantics_accepted": false
+  },
+  {
+    "class": "OFXorg.spektrafilm_v0",
+    "input": [
+      -0.1,
+      0.2,
+      4,
+      0.3
+    ],
+    "outputRole": "Display Out SDR",
+    "process": "Print simulation",
+    "sample": [
+      0.07781007140874863,
+      0.7589030861854553,
+      0.875457763671875,
+      0.30000001192092896
+    ],
+    "finite": true,
+    "semantics_accepted": false
+  },
+  {
+    "class": "OFXorg.spektrafilm.diffuse_v0",
+    "input": [
+      0.18,
+      0.18,
+      0.18,
+      1
+    ],
+    "outputRole": "Display Out SDR",
+    "process": "Print simulation",
+    "sample": [
+      0.17999528348445892,
+      0.17999522387981415,
+      0.17999525368213654,
+      1.0
+    ],
+    "finite": true,
+    "semantics_accepted": false
+  },
+  {
+    "class": "OFXorg.spektrafilm.diffuse_v0",
+    "input": [
+      -0.1,
+      0.2,
+      4,
+      0.3
+    ],
+    "outputRole": "Display Out SDR",
+    "process": "Print simulation",
+    "sample": [
+      -0.09999752789735794,
+      0.19999469816684723,
+      3.999894380569458,
+      0.30000001192092896
+    ],
+    "finite": true,
+    "semantics_accepted": false
+  }
+]

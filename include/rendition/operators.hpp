@@ -6,7 +6,7 @@ namespace rendition_kernel {
 struct Parameters;
 }
 namespace rendition {
-enum class Effect { Scene, Tone, Volume, Density, Crossover, Crosstalk, Strip, Inspector, Primaries };
+enum class Effect { Scene, Tone, Volume, Density, Crossover, Crosstalk, Strip, Inspector, Primaries, Base, Palette, Material };
 using Values = std::map<std::string, double>;
 struct Parameter {
     std::string id, label, group, unit;
@@ -32,6 +32,7 @@ class Snapshot {
     bool identity;
     std::shared_ptr<const Snapshot> diagnosticProbe;
     std::shared_ptr<const PrimariesModel> primaries;
+    std::vector<std::shared_ptr<const Snapshot>> stages;
     std::shared_ptr<const rendition_kernel::Parameters> kernel;
 
   public:
@@ -65,7 +66,7 @@ class Snapshot {
     float get(const std::string &key) const;
     Snapshot(Effect effect, const Values &values = {}, const std::string &metadata = "");
     Vec3 apply(Vec3 rgb) const;
-    std::array<float, 4> pixel(std::array<float, 4> rgba) const;
+    std::array<float, 4> pixel(std::array<float, 4> rgba, float matteCoverage = 1) const;
 };
 struct ImageView {
     float *data;

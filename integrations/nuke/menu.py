@@ -6,19 +6,21 @@ import nuke
 EFFECTS = ('Scene', 'Tone', 'Volume', 'Density', 'Crossover', 'Crosstalk', 'Strip', 'Inspector', 'Primaries')
 menus = [nuke.menu('Nodes').addMenu('Rendition', icon='Color.png'),
          nuke.menu('Nuke').addMenu('Rendition')]
-for effect in EFFECTS:
-    # Standard menu command strings participate in Nuke's node-search index.
-    for menu in menus:
+for menu in menus:
+    for effect in ('Base','Palette','Material','Inspector'):
         menu.addCommand(effect, "nuke.createNode('OFXorg.gripcolor.rendition.%s_v1')" % effect)
+    advanced=menu.addMenu('Advanced')
+    for effect in EFFECTS:
+        advanced.addCommand(effect, "nuke.createNode('OFXorg.gripcolor.rendition.%s_v1')" % effect)
 
 menus[1].addSeparator()
 menus[1].addCommand('Quick Help', lambda: nuke.message(
-    'Rendition CPU artist build\n\n'
+    'Rendition 0.3 CPU artist architecture\n\nBase -> Palette -> Material -> optional Pigment/SpektraFilm -> appropriate display path.\n\n'
     'Auto uses your OCIO scene_linear role. Missing or unsupported roles require manual Source interpretation. '
     'Manual interpretation identifies incoming RGB; it does not convert gamut.\n\n'
     'Default controls copy RGB and alpha exactly. RGB as supplied is the default. '
     'Optional unpremultiply/process/premultiply retains zero-alpha RGB.\n\n'
-    'Primaries: direct master/blacks/midtones/whites colour and soft ranges. Scene: exposure/illuminant/SOP. Tone: tonal relationships. Volume: six continuous families. '
+    'Base: monotone scalar tone and direct tonal colour. Palette: shared colour-family engines. Material: research depth/separation. Advanced Primaries: historical prototype. Scene: direct master/blacks/midtones/whites colour and soft ranges. Scene: exposure/illuminant/SOP. Tone: tonal relationships. Volume: six continuous families. '
     'Density: depth/chroma candidate. Crossover: exposure-evolving colour. '
     'Crosstalk: inspectable matrix. Strip: separation/palette candidate. Inspector: diagnostics.\n\n'
     'Density and Strip remain research candidates. Basic usability is accepted; aggressive-range simplicity challenges remain open. '

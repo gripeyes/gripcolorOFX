@@ -66,7 +66,7 @@ rendition_kernel::M3 spectralBasis(bool inverse) {
     return b;
 }
 Vec3 kernelApply(const Snapshot &s, Vec3 rgb) {
-    if(s.effectId()==Effect::Primaries) throw std::invalid_argument("Artist Primaries prototype requires CPU model dispatch");
+    if(s.effectId()>=Effect::Primaries) throw std::invalid_argument("Artist Primaries prototype requires CPU model dispatch");
     auto r = rendition_kernel::run(s.packed(), {rgb.x, rgb.y, rgb.z}, spectralTable().data(), spectralBasis(),
                                    spectralBasis(true));
     if (r.error == 1)

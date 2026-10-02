@@ -1,0 +1,146 @@
+{
+  "OFXorg.gripcolor.rendition.Base_v1": {
+    "Input": [
+      "interpretation",
+      "alphaMode"
+    ],
+    "Custom primaries": [
+      "rx",
+      "ry",
+      "gx",
+      "gy",
+      "bx",
+      "by",
+      "wx",
+      "wy"
+    ],
+    "Expert": [
+      "modelVersion",
+      "adapterVersion",
+      "semanticReference"
+    ],
+    "Artist": [
+      "exposure",
+      "contrast",
+      "pivot",
+      "blackStops",
+      "whiteLevel",
+      "shadowCompression",
+      "highlightCompression",
+      "midBalance",
+      "midTint",
+      "saturation",
+      "colourBalance",
+      "shadowTint",
+      "highlightTint"
+    ],
+    "Advanced tonal colour": [
+      "toeStart",
+      "toeSoftness",
+      "shadowHue",
+      "shadowRetention",
+      "colourDeath",
+      "deathStart",
+      "deathSoftness",
+      "midExposure",
+      "midDensity",
+      "midChroma",
+      "shoulderStart",
+      "shoulderSoftness",
+      "highlightHue",
+      "highlightRetention",
+      "highlightBleach",
+      "brillianceReduction",
+      "shadowRange",
+      "shadowSoftness",
+      "highlightRange",
+      "highlightSoftness",
+      "highlightBurn"
+    ],
+    "Local exposure": [
+      "localExposure",
+      "localProtection",
+      "localCenter",
+      "localSoftness",
+      "localChroma"
+    ]
+  },
+  "OFXorg.gripcolor.rendition.Palette_v1": {
+    "Input": [
+      "interpretation",
+      "alphaMode"
+    ],
+    "Custom primaries": [
+      "rx",
+      "ry",
+      "gx",
+      "gy",
+      "bx",
+      "by",
+      "wx",
+      "wy"
+    ],
+    "Expert": [
+      "modelVersion",
+      "adapterVersion",
+      "VolumeVersion",
+      "CrossoverVersion",
+      "CrosstalkVersion",
+      "PrimariesVersion",
+      "semanticReference"
+    ],
+    "Artist": [
+      "separation",
+      "compression",
+      "contamination",
+      "accent",
+      "bias",
+      "shadowHue",
+      "highlightHue",
+      "colourDeath",
+      "trajectory"
+    ],
+    "Colour families": [
+      "familyRed",
+      "familyYellow",
+      "familyGreen",
+      "familyCyan",
+      "familyBlue",
+      "familyMagenta"
+    ]
+  },
+  "OFXorg.gripcolor.rendition.Material_v1": {
+    "Input": [
+      "interpretation",
+      "alphaMode"
+    ],
+    "Custom primaries": [
+      "rx",
+      "ry",
+      "gx",
+      "gy",
+      "bx",
+      "by",
+      "wx",
+      "wy"
+    ],
+    "Expert": [
+      "modelVersion",
+      "adapterVersion",
+      "DensityVersion",
+      "StripVersion",
+      "CrosstalkVersion",
+      "semanticReference"
+    ],
+    "Artist": [
+      "depth",
+      "density",
+      "coupling",
+      "separation",
+      "leakage",
+      "crosstalk",
+      "contamination",
+      "anchor"
+    ]
+  }
+}

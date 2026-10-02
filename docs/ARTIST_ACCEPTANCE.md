@@ -18,3 +18,7 @@ Density and Strip remain **research candidates**. They pass only when useful beh
 The artist build is a local ad-hoc-signed arm64 CPU candidate, not a production release. Flame smoke testing and OFX host Metal parity are separate pending gates.
 
 To relocate the package, edit `artist/targets.json` to point to the existing user OCIO config and run Nuke `-t tools/nuke_artist_bench.py` from the extracted package to regenerate absolute Read paths. Offline artist tools require the repository build/Python environment; OFX usage does not. The initial saved graph uses this workstation’s fixture paths.
+
+## 0.3 consolidation artist gate
+
+The user requested continued use of correctly tagged approved samples. The native 0.3 graph lets Nuke convert AP0 originals / Rec.2020 fixtures to scene_linear with Raw OFF; Auto interprets the resulting signal. `build/architecture-0.3/artist-review.json` preserves human observations across regeneration. Evaluate Base everyday tasks without Advanced wiring, Palette grammar across portrait/fashion/neon/CG-reference samples, Material versus retained M17 baselines, and what optional SpektraFilm adds. Do not label the provided sample set as user-authored CG, invent interaction time or infer artist acceptance from numerical results. Freeze artist architecture only after those criteria pass.

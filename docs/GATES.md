@@ -24,3 +24,9 @@ The targeted 0.2 phase implements differential Inspector modes, HK appearance ex
 Option B adds a versioned ninth CPU prototype with shared core interpretation/CAT/alpha infrastructure and unchanged original operator equations. All requested master/toe/mid/shoulder/range controls are present. Six focused independent tests and 10 native Nuke checks pass; interactive menu creation/control exposure/edit/save passes. Seven task recipes on three approved frames are prepared for human review. See `ARTIST_PRIMARIES.md` and retained `0.2.1-*` reports.
 
 **Artist/prototype gate pending:** useful speed/feel, human preferences, reliable group collapse/Expert/custom expansion, wider real-media behavior and a targeted remedy for aggressive narrow zonal tone reversal. No full monotonicity, production or Metal parity claim applies to this new model. Flame and host Metal remain pending while Nuke artist evaluation continues.
+
+## Rendition 0.3 architecture consolidation
+
+Base scalar/ray tone reversal is constrained by positive-slope construction, with original Primaries v1 untouched. Palette/Material compact front ends reuse existing engines; full 1 nm spectral reference and matte-driven exposure are implemented on CPU. Native Nuke sample translation, alpha/animation/reload/render checks pass. Artist control contracts and version selectors are explicit.
+
+**Architecture freeze pending** human predictability/time/reuse, Material M17 advantage and complete Pigment/SpektraFilm workflow evidence. No invented artist acceptance. Signed/HDR adaptations, numerical conditioning and wider image/host edges remain documented. Active SpektraFilm, host Metal and Flame do not block CPU evaluation. See `ARTIST_ARCHITECTURE_0_3.md` and `PIPELINE_CONTRACT.md`.

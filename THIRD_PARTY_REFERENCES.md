@@ -37,3 +37,9 @@ The user-required Hellwig/HK brightness experiments use the already pinned Colou
 ## Artist Primaries interaction references
 
 User-requested targeted UI study: FilmLight Base Grade (https://www.filmlight.ltd.uk/store/news_articles/lowepost-base-grade-and-the-evolution-of-grading-tools/), X Grade and Chromogen (https://www.filmlight.ltd.uk/pdf/datasheets/FL-BL-DS-1039-Baselight60.pdf), Autodesk MasterGrade (https://help.autodesk.com/cloudhelp/2022/ENU/Flame-EffectsandToolsReference/files/GUID-3A5D8228-E8BC-48CB-8737-B71C6F0934BA.htm), Blackmagic HDR zones (https://documents.blackmagicdesign.com/UserManuals/DaVinci-Resolve-17-Colorist-Guide.pdf). Consulted public control descriptions only on 2026-10-02. No proprietary equations, code, presets or assets reused; implementation is independently specified. Scope is the requested primary-control interaction gap, not renewed broad research. Source comparison and boundaries: docs/ARTIST_PRIMARIES.md.
+
+## 0.3 targeted monotone / pipeline references
+
+SciPy PchipInterpolator primary documentation (https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.PchipInterpolator.html), consulted 2026-10-02: shape-preserving C1 interpolation requires appropriate monotone input data. SciPy is used offline for the targeted existing-reversal comparison; the C++ runtime uses independently implemented positive derivative integration, not copied PCHIP source. Existing SciPy license/dependency obligations remain.
+
+Installed SpektraFilm v0.2 / Pigment v1 native plugin identifiers, parameter labels/choices and local sample behavior were inspected as interface/behavioral references. No commercial implementation, spectra, manuals or binaries were copied into Rendition. Reproduction output semantics are explicitly separate from the scene-rendition suite.

@@ -8,7 +8,7 @@ from PIL import Image
 import _rendition as core
 
 ROOT=Path(__file__).resolve().parents[1]
-NAMES=['Scene','Tone','Volume','Density','Crossover','Crosstalk','Strip','Inspector','Primaries']
+NAMES=['Scene','Tone','Volume','Density','Crossover','Crosstalk','Strip','Inspector','Primaries','Base','Palette','Material']
 SPEC=json.loads((ROOT/'artist/targets.json').read_text())
 
 def rgba(rgb):
@@ -25,7 +25,7 @@ def stack(image,recipe):
 
 def write_exr(path,image):
     image=np.ascontiguousarray(image,dtype=np.float32)
-    OpenEXR.File({'comments':'Scene-linear Linear Rec.2020 / RGB as supplied; explicit interpretation required'},
+    OpenEXR.File({'comments':'Scene-linear Linear Rec.2020 / RGB as supplied; explicit interpretation required','chromaticities':(.708,.292,.170,.797,.131,.046,.3127,.329),'ocioColorSpace':'Linear Rec.2020'},
                  {key:image[...,i].copy() for i,key in enumerate('RGBA')}).write(str(path))
 
 def read_scene(path):

@@ -1,0 +1,45 @@
+{
+  "host": "Nuke 17.0v1",
+  "date": "2026-10-02",
+  "checks": [
+    {
+      "case": "Rendition menu Base / Palette / Material / Inspector",
+      "passed": true
+    },
+    {
+      "case": "Advanced submenu retains all nine historical nodes",
+      "passed": true
+    },
+    {
+      "case": "Normal menu creation of Base, Palette, Material and Inspector",
+      "passed": true
+    },
+    {
+      "case": "Base 13 main controls in intended order",
+      "passed": true
+    },
+    {
+      "case": "Base Advanced tonal controls visible and shadow hue edited",
+      "passed": true
+    },
+    {
+      "case": "Base Dodge / Burn five controls visible",
+      "passed": true
+    },
+    {
+      "case": "Palette nine main controls and six Advanced families visible",
+      "passed": true
+    },
+    {
+      "case": "Material eight main controls visible",
+      "passed": true
+    },
+    {
+      "case": "Interactive Save script as UI-created-artist.nk",
+      "passed": true
+    }
+  ],
+  "presentation": "Nuke standard tabs with self-relative Link_Knob aliases to original OFX parameters; no independent grade state",
+  "sample_graph_gui_load": "Pending: Open attempt did not visibly replace test window; native graph reload/Read conversion tests pass",
+  "artist_acceptance": "Not inferred from UI exposure or numerical tests"
+}

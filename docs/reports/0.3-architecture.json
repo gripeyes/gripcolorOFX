@@ -1,0 +1,1786 @@
+{
+  "phase": "0.3 artist architecture candidate",
+  "artist_cases": [
+    {
+      "effect": "Base",
+      "task": "Cool the blacks",
+      "frame": 5,
+      "parameters": {
+        "shadowHue": 240,
+        "shadowTint": 0.35,
+        "shadowRange": -5,
+        "shadowSoftness": 0.7
+      },
+      "view": "base-0005-0.png",
+      "scene_exr": "base-0005-0.exr",
+      "cpu_seconds": 0.4474444589995983,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Warm the shadows",
+      "frame": 5,
+      "parameters": {
+        "shadowHue": 35,
+        "shadowTint": 0.3
+      },
+      "view": "base-0005-1.png",
+      "scene_exr": "base-0005-1.exr",
+      "cpu_seconds": 0.4676570419997006,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Creamier whites",
+      "frame": 5,
+      "parameters": {
+        "highlightHue": 50,
+        "highlightTint": 0.2,
+        "highlightBleach": 0.65,
+        "highlightRange": 1.5
+      },
+      "view": "base-0005-2.png",
+      "scene_exr": "base-0005-2.exr",
+      "cpu_seconds": 0.4715374999996129,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Hold highlights down",
+      "frame": 5,
+      "parameters": {
+        "highlightCompression": 0.9,
+        "shoulderStart": 2,
+        "shoulderSoftness": 1.5,
+        "whiteLevel": -0.5
+      },
+      "view": "base-0005-3.png",
+      "scene_exr": "base-0005-3.exr",
+      "cpu_seconds": 0.47429741700034356,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Keep colour alive deeper into toe",
+      "frame": 5,
+      "parameters": {
+        "shadowCompression": 0.55,
+        "colourDeath": 0.7,
+        "deathStart": -12,
+        "deathSoftness": 1.5,
+        "shadowRetention": 1.3
+      },
+      "view": "base-0005-4.png",
+      "scene_exr": "base-0005-4.exr",
+      "cpu_seconds": 0.48721054199995706,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Let colour die smoothly into black",
+      "frame": 5,
+      "parameters": {
+        "colourDeath": 1,
+        "deathStart": -5,
+        "deathSoftness": 1.2
+      },
+      "view": "base-0005-5.png",
+      "scene_exr": "base-0005-5.exr",
+      "cpu_seconds": 0.47199095799987845,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Pale green skin highlights",
+      "frame": 5,
+      "parameters": {
+        "highlightHue": 120,
+        "highlightTint": 0.35,
+        "highlightBleach": 0.8,
+        "highlightRange": -0.5,
+        "highlightSoftness": 1.2
+      },
+      "view": "base-0005-6.png",
+      "scene_exr": "base-0005-6.exr",
+      "cpu_seconds": 0.4646435829999973,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Green to olive",
+      "frame": 5,
+      "parameters": {
+        "familyGreen": -35,
+        "compression": 0.2
+      },
+      "view": "palette-0005-0.png",
+      "scene_exr": "palette-0005-0.exr",
+      "cpu_seconds": 0.08870595900043554,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Cyan toward blue-black as exposure falls",
+      "frame": 5,
+      "parameters": {
+        "familyCyan": 25,
+        "shadowHue": 30,
+        "colourDeath": 0.7
+      },
+      "view": "palette-0005-1.png",
+      "scene_exr": "palette-0005-1.exr",
+      "cpu_seconds": 0.09179262500038021,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Protect red and compress secondary colours",
+      "frame": 5,
+      "parameters": {
+        "compression": 0.7,
+        "accent": 1
+      },
+      "view": "palette-0005-2.png",
+      "scene_exr": "palette-0005-2.exr",
+      "cpu_seconds": 0.10998387499967066,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Bronze / green neutral contamination",
+      "frame": 5,
+      "parameters": {
+        "contamination": 0.5,
+        "bias": 0.25
+      },
+      "view": "palette-0005-3.png",
+      "scene_exr": "palette-0005-3.exr",
+      "cpu_seconds": 0.36874804199942446,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "One red accent, suppress the remainder",
+      "frame": 5,
+      "parameters": {
+        "compression": 1,
+        "accent": 1
+      },
+      "view": "palette-0005-4.png",
+      "scene_exr": "palette-0005-4.exr",
+      "cpu_seconds": 0.11026316599964048,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Separate major colour families",
+      "frame": 5,
+      "parameters": {
+        "separation": 0.6
+      },
+      "view": "palette-0005-5.png",
+      "scene_exr": "palette-0005-5.exr",
+      "cpu_seconds": 0.0930212080002093,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Depth",
+      "frame": 5,
+      "parameters": {
+        "depth": 0.8
+      },
+      "view": "material-0005-0.png",
+      "scene_exr": "material-0005-0.exr",
+      "cpu_seconds": 0.053864125000472995,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Material density / chroma",
+      "frame": 5,
+      "parameters": {
+        "density": 0.7,
+        "coupling": 0.5
+      },
+      "view": "material-0005-1.png",
+      "scene_exr": "material-0005-1.exr",
+      "cpu_seconds": 0.062290374999065534,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Leaky separation",
+      "frame": 5,
+      "parameters": {
+        "separation": 0.7,
+        "leakage": 0.65,
+        "anchor": 0.7
+      },
+      "view": "material-0005-2.png",
+      "scene_exr": "material-0005-2.exr",
+      "cpu_seconds": 0.05356125000071188,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Contaminated depth",
+      "frame": 5,
+      "parameters": {
+        "depth": 0.5,
+        "contamination": 0.6,
+        "crosstalk": 0.4
+      },
+      "view": "material-0005-3.png",
+      "scene_exr": "material-0005-3.exr",
+      "cpu_seconds": 0.05518541699893831,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Cool the blacks",
+      "frame": 7,
+      "parameters": {
+        "shadowHue": 240,
+        "shadowTint": 0.35,
+        "shadowRange": -5,
+        "shadowSoftness": 0.7
+      },
+      "view": "base-0007-0.png",
+      "scene_exr": "base-0007-0.exr",
+      "cpu_seconds": 0.45114920800006075,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Warm the shadows",
+      "frame": 7,
+      "parameters": {
+        "shadowHue": 35,
+        "shadowTint": 0.3
+      },
+      "view": "base-0007-1.png",
+      "scene_exr": "base-0007-1.exr",
+      "cpu_seconds": 0.45040345800043724,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Creamier whites",
+      "frame": 7,
+      "parameters": {
+        "highlightHue": 50,
+        "highlightTint": 0.2,
+        "highlightBleach": 0.65,
+        "highlightRange": 1.5
+      },
+      "view": "base-0007-2.png",
+      "scene_exr": "base-0007-2.exr",
+      "cpu_seconds": 0.4523247500001162,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Hold highlights down",
+      "frame": 7,
+      "parameters": {
+        "highlightCompression": 0.9,
+        "shoulderStart": 2,
+        "shoulderSoftness": 1.5,
+        "whiteLevel": -0.5
+      },
+      "view": "base-0007-3.png",
+      "scene_exr": "base-0007-3.exr",
+      "cpu_seconds": 0.44842120800058183,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Keep colour alive deeper into toe",
+      "frame": 7,
+      "parameters": {
+        "shadowCompression": 0.55,
+        "colourDeath": 0.7,
+        "deathStart": -12,
+        "deathSoftness": 1.5,
+        "shadowRetention": 1.3
+      },
+      "view": "base-0007-4.png",
+      "scene_exr": "base-0007-4.exr",
+      "cpu_seconds": 0.4546265829994809,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Let colour die smoothly into black",
+      "frame": 7,
+      "parameters": {
+        "colourDeath": 1,
+        "deathStart": -5,
+        "deathSoftness": 1.2
+      },
+      "view": "base-0007-5.png",
+      "scene_exr": "base-0007-5.exr",
+      "cpu_seconds": 0.45835458299916354,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Pale green skin highlights",
+      "frame": 7,
+      "parameters": {
+        "highlightHue": 120,
+        "highlightTint": 0.35,
+        "highlightBleach": 0.8,
+        "highlightRange": -0.5,
+        "highlightSoftness": 1.2
+      },
+      "view": "base-0007-6.png",
+      "scene_exr": "base-0007-6.exr",
+      "cpu_seconds": 0.4538431250002759,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Green to olive",
+      "frame": 7,
+      "parameters": {
+        "familyGreen": -35,
+        "compression": 0.2
+      },
+      "view": "palette-0007-0.png",
+      "scene_exr": "palette-0007-0.exr",
+      "cpu_seconds": 0.08754462499928195,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Cyan toward blue-black as exposure falls",
+      "frame": 7,
+      "parameters": {
+        "familyCyan": 25,
+        "shadowHue": 30,
+        "colourDeath": 0.7
+      },
+      "view": "palette-0007-1.png",
+      "scene_exr": "palette-0007-1.exr",
+      "cpu_seconds": 0.08940504100064572,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Protect red and compress secondary colours",
+      "frame": 7,
+      "parameters": {
+        "compression": 0.7,
+        "accent": 1
+      },
+      "view": "palette-0007-2.png",
+      "scene_exr": "palette-0007-2.exr",
+      "cpu_seconds": 0.10850708299949474,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Bronze / green neutral contamination",
+      "frame": 7,
+      "parameters": {
+        "contamination": 0.5,
+        "bias": 0.25
+      },
+      "view": "palette-0007-3.png",
+      "scene_exr": "palette-0007-3.exr",
+      "cpu_seconds": 0.3635303330011084,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "One red accent, suppress the remainder",
+      "frame": 7,
+      "parameters": {
+        "compression": 1,
+        "accent": 1
+      },
+      "view": "palette-0007-4.png",
+      "scene_exr": "palette-0007-4.exr",
+      "cpu_seconds": 0.10830454200004169,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Separate major colour families",
+      "frame": 7,
+      "parameters": {
+        "separation": 0.6
+      },
+      "view": "palette-0007-5.png",
+      "scene_exr": "palette-0007-5.exr",
+      "cpu_seconds": 0.09173337500033085,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Depth",
+      "frame": 7,
+      "parameters": {
+        "depth": 0.8
+      },
+      "view": "material-0007-0.png",
+      "scene_exr": "material-0007-0.exr",
+      "cpu_seconds": 0.0527462080008263,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Material density / chroma",
+      "frame": 7,
+      "parameters": {
+        "density": 0.7,
+        "coupling": 0.5
+      },
+      "view": "material-0007-1.png",
+      "scene_exr": "material-0007-1.exr",
+      "cpu_seconds": 0.061414709000018775,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Leaky separation",
+      "frame": 7,
+      "parameters": {
+        "separation": 0.7,
+        "leakage": 0.65,
+        "anchor": 0.7
+      },
+      "view": "material-0007-2.png",
+      "scene_exr": "material-0007-2.exr",
+      "cpu_seconds": 0.05271412499860162,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Contaminated depth",
+      "frame": 7,
+      "parameters": {
+        "depth": 0.5,
+        "contamination": 0.6,
+        "crosstalk": 0.4
+      },
+      "view": "material-0007-3.png",
+      "scene_exr": "material-0007-3.exr",
+      "cpu_seconds": 0.05386279100093816,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Cool the blacks",
+      "frame": 60,
+      "parameters": {
+        "shadowHue": 240,
+        "shadowTint": 0.35,
+        "shadowRange": -5,
+        "shadowSoftness": 0.7
+      },
+      "view": "base-0060-0.png",
+      "scene_exr": "base-0060-0.exr",
+      "cpu_seconds": 0.45394416700037254,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Warm the shadows",
+      "frame": 60,
+      "parameters": {
+        "shadowHue": 35,
+        "shadowTint": 0.3
+      },
+      "view": "base-0060-1.png",
+      "scene_exr": "base-0060-1.exr",
+      "cpu_seconds": 0.4570874580003874,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Creamier whites",
+      "frame": 60,
+      "parameters": {
+        "highlightHue": 50,
+        "highlightTint": 0.2,
+        "highlightBleach": 0.65,
+        "highlightRange": 1.5
+      },
+      "view": "base-0060-2.png",
+      "scene_exr": "base-0060-2.exr",
+      "cpu_seconds": 0.4587992500000837,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Hold highlights down",
+      "frame": 60,
+      "parameters": {
+        "highlightCompression": 0.9,
+        "shoulderStart": 2,
+        "shoulderSoftness": 1.5,
+        "whiteLevel": -0.5
+      },
+      "view": "base-0060-3.png",
+      "scene_exr": "base-0060-3.exr",
+      "cpu_seconds": 0.4543228750007984,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Keep colour alive deeper into toe",
+      "frame": 60,
+      "parameters": {
+        "shadowCompression": 0.55,
+        "colourDeath": 0.7,
+        "deathStart": -12,
+        "deathSoftness": 1.5,
+        "shadowRetention": 1.3
+      },
+      "view": "base-0060-4.png",
+      "scene_exr": "base-0060-4.exr",
+      "cpu_seconds": 0.45479866599998786,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Let colour die smoothly into black",
+      "frame": 60,
+      "parameters": {
+        "colourDeath": 1,
+        "deathStart": -5,
+        "deathSoftness": 1.2
+      },
+      "view": "base-0060-5.png",
+      "scene_exr": "base-0060-5.exr",
+      "cpu_seconds": 0.4542838329998631,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Pale green skin highlights",
+      "frame": 60,
+      "parameters": {
+        "highlightHue": 120,
+        "highlightTint": 0.35,
+        "highlightBleach": 0.8,
+        "highlightRange": -0.5,
+        "highlightSoftness": 1.2
+      },
+      "view": "base-0060-6.png",
+      "scene_exr": "base-0060-6.exr",
+      "cpu_seconds": 0.4547807079998165,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Green to olive",
+      "frame": 60,
+      "parameters": {
+        "familyGreen": -35,
+        "compression": 0.2
+      },
+      "view": "palette-0060-0.png",
+      "scene_exr": "palette-0060-0.exr",
+      "cpu_seconds": 0.08297900000070513,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Cyan toward blue-black as exposure falls",
+      "frame": 60,
+      "parameters": {
+        "familyCyan": 25,
+        "shadowHue": 30,
+        "colourDeath": 0.7
+      },
+      "view": "palette-0060-1.png",
+      "scene_exr": "palette-0060-1.exr",
+      "cpu_seconds": 0.08243212500019581,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Protect red and compress secondary colours",
+      "frame": 60,
+      "parameters": {
+        "compression": 0.7,
+        "accent": 1
+      },
+      "view": "palette-0060-2.png",
+      "scene_exr": "palette-0060-2.exr",
+      "cpu_seconds": 0.09958562499923573,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Bronze / green neutral contamination",
+      "frame": 60,
+      "parameters": {
+        "contamination": 0.5,
+        "bias": 0.25
+      },
+      "view": "palette-0060-3.png",
+      "scene_exr": "palette-0060-3.exr",
+      "cpu_seconds": 0.36608341699866287,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "One red accent, suppress the remainder",
+      "frame": 60,
+      "parameters": {
+        "compression": 1,
+        "accent": 1
+      },
+      "view": "palette-0060-4.png",
+      "scene_exr": "palette-0060-4.exr",
+      "cpu_seconds": 0.10056262500074808,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Separate major colour families",
+      "frame": 60,
+      "parameters": {
+        "separation": 0.6
+      },
+      "view": "palette-0060-5.png",
+      "scene_exr": "palette-0060-5.exr",
+      "cpu_seconds": 0.08701316699989547,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Depth",
+      "frame": 60,
+      "parameters": {
+        "depth": 0.8
+      },
+      "view": "material-0060-0.png",
+      "scene_exr": "material-0060-0.exr",
+      "cpu_seconds": 0.04864308399919537,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Material density / chroma",
+      "frame": 60,
+      "parameters": {
+        "density": 0.7,
+        "coupling": 0.5
+      },
+      "view": "material-0060-1.png",
+      "scene_exr": "material-0060-1.exr",
+      "cpu_seconds": 0.05426204200011853,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Leaky separation",
+      "frame": 60,
+      "parameters": {
+        "separation": 0.7,
+        "leakage": 0.65,
+        "anchor": 0.7
+      },
+      "view": "material-0060-2.png",
+      "scene_exr": "material-0060-2.exr",
+      "cpu_seconds": 0.048664332998669124,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Contaminated depth",
+      "frame": 60,
+      "parameters": {
+        "depth": 0.5,
+        "contamination": 0.6,
+        "crosstalk": 0.4
+      },
+      "view": "material-0060-3.png",
+      "scene_exr": "material-0060-3.exr",
+      "cpu_seconds": 0.04992020800091268,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Cool the blacks",
+      "frame": 4,
+      "parameters": {
+        "shadowHue": 240,
+        "shadowTint": 0.35,
+        "shadowRange": -5,
+        "shadowSoftness": 0.7
+      },
+      "view": "base-0004-0.png",
+      "scene_exr": "base-0004-0.exr",
+      "cpu_seconds": 0.45440004100055376,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Warm the shadows",
+      "frame": 4,
+      "parameters": {
+        "shadowHue": 35,
+        "shadowTint": 0.3
+      },
+      "view": "base-0004-1.png",
+      "scene_exr": "base-0004-1.exr",
+      "cpu_seconds": 0.45309829100006027,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Creamier whites",
+      "frame": 4,
+      "parameters": {
+        "highlightHue": 50,
+        "highlightTint": 0.2,
+        "highlightBleach": 0.65,
+        "highlightRange": 1.5
+      },
+      "view": "base-0004-2.png",
+      "scene_exr": "base-0004-2.exr",
+      "cpu_seconds": 0.45283412500066333,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Hold highlights down",
+      "frame": 4,
+      "parameters": {
+        "highlightCompression": 0.9,
+        "shoulderStart": 2,
+        "shoulderSoftness": 1.5,
+        "whiteLevel": -0.5
+      },
+      "view": "base-0004-3.png",
+      "scene_exr": "base-0004-3.exr",
+      "cpu_seconds": 0.44980295799905434,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Keep colour alive deeper into toe",
+      "frame": 4,
+      "parameters": {
+        "shadowCompression": 0.55,
+        "colourDeath": 0.7,
+        "deathStart": -12,
+        "deathSoftness": 1.5,
+        "shadowRetention": 1.3
+      },
+      "view": "base-0004-4.png",
+      "scene_exr": "base-0004-4.exr",
+      "cpu_seconds": 0.45367395899847907,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Let colour die smoothly into black",
+      "frame": 4,
+      "parameters": {
+        "colourDeath": 1,
+        "deathStart": -5,
+        "deathSoftness": 1.2
+      },
+      "view": "base-0004-5.png",
+      "scene_exr": "base-0004-5.exr",
+      "cpu_seconds": 0.45457333299964375,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Base",
+      "task": "Pale green skin highlights",
+      "frame": 4,
+      "parameters": {
+        "highlightHue": 120,
+        "highlightTint": 0.35,
+        "highlightBleach": 0.8,
+        "highlightRange": -0.5,
+        "highlightSoftness": 1.2
+      },
+      "view": "base-0004-6.png",
+      "scene_exr": "base-0004-6.exr",
+      "cpu_seconds": 0.45770679199995357,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Green to olive",
+      "frame": 4,
+      "parameters": {
+        "familyGreen": -35,
+        "compression": 0.2
+      },
+      "view": "palette-0004-0.png",
+      "scene_exr": "palette-0004-0.exr",
+      "cpu_seconds": 0.0894441669988737,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Cyan toward blue-black as exposure falls",
+      "frame": 4,
+      "parameters": {
+        "familyCyan": 25,
+        "shadowHue": 30,
+        "colourDeath": 0.7
+      },
+      "view": "palette-0004-1.png",
+      "scene_exr": "palette-0004-1.exr",
+      "cpu_seconds": 0.09312937499998952,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Protect red and compress secondary colours",
+      "frame": 4,
+      "parameters": {
+        "compression": 0.7,
+        "accent": 1
+      },
+      "view": "palette-0004-2.png",
+      "scene_exr": "palette-0004-2.exr",
+      "cpu_seconds": 0.11107679199994891,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Bronze / green neutral contamination",
+      "frame": 4,
+      "parameters": {
+        "contamination": 0.5,
+        "bias": 0.25
+      },
+      "view": "palette-0004-3.png",
+      "scene_exr": "palette-0004-3.exr",
+      "cpu_seconds": 0.3658210829999007,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "One red accent, suppress the remainder",
+      "frame": 4,
+      "parameters": {
+        "compression": 1,
+        "accent": 1
+      },
+      "view": "palette-0004-4.png",
+      "scene_exr": "palette-0004-4.exr",
+      "cpu_seconds": 0.11042054200152052,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Palette",
+      "task": "Separate major colour families",
+      "frame": 4,
+      "parameters": {
+        "separation": 0.6
+      },
+      "view": "palette-0004-5.png",
+      "scene_exr": "palette-0004-5.exr",
+      "cpu_seconds": 0.09301800000139337,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Depth",
+      "frame": 4,
+      "parameters": {
+        "depth": 0.8
+      },
+      "view": "material-0004-0.png",
+      "scene_exr": "material-0004-0.exr",
+      "cpu_seconds": 0.05416650000006484,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Material density / chroma",
+      "frame": 4,
+      "parameters": {
+        "density": 0.7,
+        "coupling": 0.5
+      },
+      "view": "material-0004-1.png",
+      "scene_exr": "material-0004-1.exr",
+      "cpu_seconds": 0.0632514999997511,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Leaky separation",
+      "frame": 4,
+      "parameters": {
+        "separation": 0.7,
+        "leakage": 0.65,
+        "anchor": 0.7
+      },
+      "view": "material-0004-2.png",
+      "scene_exr": "material-0004-2.exr",
+      "cpu_seconds": 0.05405133399835904,
+      "finite": true,
+      "alpha_bit_exact": true
+    },
+    {
+      "effect": "Material",
+      "task": "Contaminated depth",
+      "frame": 4,
+      "parameters": {
+        "depth": 0.5,
+        "contamination": 0.6,
+        "crosstalk": 0.4
+      },
+      "view": "material-0004-3.png",
+      "scene_exr": "material-0004-3.exr",
+      "cpu_seconds": 0.05534470800012059,
+      "finite": true,
+      "alpha_bit_exact": true
+    }
+  ],
+  "monotone_comparison": {
+    "historical_gain": 264,
+    "raw_knots_PCHIP": 200,
+    "amplitude_bounded_displacement": 159,
+    "integrated_positive_slope_Base": 0
+  },
+  "palette_geometry": [
+    {
+      "task": "Green to olive",
+      "parameters": {
+        "familyGreen": -35,
+        "compression": 0.2
+      },
+      "samples": [
+        [
+          0.800000011920929,
+          0.019999999552965164,
+          0.009999999776482582
+        ],
+        [
+          0.20000000298023224,
+          0.23999999463558197,
+          0.05999999865889549
+        ],
+        [
+          0.009999999776482582,
+          0.6000000238418579,
+          0.800000011920929
+        ],
+        [
+          -0.10000000149011612,
+          0.20000000298023224,
+          4.0
+        ],
+        [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.18000000715255737
+        ]
+      ],
+      "columns": "Jacobian9, determinant, stretches3, condition, disagreement, reliable",
+      "data": [
+        [
+          0.888615705558039,
+          0.12904397469598158,
+          0.028051418286972902,
+          0.05383651840262256,
+          0.9354267899426538,
+          -0.01055886304211671,
+          0.03127328267024288,
+          0.059211123709828006,
+          0.9779812198921064,
+          0.8059196103633747,
+          1.0336974994823576,
+          0.9530349814646393,
+          0.8180680208838124,
+          1.2635838012169045,
+          0.00014263876142403968,
+          1.0
+        ],
+        [
+          0.698807897677884,
+          0.42558673786166645,
+          -0.1654326736515328,
+          0.14032037749906867,
+          0.7741214454240656,
+          0.10750485060147458,
+          0.2853594933565131,
+          -0.18160933813485658,
+          0.9053938688397362,
+          0.5031748392572892,
+          1.0383926484179973,
+          0.9648939716206578,
+          0.5022011683007183,
+          2.0676826617739117,
+          0.0004003893237931369,
+          1.0
+        ],
+        [
+          0.9453476974227992,
+          0.07425309193860825,
+          0.00512218745343466,
+          0.038221454398982994,
+          0.937080911935628,
+          0.018067352108478617,
+          0.07338817267640985,
+          0.1100804649083594,
+          0.8373193264789152,
+          0.7372650156596351,
+          1.027789303331513,
+          0.8889473723024747,
+          0.8069441592602355,
+          1.2736808260360133,
+          0.00019356744072020072,
+          1.0
+        ],
+        [
+          1.0687707102823583,
+          0.10025518281893196,
+          0.000633288630606467,
+          0.10181961774802513,
+          0.914247396948982,
+          0.02623677544330204,
+          -0.7606743519392927,
+          0.22980609831057797,
+          0.7944270600506631,
+          0.7601521319455994,
+          1.4139807260268555,
+          0.9808222106281108,
+          0.5481087515164261,
+          2.5797448446405262,
+          0.0007492747161986266,
+          1.0
+        ],
+        [
+          0.9994619205298013,
+          -0.00020695364238410596,
+          -0.00020695364238410596,
+          0.00016556291390728477,
+          1.0,
+          -0.00020695364238410596,
+          -0.00028973509933774837,
+          -0.00016556291390728477,
+          1.0001241721854304,
+          0.9995859659549486,
+          1.0003042578635515,
+          0.999913054849049,
+          0.9993688168435212,
+          1.0009360318275538,
+          0.00037390730891411503,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "Cyan toward blue-black as exposure falls",
+      "parameters": {
+        "familyCyan": 25,
+        "shadowHue": 30,
+        "colourDeath": 0.7
+      },
+      "samples": [
+        [
+          0.800000011920929,
+          0.019999999552965164,
+          0.009999999776482582
+        ],
+        [
+          0.20000000298023224,
+          0.23999999463558197,
+          0.05999999865889549
+        ],
+        [
+          0.009999999776482582,
+          0.6000000238418579,
+          0.800000011920929
+        ],
+        [
+          -0.10000000149011612,
+          0.20000000298023224,
+          4.0
+        ],
+        [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.18000000715255737
+        ]
+      ],
+      "columns": "Jacobian9, determinant, stretches3, condition, disagreement, reliable",
+      "data": [
+        [
+          0.9603263299061243,
+          0.15839924376654552,
+          0.15422692125905418,
+          0.021101084041126508,
+          0.9140645918364971,
+          -0.05693404144848509,
+          -0.005148089424079869,
+          0.0842916248541899,
+          0.8369860557815305,
+          0.7375642197304518,
+          1.0569969722560995,
+          0.8720062188712953,
+          0.8002146810448076,
+          1.3208917522932992,
+          0.00017137855494744534,
+          1.0
+        ],
+        [
+          0.9248106295790388,
+          0.02601514963367689,
+          0.08111757857974389,
+          0.04951570843164038,
+          0.9733018750776108,
+          -0.038401241753977494,
+          -0.04745126039985099,
+          0.09064944741090276,
+          0.9274350019402406,
+          0.840985222858872,
+          1.0067310900273048,
+          0.9200647486976472,
+          0.9079386260956792,
+          1.108809627756948,
+          0.000629000494486029,
+          1.0
+        ],
+        [
+          0.9233498720596418,
+          -0.09093279690061094,
+          0.1365668305766652,
+          0.27354789439739974,
+          0.940284607361049,
+          -0.08385486514677395,
+          -1.5589585026205073,
+          0.8830278646997467,
+          0.9538071822381166,
+          1.1414914787737134,
+          2.156632179605056,
+          1.023026317886535,
+          0.5173801785902552,
+          4.168370318092576,
+          0.00038726089462803653,
+          1.0
+        ],
+        [
+          -0.14320013560054465,
+          -0.0238344478179075,
+          -0.015750260765906722,
+          1.5780848658243787,
+          1.0161268090971745,
+          0.028445835195946952,
+          -4.913716702895109,
+          0.2233091809935366,
+          0.8728058411563105,
+          -0.1741226063569859,
+          5.228855776581277,
+          1.0767436047238357,
+          0.03092688611610461,
+          169.07152427021893,
+          0.002154085470607337,
+          1.0
+        ],
+        [
+          0.9987582781456954,
+          -0.00020695364238410596,
+          -0.00020695364238410596,
+          0.0004966887417218543,
+          1.0,
+          -0.00020695364238410596,
+          -0.0004966887417218543,
+          -0.00016556291390728477,
+          1.0001241721854304,
+          0.9988822619310168,
+          1.0003456619060938,
+          0.9998710811957777,
+          0.9986658524992799,
+          1.001682053514306,
+          0.0007625554378632693,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "Protect red and compress secondary colours",
+      "parameters": {
+        "compression": 0.7,
+        "accent": 1
+      },
+      "samples": [
+        [
+          0.800000011920929,
+          0.019999999552965164,
+          0.009999999776482582
+        ],
+        [
+          0.20000000298023224,
+          0.23999999463558197,
+          0.05999999865889549
+        ],
+        [
+          0.009999999776482582,
+          0.6000000238418579,
+          0.800000011920929
+        ],
+        [
+          -0.10000000149011612,
+          0.20000000298023224,
+          4.0
+        ],
+        [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.18000000715255737
+        ]
+      ],
+      "columns": "Jacobian9, determinant, stretches3, condition, disagreement, reliable",
+      "data": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0000005820762428,
+          1.0000005820762428,
+          1.0000005820762428,
+          1.0,
+          1.0,
+          1.0000005820762428,
+          3.7572852616070723e-07,
+          1.0
+        ],
+        [
+          0.675152117223395,
+          0.28064075499813734,
+          0.04731082654249127,
+          0.17214081708679996,
+          0.8017198559543027,
+          0.015832363213038415,
+          0.13765056500682976,
+          0.24313920278157208,
+          0.6717578579743888,
+          0.32593027262608726,
+          1.0528111141649983,
+          0.611865847740249,
+          0.5059621459308572,
+          2.080810042079455,
+          0.0005609524696604947,
+          1.0
+        ],
+        [
+          0.7648574960942685,
+          0.2678065862017583,
+          0.025685441811950527,
+          0.1539288982228048,
+          0.783936820146029,
+          0.05282372224705707,
+          0.22567794419984308,
+          0.3403740128147817,
+          0.4803680524511995,
+          0.254468476800735,
+          1.097216975510057,
+          0.5728785634989741,
+          0.40483579045839707,
+          2.71027661429755,
+          0.0002241406382173829,
+          1.0
+        ],
+        [
+          1.292302683483323,
+          0.3320356301339244,
+          0.016994486663686484,
+          0.21414827770544506,
+          0.7463296514985006,
+          0.06751974370436596,
+          -1.909747406732716,
+          0.5461433866671633,
+          0.4001043063626881,
+          0.29318581885041767,
+          2.3484576105359105,
+          0.9808398265409635,
+          0.12728057908891854,
+          18.451028643539342,
+          0.0014188200380838198,
+          1.0
+        ],
+        [
+          0.9994619205298013,
+          -0.00016556291390728477,
+          -0.00020695364238410596,
+          0.00016556291390728477,
+          0.9999586092715231,
+          -0.00020695364238410596,
+          -0.00028973509933774837,
+          0.00012417218543046358,
+          1.0001241721854304,
+          0.9995446454320469,
+          1.000213042624802,
+          0.9999528671419969,
+          0.9993788487553767,
+          1.0008347123520416,
+          0.0005848458641244228,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "Bronze / green neutral contamination",
+      "parameters": {
+        "contamination": 0.5,
+        "bias": 0.25
+      },
+      "samples": [
+        [
+          0.800000011920929,
+          0.019999999552965164,
+          0.009999999776482582
+        ],
+        [
+          0.20000000298023224,
+          0.23999999463558197,
+          0.05999999865889549
+        ],
+        [
+          0.009999999776482582,
+          0.6000000238418579,
+          0.800000011920929
+        ],
+        [
+          -0.10000000149011612,
+          0.20000000298023224,
+          4.0
+        ],
+        [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.18000000715255737
+        ]
+      ],
+      "columns": "Jacobian9, determinant, stretches3, condition, disagreement, reliable",
+      "data": [
+        [
+          0.9970570704812993,
+          -0.00741332302670333,
+          -0.0007078047110922778,
+          0.0022828658173148562,
+          1.0058289114941432,
+          0.0005238686184071134,
+          -0.013068999357398301,
+          -0.033705852427374346,
+          0.9970588778850609,
+          0.999944548531733,
+          1.0190133088537798,
+          0.9999522164662843,
+          0.9813339266627003,
+          1.0383960863548445,
+          7.919297459584895e-05,
+          1.0
+        ],
+        [
+          0.9971439215199305,
+          -0.0074195951819197815,
+          -0.0006519208381839348,
+          0.002266236185272569,
+          1.0058363342853596,
+          0.0004967015909972837,
+          -0.013170557556190239,
+          -0.033900409785173224,
+          0.997035312378735,
+          1.0000151303969806,
+          1.0191197104097416,
+          1.0000217863365912,
+          0.9812324636556613,
+          1.038611896933096,
+          2.5732750125597756e-05,
+          1.0
+        ],
+        [
+          0.9978524297026522,
+          -0.005548551352257488,
+          -0.0004828243741618239,
+          0.001676379578902763,
+          1.0043957681418567,
+          0.0003352704514975414,
+          -0.009872013075760716,
+          -0.02548055431381314,
+          0.9978021159290716,
+          1.0000490101756032,
+          1.014370556869796,
+          1.000007042149368,
+          0.9858744035480291,
+          1.0289044458596481,
+          3.1595261586214303e-05,
+          1.0
+        ],
+        [
+          0.9975375835163381,
+          -0.006399128280589342,
+          -0.0005680971539263895,
+          0.0019501891515839001,
+          1.0050403263359846,
+          0.0004414394278050961,
+          -0.011384485286037055,
+          -0.029295732672714066,
+          0.9974668454775741,
+          1.000044758011888,
+          1.0165060177868002,
+          1.000026530359744,
+          0.9837799380134242,
+          1.0332656506895848,
+          2.3430939244364333e-05,
+          1.0
+        ],
+        [
+          0.9970198675496689,
+          -0.007740066225165563,
+          -0.0006622516556291391,
+          0.0022764900662251655,
+          1.006043046357616,
+          0.0004966887417218543,
+          -0.013658940397350994,
+          -0.0353476821192053,
+          0.9968956953642384,
+          0.999957223322198,
+          1.0199097365213354,
+          1.0000194862218534,
+          0.9804178767075353,
+          1.0402806402780238,
+          8.0374692129409e-05,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "One red accent, suppress the remainder",
+      "parameters": {
+        "compression": 1,
+        "accent": 1
+      },
+      "samples": [
+        [
+          0.800000011920929,
+          0.019999999552965164,
+          0.009999999776482582
+        ],
+        [
+          0.20000000298023224,
+          0.23999999463558197,
+          0.05999999865889549
+        ],
+        [
+          0.009999999776482582,
+          0.6000000238418579,
+          0.800000011920929
+        ],
+        [
+          -0.10000000149011612,
+          0.20000000298023224,
+          4.0
+        ],
+        [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.18000000715255737
+        ]
+      ],
+      "columns": "Jacobian9, determinant, stretches3, condition, disagreement, reliable",
+      "data": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0000005820762428,
+          1.0000005820762428,
+          1.0000005820762428,
+          1.0,
+          1.0,
+          1.0000005820762428,
+          3.7572852616070723e-07,
+          1.0
+        ],
+        [
+          0.537129020240904,
+          0.4034210853098224,
+          0.06267753201396974,
+          0.2423010058363343,
+          0.7122500931329939,
+          0.035824602250679086,
+          0.2130262014156215,
+          0.37097975909598907,
+          0.46124951493985256,
+          0.1234377438836084,
+          1.088029281930817,
+          0.3829824019832389,
+          0.29622968253290133,
+          3.6729245787513984,
+          0.00055653987799474,
+          1.0
+        ],
+        [
+          0.6240416114664363,
+          0.3889509760095366,
+          0.04369691551184622,
+          0.23767337140888062,
+          0.6950156459544032,
+          0.06647668007748472,
+          0.29765050745406835,
+          0.4492251527343168,
+          0.29824169274325735,
+          0.08646871245166898,
+          1.1376753867714966,
+          0.35445351159036903,
+          0.21442792677454928,
+          5.305630679196255,
+          0.0003419109064182195,
+          1.0
+        ],
+        [
+          1.4503223306902402,
+          0.4573062380092015,
+          0.03671583966621964,
+          0.20248067040313222,
+          0.6729785609179131,
+          0.07736179406943823,
+          -2.1706368941514813,
+          0.5906532307634995,
+          0.23530025331545223,
+          0.12283508587137838,
+          2.6317617362177352,
+          1.0006757378443103,
+          0.04664257250846027,
+          56.42402626356797,
+          0.0016072603251260174,
+          1.0
+        ],
+        [
+          0.9994619205298013,
+          -0.00016556291390728477,
+          -0.00020695364238410596,
+          0.00016556291390728477,
+          0.9999586092715231,
+          -0.00020695364238410596,
+          -0.00028973509933774837,
+          0.00012417218543046358,
+          1.0001241721854304,
+          0.9995446454320469,
+          1.000213042624802,
+          0.9999528671419969,
+          0.9993788487553767,
+          1.0008347123520416,
+          0.0006205113663659493,
+          1.0
+        ]
+      ]
+    },
+    {
+      "task": "Separate major colour families",
+      "parameters": {
+        "separation": 0.6
+      },
+      "samples": [
+        [
+          0.800000011920929,
+          0.019999999552965164,
+          0.009999999776482582
+        ],
+        [
+          0.20000000298023224,
+          0.23999999463558197,
+          0.05999999865889549
+        ],
+        [
+          0.009999999776482582,
+          0.6000000238418579,
+          0.800000011920929
+        ],
+        [
+          -0.10000000149011612,
+          0.20000000298023224,
+          4.0
+        ],
+        [
+          0.18000000715255737,
+          0.18000000715255737,
+          0.18000000715255737
+        ]
+      ],
+      "columns": "Jacobian9, determinant, stretches3, condition, disagreement, reliable",
+      "data": [
+        [
+          1.108068842199374,
+          -0.13720235531330835,
+          -0.03486869524117747,
+          -0.06103086350767397,
+          1.0743427777143961,
+          0.017827831160636746,
+          -0.02961148208165698,
+          -0.03784892560367127,
+          0.9802850776606123,
+          1.1583980152059898,
+          1.194116665559043,
+          1.0140264706884745,
+          0.9566691138829547,
+          1.2482023807712674,
+          0.00015396668071754823,
+          1.0
+        ],
+        [
+          1.0827020985967961,
+          -0.06826648453992301,
+          -0.01732246798603027,
+          -0.053986092139575316,
+          1.0581460325344592,
+          0.00270081490104773,
+          -0.03324071774493977,
+          -0.04336116975040358,
+          1.0438804811796663,
+          1.1915648297294683,
+          1.1333613763158699,
+          1.0622355363848934,
+          0.9897566797406475,
+          1.145090909225136,
+          0.00043511880865623563,
+          1.0
+        ],
+        [
+          1.0319385234355536,
+          -0.06078523133661153,
+          -0.0035412941439427804,
+          -0.036135293145237335,
+          1.068842199374162,
+          -0.022090597526449113,
+          -0.08575612868075912,
+          -0.11220384443451051,
+          1.1689018030099836,
+          1.2836952550097709,
+          1.206597600317843,
+          1.0954219551212754,
+          0.9712209402981709,
+          1.2423513026267843,
+          0.00020607492911105027,
+          1.0
+        ],
+        [
+          0.9268669754931818,
+          -0.09375174623279378,
+          0.002632804351065415,
+          -0.15141346803980846,
+          1.1053402127144374,
+          -0.03491934883027865,
+          1.017391514907678,
+          -0.30088475794885167,
+          1.235225748770675,
+          1.2387100946685514,
+          1.8028410744587162,
+          1.0374831346820337,
+          0.6622640598760688,
+          2.7222390337716447,
+          0.0007422847110371809,
+          1.0
+        ],
+        [
+          0.984478476821192,
+          0.014776490066225166,
+          -0.00028973509933774837,
+          0.00016556291390728477,
+          1.0,
+          -0.00028973509933774837,
+          -0.00028973509933774837,
+          0.014817880794701987,
+          0.9853476821192053,
+          0.9700553178446809,
+          1.005316345010914,
+          0.9852381473206674,
+          0.9793829480852653,
+          1.026479322492136,
+          0.00039108970096517773,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "original_model_compatibility": "Primaries v1 retained; stored 0.2.1 reference recipes pass",
+  "artist_acceptance": "Pending human predictability / time / reuse / actual authored CG / SpektraFilm comparison",
+  "model_policy": "Stable IDs plus explicit v1 selections; no silent replacement"
+}

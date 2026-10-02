@@ -1,5 +1,6 @@
 #include "rendition/diagnostics.hpp"
 #include "rendition/primaries.hpp"
+#include "rendition/artist_models.hpp"
 #include "rendition/operators.hpp"
 #include "rendition/kernel_bridge.hpp"
 #include <algorithm>
@@ -8,14 +9,14 @@
 namespace rendition {
 const char *name(Effect e) {
     static const char *n[] = {"Scene",     "Tone",      "Volume", "Density",
-                              "Crossover", "Crosstalk", "Strip",  "Inspector", "Primaries"};
+                              "Crossover", "Crosstalk", "Strip",  "Inspector", "Primaries", "Base", "Palette", "Material"};
     int i = int(e);
-    if (i < 0 || i > 8)
+    if (i < 0 || i > 11)
         throw std::invalid_argument("Invalid effect");
     return n[i];
 }
 std::vector<Parameter> parameters(Effect e) {
-    if (int(e) < 0 || int(e) > int(Effect::Primaries))
+    if (int(e) < 0 || int(e) > int(Effect::Material))
         throw std::invalid_argument("Unknown effect identifier");
     std::vector<Parameter> p;
     auto add = [&](std::string id, std::string label, double v, double lo, double hi,
@@ -202,6 +203,7 @@ std::vector<Parameter> parameters(Effect e) {
     }
     if(e==Effect::Primaries) {auto extra=primariesParameters();p.insert(p.end(),extra.begin(),extra.end());}
     if(e==Effect::Primaries) for(auto &d:p) if(d.id=="modelVersion") d.choices={"Artist Primaries v1 CPU prototype"};
+    if(e>=Effect::Base) {auto extra=artistParameters(e);p.insert(p.end(),extra.begin(),extra.end());for(auto &d:p)if(d.id=="modelVersion")d.choices={std::string(name(e))+" v1 CPU"};}
     return p;
 }
 namespace {
@@ -364,6 +366,22 @@ Snapshot::Snapshot(Effect e, const Values &v, const std::string &metadata)
         }
         primaries=std::make_shared<const PrimariesModel>(*this);
     }
+    if(e==Effect::Base) {
+        if(get("toeStart")>get("shoulderStart") || get("shadowRange")>get("highlightRange"))throw std::invalid_argument("Base range centers reversed");
+        for(auto &d:artistParameters(e)) {
+          if(d.id=="localExposure") { changed(d.id,0);continue; }
+          if(d.id.find("Softness")!=std::string::npos || d.id.find("Range")!=std::string::npos || d.id.find("Start")!=std::string::npos || d.id.find("Hue")!=std::string::npos || d.id=="pivot" || d.group=="Local exposure")continue;
+          changed(d.id,d.value);
+        }
+        primaries=std::make_shared<const PrimariesModel>(*this,baseValues(values),true);
+    }
+    if(e==Effect::Palette || e==Effect::Material) {
+        for(auto &stage:artistStages(e,values)) {
+            auto child=std::make_shared<const Snapshot>(stage.first,stage.second,metadata);
+            if(!child->isIdentity())identity=false;
+            stages.push_back(child);
+        }
+    }
     if (e == Effect::Inspector)
         identity = get("mode") == 0;
     if(e==Effect::Inspector && get("mode")>=11) {
@@ -376,11 +394,19 @@ Snapshot::Snapshot(Effect e, const Values &v, const std::string &metadata)
     kernel = std::make_shared<const rendition_kernel::Parameters>(kernelParameters(*this));
 }
 Vec3 Snapshot::apply(Vec3 rgb) const {
+    if(!stages.empty()) {if(isIdentity())return rgb;Vec3 source=rgb;for(auto &stage:stages)rgb=stage->apply(rgb);
+      if(effect==Effect::Palette && get("accent")!=0) {
+        auto q=oklab(toD65*(space.toXYZ*source));double c=std::hypot(q.y,q.z);
+        double hue=std::atan2(q.z,q.y)*180/3.141592653589793;
+        double weight=std::exp(8*(std::cos((hue-29)*3.141592653589793/180)-1))*c/(c+std::abs(q.x)*.02+1e-12)*get("accent");
+        rgb=rgb*float(1-weight)+source*float(weight);
+      }
+      return rgb;}
     if(primaries) return isIdentity()?rgb:primaries->apply(rgb);
     if(diagnosticProbe) return differentialView(differential(*diagnosticProbe,rgb,get("probeStep")),int(get("mode")));
     return kernelApply(*this, rgb);
 }
-std::array<float, 4> Snapshot::pixel(std::array<float, 4> p) const {
+std::array<float, 4> Snapshot::pixel(std::array<float, 4> p, float matteCoverage) const {
     if (identity)
         return p;
     Vec3 rgb{p[0], p[1], p[2]};
@@ -398,7 +424,8 @@ std::array<float, 4> Snapshot::pixel(std::array<float, 4> p) const {
         rgb = rgb * p[3];
     if (!finite(rgb))
         throw std::overflow_error("Premultiplication produced nonfinite RGB");
-    return {rgb.x, rgb.y, rgb.z, p[3]};
+    std::array<float,4> out{rgb.x,rgb.y,rgb.z,p[3]};
+    return effect==Effect::Base?localExposure(*this,out,matteCoverage):out;
 }
 float *ImageView::at(int x, int y) const {
     if (!data || x < x1 || x >= x2 || y < y1 || y >= y2)
@@ -520,6 +547,13 @@ Semantic semantics(Effect e, const Values &v) {
         s.gamutDependence="Colorimetric D65 XYZ; fixed Rec.2020 artist tint directions";
         s.status="Artist Primaries v1 CPU prototype";
         s.limitations="Nonphysical density balance; aggressive zonal exposure/offset may reverse tone; magnitude-based signed selection; no global inverse or host Metal";
+    }
+    if(e>=Effect::Base) {
+      s.domain=e==Effect::Base?"Scene Linear / monotone stop tone":e==Effect::Palette?"Shared Volume / Crossover / zero-Y tint":"Shared Density / Strip / Crosstalk";
+      s.reference="Scene-compatible authorship; no DRT";s.exposure="Conditioned";s.invertibility="Combined inverse not claimed";s.gamut="Unbounded";s.negative="Existing signed adapters / residual preservation";s.hdr="Exposure-conditioned";s.status=std::string(name(e))+" v1 CPU artist candidate";
+      s.neutralAxis="Configuration-dependent; explicit tint may colour neutrals";s.neutralMagnitude="Identity only";
+      s.gamutDependence=e==Effect::Base?"Colorimetric fixed D65 XYZ": "Colorimetric Volume/Crossover/spectral/tint; explicit Crosstalk gamut-relative";
+      s.limitations=e==Effect::Base?"Scalar tone monotone; no global chromatic inverse. No host Metal acceptance":"Underlying Volume folds and Density/Strip baseline superiority unresolved; no automatic repair";
     }
     return s;
 }
