@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "working_gamut": "Linear Rec.2020",
+  "ocio_config": "/Users/j7s/coding/authored-DRTs/config-2020.ocio",
+  "display": "sRGB",
+  "view": "Flawed Emulsion 2",
+  "artist_acceptance": "Pending user evaluation; recipes are editable starting points, not approved looks",
+  "targets": [
+    {
+      "id": "dark_chromatic_collapse",
+      "intent": "Retain dark hue identity, then move cyan toward blue-black and warm families toward olive/brown-black.",
+      "recipe": [
+        {
+          "effect": "Crossover",
+          "parameters": {
+            "hue": 195,
+            "width": 180,
+            "darkHue": 35,
+            "darkChroma": 0.55,
+            "darkDensity": 0.3,
+            "transition": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "dense_skin",
+      "intent": "Evaluate cream/ochre/bronze skin without generic orange; skin-like synthetic patches do not establish skin realism.",
+      "recipe": [
+        {
+          "effect": "Volume",
+          "parameters": {
+            "v0_hue": 55,
+            "v0_width": 110,
+            "v0_hueDelta": 20,
+            "v0_chroma": 0.7
+          }
+        },
+        {
+          "effect": "Density",
+          "parameters": {
+            "hue": 65,
+            "width": 140,
+            "density": 0.45,
+            "chromaCoupling": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "palette_hierarchy",
+      "intent": "Suppress secondary variation while allowing a small family set to dominate.",
+      "recipe": [
+        {
+          "effect": "Strip",
+          "parameters": {
+            "separation": 0.55,
+            "palette": 0.4,
+            "leakage": 0.3,
+            "redAnchor": 0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "protected_red_accent",
+      "intent": "Keep red/orange stronger while cyan/green and secondary palette relationships compress.",
+      "recipe": [
+        {
+          "effect": "Strip",
+          "parameters": {
+            "separation": 0.65,
+            "palette": -0.4,
+            "leakage": 0.4,
+            "redAnchor": 0.9
+          }
+        },
+        {
+          "effect": "Volume",
+          "parameters": {
+            "v3_width": 140,
+            "v3_chroma": 0.6
+          }
+        }
+      ]
+    },
+    {
+      "id": "controlled_contamination",
+      "intent": "Introduce coherent olive/cyan/bronze contamination with a few controls.",
+      "recipe": [
+        {
+          "effect": "Crosstalk",
+          "parameters": {
+            "rg": 0.06,
+            "gr": 0.03,
+            "bg": 0.04
+          }
+        },
+        {
+          "effect": "Strip",
+          "parameters": {
+            "separation": 0.3,
+            "leakage": 0.25,
+            "palette": -0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "exposure_colour_death",
+      "intent": "Evolve hue/chroma gracefully through darkness; inspect threshold seams and signed compositing edges.",
+      "recipe": [
+        {
+          "effect": "Crossover",
+          "parameters": {
+            "width": 360,
+            "darkHue": 25,
+            "darkChroma": 0.15,
+            "darkDensity": 0.25,
+            "brightHue": -8,
+            "transition": 2.5
+          }
+        }
+      ]
+    }
+  ],
+  "reference_challenge": {
+    "status": "Executed approved-frame palette challenge; human artist evaluation pending",
+    "approved_view": "Flawed Emulsion 2",
+    "families": [
+      "cold spectral/cyan",
+      "warm bronze/olive",
+      "near-monochrome black",
+      "protected red accent",
+      "dense low-key skin"
+    ],
+    "sources": [
+      "ACES_ODT_SampleFrames-main: 4,5,7,14,23,60"
+    ],
+    "references": [
+      "4 cold/cyan neon",
+      "14 warm candles",
+      "23 low-key chromatic black",
+      "7 red jacket accent",
+      "5 low-key faces"
+    ],
+    "human_interaction_seconds": null
+  }
+}

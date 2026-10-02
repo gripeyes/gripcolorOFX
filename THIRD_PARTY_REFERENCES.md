@@ -25,3 +25,7 @@ Project code is private/unlicensed pending the user's licensing decision. Licens
 - HCT/Material Color Utilities, Okhsl/Okhsv, Filmic/AgX, Mitsuba, CLF/CTF: further scoped comparisons remain open.
 
 Record exact new files/commits, licensing and any reused code before additional implementation reuse. Existing BSD reference licenses are retained under `third_party/licenses/` and the vendored OpenFX directory. Dataset provenance is not inferred from a software license alone.
+
+## Artist fixtures and offline IO
+
+User approved any frames from the local ACES_ODT_SampleFrames-main dataset. Six AP0/D60 files are explicitly converted through the user OCIO config for artist fixtures. Retain the dataset MIT license (Alex Fry, 2022) and embedded contributor credits; original filenames/hashes are in approved-assets.json. User-authored DRT/config is referenced locally, not copied into the bundle. OpenEXR 3.5.1 is pinned for offline EXR IO only (BSD-3-Clause); its installed license is packaged. No OpenEXR Python dependency enters the OFX runtime.

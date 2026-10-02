@@ -19,17 +19,17 @@ Bundle: `build/Rendition.ofx.bundle`, ad-hoc signed for local development. Signi
 
 ## Nuke
 
-Launch a licensed Nuke with `OFX_PLUGIN_PATH` pointing at the build directory. This does not install into the system OFX directory.
+Install the current-user bundle and normal menu registration, then restart Nuke:
 
 ```sh
-OFX_PLUGIN_PATH="$PWD/build" \
-  /Applications/Nuke17.0v1/Nuke17.0v1.app/Contents/MacOS/Nuke17.0 \
-  -t tools/nuke_smoke.py
+python3 tools/install_nuke.py
 ```
 
-Effects use `OFXorg.gripcolor.rendition.Scene_v1` and the corresponding Tone, Volume, Density, Crossover, Crosstalk, Strip, Inspector names. They appear under **Rendition / Research**.
+All eight effects appear under **Nodes → Rendition** and the main **Rendition** menu. Each was created interactively through that visible menu in Nuke 17.0v1; see [UI verification](docs/reports/nuke-ui-discovery.json). `init.py` is backed up before a named registration block is appended. The installer does not alter other menu entries. To remove the integration, remove that named block and the Rendition folder/bundle in the paths printed by the installer.
 
-**Select source interpretation before processing.** Auto accepts an exact allowlist of known scene-linear metadata. Unknown metadata fails rendering with `Unspecified / Interpretation Required`; it never assumes Rec.2020. Manual choices interpret incoming values; they do not convert the image into that gamut.
+Open [the artist graph](build/artist-tests/Rendition-artist-bench.nk), using your local Flawed Emulsion 2 configuration. [Artist evaluation instructions](docs/ARTIST_ACCEPTANCE.md) and [M1–M18 audit](docs/FINAL_ADDENDUM_AUDIT.md) record the outstanding gates. The artist package contains the native bundle, installer, menu, comparison fixtures, graph, reports and feedback template. The OFX binary has no Python dependency; Nuke’s bundled Python/OCIO startup integration resolves Auto interpretation outside pixel processing.
+
+**Select source interpretation before processing.** In Nuke, Auto resolves the active OCIO `scene_linear` role through the installed startup integration and updates on project-config changes, creation, load and before rendering. Other hosts use recognized scene-linear clip metadata. Missing/unsupported/ambiguous Nuke roles fail explicitly; they never fall back to a preset. Unknown metadata fails rendering with `Unspecified / Interpretation Required`; it never assumes Rec.2020. Manual choices interpret incoming values; they do not convert the image into that gamut.
 
 Default controls produce exact RGB/alpha identity. RGB as supplied is the default alpha mode. Explicit unpremultiply/process/premultiply preserves zero-alpha RGB. Alpha is not graded. Nonfinite image data has a diagnostic mode; invalid active processing reports errors rather than repairing pixels by clipping.
 

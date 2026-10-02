@@ -71,6 +71,7 @@ struct Instance {
     std::map<std::string, OfxParamHandle> params;
     OfxImageClipHandle source = nullptr, output = nullptr, reference = nullptr;
     OfxPropertySetHandle sourceProps = nullptr, referenceProps = nullptr;
+    OfxParamHandle hostSceneLinear = nullptr;
     bool generator = false;
 };
 Instance *instance(OfxImageEffectHandle h) {
@@ -99,6 +100,20 @@ Values values(Instance &i, double t) {
         std::fprintf(stderr, "Rendition snapshot interpretation=%g alpha=%g exposure=%g\n",
                      v["interpretation"], v["alphaMode"], v.count("exposure") ? v["exposure"] : 0);
     return v;
+}
+// Nuke resolves its OCIO scene_linear role through the startup host bridge.
+// 0: no bridge (native clip metadata); 1: explicitly unresolved; 2..4: known gamut.
+std::string inputInterpretation(Instance &i, const Values &v, OfxPropertySetHandle clipProps) {
+    if (int(v.at("interpretation")) == 0 && i.hostSceneLinear) {
+        int role = 0;
+        checked(param->paramGetValue(i.hostSceneLinear, &role));
+        if (role == 1) return {};
+        if (role == 2) return "Linear Rec.2020";
+        if (role == 3) return "ACEScg";
+        if (role == 4) return "Linear Rec.709";
+        if (role != 0) throw std::invalid_argument("Invalid scene_linear host interpretation");
+    }
+    return str(clipProps, kOfxImageClipPropColourspace);
 }
 struct Image {
     OfxPropertySetHandle handle = nullptr;
@@ -148,7 +163,7 @@ OfxStatus describe(Effect e, OfxImageEffectHandle h) {
     checked(fx->getPropertySet(h, &p));
     std::string label = "Rendition " + std::string(name(e));
     checked(prop->propSetString(p, kOfxPropLabel, 0, label.c_str()));
-    checked(prop->propSetString(p, kOfxImageEffectPluginPropGrouping, 0, "Rendition / Research"));
+    checked(prop->propSetString(p, kOfxImageEffectPluginPropGrouping, 0, "Rendition"));
     checked(prop->propSetString(p, kOfxPropPluginDescription, 0,
                                 "Scene-compatible color rendition research suite. CPU reference. Production "
                                 "host/model gates are not yet accepted."));
@@ -194,6 +209,15 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     }
     OfxParamSetHandle set;
     checked(fx->getParamSet(h, &set));
+    OfxPropertySetHandle roleProps;
+    checked(param->paramDefine(set, kOfxParamTypeChoice, "hostSceneLinear", &roleProps));
+    checked(prop->propSetInt(roleProps, kOfxParamPropDefault, 0, 0));
+    checked(prop->propSetInt(roleProps, kOfxParamPropSecret, 0, 1));
+    checked(prop->propSetInt(roleProps, kOfxParamPropPersistant, 0, 0));
+    checked(prop->propSetInt(roleProps, kOfxParamPropAnimates, 0, 0));
+    const char *roles[] = {"No host bridge", "Interpretation required", "Linear Rec.2020", "ACEScg", "Linear Rec.709"};
+    for (int n = 0; n < 5; ++n)
+        checked(prop->propSetString(roleProps, kOfxParamPropChoiceOption, n, roles[n]));
     auto defs = parameters(e);
     std::vector<std::string> groups;
     if (e == Effect::Volume) {
@@ -227,7 +251,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
         checked(prop->propSetString(p, kOfxParamPropParent, 0, ("group_" + d.group).c_str()));
         std::string hint = d.unit.empty() ? d.label : d.label + " (" + d.unit + ")";
         if (d.id == "interpretation")
-            hint += ". Unknown Auto metadata fails; manual interpretation does not transform pixels.";
+            hint += ". Auto uses the Nuke OCIO scene_linear role; unresolved roles/metadata fail. Manual interpretation overrides and does not transform pixels.";
         checked(prop->propSetString(p, kOfxParamPropHint, 0, hint.c_str()));
         checked(prop->propSetInt(p, kOfxParamPropEvaluateOnChange, 0, 1));
         if (d.choices.empty()) {
@@ -275,6 +299,7 @@ OfxStatus create(Effect e, OfxImageEffectHandle h) {
     i->generator = str(p, kOfxImageEffectPropContext) == kOfxImageEffectContextGenerator;
     OfxParamSetHandle set;
     checked(fx->getParamSet(h, &set));
+    checked(param->paramGetHandle(set, "hostSceneLinear", &i->hostSceneLinear, nullptr));
     for (auto &d : i->defs) {
         OfxParamHandle q;
         checked(param->paramGetHandle(set, d.id.c_str(), &q, nullptr));
@@ -398,7 +423,7 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
     if (metal)
         throw std::runtime_error("Metal is not accepted; CPU image buffers are required");
     auto v = values(i, t);
-    Snapshot s(i.effect, v, str(i.sourceProps, kOfxImageClipPropColourspace));
+    Snapshot s(i.effect, v, inputInterpretation(i, v, i.sourceProps));
     OfxRectI window;
     checked(prop->propGetIntN(in, kOfxImageEffectPropRenderWindow, 4, &window.x1));
     Image dst(i.output, t);
@@ -420,7 +445,7 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
         if (!connected)
             throw std::runtime_error("Difference requires connected Reference clip");
         auto referenceSpace =
-            interpret(int(s.get("interpretation")), str(i.referenceProps, kOfxImageClipPropColourspace),
+            interpret(int(s.get("interpretation")), inputInterpretation(i, v, i.referenceProps),
                       {s.get("rx"), s.get("ry"), s.get("gx"), s.get("gy"), s.get("bx"), s.get("by"),
                        s.get("wx"), s.get("wy")});
         if (referenceSpace.toXYZ.v != s.colorSpace().toXYZ.v)
@@ -491,7 +516,8 @@ OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHa
             double t;
             checked(prop->propGetDouble(in, kOfxPropTime, 0, &t));
             try {
-                Snapshot s(e, values(i, t), str(i.sourceProps, kOfxImageClipPropColourspace));
+                auto v = values(i, t);
+                Snapshot s(e, v, inputInterpretation(i, v, i.sourceProps));
                 // A successful semantic revalidation clears a previous recoverable render error.
                 // Some hosts query identity before dispatching their deferred change notification.
                 if (msg)
@@ -514,6 +540,12 @@ OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHa
             if (!connected(i.sourceProps)) {
                 auto v = values(i, 0);
                 int interpretation = int(v.at("interpretation"));
+                if (interpretation == 0) {
+                    const auto role = inputInterpretation(i, v, i.sourceProps);
+                    if (role == "Linear Rec.2020") interpretation = 1;
+                    else if (role == "ACEScg") interpretation = 2;
+                    else if (role == "Linear Rec.709") interpretation = 3;
+                }
                 if (interpretation == 1)
                     tag = kOfxColourspaceLinRec2020;
                 else if (interpretation == 2)

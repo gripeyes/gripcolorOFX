@@ -15,7 +15,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -26,7 +26,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",
@@ -484,7 +484,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -495,7 +495,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",
@@ -812,7 +812,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -823,7 +823,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",
@@ -2331,7 +2331,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -2342,7 +2342,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",
@@ -2629,7 +2629,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -2640,7 +2640,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",
@@ -3114,7 +3114,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -3125,7 +3125,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",
@@ -3494,7 +3494,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -3505,7 +3505,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",
@@ -3893,7 +3893,7 @@
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
-      "external_gamut": "Explicit manual interpretation or recognized scene-linear metadata; no implicit working-gamut conversion",
+      "external_gamut": "Explicit manual interpretation, Nuke OCIO scene_linear role, or recognized scene-linear metadata; no implicit working-gamut conversion",
       "parameters": [
         {
           "id": "interpretation",
@@ -3904,7 +3904,7 @@
           "min": 0.0,
           "max": 4.0,
           "choices": [
-            "Auto / interpretation required",
+            "Auto / scene_linear or metadata",
             "Linear Rec.2020",
             "ACEScg / AP1",
             "Linear Rec.709",

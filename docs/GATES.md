@@ -12,3 +12,7 @@
 | H: Production | Local signed CPU bundle, shared-equation offline Metal kernels, tests and benchmark tools | **Pending** Flame, OFX Metal host integration, final model/artist/media acceptance and distribution signing |
 
 No production gate is inferred solely from passing unit tests. The entire bundle is labeled Research. Optional runtime spectral processing, tetra/cone models, overlays and CLF/CTF export are not implemented or implied by the candidate.
+
+## First-class artist gate
+
+Normal eight-node Nuke UI exposure is verified. M15–M17 comparisons and approved ACES photographic/CG fixtures are available in the artist build. Human feedback/time/reuse and meaningful superiority over simple baselines remain pending, particularly for Density/Strip. See `FINAL_ADDENDUM_AUDIT.md` and `ARTIST_ACCEPTANCE.md`. Flame/host Metal do not block this evaluation. M18 stops broad literature expansion; future work is driven by recorded failures.

@@ -22,7 +22,7 @@ std::vector<Parameter> parameters(Effect e) {
         p.push_back({id, label, group, unit, v, lo, hi, choices});
     };
     add("interpretation", "Source interpretation", 0, 0, 4, "Input", "",
-        {"Auto / interpretation required", "Linear Rec.2020", "ACEScg / AP1", "Linear Rec.709",
+        {"Auto / scene_linear or metadata", "Linear Rec.2020", "ACEScg / AP1", "Linear Rec.709",
          "Custom xy primaries / white"});
     add("alphaMode", "RGB / alpha handling", 0, 0, 1, "Input", "",
         {"RGB as supplied", "Unpremultiply / process / premultiply"});

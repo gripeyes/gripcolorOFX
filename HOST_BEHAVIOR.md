@@ -16,7 +16,9 @@ Recoverable interpretation errors are cleared after successful semantic revalida
 
 GPU rendering is not advertised. The offline Metal validator can synchronize its own command buffers; that does not validate an OFX asynchronous host path. The plugin rejects unexpected GPU-buffer render requests instead of treating GPU pointers as CPU memory.
 
-Pending: interactive GUI/graph ergonomics, complex real-media workloads, full animation/model compatibility matrix, host tile/PAR/proxy edge cases, and actual OFX Metal buffers/queue/error behavior.
+Normal user installation and main-menu creation of all eight effects were verified interactively; see `docs/reports/nuke-ui-discovery.json`. Native artist panels are visible; independent Tab-search automation remains unverified. The artist graph uses the custom user view Flawed Emulsion 2 (sRGB).
+
+Pending: artist ergonomics/acceptance, complex real-media workloads, full animation/model compatibility matrix, host tile/PAR/proxy edge cases, and actual OFX Metal buffers/queue/error behavior.
 
 ## Flame — early Gate C pending
 
@@ -34,3 +36,9 @@ Run the CPU candidate immediately when access is available:
 8. Keep Metal disabled until actual buffer/queue support and error propagation are verified.
 
 Record Flame version/build, macOS, hardware, project color management, applicable contexts, test results and numerical differences. Host limitations belong here, not in undocumented alternate creative math.
+
+## Nuke Auto / scene_linear role
+
+Auto now uses the current OCIO `scene_linear` role, resolved by `integrations/nuke/rendition_host.py` using Nuke's bundled PyOpenColorIO. A hidden, nonanimated, nonpersistent OFX bridge parameter communicates the supported gamut (Rec.2020/AP1/Rec.709) or explicit unresolved state. Config changes, node creation, project reload and before-render callbacks refresh it. Manual interpretation overrides it; model/domain controls and pixels are never changed by this bridge. Missing/non-OCIO/unsupported/ambiguous roles fail instead of using stale metadata or a default gamut. Other hosts retain recognized clip-metadata Auto behavior.
+
+Role resolution/callback tests pass with real OCIO configs and simulated Nuke callbacks. The rebuilt CPU bundle and existing numerical suites pass. Retesting the new bridge in Nuke itself is currently **pending**: both render-license (`-t`) and interactive-license (`-ti`) terminal attempts failed with Foundry license-server communication / missing token errors. Earlier eight-node UI and host reports remain historical evidence for the previous build, not proof of this new Auto bridge. Frameserver/background-render and live project-change acceptance remain pending host access.

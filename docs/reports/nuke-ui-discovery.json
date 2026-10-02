@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "host": "Nuke 17.0v1 / macOS arm64",
+  "launch": "Normal application launch through computer-use app API; no OFX_PLUGIN_PATH launch environment",
+  "installation": "User Library/OFX/Plugins/Rendition.ofx.bundle plus ~/.nuke/Rendition/menu.py and a named init.py registration block",
+  "category": "Rendition in Nodes toolbar and native main menu",
+  "interactive_method": "Clicked the visible native Rendition menu, then each named effect. Verified the resulting native OFX control panel name and artist controls through accessibility state.",
+  "checks": [
+    {
+      "effect": "Scene",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    },
+    {
+      "effect": "Tone",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    },
+    {
+      "effect": "Volume",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    },
+    {
+      "effect": "Density",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    },
+    {
+      "effect": "Crossover",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    },
+    {
+      "effect": "Crosstalk",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    },
+    {
+      "effect": "Strip",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    },
+    {
+      "effect": "Inspector",
+      "menu_visible": true,
+      "ui_creation_verified": true
+    }
+  ],
+  "tab_search": "Registered through Nodes menu; independent interactive Tab-search verification pending",
+  "limitations": "Toolbar QToolButton/canvas interactions did not respond reliably through accessibility automation. Native main-menu clicks and resulting control panels were verified. This report does not equate menu creation with artist acceptance or production release.",
+  "saved_interactive_graph": "build/artist-tests/Nuke-menu-created-eight.nk",
+  "saved_graph_contains_all_eight_native_classes": true,
+  "artist_bench_validation": "Separate headless sample/CPU comparison verified; interactive artist-graph loading not claimed by this UI report."
+}
