@@ -1,4 +1,203 @@
 {
+  "OFXorg.gripcolor.rendition.Scene_v1": {
+    "Input": [
+      "interpretation",
+      "alphaMode"
+    ],
+    "Custom primaries": [
+      "rx",
+      "ry",
+      "gx",
+      "gy",
+      "bx",
+      "by",
+      "wx",
+      "wy"
+    ],
+    "Expert": [
+      "modelVersion",
+      "adapterVersion",
+      "lookDomain",
+      "adaptation",
+      "cdlDomain",
+      "semanticReference"
+    ],
+    "Artist": [
+      "exposure",
+      "rExposure",
+      "gExposure",
+      "bExposure",
+      "temperature",
+      "tint"
+    ],
+    "Custom matrix": [
+      "m00",
+      "m01",
+      "m02",
+      "m10",
+      "m11",
+      "m12",
+      "m20",
+      "m21",
+      "m22",
+      "matrixMix"
+    ],
+    "SOP": [
+      "rSlope",
+      "rOffset",
+      "rPower",
+      "gSlope",
+      "gOffset",
+      "gPower",
+      "bSlope",
+      "bOffset",
+      "bPower",
+      "saturation"
+    ]
+  },
+  "OFXorg.gripcolor.rendition.Tone_v1": {
+    "Input": [
+      "interpretation",
+      "alphaMode"
+    ],
+    "Custom primaries": [
+      "rx",
+      "ry",
+      "gx",
+      "gy",
+      "bx",
+      "by",
+      "wx",
+      "wy"
+    ],
+    "Expert": [
+      "modelVersion",
+      "adapterVersion",
+      "lookDomain",
+      "semanticReference"
+    ],
+    "Artist": [
+      "exposure",
+      "contrast",
+      "pivot",
+      "toe",
+      "toeExtent",
+      "shoulder",
+      "shoulderExtent",
+      "shadowDensity",
+      "highlightDensity",
+      "preserveGray",
+      "linked"
+    ],
+    "Channels": [
+      "rContrast",
+      "gContrast",
+      "bContrast"
+    ]
+  },
+  "OFXorg.gripcolor.rendition.Crossover_v1": {
+    "Input": [
+      "interpretation",
+      "alphaMode"
+    ],
+    "Custom primaries": [
+      "rx",
+      "ry",
+      "gx",
+      "gy",
+      "bx",
+      "by",
+      "wx",
+      "wy"
+    ],
+    "Expert": [
+      "modelVersion",
+      "adapterVersion",
+      "lookDomain",
+      "semanticReference"
+    ],
+    "Artist": [
+      "mode",
+      "darkPivot",
+      "brightPivot",
+      "transition",
+      "darkHue",
+      "darkChroma",
+      "darkDensity",
+      "midHue",
+      "midChroma",
+      "midDensity",
+      "brightHue",
+      "brightChroma",
+      "brightDensity"
+    ],
+    "Selection": [
+      "hue",
+      "width",
+      "chromaMin",
+      "chromaMax",
+      "evMin",
+      "evMax",
+      "softness",
+      "neutral"
+    ],
+    "Channels": [
+      "darkr",
+      "darkg",
+      "darkb",
+      "midr",
+      "midg",
+      "midb",
+      "brightr",
+      "brightg",
+      "brightb"
+    ]
+  },
+  "OFXorg.gripcolor.rendition.Crosstalk_v1": {
+    "Input": [
+      "interpretation",
+      "alphaMode"
+    ],
+    "Custom primaries": [
+      "rx",
+      "ry",
+      "gx",
+      "gy",
+      "bx",
+      "by",
+      "wx",
+      "wy"
+    ],
+    "Expert": [
+      "modelVersion",
+      "adapterVersion",
+      "lookDomain",
+      "rowSum",
+      "semanticReference"
+    ],
+    "Matrix": [
+      "m00",
+      "m01",
+      "m02",
+      "m10",
+      "m11",
+      "m12",
+      "m20",
+      "m21",
+      "m22"
+    ],
+    "Artist": [
+      "mode",
+      "domain",
+      "mix",
+      "rg",
+      "rb",
+      "gr",
+      "gb",
+      "br",
+      "bg"
+    ]
+  },
   "OFXorg.gripcolor.rendition.Base_v1": {
     "Input": [
       "interpretation",
@@ -107,6 +306,245 @@
       "familyCyan",
       "familyBlue",
       "familyMagenta"
+    ],
+    "Families / Red": [
+      "Volume_v0_hue",
+      "Volume_v0_width",
+      "Volume_v0_neutral",
+      "Volume_v0_hueDelta",
+      "Volume_v0_chroma",
+      "Volume_v0_density",
+      "Volume_v0_exposure"
+    ],
+    "Families / Red selection": [
+      "Volume_v0_chromaMin",
+      "Volume_v0_chromaMax",
+      "Volume_v0_evMin",
+      "Volume_v0_evMax",
+      "Volume_v0_softness"
+    ],
+    "Families / Red matrix": [
+      "Volume_v0_m00",
+      "Volume_v0_m01",
+      "Volume_v0_m02",
+      "Volume_v0_m10",
+      "Volume_v0_m11",
+      "Volume_v0_m12",
+      "Volume_v0_m20",
+      "Volume_v0_m21",
+      "Volume_v0_m22",
+      "Volume_v0_matrixMix"
+    ],
+    "Families / Yellow": [
+      "Volume_v1_hue",
+      "Volume_v1_width",
+      "Volume_v1_neutral",
+      "Volume_v1_hueDelta",
+      "Volume_v1_chroma",
+      "Volume_v1_density",
+      "Volume_v1_exposure"
+    ],
+    "Families / Yellow selection": [
+      "Volume_v1_chromaMin",
+      "Volume_v1_chromaMax",
+      "Volume_v1_evMin",
+      "Volume_v1_evMax",
+      "Volume_v1_softness"
+    ],
+    "Families / Yellow matrix": [
+      "Volume_v1_m00",
+      "Volume_v1_m01",
+      "Volume_v1_m02",
+      "Volume_v1_m10",
+      "Volume_v1_m11",
+      "Volume_v1_m12",
+      "Volume_v1_m20",
+      "Volume_v1_m21",
+      "Volume_v1_m22",
+      "Volume_v1_matrixMix"
+    ],
+    "Families / Green": [
+      "Volume_v2_hue",
+      "Volume_v2_width",
+      "Volume_v2_neutral",
+      "Volume_v2_hueDelta",
+      "Volume_v2_chroma",
+      "Volume_v2_density",
+      "Volume_v2_exposure"
+    ],
+    "Families / Green selection": [
+      "Volume_v2_chromaMin",
+      "Volume_v2_chromaMax",
+      "Volume_v2_evMin",
+      "Volume_v2_evMax",
+      "Volume_v2_softness"
+    ],
+    "Families / Green matrix": [
+      "Volume_v2_m00",
+      "Volume_v2_m01",
+      "Volume_v2_m02",
+      "Volume_v2_m10",
+      "Volume_v2_m11",
+      "Volume_v2_m12",
+      "Volume_v2_m20",
+      "Volume_v2_m21",
+      "Volume_v2_m22",
+      "Volume_v2_matrixMix"
+    ],
+    "Families / Cyan": [
+      "Volume_v3_hue",
+      "Volume_v3_width",
+      "Volume_v3_neutral",
+      "Volume_v3_hueDelta",
+      "Volume_v3_chroma",
+      "Volume_v3_density",
+      "Volume_v3_exposure"
+    ],
+    "Families / Cyan selection": [
+      "Volume_v3_chromaMin",
+      "Volume_v3_chromaMax",
+      "Volume_v3_evMin",
+      "Volume_v3_evMax",
+      "Volume_v3_softness"
+    ],
+    "Families / Cyan matrix": [
+      "Volume_v3_m00",
+      "Volume_v3_m01",
+      "Volume_v3_m02",
+      "Volume_v3_m10",
+      "Volume_v3_m11",
+      "Volume_v3_m12",
+      "Volume_v3_m20",
+      "Volume_v3_m21",
+      "Volume_v3_m22",
+      "Volume_v3_matrixMix"
+    ],
+    "Families / Blue": [
+      "Volume_v4_hue",
+      "Volume_v4_width",
+      "Volume_v4_neutral",
+      "Volume_v4_hueDelta",
+      "Volume_v4_chroma",
+      "Volume_v4_density",
+      "Volume_v4_exposure"
+    ],
+    "Families / Blue selection": [
+      "Volume_v4_chromaMin",
+      "Volume_v4_chromaMax",
+      "Volume_v4_evMin",
+      "Volume_v4_evMax",
+      "Volume_v4_softness"
+    ],
+    "Families / Blue matrix": [
+      "Volume_v4_m00",
+      "Volume_v4_m01",
+      "Volume_v4_m02",
+      "Volume_v4_m10",
+      "Volume_v4_m11",
+      "Volume_v4_m12",
+      "Volume_v4_m20",
+      "Volume_v4_m21",
+      "Volume_v4_m22",
+      "Volume_v4_matrixMix"
+    ],
+    "Families / Magenta": [
+      "Volume_v5_hue",
+      "Volume_v5_width",
+      "Volume_v5_neutral",
+      "Volume_v5_hueDelta",
+      "Volume_v5_chroma",
+      "Volume_v5_density",
+      "Volume_v5_exposure"
+    ],
+    "Families / Magenta selection": [
+      "Volume_v5_chromaMin",
+      "Volume_v5_chromaMax",
+      "Volume_v5_evMin",
+      "Volume_v5_evMax",
+      "Volume_v5_softness"
+    ],
+    "Families / Magenta matrix": [
+      "Volume_v5_m00",
+      "Volume_v5_m01",
+      "Volume_v5_m02",
+      "Volume_v5_m10",
+      "Volume_v5_m11",
+      "Volume_v5_m12",
+      "Volume_v5_m20",
+      "Volume_v5_m21",
+      "Volume_v5_m22",
+      "Volume_v5_matrixMix"
+    ],
+    "Families / Expert": [
+      "Volume_overlap"
+    ],
+    "Families / Diagnostic": [
+      "Volume_debug"
+    ],
+    "Trajectory / Expert": [
+      "Crossover_lookDomain"
+    ],
+    "Trajectory / Artist": [
+      "Crossover_mode",
+      "Crossover_darkPivot",
+      "Crossover_brightPivot",
+      "Crossover_transition",
+      "Crossover_darkHue",
+      "Crossover_darkChroma",
+      "Crossover_darkDensity",
+      "Crossover_midHue",
+      "Crossover_midChroma",
+      "Crossover_midDensity",
+      "Crossover_brightHue",
+      "Crossover_brightChroma",
+      "Crossover_brightDensity"
+    ],
+    "Trajectory / Selection": [
+      "Crossover_hue",
+      "Crossover_width",
+      "Crossover_chromaMin",
+      "Crossover_chromaMax",
+      "Crossover_evMin",
+      "Crossover_evMax",
+      "Crossover_softness",
+      "Crossover_neutral"
+    ],
+    "Trajectory / Channels": [
+      "Crossover_darkr",
+      "Crossover_darkg",
+      "Crossover_darkb",
+      "Crossover_midr",
+      "Crossover_midg",
+      "Crossover_midb",
+      "Crossover_brightr",
+      "Crossover_brightg",
+      "Crossover_brightb"
+    ],
+    "Crosstalk Matrix / Expert": [
+      "Crosstalk_lookDomain",
+      "Crosstalk_rowSum"
+    ],
+    "Crosstalk Matrix / Matrix": [
+      "Crosstalk_m00",
+      "Crosstalk_m01",
+      "Crosstalk_m02",
+      "Crosstalk_m10",
+      "Crosstalk_m11",
+      "Crosstalk_m12",
+      "Crosstalk_m20",
+      "Crosstalk_m21",
+      "Crosstalk_m22"
+    ],
+    "Crosstalk Matrix / Artist": [
+      "Crosstalk_mode",
+      "Crosstalk_domain",
+      "Crosstalk_mix",
+      "Crosstalk_rg",
+      "Crosstalk_rb",
+      "Crosstalk_gr",
+      "Crosstalk_gb",
+      "Crosstalk_br",
+      "Crosstalk_bg"
     ]
   },
   "OFXorg.gripcolor.rendition.Material_v1": {
@@ -141,6 +579,78 @@
       "crosstalk",
       "contamination",
       "anchor"
+    ],
+    "Density / Selection": [
+      "Density_hue",
+      "Density_width",
+      "Density_chromaMin",
+      "Density_chromaMax",
+      "Density_evMin",
+      "Density_evMax",
+      "Density_softness",
+      "Density_neutral"
+    ],
+    "Density / Artist": [
+      "Density_density",
+      "Density_chromaCoupling",
+      "Density_highlightProtection",
+      "Density_shadowWeight"
+    ],
+    "Density / Diagnostic": [
+      "Density_debug"
+    ],
+    "Strip / Artist": [
+      "Strip_mode",
+      "Strip_separation",
+      "Strip_leakage",
+      "Strip_density",
+      "Strip_palette",
+      "Strip_neutralAnchor",
+      "Strip_redAnchor",
+      "Strip_mix",
+      "Strip_rContribution",
+      "Strip_rWeight",
+      "Strip_gContribution",
+      "Strip_gWeight",
+      "Strip_bContribution",
+      "Strip_bWeight"
+    ],
+    "Strip / Custom basis": [
+      "Strip_m00",
+      "Strip_m01",
+      "Strip_m02",
+      "Strip_m10",
+      "Strip_m11",
+      "Strip_m12",
+      "Strip_m20",
+      "Strip_m21",
+      "Strip_m22"
+    ],
+    "Crosstalk Matrix / Expert": [
+      "Crosstalk_lookDomain",
+      "Crosstalk_rowSum"
+    ],
+    "Crosstalk Matrix / Matrix": [
+      "Crosstalk_m00",
+      "Crosstalk_m01",
+      "Crosstalk_m02",
+      "Crosstalk_m10",
+      "Crosstalk_m11",
+      "Crosstalk_m12",
+      "Crosstalk_m20",
+      "Crosstalk_m21",
+      "Crosstalk_m22"
+    ],
+    "Crosstalk Matrix / Artist": [
+      "Crosstalk_mode",
+      "Crosstalk_domain",
+      "Crosstalk_mix",
+      "Crosstalk_rg",
+      "Crosstalk_rb",
+      "Crosstalk_gr",
+      "Crosstalk_gb",
+      "Crosstalk_br",
+      "Crosstalk_bg"
     ]
   }
 }

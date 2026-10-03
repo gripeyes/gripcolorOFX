@@ -280,7 +280,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
         }
         if (d.id == "modelVersion" || d.id == "adapterVersion") {
             prop->propSetInt(p, kOfxParamPropAnimates, 0, 0);
-            prop->propSetInt(p, kOfxParamPropEnabled, 0, 0);
+            prop->propSetInt(p, kOfxParamPropEnabled, 0, d.id == "modelVersion" && d.hi > 0 ? 1 : 0);
         }
     }
     OfxPropertySetHandle semanticProperty;

@@ -1,0 +1,300 @@
+{
+  "host": "17.0v1",
+  "checks": [
+    {
+      "case": "Palette native composed state, link edits and animation",
+      "passed": true,
+      "values": [
+        0.4539587199687958,
+        0.24942979216575623,
+        4.408698558807373,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Material native composed state, link edits and animation",
+      "passed": true,
+      "values": [
+        0.38803255558013916,
+        0.24616673588752747,
+        3.676858425140381,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Native copy/paste explicit model persistence",
+      "passed": true
+    },
+    {
+      "case": "Rename animation save/reload",
+      "passed": true
+    },
+    {
+      "case": "0.3 saved artist graph remains v1",
+      "passed": true
+    },
+    {
+      "case": "Tone look domain 0",
+      "passed": true,
+      "values": [
+        0.03718669340014458,
+        0.5578003525733948,
+        7.4373393058776855,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Scene look domain 0",
+      "passed": true,
+      "values": [
+        0.021435469388961792,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crosstalk look domain 0",
+      "passed": true,
+      "values": [
+        0.02622039057314396,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crossover look domain 0",
+      "passed": true,
+      "values": [
+        0.02208974026143551,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Tone look domain 1",
+      "passed": true,
+      "values": [
+        0.03718669340014458,
+        0.5578003525733948,
+        7.43734073638916,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Scene look domain 1",
+      "passed": true,
+      "values": [
+        0.06736503541469574,
+        0.29999998211860657,
+        4.0,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crosstalk look domain 1",
+      "passed": true,
+      "values": [
+        0.02622038871049881,
+        0.29999998211860657,
+        4.0,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crossover look domain 1",
+      "passed": true,
+      "values": [
+        0.02208974026143551,
+        0.29999998211860657,
+        4.0,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Tone look domain 2",
+      "passed": true,
+      "values": [
+        0.05931798741221428,
+        0.5654874444007874,
+        7.254153728485107,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Scene look domain 2",
+      "passed": true,
+      "values": [
+        0.11319726705551147,
+        0.2999999523162842,
+        3.9999964237213135,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crosstalk look domain 2",
+      "passed": true,
+      "values": [
+        0.03024364449083805,
+        0.2999999523162842,
+        3.9999964237213135,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crossover look domain 2",
+      "passed": true,
+      "values": [
+        0.024385329335927963,
+        0.2999999523162842,
+        3.9999964237213135,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Tone look domain 3",
+      "passed": true,
+      "values": [
+        0.043234970420598984,
+        0.5598089694976807,
+        7.3859686851501465,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Scene look domain 3",
+      "passed": true,
+      "values": [
+        0.0633038803935051,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crosstalk look domain 3",
+      "passed": true,
+      "values": [
+        0.027509350329637527,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crossover look domain 3",
+      "passed": true,
+      "values": [
+        0.02272975631058216,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Tone look domain 4",
+      "passed": true,
+      "values": [
+        0.03718668594956398,
+        0.5578004121780396,
+        7.437336444854736,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Scene look domain 4",
+      "passed": true,
+      "values": [
+        0.06276676803827286,
+        0.2999999225139618,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crosstalk look domain 4",
+      "passed": true,
+      "values": [
+        0.02622039057314396,
+        0.2999999225139618,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crossover look domain 4",
+      "passed": true,
+      "values": [
+        0.022089743986725807,
+        0.2999999225139618,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Tone look domain 5",
+      "passed": true,
+      "values": [
+        0.03718669340014458,
+        0.5578003525733948,
+        7.4373393058776855,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Scene look domain 5",
+      "passed": true,
+      "values": [
+        0.021435469388961792,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crosstalk look domain 5",
+      "passed": true,
+      "values": [
+        0.02622039057314396,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Crossover look domain 5",
+      "passed": true,
+      "values": [
+        0.02208974026143551,
+        0.30000001192092896,
+        4.000000476837158,
+        0.3700000047683716
+      ]
+    },
+    {
+      "case": "Domain choice animation and saved reload",
+      "passed": true
+    },
+    {
+      "case": "Base all creative native parameters animation/save/reload",
+      "passed": true,
+      "parameter_count": 39,
+      "note": "Serialization test; deliberately mixed settings are not an artist grade or per-control render certification"
+    },
+    {
+      "case": "Palette all creative native parameters animation/save/reload",
+      "passed": true,
+      "parameter_count": 200,
+      "note": "Serialization test; deliberately mixed settings are not an artist grade or per-control render certification"
+    },
+    {
+      "case": "Material all creative native parameters animation/save/reload",
+      "passed": true,
+      "parameter_count": 64,
+      "note": "Serialization test; deliberately mixed settings are not an artist grade or per-control render certification"
+    }
+  ],
+  "artist_acceptance": false
+}

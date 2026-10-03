@@ -203,7 +203,7 @@ std::vector<Parameter> parameters(Effect e) {
     }
     if(e==Effect::Primaries) {auto extra=primariesParameters();p.insert(p.end(),extra.begin(),extra.end());}
     if(e==Effect::Primaries) for(auto &d:p) if(d.id=="modelVersion") d.choices={"Artist Primaries v1 CPU prototype"};
-    if(e>=Effect::Base) {auto extra=artistParameters(e);p.insert(p.end(),extra.begin(),extra.end());for(auto &d:p)if(d.id=="modelVersion")d.choices={std::string(name(e))+" v1 CPU"};}
+    if(e>=Effect::Base) {auto extra=artistParameters(e);p.insert(p.end(),extra.begin(),extra.end());for(auto &d:p)if(d.id=="modelVersion")d.choices={std::string(name(e))+" v1 CPU"};if(e==Effect::Palette || e==Effect::Material)for(auto &d:p)if(d.id=="modelVersion"){d.hi=1;d.choices.push_back("v2 restored controls (explicit opt-in)");}}
     return p;
 }
 namespace {

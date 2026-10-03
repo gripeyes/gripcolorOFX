@@ -14,7 +14,7 @@ def test_default_identity_versions_and_unknown_semantics():
  for i in [9,10,11]:
   assert np.array_equal(run(i,a).view('u4'),a.view('u4'))
   with pytest.raises(Exception):c.process(i,a,{})
-  with pytest.raises(Exception):run(i,a,{'modelVersion':1})
+  with pytest.raises(Exception):run(i,a,{'modelVersion':2})
  assert len([p for p in c.parameters(9) if p['group']=='Artist'])==13
 
 def test_base_constrained_monotone_aggressive_signed_neutral_curve():

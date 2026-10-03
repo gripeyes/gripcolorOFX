@@ -4170,7 +4170,7 @@
       "model_versions": [
         {
           "id": 0,
-          "name": "v1 research candidate",
+          "name": "Artist Primaries v1 CPU prototype",
           "frozen_production": false
         }
       ],
@@ -4665,7 +4665,7 @@
       "model_versions": [
         {
           "id": 0,
-          "name": "v1 research candidate",
+          "name": "Base v1 CPU",
           "frozen_production": false
         }
       ],
@@ -5220,7 +5220,12 @@
       "model_versions": [
         {
           "id": 0,
-          "name": "v1 research candidate",
+          "name": "Palette v1 CPU",
+          "frozen_production": false
+        },
+        {
+          "id": 1,
+          "name": "v2 restored controls (explicit opt-in)",
           "frozen_production": false
         }
       ],
@@ -5343,9 +5348,10 @@
           "unit": "",
           "default": 0.0,
           "min": 0.0,
-          "max": 0.0,
+          "max": 1.0,
           "choices": [
-            "Palette v1 CPU"
+            "Palette v1 CPU",
+            "v2 restored controls (explicit opt-in)"
           ]
         },
         {
@@ -5557,6 +5563,1895 @@
           "choices": [
             "v1 historical equations"
           ]
+        },
+        {
+          "id": "Volume_v0_hue",
+          "label": "Hue center",
+          "group": "Families / Red",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 29.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_width",
+          "label": "Hue width",
+          "group": "Families / Red",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Families / Red selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Families / Red selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_evMin",
+          "label": "Minimum exposure",
+          "group": "Families / Red selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_evMax",
+          "label": "Maximum exposure",
+          "group": "Families / Red selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_softness",
+          "label": "Selection softness",
+          "group": "Families / Red selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_neutral",
+          "label": "Neutral protection",
+          "group": "Families / Red",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_hueDelta",
+          "label": "Hue displacement",
+          "group": "Families / Red",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_chroma",
+          "label": "Chroma scale",
+          "group": "Families / Red",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Families / Red",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_exposure",
+          "label": "Exposure displacement",
+          "group": "Families / Red",
+          "unit": "stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m00",
+          "label": "Local M11",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m01",
+          "label": "Local M12",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m02",
+          "label": "Local M13",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m10",
+          "label": "Local M21",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m11",
+          "label": "Local M22",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m12",
+          "label": "Local M23",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m20",
+          "label": "Local M31",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m21",
+          "label": "Local M32",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_m22",
+          "label": "Local M33",
+          "group": "Families / Red matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v0_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Families / Red matrix",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_hue",
+          "label": "Hue center",
+          "group": "Families / Yellow",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 110.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_width",
+          "label": "Hue width",
+          "group": "Families / Yellow",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Families / Yellow selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Families / Yellow selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_evMin",
+          "label": "Minimum exposure",
+          "group": "Families / Yellow selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_evMax",
+          "label": "Maximum exposure",
+          "group": "Families / Yellow selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_softness",
+          "label": "Selection softness",
+          "group": "Families / Yellow selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_neutral",
+          "label": "Neutral protection",
+          "group": "Families / Yellow",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_hueDelta",
+          "label": "Hue displacement",
+          "group": "Families / Yellow",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_chroma",
+          "label": "Chroma scale",
+          "group": "Families / Yellow",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Families / Yellow",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_exposure",
+          "label": "Exposure displacement",
+          "group": "Families / Yellow",
+          "unit": "stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m00",
+          "label": "Local M11",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m01",
+          "label": "Local M12",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m02",
+          "label": "Local M13",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m10",
+          "label": "Local M21",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m11",
+          "label": "Local M22",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m12",
+          "label": "Local M23",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m20",
+          "label": "Local M31",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m21",
+          "label": "Local M32",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_m22",
+          "label": "Local M33",
+          "group": "Families / Yellow matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v1_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Families / Yellow matrix",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_hue",
+          "label": "Hue center",
+          "group": "Families / Green",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 145.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_width",
+          "label": "Hue width",
+          "group": "Families / Green",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Families / Green selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Families / Green selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_evMin",
+          "label": "Minimum exposure",
+          "group": "Families / Green selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_evMax",
+          "label": "Maximum exposure",
+          "group": "Families / Green selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_softness",
+          "label": "Selection softness",
+          "group": "Families / Green selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_neutral",
+          "label": "Neutral protection",
+          "group": "Families / Green",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_hueDelta",
+          "label": "Hue displacement",
+          "group": "Families / Green",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_chroma",
+          "label": "Chroma scale",
+          "group": "Families / Green",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Families / Green",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_exposure",
+          "label": "Exposure displacement",
+          "group": "Families / Green",
+          "unit": "stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m00",
+          "label": "Local M11",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m01",
+          "label": "Local M12",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m02",
+          "label": "Local M13",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m10",
+          "label": "Local M21",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m11",
+          "label": "Local M22",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m12",
+          "label": "Local M23",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m20",
+          "label": "Local M31",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m21",
+          "label": "Local M32",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_m22",
+          "label": "Local M33",
+          "group": "Families / Green matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v2_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Families / Green matrix",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_hue",
+          "label": "Hue center",
+          "group": "Families / Cyan",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 195.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_width",
+          "label": "Hue width",
+          "group": "Families / Cyan",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Families / Cyan selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Families / Cyan selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_evMin",
+          "label": "Minimum exposure",
+          "group": "Families / Cyan selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_evMax",
+          "label": "Maximum exposure",
+          "group": "Families / Cyan selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_softness",
+          "label": "Selection softness",
+          "group": "Families / Cyan selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_neutral",
+          "label": "Neutral protection",
+          "group": "Families / Cyan",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_hueDelta",
+          "label": "Hue displacement",
+          "group": "Families / Cyan",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_chroma",
+          "label": "Chroma scale",
+          "group": "Families / Cyan",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Families / Cyan",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_exposure",
+          "label": "Exposure displacement",
+          "group": "Families / Cyan",
+          "unit": "stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m00",
+          "label": "Local M11",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m01",
+          "label": "Local M12",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m02",
+          "label": "Local M13",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m10",
+          "label": "Local M21",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m11",
+          "label": "Local M22",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m12",
+          "label": "Local M23",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m20",
+          "label": "Local M31",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m21",
+          "label": "Local M32",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_m22",
+          "label": "Local M33",
+          "group": "Families / Cyan matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v3_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Families / Cyan matrix",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_hue",
+          "label": "Hue center",
+          "group": "Families / Blue",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 265.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_width",
+          "label": "Hue width",
+          "group": "Families / Blue",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Families / Blue selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Families / Blue selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_evMin",
+          "label": "Minimum exposure",
+          "group": "Families / Blue selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_evMax",
+          "label": "Maximum exposure",
+          "group": "Families / Blue selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_softness",
+          "label": "Selection softness",
+          "group": "Families / Blue selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_neutral",
+          "label": "Neutral protection",
+          "group": "Families / Blue",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_hueDelta",
+          "label": "Hue displacement",
+          "group": "Families / Blue",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_chroma",
+          "label": "Chroma scale",
+          "group": "Families / Blue",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Families / Blue",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_exposure",
+          "label": "Exposure displacement",
+          "group": "Families / Blue",
+          "unit": "stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m00",
+          "label": "Local M11",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m01",
+          "label": "Local M12",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m02",
+          "label": "Local M13",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m10",
+          "label": "Local M21",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m11",
+          "label": "Local M22",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m12",
+          "label": "Local M23",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m20",
+          "label": "Local M31",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m21",
+          "label": "Local M32",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_m22",
+          "label": "Local M33",
+          "group": "Families / Blue matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v4_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Families / Blue matrix",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_hue",
+          "label": "Hue center",
+          "group": "Families / Magenta",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 325.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_width",
+          "label": "Hue width",
+          "group": "Families / Magenta",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 90.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Families / Magenta selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Families / Magenta selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_evMin",
+          "label": "Minimum exposure",
+          "group": "Families / Magenta selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_evMax",
+          "label": "Maximum exposure",
+          "group": "Families / Magenta selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_softness",
+          "label": "Selection softness",
+          "group": "Families / Magenta selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_neutral",
+          "label": "Neutral protection",
+          "group": "Families / Magenta",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_hueDelta",
+          "label": "Hue displacement",
+          "group": "Families / Magenta",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_chroma",
+          "label": "Chroma scale",
+          "group": "Families / Magenta",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_density",
+          "label": "Density (coordinate trajectory)",
+          "group": "Families / Magenta",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_exposure",
+          "label": "Exposure displacement",
+          "group": "Families / Magenta",
+          "unit": "stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m00",
+          "label": "Local M11",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m01",
+          "label": "Local M12",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m02",
+          "label": "Local M13",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m10",
+          "label": "Local M21",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m11",
+          "label": "Local M22",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m12",
+          "label": "Local M23",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m20",
+          "label": "Local M31",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m21",
+          "label": "Local M32",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_m22",
+          "label": "Local M33",
+          "group": "Families / Magenta matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_v5_matrixMix",
+          "label": "Local matrix mix",
+          "group": "Families / Magenta matrix",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Volume_overlap",
+          "label": "Overlap composition",
+          "group": "Families / Expert",
+          "unit": "; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 3.0,
+          "choices": [
+            "Weighted deltas",
+            "Normalized weighted deltas",
+            "Bounded vector accumulation",
+            "Shared field"
+          ]
+        },
+        {
+          "id": "Volume_debug",
+          "label": "Selection view",
+          "group": "Families / Diagnostic",
+          "unit": "; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 7.0,
+          "choices": [
+            "Off",
+            "Combined weight",
+            "Red",
+            "Yellow",
+            "Green",
+            "Cyan",
+            "Blue",
+            "Magenta"
+          ]
+        },
+        {
+          "id": "Crossover_lookDomain",
+          "label": "Look coordinate encoding",
+          "group": "Trajectory / Expert",
+          "unit": "; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 5.0,
+          "choices": [
+            "Pure stops (positive only)",
+            "ACEScct scalar encoding",
+            "LogC4 scalar encoding",
+            "DaVinci Intermediate scalar encoding",
+            "AgX unclamped stops (positive only)",
+            "LookLog candidate"
+          ]
+        },
+        {
+          "id": "Crossover_mode",
+          "label": "Crossover mode",
+          "group": "Trajectory / Artist",
+          "unit": "; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Hue trajectories",
+            "Channel trajectories"
+          ]
+        },
+        {
+          "id": "Crossover_hue",
+          "label": "Hue center",
+          "group": "Trajectory / Selection",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 195.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_width",
+          "label": "Hue width",
+          "group": "Trajectory / Selection",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 360.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Trajectory / Selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Trajectory / Selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_evMin",
+          "label": "Minimum exposure",
+          "group": "Trajectory / Selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_evMax",
+          "label": "Maximum exposure",
+          "group": "Trajectory / Selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_softness",
+          "label": "Selection softness",
+          "group": "Trajectory / Selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_neutral",
+          "label": "Neutral protection",
+          "group": "Trajectory / Selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Crossover_darkPivot",
+          "label": "Dark transition center",
+          "group": "Trajectory / Artist",
+          "unit": "stops; model v2 composed expert state",
+          "default": -3.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_brightPivot",
+          "label": "Bright transition center",
+          "group": "Trajectory / Artist",
+          "unit": "stops; model v2 composed expert state",
+          "default": 3.0,
+          "min": -20.0,
+          "max": 20.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_transition",
+          "label": "Transition width",
+          "group": "Trajectory / Artist",
+          "unit": "stops; model v2 composed expert state",
+          "default": 2.0,
+          "min": 0.1,
+          "max": 10.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_darkHue",
+          "label": "dark hue displacement",
+          "group": "Trajectory / Artist",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_darkChroma",
+          "label": "dark chroma scale",
+          "group": "Trajectory / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_darkDensity",
+          "label": "dark density",
+          "group": "Trajectory / Artist",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_darkr",
+          "label": "dark r displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_darkg",
+          "label": "dark g displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_darkb",
+          "label": "dark b displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_midHue",
+          "label": "mid hue displacement",
+          "group": "Trajectory / Artist",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_midChroma",
+          "label": "mid chroma scale",
+          "group": "Trajectory / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_midDensity",
+          "label": "mid density",
+          "group": "Trajectory / Artist",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_midr",
+          "label": "mid r displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_midg",
+          "label": "mid g displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_midb",
+          "label": "mid b displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_brightHue",
+          "label": "bright hue displacement",
+          "group": "Trajectory / Artist",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 0.0,
+          "min": -180.0,
+          "max": 180.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_brightChroma",
+          "label": "bright chroma scale",
+          "group": "Trajectory / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_brightDensity",
+          "label": "bright density",
+          "group": "Trajectory / Artist",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_brightr",
+          "label": "bright r displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_brightg",
+          "label": "bright g displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crossover_brightb",
+          "label": "bright b displacement",
+          "group": "Trajectory / Channels",
+          "unit": "normalized look stops; model v2 composed expert state",
+          "default": 0.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_lookDomain",
+          "label": "Look coordinate encoding",
+          "group": "Crosstalk Matrix / Expert",
+          "unit": "; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 5.0,
+          "choices": [
+            "Pure stops (positive only)",
+            "ACEScct scalar encoding",
+            "LogC4 scalar encoding",
+            "DaVinci Intermediate scalar encoding",
+            "AgX unclamped stops (positive only)",
+            "LookLog candidate"
+          ]
+        },
+        {
+          "id": "Crosstalk_m00",
+          "label": "M11",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m01",
+          "label": "M12",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m02",
+          "label": "M13",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m10",
+          "label": "M21",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m11",
+          "label": "M22",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m12",
+          "label": "M23",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m20",
+          "label": "M31",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m21",
+          "label": "M32",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m22",
+          "label": "M33",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_mode",
+          "label": "Matrix constraints",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 3.0,
+          "choices": [
+            "Unrestricted",
+            "Neutral-preserving (row sums = 1)",
+            "Row-sum locked",
+            "Luminance preserving"
+          ]
+        },
+        {
+          "id": "Crosstalk_domain",
+          "label": "Processing domain",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Scene Linear",
+            "Selected look coordinate"
+          ]
+        },
+        {
+          "id": "Crosstalk_rowSum",
+          "label": "Locked row sum",
+          "group": "Crosstalk Matrix / Expert",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_mix",
+          "label": "Mix",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_rg",
+          "label": "rg interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_rb",
+          "label": "rb interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_gr",
+          "label": "gr interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_gb",
+          "label": "gb interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_br",
+          "label": "br interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_bg",
+          "label": "bg interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
         }
       ],
       "semantics": {
@@ -5583,7 +7478,12 @@
       "model_versions": [
         {
           "id": 0,
-          "name": "v1 research candidate",
+          "name": "Material v1 CPU",
+          "frozen_production": false
+        },
+        {
+          "id": 1,
+          "name": "v2 restored controls (explicit opt-in)",
           "frozen_production": false
         }
       ],
@@ -5706,9 +7606,10 @@
           "unit": "",
           "default": 0.0,
           "min": 0.0,
-          "max": 0.0,
+          "max": 1.0,
           "choices": [
-            "Material v1 CPU"
+            "Material v1 CPU",
+            "v2 restored controls (explicit opt-in)"
           ]
         },
         {
@@ -5838,6 +7739,588 @@
           "choices": [
             "v1 historical equations"
           ]
+        },
+        {
+          "id": "Density_hue",
+          "label": "Hue center",
+          "group": "Density / Selection",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 195.0,
+          "min": 0.0,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Density_width",
+          "label": "Hue width",
+          "group": "Density / Selection",
+          "unit": "degrees; model v2 composed expert state",
+          "default": 360.0,
+          "min": 0.1,
+          "max": 360.0,
+          "choices": []
+        },
+        {
+          "id": "Density_chromaMin",
+          "label": "Minimum relative chroma",
+          "group": "Density / Selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Density_chromaMax",
+          "label": "Maximum relative chroma",
+          "group": "Density / Selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 4.0,
+          "min": 0.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Density_evMin",
+          "label": "Minimum exposure",
+          "group": "Density / Selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": -20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Density_evMax",
+          "label": "Maximum exposure",
+          "group": "Density / Selection",
+          "unit": "stops; model v2 composed expert state",
+          "default": 20.0,
+          "min": -30.0,
+          "max": 30.0,
+          "choices": []
+        },
+        {
+          "id": "Density_softness",
+          "label": "Selection softness",
+          "group": "Density / Selection",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.01,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Density_neutral",
+          "label": "Neutral protection",
+          "group": "Density / Selection",
+          "unit": "C / |L|; model v2 composed expert state",
+          "default": 0.03,
+          "min": 0.0,
+          "max": 0.5,
+          "choices": []
+        },
+        {
+          "id": "Density_density",
+          "label": "Density",
+          "group": "Density / Artist",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Density_chromaCoupling",
+          "label": "Chroma-density coupling",
+          "group": "Density / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Density_highlightProtection",
+          "label": "Highlight protection",
+          "group": "Density / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Density_shadowWeight",
+          "label": "Shadow weighting",
+          "group": "Density / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.5,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Density_debug",
+          "label": "Density-only view",
+          "group": "Density / Diagnostic",
+          "unit": "; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Off",
+            "Weight"
+          ]
+        },
+        {
+          "id": "Strip_mode",
+          "label": "Separation system",
+          "group": "Strip / Artist",
+          "unit": "; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": [
+            "Three-channel",
+            "Two-channel",
+            "Custom basis"
+          ]
+        },
+        {
+          "id": "Strip_separation",
+          "label": "Separation",
+          "group": "Strip / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_leakage",
+          "label": "Leakage",
+          "group": "Strip / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.1,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_density",
+          "label": "Dye density coupling",
+          "group": "Strip / Artist",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_palette",
+          "label": "Palette compression / expansion",
+          "group": "Strip / Artist",
+          "unit": "artistic units; model v2 composed expert state",
+          "default": 0.0,
+          "min": -1.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_neutralAnchor",
+          "label": "Neutral anchor",
+          "group": "Strip / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_redAnchor",
+          "label": "Red / skin anchor",
+          "group": "Strip / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_mix",
+          "label": "Global mix",
+          "group": "Strip / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_rContribution",
+          "label": "r separation contribution",
+          "group": "Strip / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_rWeight",
+          "label": "r recombination weight",
+          "group": "Strip / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_gContribution",
+          "label": "g separation contribution",
+          "group": "Strip / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_gWeight",
+          "label": "g recombination weight",
+          "group": "Strip / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_bContribution",
+          "label": "b separation contribution",
+          "group": "Strip / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_bWeight",
+          "label": "b recombination weight",
+          "group": "Strip / Artist",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m00",
+          "label": "M11",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m01",
+          "label": "M12",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m02",
+          "label": "M13",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m10",
+          "label": "M21",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m11",
+          "label": "M22",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m12",
+          "label": "M23",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m20",
+          "label": "M31",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m21",
+          "label": "M32",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Strip_m22",
+          "label": "M33",
+          "group": "Strip / Custom basis",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_lookDomain",
+          "label": "Look coordinate encoding",
+          "group": "Crosstalk Matrix / Expert",
+          "unit": "; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 5.0,
+          "choices": [
+            "Pure stops (positive only)",
+            "ACEScct scalar encoding",
+            "LogC4 scalar encoding",
+            "DaVinci Intermediate scalar encoding",
+            "AgX unclamped stops (positive only)",
+            "LookLog candidate"
+          ]
+        },
+        {
+          "id": "Crosstalk_m00",
+          "label": "M11",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m01",
+          "label": "M12",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m02",
+          "label": "M13",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m10",
+          "label": "M21",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m11",
+          "label": "M22",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m12",
+          "label": "M23",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m20",
+          "label": "M31",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m21",
+          "label": "M32",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_m22",
+          "label": "M33",
+          "group": "Crosstalk Matrix / Matrix",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 1.0,
+          "min": -8.0,
+          "max": 8.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_mode",
+          "label": "Matrix constraints",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 3.0,
+          "choices": [
+            "Unrestricted",
+            "Neutral-preserving (row sums = 1)",
+            "Row-sum locked",
+            "Luminance preserving"
+          ]
+        },
+        {
+          "id": "Crosstalk_domain",
+          "label": "Processing domain",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "; model v2 composed expert state",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Scene Linear",
+            "Selected look coordinate"
+          ]
+        },
+        {
+          "id": "Crosstalk_rowSum",
+          "label": "Locked row sum",
+          "group": "Crosstalk Matrix / Expert",
+          "unit": "factor; model v2 composed expert state",
+          "default": 1.0,
+          "min": -4.0,
+          "max": 4.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_mix",
+          "label": "Mix",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "fraction; model v2 composed expert state",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_rg",
+          "label": "rg interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_rb",
+          "label": "rb interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_gr",
+          "label": "gr interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_gb",
+          "label": "gb interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_br",
+          "label": "br interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
+        },
+        {
+          "id": "Crosstalk_bg",
+          "label": "bg interaction",
+          "group": "Crosstalk Matrix / Artist",
+          "unit": "coefficient; model v2 composed expert state",
+          "default": 0.0,
+          "min": -2.0,
+          "max": 2.0,
+          "choices": []
         }
       ],
       "semantics": {

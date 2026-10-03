@@ -16,7 +16,9 @@ if not args.integration_only:shutil.copytree(bundle,installed,dirs_exist_ok=True
 nuke_dir=args.home/'.nuke';folder=nuke_dir/'Rendition';folder.mkdir(parents=True,exist_ok=True)
 for source in (root/'integrations/nuke').glob('*'):
     if source.is_file() and source.suffix in ('.py','.json'):shutil.copy2(source,folder/source.name)
-lab=root/'build/architecture-0.3/index.html'
+lab=root/'build/control-audit-0.31/index.html'
+if not lab.exists():lab=root/'control-audit-0.31/index.html'
+if not lab.exists():lab=root/'build/architecture-0.3/index.html'
 if not lab.exists():lab=root/'architecture-0.3/index.html'
 if not lab.exists():lab=root/'build/validation-0.2/index.html'
 if not lab.exists():lab=root/'validation-0.2/index.html'

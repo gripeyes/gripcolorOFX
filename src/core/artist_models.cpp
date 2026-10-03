@@ -45,6 +45,19 @@ std::vector<Parameter> artistParameters(Effect e) {
   std::stable_sort(p.begin(),p.end(),[&](auto &a,auto &b){return rank(a)<rank(b);});
  }
  if(e!=Effect::Base)for(auto stage:e==Effect::Palette?std::vector<std::string>{"Volume","Crossover","Crosstalk","Primaries"}:std::vector<std::string>{"Density","Strip","Crosstalk"})p.push_back({stage+"Version",stage+" model","Expert","",0,0,0,{"v1 historical equations"}});
+ // Append persistent expert state after every historical artist parameter.
+ if(e==Effect::Palette || e==Effect::Material) {
+  auto stages=e==Effect::Palette?std::vector<Effect>{Effect::Volume,Effect::Crossover,Effect::Crosstalk}:std::vector<Effect>{Effect::Density,Effect::Strip,Effect::Crosstalk};
+  for(auto stage:stages)for(auto d:parameters(stage)) {
+   if(d.group=="Input" || d.group=="Custom primaries" || d.id=="modelVersion" || d.id=="adapterVersion")continue;
+   std::string prefix=std::string(name(stage))+"_";
+   if(stage==Effect::Crossover && d.id=="width")d.value=360;
+   d.id=prefix+d.id;
+   d.group=stage==Effect::Volume?"Families / "+d.group:stage==Effect::Crossover?"Trajectory / "+d.group:stage==Effect::Crosstalk?"Crosstalk Matrix / "+d.group:std::string(name(stage))+" / "+d.group;
+   d.unit+="; model v2 composed expert state";
+   p.push_back(d);
+  }
+ }
  return p;
 }
 Values baseValues(const Values &v) {
@@ -57,6 +70,32 @@ Values baseValues(const Values &v) {
  out["brillianceReduction"]+=burn;
  return out;
 }
+// v1 is immutable. v2 composes immutable artist macros with persistent expert state.
+static std::vector<std::pair<Effect,Values>> composeArtistStages(std::vector<std::pair<Effect,Values>> stages,const Values &v) {
+ bool enabled=v.at("modelVersion")==1;
+ for(auto &stage:stages)for(auto &d:parameters(stage.first)) {
+  auto id=std::string(name(stage.first))+"_"+d.id;
+  if(!v.count(id))continue;
+  double expert=v.at(id);
+  double expertDefault=stage.first==Effect::Crossover && d.id=="width"?360:d.value;
+  if(!enabled) {
+   if(expert!=expertDefault)throw std::invalid_argument("Select restored controls v2 before editing "+id);
+   continue;
+  }
+  double base=stage.second.count(d.id)?stage.second.at(d.id):d.value;
+  if(!d.choices.empty() || d.id=="debug" || d.id=="hue" || d.id=="width" || d.id=="chromaMin" || d.id=="chromaMax" || d.id=="evMin" || d.id=="evMax" || d.id=="softness" || d.id=="neutral" || (stage.first==Effect::Volume && d.group!="Expert" && (d.id.find("_hue")!=std::string::npos && d.id.find("Delta")==std::string::npos || d.id.find("_width")!=std::string::npos || d.id.find("_chromaMin")!=std::string::npos || d.id.find("_chromaMax")!=std::string::npos || d.id.find("_evMin")!=std::string::npos || d.id.find("_evMax")!=std::string::npos || d.id.find("_softness")!=std::string::npos || d.id.find("_neutral")!=std::string::npos)))stage.second[d.id]=expert;
+  else if(d.id=="chroma" || d.id=="darkChroma" || d.id=="midChroma" || d.id=="brightChroma" || (stage.first==Effect::Volume && d.id.find("_chroma")!=std::string::npos && d.id.find("Min")==std::string::npos && d.id.find("Max")==std::string::npos))stage.second[d.id]=base*expert;
+  else if(stage.first==Effect::Strip && d.id=="separation")stage.second[d.id]=1-(1-base)*(1-expert);
+  else {
+   double delta=expert-d.value;
+   if(stage.first==Effect::Crossover && (d.id=="darkHue" || d.id=="midHue" || d.id=="brightHue" || d.group=="Channels"))delta*=v.count("trajectory")?v.at("trajectory"):1;
+   if(stage.first==Effect::Volume && d.id.find("_hueDelta")!=std::string::npos)delta*=v.at("trajectory");
+   stage.second[d.id]=base+delta;
+  }
+ }
+ // Child snapshots validate effective domains/ranges; never silently clamp composed state.
+ return stages;
+}
 std::vector<std::pair<Effect,Values>> artistStages(Effect e,const Values &v) {
  Values common;for(auto k:{"interpretation","rx","ry","gx","gy","bx","by","wx","wy"})common[k]=v.at(k);
  auto V=[&](Values extra){auto x=common;x.insert(extra.begin(),extra.end());return x;};
@@ -68,13 +107,15 @@ std::vector<std::pair<Effect,Values>> artistStages(Effect e,const Values &v) {
    volume[k+"chroma"]=1+protect*(.25*v.at("separation")-.7*v.at("compression"));
    volume[k+"hueDelta"]=v.at(std::string("family")+family)*v.at("trajectory")*protect;
   }
-  return {{Effect::Volume,volume},{Effect::Crossover,V({{"width",360},{"darkHue",v.at("shadowHue")*v.at("trajectory")},{"brightHue",v.at("highlightHue")*v.at("trajectory")},{"darkChroma",1-v.at("colourDeath")}})},
+  std::vector<std::pair<Effect,Values>> result={{Effect::Volume,volume},{Effect::Crossover,V({{"width",360},{"darkHue",v.at("shadowHue")*v.at("trajectory")},{"brightHue",v.at("highlightHue")*v.at("trajectory")},{"darkChroma",1-v.at("colourDeath")}})},
    {Effect::Crosstalk,V({{"rg",v.at("separation")*.025},{"bg",v.at("separation")*.025}})},
    {Effect::Primaries,V({{"midBalance",v.at("bias")*.3},{"midTint",v.at("contamination")*.2}})}};
+  return composeArtistStages(result,v);
  }
- return {{Effect::Density,V({{"density",v.at("density")},{"chromaCoupling",v.at("coupling")}})},
+ std::vector<std::pair<Effect,Values>> result={{Effect::Density,V({{"density",v.at("density")},{"chromaCoupling",v.at("coupling")}})},
   {Effect::Strip,V({{"separation",1-(1-v.at("separation"))*(1-.5*v.at("depth"))},{"leakage",v.at("leakage")},{"density",v.at("depth")},{"redAnchor",v.at("anchor")}})},
   {Effect::Crosstalk,V({{"rg",v.at("crosstalk")*.1},{"bg",v.at("crosstalk")*.1},{"gr",v.at("contamination")*.1},{"gb",v.at("contamination")*.1}})}};
+ return composeArtistStages(result,v);
 }
 std::array<float,4> localExposure(const Snapshot &base,std::array<float,4> p,float coverage) {
  if(!std::isfinite(coverage) || coverage<0 || coverage>1)throw std::domain_error("Matte alpha must be finite coverage in [0,1]");

@@ -7,6 +7,7 @@
 namespace py = pybind11;
 using namespace rendition;
 PYBIND11_MODULE(_rendition, m) {
+    m.def("artist_stages",[](int e,const Values &v){Snapshot s(static_cast<Effect>(e),v);py::list result;for(auto &stage:artistStages(static_cast<Effect>(e),s.parameterValues())){py::dict d;d["effect"]=int(stage.first);d["values"]=stage.second;result.append(d);}return result;});
     m.def("local_exposure",[](std::array<float,4> rgba,float coverage,const Values &v){return localExposure(Snapshot(Effect::Base,v),rgba,coverage);});
     m.def("encode", [](float x, int d) { return encode(x, static_cast<LookDomain>(d)); });
     m.def("decode", [](float x, int d) { return decode(x, static_cast<LookDomain>(d)); });
