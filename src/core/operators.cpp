@@ -203,7 +203,7 @@ std::vector<Parameter> parameters(Effect e) {
     }
     if(e==Effect::Primaries) {auto extra=primariesParameters();p.insert(p.end(),extra.begin(),extra.end());}
     if(e==Effect::Primaries) for(auto &d:p) if(d.id=="modelVersion") d.choices={"Artist Primaries v1 CPU prototype"};
-    if(e>=Effect::Base) {auto extra=artistParameters(e);p.insert(p.end(),extra.begin(),extra.end());for(auto &d:p)if(d.id=="modelVersion")d.choices={std::string(name(e))+" v1 CPU"};if(e==Effect::Palette || e==Effect::Material)for(auto &d:p)if(d.id=="modelVersion"){d.hi=1;d.choices.push_back("v2 restored controls (explicit opt-in)");}}
+    if(e>=Effect::Base) {auto extra=artistParameters(e);p.insert(p.end(),extra.begin(),extra.end());for(auto &d:p)if(d.id=="modelVersion")d.choices={std::string(name(e))+" v1 CPU"};if(e==Effect::Palette || e==Effect::Material)for(auto &d:p)if(d.id=="modelVersion"){d.hi=2;d.choices.push_back("v2 restored controls (explicit opt-in)");d.choices.push_back("Full controls — bounded composition");}}
     return p;
 }
 namespace {
@@ -252,7 +252,7 @@ Snapshot::Snapshot(Effect e, const Values &v, const std::string &metadata)
     toD65 = adaptation(space.wx, space.wy, .3127, .3290);
     fromD65 = toD65.inverse();
     for (auto &p : defs)
-        if (p.id.size() >= 9 && p.id.substr(p.id.size() - 9) == "chromaMin") {
+        if (!(e>=Effect::Palette && get("modelVersion")==2) && p.id.size() >= 9 && p.id.substr(p.id.size() - 9) == "chromaMin") {
             auto k = p.id.substr(0, p.id.size() - 9);
             if (get(k + "chromaMin") > get(k + "chromaMax") || get(k + "evMin") > get(k + "evMax"))
                 throw std::invalid_argument("Selection minimum exceeds maximum");

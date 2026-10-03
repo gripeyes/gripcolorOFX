@@ -5227,6 +5227,11 @@
           "id": 1,
           "name": "v2 restored controls (explicit opt-in)",
           "frozen_production": false
+        },
+        {
+          "id": 2,
+          "name": "Full controls \u2014 bounded composition",
+          "frozen_production": false
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
@@ -5348,10 +5353,11 @@
           "unit": "",
           "default": 0.0,
           "min": 0.0,
-          "max": 1.0,
+          "max": 2.0,
           "choices": [
             "Palette v1 CPU",
-            "v2 restored controls (explicit opt-in)"
+            "v2 restored controls (explicit opt-in)",
+            "Full controls \u2014 bounded composition"
           ]
         },
         {
@@ -7485,6 +7491,11 @@
           "id": 1,
           "name": "v2 restored controls (explicit opt-in)",
           "frozen_production": false
+        },
+        {
+          "id": 2,
+          "name": "Full controls \u2014 bounded composition",
+          "frozen_production": false
         }
       ],
       "external_encoding": "Scene-linear RGB; Inspector diagnostic modes have diagnostic semantics",
@@ -7606,10 +7617,11 @@
           "unit": "",
           "default": 0.0,
           "min": 0.0,
-          "max": 1.0,
+          "max": 2.0,
           "choices": [
             "Material v1 CPU",
-            "v2 restored controls (explicit opt-in)"
+            "v2 restored controls (explicit opt-in)",
+            "Full controls \u2014 bounded composition"
           ]
         },
         {

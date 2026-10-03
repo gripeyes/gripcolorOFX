@@ -70,9 +70,10 @@ Values baseValues(const Values &v) {
  out["brillianceReduction"]+=burn;
  return out;
 }
-// v1 is immutable. v2 composes immutable artist macros with persistent expert state.
+// Stored indices 0/1 are immutable historical mappings; index 2 bounds composition.
 static std::vector<std::pair<Effect,Values>> composeArtistStages(std::vector<std::pair<Effect,Values>> stages,const Values &v) {
- bool enabled=v.at("modelVersion")==1;
+ bool enabled=v.at("modelVersion")>=1;
+ bool safe=v.at("modelVersion")==2;
  for(auto &stage:stages)for(auto &d:parameters(stage.first)) {
   auto id=std::string(name(stage.first))+"_"+d.id;
   if(!v.count(id))continue;
@@ -83,7 +84,21 @@ static std::vector<std::pair<Effect,Values>> composeArtistStages(std::vector<std
    continue;
   }
   double base=stage.second.count(d.id)?stage.second.at(d.id):d.value;
-  if(!d.choices.empty() || d.id=="debug" || d.id=="hue" || d.id=="width" || d.id=="chromaMin" || d.id=="chromaMax" || d.id=="evMin" || d.id=="evMax" || d.id=="softness" || d.id=="neutral" || (stage.first==Effect::Volume && d.group!="Expert" && (d.id.find("_hue")!=std::string::npos && d.id.find("Delta")==std::string::npos || d.id.find("_width")!=std::string::npos || d.id.find("_chromaMin")!=std::string::npos || d.id.find("_chromaMax")!=std::string::npos || d.id.find("_evMin")!=std::string::npos || d.id.find("_evMax")!=std::string::npos || d.id.find("_softness")!=std::string::npos || d.id.find("_neutral")!=std::string::npos)))stage.second[d.id]=expert;
+  if(!d.choices.empty() || d.id=="debug" || d.id=="hue" || d.id=="width" || d.id=="chromaMin" || d.id=="chromaMax" || d.id=="evMin" || d.id=="evMax" || d.id=="softness" || d.id=="neutral" || (stage.first==Effect::Volume && d.group!="Expert" && ((d.id.find("_hue")!=std::string::npos && d.id.find("Delta")==std::string::npos) || d.id.find("_width")!=std::string::npos || d.id.find("_chromaMin")!=std::string::npos || d.id.find("_chromaMax")!=std::string::npos || d.id.find("_evMin")!=std::string::npos || d.id.find("_evMax")!=std::string::npos || d.id.find("_softness")!=std::string::npos || d.id.find("_neutral")!=std::string::npos)))stage.second[d.id]=expert;
+  else if(safe) {
+   // Expert deflections consume the remaining legal headroom. Neutral expert
+   // state is exact macro behavior; neutral macro state is exact expert behavior.
+   double delta=expert-d.value;
+   double span=delta>=0?d.hi-d.value:d.value-d.lo;
+   double f=span>0?delta/span:0;
+   bool trajectory=(stage.first==Effect::Crossover && (d.id=="darkHue" || d.id=="midHue" || d.id=="brightHue" || d.group=="Channels")) || (stage.first==Effect::Volume && d.id.find("_hueDelta")!=std::string::npos);
+   if(trajectory) {
+    double t=v.count("trajectory")?v.at("trajectory"):1;
+    f=t==0?0:t*f/(1+(t-1)*std::abs(f));
+   }
+   if(stage.first==Effect::Strip && d.id=="separation")stage.second[d.id]=1-(1-base)*(1-expert);
+   else stage.second[d.id]=f==1?d.hi:f==-1?d.lo:base+f*(f>=0?d.hi-base:base-d.lo);
+  }
   else if(d.id=="chroma" || d.id=="darkChroma" || d.id=="midChroma" || d.id=="brightChroma" || (stage.first==Effect::Volume && d.id.find("_chroma")!=std::string::npos && d.id.find("Min")==std::string::npos && d.id.find("Max")==std::string::npos))stage.second[d.id]=base*expert;
   else if(stage.first==Effect::Strip && d.id=="separation")stage.second[d.id]=1-(1-base)*(1-expert);
   else {
@@ -93,7 +108,36 @@ static std::vector<std::pair<Effect,Values>> composeArtistStages(std::vector<std
    stage.second[d.id]=base+delta;
   }
  }
- // Child snapshots validate effective domains/ranges; never silently clamp composed state.
+ if(safe)for(auto &stage:stages) {
+  if(stage.first==Effect::Strip) {
+   // A custom record basis must be invertible throughout its editor range.
+   // Full-controls records use positive diagonal gains and normalized signed
+   // cross-record biases; strict row dominance guarantees nonsingularity.
+   for(int row=0;row<3;++row) {
+    std::string diagonal="m"+std::to_string(row)+std::to_string(row);
+    double gain=std::exp2((stage.second.at(diagonal)-1)/4);
+    double total=1;
+    for(int col=0;col<3;++col)if(col!=row)total+=std::abs(stage.second.at("m"+std::to_string(row)+std::to_string(col)));
+    for(int col=0;col<3;++col) {
+     auto key="m"+std::to_string(row)+std::to_string(col);
+     stage.second[key]=col==row?gain:.75*gain*stage.second.at(key)/total;
+    }
+   }
+  }
+  // Range endpoints describe one interval, including when animated endpoints cross.
+  // Sorting coordinates changes neither stored knob and is continuous at equality.
+  for(auto &d:parameters(stage.first))if(d.id.size()>=9 && d.id.substr(d.id.size()-9)=="chromaMin") {
+   auto prefix=d.id.substr(0,d.id.size()-9);
+   for(auto pair:{std::make_pair("chromaMin","chromaMax"),std::make_pair("evMin","evMax")}) {
+    auto a=prefix+pair.first,b=prefix+pair.second;
+    double av=stage.second.count(a)?stage.second.at(a):0;
+    double bv=stage.second.count(b)?stage.second.at(b):0;
+    if(av>bv)std::swap(stage.second[a],stage.second[b]);
+   }
+  }
+  if(stage.first==Effect::Crossover && stage.second["darkPivot"]>stage.second["brightPivot"])std::swap(stage.second["darkPivot"],stage.second["brightPivot"]);
+ }
+ // Legacy composition remains unchanged; child snapshots validate every stage.
  return stages;
 }
 std::vector<std::pair<Effect,Values>> artistStages(Effect e,const Values &v) {

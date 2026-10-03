@@ -2,6 +2,8 @@
 
 A macOS arm64 **research/development candidate** for eight separately instantiable color-rendition effects. CPU processing is available in Nuke; shared-equation Metal kernels have an offline validator, but host Metal rendering is deliberately disabled pending asynchronous error-reporting/buffer integration. This is not a production-approved release.
 
+Current UX correction candidate: [0.32 report](docs/NUKE_UX_0.32.md). Presets are stopped; final Properties/mouse acceptance and new-model default promotion remain pending.
+
 ## Build and verify
 
 Requires Xcode with its Metal toolchain, CMake, and Python 3.14 for the pinned research environment. The OFX runtime itself has no Python dependency.

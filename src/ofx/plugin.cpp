@@ -6,6 +6,7 @@
 #include "ofxParam.h"
 #include "rendition/operators.hpp"
 #include "rendition/artist_models.hpp"
+#include "rendition/ui_layout.hpp"
 #include <algorithm>
 #include <atomic>
 #include <cstdio>
@@ -232,7 +233,14 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
         if(e>=Effect::Primaries) for(char &c:group) if(c==' ' || c=='/') c='_';
         return std::string("group_")+group;
     };
+    const auto hostName=str(host->host,kOfxPropName);
+    const bool nukePages=e>=Effect::Base && (hostName.find("nuke")!=std::string::npos || hostName.find("Nuke")!=std::string::npos);
     std::vector<std::string> groups;
+    if(e>=Effect::Base) {
+        groups.push_back("Artist");OfxPropertySetHandle p;
+        checked(param->paramDefine(set,kOfxParamTypeGroup,groupId("Artist").c_str(),&p));
+        prop->propSetString(p,kOfxPropLabel,0,"Artist");prop->propSetInt(p,kOfxParamPropGroupOpen,0,1);
+    }
     if (e == Effect::Volume) {
         for (auto family : {"Red", "Yellow", "Green", "Cyan", "Blue", "Magenta"}) {
             groups.push_back(family);
@@ -263,6 +271,12 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
         checked(prop->propSetString(p, kOfxPropLabel, 0, d.label.c_str()));
         checked(prop->propSetString(p, kOfxParamPropParent, 0, groupId(d.group).c_str()));
         std::string hint = d.unit.empty() ? d.label : d.label + " (" + d.unit + ")";
+        if(d.id=="pivot")hint+=". Used by nonidentity tone shaping; inactive at neutral tone settings.";
+        if(d.id=="Crosstalk_mix")hint+=". Blend an authored matrix; identity matrix has no visible effect.";
+        if(d.id=="coupling" || d.id=="Density_chromaCoupling")hint+=". Requires nonzero Material Density.";
+        if(d.id=="leakage" || d.id=="Strip_leakage")hint+=". Requires active record separation.";
+        if(d.id=="anchor" || d.id=="Strip_redAnchor" || d.id=="Strip_neutralAnchor")hint+=". Protects an existing deformation; does not create one.";
+        if(d.id=="blackStops" || d.id=="whiteLevel")hint+=". Tonal exposure displacement, never an output clamp.";
         if (d.id == "interpretation")
             hint += ". Auto uses the Nuke OCIO scene_linear role; unresolved roles/metadata fail. Manual interpretation overrides and does not transform pixels.";
         checked(prop->propSetString(p, kOfxParamPropHint, 0, hint.c_str()));
@@ -278,9 +292,42 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
             for (size_t i = 0; i < d.choices.size(); i++)
                 checked(prop->propSetString(p, kOfxParamPropChoiceOption, int(i), d.choices[i].c_str()));
         }
-        if (d.id == "modelVersion" || d.id == "adapterVersion") {
+        if (d.id == "modelVersion" || d.id == "adapterVersion" || d.id.find("Version")!=std::string::npos) {
             prop->propSetInt(p, kOfxParamPropAnimates, 0, 0);
-            prop->propSetInt(p, kOfxParamPropEnabled, 0, d.id == "modelVersion" && d.hi > 0 ? 1 : 0);
+            prop->propSetInt(p, kOfxParamPropEnabled, 0, 0);
+            if(e>=Effect::Base)prop->propSetInt(p,kOfxParamPropSecret,0,1);
+        }
+    }
+    if(e>=Effect::Base) {
+        OfxPropertySetHandle q;
+        checked(param->paramDefine(set,kOfxParamTypePushButton,"enableFullControls",&q));
+        prop->propSetString(q,kOfxPropLabel,0,"Enable full controls");
+        prop->propSetString(q,kOfxParamPropHint,0,"Deliberate migration to bounded Main/Expert composition. Historical equations are retained until this action. Undo is supported; appearance can change with non-neutral Expert settings.");
+        prop->propSetInt(q,kOfxParamPropEvaluateOnChange,0,0);
+        if(e==Effect::Base)prop->propSetInt(q,kOfxParamPropSecret,0,1);
+        if(e==Effect::Palette) {
+            checked(param->paramDefine(set,kOfxParamTypeChoice,"editFamily",&q));
+            prop->propSetString(q,kOfxPropLabel,0,"Family");
+            prop->propSetInt(q,kOfxParamPropDefault,0,0);
+            prop->propSetInt(q,kOfxParamPropAnimates,0,0);
+            prop->propSetInt(q,kOfxParamPropEvaluateOnChange,0,0);
+            int n=0;for(auto label:{"Red","Yellow","Green","Cyan","Blue","Magenta"})prop->propSetString(q,kOfxParamPropChoiceOption,n++,label);
+        }
+        std::vector<std::string> pages;
+        for(auto &d:defs) {auto page=uiPage(e,d);if(std::find(pages.begin(),pages.end(),page)==pages.end())pages.push_back(page);}
+        auto compatibility=std::find(pages.begin(),pages.end(),"Input / Compatibility");
+        if(compatibility!=pages.end()){pages.erase(compatibility);pages.push_back("Input / Compatibility");}
+        OfxPropertySetHandle effectProps;fx->getPropertySet(h,&effectProps);
+        int pageIndex=0;
+        for(auto &page:pages) {
+            std::string id="page_"+page;for(char &c:id)if(c==' ' || c=='/' || c=='-')c='_';
+            checked(param->paramDefine(set,kOfxParamTypePage,id.c_str(),&q));
+            prop->propSetString(q,kOfxPropLabel,0,page.c_str());
+            prop->propSetString(effectProps,kOfxPluginPropParamPageOrder,pageIndex++,id.c_str());
+            int child=0;
+            if(page=="Families")prop->propSetString(q,kOfxParamPropPageChild,child++,"editFamily");
+            for(auto &d:defs)if(uiPage(e,d)==page)prop->propSetString(q,kOfxParamPropPageChild,child++,d.id.c_str());
+            if(page=="Input / Compatibility")prop->propSetString(q,kOfxParamPropPageChild,child++,"enableFullControls");
         }
     }
     OfxPropertySetHandle semanticProperty;
@@ -288,6 +335,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     checked(prop->propSetString(semanticProperty, kOfxPropLabel, 0, "Semantic reference (default model)"));
     checked(prop->propSetString(semanticProperty, kOfxParamPropParent, 0, "group_Expert"));
     checked(prop->propSetString(semanticProperty, kOfxParamPropStringMode, 0, kOfxParamStringIsMultiLine));
+    if(nukePages)prop->propSetInt(semanticProperty,kOfxParamPropSecret,0,1);
     prop->propSetInt(semanticProperty, kOfxParamPropEnabled, 0, 0);
     prop->propSetInt(semanticProperty, kOfxParamPropAnimates, 0, 0);
     std::string summary = "Default model reference. Configuration-dependent details: docs/interfaces.json "
@@ -302,6 +350,67 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     }
     checked(prop->propSetString(semanticProperty, kOfxParamPropDefault, 0, summary.c_str()));
     return kOfxStatOK;
+}
+void updatePresentation(Instance &i,double time=0) {
+    auto value=[&](const std::string &id,double fallback=0.) {
+        auto it=i.params.find(id);if(it==i.params.end())return fallback;
+        auto d=std::find_if(i.defs.begin(),i.defs.end(),[&](auto &p){return p.id==id;});
+        if(d!=i.defs.end() && !d->choices.empty()){int n=0;param->paramGetValueAtTime(it->second,time,&n);return double(n);}
+        if(id=="editFamily"){int n=0;param->paramGetValue(it->second,&n);return double(n);}
+        double n=0;param->paramGetValueAtTime(it->second,time,&n);return n;
+    };
+    bool legacy=(i.effect==Effect::Palette || i.effect==Effect::Material) && value("modelVersion")==0;
+    const bool legacyFull=(i.effect==Effect::Palette || i.effect==Effect::Material) && value("modelVersion")==1;
+    for(auto &d:i.defs) {
+        bool enabled=true,secret=false;
+        if(customCoordinate(d.id))enabled=value("interpretation")==4;
+        if(d.id.find("Version")!=std::string::npos){enabled=false;secret=i.effect>=Effect::Base;}
+        bool child=d.id.rfind("Volume_",0)==0 || d.id.rfind("Crossover_",0)==0 || d.id.rfind("Crosstalk_",0)==0 || d.id.rfind("Density_",0)==0 || d.id.rfind("Strip_",0)==0;
+        if(legacy && child)enabled=false;
+        if(i.effect==Effect::Palette && d.id.rfind("Volume_v",0)==0 && d.id.size()>8)secret=int(d.id[8]-'0')!=int(value("editFamily"));
+        if(d.id=="pivot")enabled=value("contrast",1)!=1 || value("shadowCompression")!=0 || value("highlightCompression")!=0 || value("midExposure")!=0 || value("midDensity")!=0 || value("blackStops")!=0 || value("whiteLevel")!=0 || value("colourBalance")!=0 || value("brillianceReduction")!=0 || value("highlightBurn")!=0;
+        if(i.effect==Effect::Base && d.id=="shadowHue")enabled=value("shadowTint")!=0;
+        if(i.effect==Effect::Base && d.id=="highlightHue")enabled=value("highlightTint")!=0;
+        if(d.id=="deathStart" || d.id=="deathSoftness")enabled=value("colourDeath")!=0;
+        if(d.id=="localProtection" || d.id=="localChroma")enabled=value("localExposure")!=0;
+        if(d.id=="localCenter" || d.id=="localSoftness")enabled=value("localExposure")!=0 && value("localProtection")!=0;
+        if(i.effect==Effect::Material && d.id=="coupling")enabled=value("density")!=0 || (!legacy && value("Density_density")!=0);
+        if(i.effect==Effect::Material && (d.id=="leakage" || d.id=="anchor"))enabled=value("depth")!=0 || value("separation")!=0 || (!legacy && value("Strip_separation")!=0);
+        if(d.id=="Crossover_lookDomain")enabled=!legacy && value("Crossover_mode")==1;
+        if(d.id=="Crosstalk_lookDomain")enabled=!legacy && value("Crosstalk_domain")==1;
+        if(d.id=="Crosstalk_rowSum")enabled=!legacy && value("Crosstalk_mode")==2;
+        if(d.id.rfind("Crossover_",0)==0 && d.group.find("Channels")!=std::string::npos)enabled=!legacy && value("Crossover_mode")==1;
+        if(d.id.rfind("Crossover_",0)==0 && (d.id.find("Hue")!=std::string::npos || d.id.find("Chroma")!=std::string::npos || d.id.find("Density")!=std::string::npos))enabled=!legacy && value("Crossover_mode")==0;
+        if(d.id.rfind("Density_",0)==0 && d.id!="Density_density" && d.id!="Density_debug")enabled=!legacy && (value("density")!=0 || value("Density_density")!=0);
+        if(d.id.rfind("Strip_m",0)==0 && d.id.size()==9 && std::isdigit(d.id[7]) && std::isdigit(d.id[8]))enabled=!legacy && value("Strip_mode")==2;
+        if(d.id=="Strip_leakage" || d.id=="Strip_density" || d.id=="Strip_palette" || d.id=="Strip_neutralAnchor" || d.id=="Strip_redAnchor")enabled=!legacy && (value("depth")!=0 || value("separation")!=0 || value("Strip_separation")!=0);
+        if(d.id.rfind("Volume_v",0)==0 && d.id.find("_matrixMix")!=std::string::npos) {
+            const auto prefix=d.id.substr(0,d.id.rfind('_')+1);bool active=false;
+            for(int r=0;r<3;r++)for(int c=0;c<3;c++)active=active || value(prefix+"m"+std::to_string(r)+std::to_string(c),r==c?1:0)!=(r==c?1:0);
+            enabled=!legacy && active;
+        }
+        if(d.id=="Crosstalk_mix") {
+            bool active=value("crosstalk")!=0 || value("contamination")!=0;
+            for(int r=0;r<3;r++)for(int c=0;c<3;c++)active=active || value("Crosstalk_m"+std::to_string(r)+std::to_string(c),r==c?1:0)!=(r==c?1:0);
+            for(auto id:{"Crosstalk_rg","Crosstalk_rb","Crosstalk_gr","Crosstalk_gb","Crosstalk_br","Crosstalk_bg"})active=active || value(id)!=0;
+            enabled=!legacy && active;
+        }
+        // Unsafe historical additive composition stays renderable, but immutable
+        // in the ordinary UI until deliberate migration. Never rewrite old values.
+        if(legacyFull && d.group!="Input" && d.group!="Custom primaries")enabled=false;
+        OfxPropertySetHandle q;if(param->paramGetPropertySet(i.params.at(d.id),&q)==kOfxStatOK){
+          prop->propSetInt(q,kOfxParamPropEnabled,0,enabled);
+          auto hostName=str(host->host,kOfxPropName);
+          if(hostName.find("nuke")==std::string::npos && hostName.find("Nuke")==std::string::npos)prop->propSetInt(q,kOfxParamPropSecret,0,secret);
+          if(i.effect==Effect::Base) {
+           if(d.id=="toeStart")prop->propSetDouble(q,kOfxParamPropDisplayMax,0,std::min(d.hi,value("shoulderStart")));
+           if(d.id=="shoulderStart")prop->propSetDouble(q,kOfxParamPropDisplayMin,0,std::max(d.lo,value("toeStart")));
+           if(d.id=="shadowRange")prop->propSetDouble(q,kOfxParamPropDisplayMax,0,std::min(d.hi,value("highlightRange")));
+           if(d.id=="highlightRange")prop->propSetDouble(q,kOfxParamPropDisplayMin,0,std::max(d.lo,value("shadowRange")));
+          }
+        }
+    }
+    if(i.params.count("enableFullControls")){OfxPropertySetHandle q;param->paramGetPropertySet(i.params.at("enableFullControls"),&q);prop->propSetInt(q,kOfxParamPropEnabled,0,i.effect!=Effect::Base && value("modelVersion")!=2);}
 }
 OfxStatus create(Effect e, OfxImageEffectHandle h) {
     auto i = std::make_unique<Instance>();
@@ -325,6 +434,11 @@ OfxStatus create(Effect e, OfxImageEffectHandle h) {
             checked(fx->clipGetHandle(h, e==Effect::Base?"Matte":"Reference", &i->reference, &i->referenceProps));
     }
     checked(prop->propSetPointer(p, kOfxPropInstanceData, 0, i.get()));
+    if(e>=Effect::Base) {
+        OfxParamHandle q;checked(param->paramGetHandle(set,"enableFullControls",&q,nullptr));i->params["enableFullControls"]=q;
+        if(e==Effect::Palette){checked(param->paramGetHandle(set,"editFamily",&q,nullptr));i->params["editFamily"]=q;}
+    }
+    updatePresentation(*i);
     i.release();
     return kOfxStatOK;
 }
@@ -594,6 +708,15 @@ OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHa
             return kOfxStatOK;
         }
         if (std::strcmp(act, kOfxActionInstanceChanged) == 0) {
+            auto &i=*instance(h);
+            double time=0;prop->propGetDouble(in,kOfxPropTime,0,&time);
+            if(str(in,kOfxPropName)=="enableFullControls" && str(in,kOfxPropChangeReason)==kOfxChangeUserEdited && i.effect!=Effect::Base) {
+                OfxParamSetHandle set;fx->getParamSet(h,&set);
+                param->paramEditBegin(set,"Enable full Rendition controls");
+                param->paramSetValue(i.params.at("modelVersion"),2);
+                param->paramEditEnd(set);
+            }
+            updatePresentation(i,time);
             if (msg) {
                 auto status = msg->clearPersistentMessage(h);
                 if (std::getenv("RENDITION_TRACE"))
