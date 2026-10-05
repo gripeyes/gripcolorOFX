@@ -849,6 +849,12 @@ Observed Nuke limitations are host-specific, not a claim that OFX universally la
 | Literal historical Primaries black offset or its reversal-prone tone equations copied into Base | Historical Advanced nodes preserve them; Base has different permanent semantics |
 | Film stocks, negative/print/scanner processes, grain, halation, optical/spatial controls | SpektraFilm/Pigment ownership; not restored colour-control depth |
 
+## Subsequent P0 closure — 2026-10-05
+
+The systemic Nuke `OFX suite operation failed: 1` investigation is closed by the accepted shared runtime correction. Render now preserves **Render context → Output acquisition/ownership → timed parameter evaluation → immutable snapshot → input acquisition → processing**. Output must not move after snapshot construction. Opt-in `RENDITION_SUITE_TRACE` remains diagnostic only. All grading equations, IDs, defaults, generations and original scheduling declarations are unchanged.
+
+Evidence: [runtime contract fixes](OFX_RUNTIME_CONTRACT_FIXES.md), [Pigment comparison](RENDITION_VS_PIGMENT_OFX_RENDER_AUDIT.md), and [final acquisition-order correction](OFX_OUTPUT_ACQUISITION_FIX.md). This amendment closes the systemic runtime failure; it does not rewrite the historical UX findings or claim every secondary-page interaction/Flame/Metal acceptance gate passed. Reopen allocator investigation only if the failure reproduces on the accepted build.
+
 ## 14. Known open issues and documentation discrepancies
 
 Current unresolved acceptance is limited to: full continuous mouse dragging across every secondary page/connected Viewer; new bounded-model default promotion; final artist predictability/usability acceptance; Flame presentation; host Metal. Offline Metal parity is not host GPU acceptance. Presets remain stopped. Artist feedback is positive; these engineering/interaction gates still remain open.

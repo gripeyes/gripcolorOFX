@@ -14,6 +14,14 @@
 #include <cstring>
 #include <memory>
 #include <mutex>
+#include <thread>
+#include "render_trace.hpp"
+#ifndef RENDITION_HOST_FRAME_THREADING
+#define RENDITION_HOST_FRAME_THREADING 1
+#endif
+#ifndef RENDITION_SUPPORTS_TILES
+#define RENDITION_SUPPORTS_TILES 1
+#endif
 using namespace rendition;
 namespace {
 OfxHost *host = nullptr;
@@ -24,10 +32,48 @@ const OfxMessageSuiteV2 *msg = nullptr;
 const OfxMessageSuiteV1 *msg1 = nullptr;
 const OfxMultiThreadSuiteV1 *threads = nullptr;
 std::mutex loadMutex;
-void checked(OfxStatus s) {
-    if (s != kOfxStatOK)
+// Opt-in diagnostics. Extra read-only context/abort calls; no status recovery.
+struct SuiteTraceContext {
+    const char *action = "none", *subject = "none";
+    const void *instance = nullptr;
+    int effect = -1;
+    unsigned depth = 0;
+    double time = 0;
+    bool timed = false;
+};
+thread_local SuiteTraceContext suiteTrace;
+struct SuiteTraceAction {
+    SuiteTraceContext previous = suiteTrace;
+    SuiteTraceAction(Effect effect, const char *action, const void *instance) {
+        suiteTrace = {action, "none", instance, int(effect), previous.depth + 1, 0, false};
+    }
+    ~SuiteTraceAction() { suiteTrace = previous; }
+};
+struct SuiteTraceSubject {
+    SuiteTraceContext previous = suiteTrace;
+    explicit SuiteTraceSubject(const char *subject) { suiteTrace.subject = subject; }
+    SuiteTraceSubject(const char *subject, double time) : SuiteTraceSubject(subject) {
+        suiteTrace.time = time;
+        suiteTrace.timed = true;
+    }
+    ~SuiteTraceSubject() { suiteTrace = previous; }
+};
+void checkedStatus(OfxStatus s, const char *call, const char *file, int line) {
+    if (s != kOfxStatOK) {
+        if (std::getenv("RENDITION_SUITE_TRACE"))
+            std::fprintf(stderr,
+                         "Rendition suite failure: status=%d call=%s source=%s:%d "
+                         "action=%s effect=%d instance=%p thread=%zu depth=%u render_id=%llu "
+                         "subject=%s timed=%d time=%.17g\n",
+                         s, call, file, line, suiteTrace.action, suiteTrace.effect,
+                         suiteTrace.instance, std::hash<std::thread::id>{}(std::this_thread::get_id()),
+                         suiteTrace.depth, (unsigned long long)(rendition::ofx_trace::current ? rendition::ofx_trace::current->renderId : 0),
+                         suiteTrace.subject, int(suiteTrace.timed), suiteTrace.time);
+        rendition::ofx_trace::dump();
         throw std::runtime_error("OFX suite operation failed: " + std::to_string(s));
+    }
 }
+#define checked(call) checkedStatus((call), #call, __FILE__, __LINE__)
 std::string str(OfxPropertySetHandle p, const char *k) {
     char *c = nullptr;
     if (!p || prop->propGetString(p, k, 0, &c) != kOfxStatOK || !c)
@@ -67,63 +113,50 @@ void error(const void *h, const std::string &s) {
     else
         std::fprintf(stderr, "Rendition: %s\n", s.c_str());
 }
-struct Instance {
-    Effect effect;
-    std::vector<Parameter> defs;
-    std::map<std::string, OfxParamHandle> params;
-    OfxImageClipHandle source = nullptr, output = nullptr, reference = nullptr;
-    OfxPropertySetHandle sourceProps = nullptr, referenceProps = nullptr;
-    OfxParamHandle hostSceneLinear = nullptr;
-    bool generator = false;
-};
-Instance *instance(OfxImageEffectHandle h) {
-    OfxPropertySetHandle p;
-    checked(fx->getPropertySet(h, &p));
-    void *v = nullptr;
-    checked(prop->propGetPointer(p, kOfxPropInstanceData, 0, &v));
-    if (!v)
-        throw std::runtime_error("Missing Rendition instance");
-    return static_cast<Instance *>(v);
-}
-Values values(Instance &i, double t) {
-    Values v;
-    for (auto &d : i.defs) {
-        if (d.choices.empty()) {
-            double x;
-            checked(param->paramGetValueAtTime(i.params.at(d.id), t, &x));
-            v[d.id] = x;
-        } else {
-            int x;
-            checked(param->paramGetValueAtTime(i.params.at(d.id), t, &x));
-            v[d.id] = x;
-        }
+#include "persistent_state.hpp"
+// Internal control flow, never a processing error or persistent host message.
+struct RenderCancelled {};
+[[noreturn]] void cancelRender() {
+    if (rendition::ofx_trace::current) {
+        auto &event = *rendition::ofx_trace::current;
+        std::snprintf(event.stage, sizeof(event.stage), "render-cancelled");
+        rendition::ofx_trace::record(event);
     }
-    if (std::getenv("RENDITION_TRACE"))
-        std::fprintf(stderr, "Rendition snapshot interpretation=%g alpha=%g exposure=%g\n",
-                     v["interpretation"], v["alphaMode"], v.count("exposure") ? v["exposure"] : 0);
-    return v;
+    throw RenderCancelled{};
 }
-// Nuke resolves its OCIO scene_linear role through the startup host bridge.
-// 0: no bridge (native clip metadata); 1: explicitly unresolved; 2..4: known gamut.
-std::string inputInterpretation(Instance &i, const Values &v, OfxPropertySetHandle clipProps) {
-    if (int(v.at("interpretation")) == 0 && i.hostSceneLinear) {
-        int role = 0;
-        checked(param->paramGetValue(i.hostSceneLinear, &role));
-        if (role == 1) return {};
-        if (role == 2) return "Linear Rec.2020";
-        if (role == 3) return "ACEScg";
-        if (role == 4) return "Linear Rec.709";
-        if (role != 0) throw std::invalid_argument("Invalid scene_linear host interpretation");
-    }
-    return str(clipProps, kOfxImageClipPropColourspace);
+void checkRenderAbort(OfxImageEffectHandle effect) {
+    if (effect && fx->abort && fx->abort(effect)) cancelRender();
 }
+enum class ImageAccess { Input, Output };
 struct Image {
     OfxPropertySetHandle handle = nullptr;
     ImageView view{};
     OfxRectD rod{};
-    Image(OfxImageClipHandle clip, double t, bool matte=false) {
-        checked(fx->clipGetImage(clip, t, nullptr, &handle));
+    Image(OfxImageClipHandle clip, double t, ImageAccess access, bool matte=false, const char *role="unspecified clip", OfxImageEffectHandle renderInstance=nullptr) {
+        SuiteTraceSubject trace(role, t);
+        const bool traced = rendition::ofx_trace::current != nullptr;
+        rendition::ofx_trace::Event acquisition;
+        const int abortBefore = renderInstance && fx->abort ? fx->abort(renderInstance) : -1;
+        if (traced) acquisition = rendition::ofx_trace::acquisitionBefore(clip, role, fx, abortBefore);
+        if (abortBefore > 0) cancelRender();
+        const auto status = fx->clipGetImage(clip, t, nullptr, &handle);
+        const int abortAfter = status != kOfxStatOK && renderInstance && fx->abort ? fx->abort(renderInstance) : -1;
+        if (traced) rendition::ofx_trace::acquisitionAfter(acquisition, status, fx, abortAfter);
+        if (status == kOfxStatFailed && abortAfter > 0) {
+            handle = nullptr; // Failed fetch did not acquire an owned image.
+            cancelRender();
+        }
+        if (status == kOfxStatFailed && access == ImageAccess::Input) {
+            // The OFX contract defines unavailable input as black-transparent.
+            // No image exists: do not inspect or release an invalid image handle.
+            handle = nullptr;
+            return;
+        }
+        checkedStatus(status, "fx->clipGetImage(clip, t, nullptr, &handle)", __FILE__, __LINE__);
+        if (!handle) throw std::runtime_error("Host returned a null image handle after successful acquisition");
         try {
+            // Constructor owns a successful handle before any cancellation/validation.
+            checkRenderAbort(renderInstance);
             void *data = nullptr;
             checked(prop->propGetPointer(handle, kOfxImagePropData, 0, &data));
             if (!data)
@@ -179,12 +212,12 @@ OfxStatus describe(Effect e, OfxImageEffectHandle h) {
         checked(
             prop->propSetString(p, kOfxImageEffectPropSupportedContexts, 2, kOfxImageEffectContextGenerator));
     checked(prop->propSetString(p, kOfxImageEffectPropSupportedPixelDepths, 0, kOfxBitDepthFloat));
-    checked(prop->propSetInt(p, kOfxImageEffectPropSupportsTiles, 0, 1));
+    checked(prop->propSetInt(p, kOfxImageEffectPropSupportsTiles, 0, RENDITION_SUPPORTS_TILES));
     checked(prop->propSetInt(p, kOfxImageEffectPropSupportsMultiResolution, 0, 1));
     checked(prop->propSetInt(p, kOfxImageEffectPropTemporalClipAccess, 0, 0));
     checked(
         prop->propSetString(p, kOfxImageEffectPluginRenderThreadSafety, 0, kOfxImageEffectRenderFullySafe));
-    checked(prop->propSetInt(p, kOfxImageEffectPluginPropHostFrameThreading, 0, 1));
+    checked(prop->propSetInt(p, kOfxImageEffectPluginPropHostFrameThreading, 0, RENDITION_HOST_FRAME_THREADING));
     // No preferred input color space: do not request conversions. Core native metadata only.
     prop->propSetString(p, kOfxImageEffectPropColourManagementStyle, 0, kOfxImageEffectColourManagementCore);
     prop->propSetString(p, kOfxImageEffectPropColourManagementAvailableConfigs, 0,
@@ -200,7 +233,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
         checked(prop->propSetString(p, kOfxImageEffectPropSupportedComponents, 0, kOfxImageComponentRGBA));
         checked(prop->propSetString(p, kOfxImageEffectPropSupportedComponents, 1, kOfxImageComponentRGB));
         checked(prop->propSetInt(p, kOfxImageClipPropOptional, 0, optional));
-        checked(prop->propSetInt(p, kOfxImageEffectPropSupportsTiles, 0, 1));
+        checked(prop->propSetInt(p, kOfxImageEffectPropSupportsTiles, 0, RENDITION_SUPPORTS_TILES));
     };
     clip(kOfxImageEffectOutputClipName, false);
     if (context != kOfxImageEffectContextGenerator) {
@@ -213,7 +246,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
             checked(prop->propSetString(p,kOfxImageEffectPropSupportedComponents,1,kOfxImageComponentRGBA));
             checked(prop->propSetInt(p,kOfxImageClipPropOptional,0,1));
             checked(prop->propSetInt(p,kOfxImageClipPropIsMask,0,1));
-            checked(prop->propSetInt(p,kOfxImageEffectPropSupportsTiles,0,1));
+            checked(prop->propSetInt(p,kOfxImageEffectPropSupportsTiles,0,RENDITION_SUPPORTS_TILES));
         }
     }
     OfxParamSetHandle set;
@@ -234,7 +267,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
         return std::string("group_")+group;
     };
     const auto hostName=str(host->host,kOfxPropName);
-    const bool nukePages=e>=Effect::Base && (hostName.find("nuke")!=std::string::npos || hostName.find("Nuke")!=std::string::npos);
+    const bool nukePages=e>=Effect::Base && presentationUsesHostLinks(hostName);
     std::vector<std::string> groups;
     if(e>=Effect::Base) {
         groups.push_back("Artist");OfxPropertySetHandle p;
@@ -351,67 +384,7 @@ OfxStatus describeContext(Effect e, OfxImageEffectHandle h, OfxPropertySetHandle
     checked(prop->propSetString(semanticProperty, kOfxParamPropDefault, 0, summary.c_str()));
     return kOfxStatOK;
 }
-void updatePresentation(Instance &i,double time=0) {
-    auto value=[&](const std::string &id,double fallback=0.) {
-        auto it=i.params.find(id);if(it==i.params.end())return fallback;
-        auto d=std::find_if(i.defs.begin(),i.defs.end(),[&](auto &p){return p.id==id;});
-        if(d!=i.defs.end() && !d->choices.empty()){int n=0;param->paramGetValueAtTime(it->second,time,&n);return double(n);}
-        if(id=="editFamily"){int n=0;param->paramGetValue(it->second,&n);return double(n);}
-        double n=0;param->paramGetValueAtTime(it->second,time,&n);return n;
-    };
-    bool legacy=(i.effect==Effect::Palette || i.effect==Effect::Material) && value("modelVersion")==0;
-    const bool legacyFull=(i.effect==Effect::Palette || i.effect==Effect::Material) && value("modelVersion")==1;
-    for(auto &d:i.defs) {
-        bool enabled=true,secret=false;
-        if(customCoordinate(d.id))enabled=value("interpretation")==4;
-        if(d.id.find("Version")!=std::string::npos){enabled=false;secret=i.effect>=Effect::Base;}
-        bool child=d.id.rfind("Volume_",0)==0 || d.id.rfind("Crossover_",0)==0 || d.id.rfind("Crosstalk_",0)==0 || d.id.rfind("Density_",0)==0 || d.id.rfind("Strip_",0)==0;
-        if(legacy && child)enabled=false;
-        if(i.effect==Effect::Palette && d.id.rfind("Volume_v",0)==0 && d.id.size()>8)secret=int(d.id[8]-'0')!=int(value("editFamily"));
-        if(d.id=="pivot")enabled=value("contrast",1)!=1 || value("shadowCompression")!=0 || value("highlightCompression")!=0 || value("midExposure")!=0 || value("midDensity")!=0 || value("blackStops")!=0 || value("whiteLevel")!=0 || value("colourBalance")!=0 || value("brillianceReduction")!=0 || value("highlightBurn")!=0;
-        if(i.effect==Effect::Base && d.id=="shadowHue")enabled=value("shadowTint")!=0;
-        if(i.effect==Effect::Base && d.id=="highlightHue")enabled=value("highlightTint")!=0;
-        if(d.id=="deathStart" || d.id=="deathSoftness")enabled=value("colourDeath")!=0;
-        if(d.id=="localProtection" || d.id=="localChroma")enabled=value("localExposure")!=0;
-        if(d.id=="localCenter" || d.id=="localSoftness")enabled=value("localExposure")!=0 && value("localProtection")!=0;
-        if(i.effect==Effect::Material && d.id=="coupling")enabled=value("density")!=0 || (!legacy && value("Density_density")!=0);
-        if(i.effect==Effect::Material && (d.id=="leakage" || d.id=="anchor"))enabled=value("depth")!=0 || value("separation")!=0 || (!legacy && value("Strip_separation")!=0);
-        if(d.id=="Crossover_lookDomain")enabled=!legacy && value("Crossover_mode")==1;
-        if(d.id=="Crosstalk_lookDomain")enabled=!legacy && value("Crosstalk_domain")==1;
-        if(d.id=="Crosstalk_rowSum")enabled=!legacy && value("Crosstalk_mode")==2;
-        if(d.id.rfind("Crossover_",0)==0 && d.group.find("Channels")!=std::string::npos)enabled=!legacy && value("Crossover_mode")==1;
-        if(d.id.rfind("Crossover_",0)==0 && (d.id.find("Hue")!=std::string::npos || d.id.find("Chroma")!=std::string::npos || d.id.find("Density")!=std::string::npos))enabled=!legacy && value("Crossover_mode")==0;
-        if(d.id.rfind("Density_",0)==0 && d.id!="Density_density" && d.id!="Density_debug")enabled=!legacy && (value("density")!=0 || value("Density_density")!=0);
-        if(d.id.rfind("Strip_m",0)==0 && d.id.size()==9 && std::isdigit(d.id[7]) && std::isdigit(d.id[8]))enabled=!legacy && value("Strip_mode")==2;
-        if(d.id=="Strip_leakage" || d.id=="Strip_density" || d.id=="Strip_palette" || d.id=="Strip_neutralAnchor" || d.id=="Strip_redAnchor")enabled=!legacy && (value("depth")!=0 || value("separation")!=0 || value("Strip_separation")!=0);
-        if(d.id.rfind("Volume_v",0)==0 && d.id.find("_matrixMix")!=std::string::npos) {
-            const auto prefix=d.id.substr(0,d.id.rfind('_')+1);bool active=false;
-            for(int r=0;r<3;r++)for(int c=0;c<3;c++)active=active || value(prefix+"m"+std::to_string(r)+std::to_string(c),r==c?1:0)!=(r==c?1:0);
-            enabled=!legacy && active;
-        }
-        if(d.id=="Crosstalk_mix") {
-            bool active=value("crosstalk")!=0 || value("contamination")!=0;
-            for(int r=0;r<3;r++)for(int c=0;c<3;c++)active=active || value("Crosstalk_m"+std::to_string(r)+std::to_string(c),r==c?1:0)!=(r==c?1:0);
-            for(auto id:{"Crosstalk_rg","Crosstalk_rb","Crosstalk_gr","Crosstalk_gb","Crosstalk_br","Crosstalk_bg"})active=active || value(id)!=0;
-            enabled=!legacy && active;
-        }
-        // Unsafe historical additive composition stays renderable, but immutable
-        // in the ordinary UI until deliberate migration. Never rewrite old values.
-        if(legacyFull && d.group!="Input" && d.group!="Custom primaries")enabled=false;
-        OfxPropertySetHandle q;if(param->paramGetPropertySet(i.params.at(d.id),&q)==kOfxStatOK){
-          prop->propSetInt(q,kOfxParamPropEnabled,0,enabled);
-          auto hostName=str(host->host,kOfxPropName);
-          if(hostName.find("nuke")==std::string::npos && hostName.find("Nuke")==std::string::npos)prop->propSetInt(q,kOfxParamPropSecret,0,secret);
-          if(i.effect==Effect::Base) {
-           if(d.id=="toeStart")prop->propSetDouble(q,kOfxParamPropDisplayMax,0,std::min(d.hi,value("shoulderStart")));
-           if(d.id=="shoulderStart")prop->propSetDouble(q,kOfxParamPropDisplayMin,0,std::max(d.lo,value("toeStart")));
-           if(d.id=="shadowRange")prop->propSetDouble(q,kOfxParamPropDisplayMax,0,std::min(d.hi,value("highlightRange")));
-           if(d.id=="highlightRange")prop->propSetDouble(q,kOfxParamPropDisplayMin,0,std::max(d.lo,value("shadowRange")));
-          }
-        }
-    }
-    if(i.params.count("enableFullControls")){OfxPropertySetHandle q;param->paramGetPropertySet(i.params.at("enableFullControls"),&q);prop->propSetInt(q,kOfxParamPropEnabled,0,i.effect!=Effect::Base && value("modelVersion")!=2);}
-}
+#include "presentation.hpp"
 OfxStatus create(Effect e, OfxImageEffectHandle h) {
     auto i = std::make_unique<Instance>();
     i->effect = e;
@@ -492,6 +465,7 @@ struct Job {
     std::exception_ptr failure;
     std::mutex mutex;
     std::atomic<bool> failed{false};
+    std::atomic<bool> cancelled{false};
 };
 void worker(unsigned int tid, unsigned int n, void *opaque) {
     auto &j = *static_cast<Job *>(opaque);
@@ -500,14 +474,20 @@ void worker(unsigned int tid, unsigned int n, void *opaque) {
         int start = j.window.y1 + int(int64_t(height) * tid / n),
             end = j.window.y1 + int(int64_t(height) * (tid + 1) / n);
         for (int y = start; y < end; y++) {
-            if (j.failed || fx->abort(j.effect))
-                return;
+            if (j.failed || j.cancelled) return;
+            if (fx->abort(j.effect)) { j.cancelled = true; return; }
             for (int x = j.window.x1; x < j.window.x2; x++) {
+                if ((int64_t(x) - j.window.x1) % 256 == 0) {
+                    if (j.failed || j.cancelled) return;
+                    if (fx->abort(j.effect)) { j.cancelled = true; return; }
+                }
                 if (j.snap.effectId() != Effect::Inspector) {
                     if (!j.src)
                         throw std::runtime_error("Missing Source");
-                    if(j.snap.effectId()==Effect::Base && j.snap.get("localExposure")!=0) {
-                        auto a=j.src->at(x,y),b=j.dst.at(x,y);if(!a || !b)throw std::runtime_error("Missing source/output pixel");
+                    if(!j.src->at(x,y) || (j.snap.effectId()==Effect::Base && j.snap.get("localExposure")!=0)) {
+                        const float transparent[4] = {0,0,0,0};
+                        const float *a=j.src->at(x,y);if(!a)a=transparent;
+                        auto b=j.dst.at(x,y);if(!b)throw std::runtime_error("Missing output pixel");
                         auto m=j.ref?j.ref->at(x,y):nullptr;
                         float coverage=j.ref?(m?(j.ref->components==1?m[0]:m[3]):0):1;
                         auto p=j.snap.pixel({a[0],a[1],a[2],j.src->components==4?a[3]:1},coverage);for(int c=0;c<j.dst.components;++c)b[c]=p[c];
@@ -522,9 +502,8 @@ void worker(unsigned int tid, unsigned int n, void *opaque) {
                 Vec3 rgb = a ? Vec3{a[0], a[1], a[2]} : Vec3{},
                      reference = r ? Vec3{r[0], r[1], r[2]} : Vec3{};
                 if (j.mode == 0) {
-                    if (!a)
-                        throw std::runtime_error("Input mode requires Source");
-                    std::memcpy(b, a, size_t(j.dst.components) * sizeof(float));
+                    if(a)std::memcpy(b, a, size_t(j.dst.components) * sizeof(float));
+                    else std::fill_n(b,j.dst.components,0.f);
                     continue;
                 }
                 float u = float(((x + .5) * j.par / j.scaleX - j.rod.x1) / (j.rod.x2 - j.rod.x1)),
@@ -536,7 +515,7 @@ void worker(unsigned int tid, unsigned int n, void *opaque) {
                 b[1] = out.y;
                 b[2] = out.z;
                 if (j.dst.components == 4)
-                    b[3] = a && j.src->components == 4 ? a[3] : 1;
+                    b[3] = a && j.src->components == 4 ? a[3] : j.src ? 0 : 1;
             }
         }
     } catch (...) {
@@ -550,18 +529,26 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
     auto &i = *instance(h);
     double t;
     checked(prop->propGetDouble(in, kOfxPropTime, 0, &t));
+    SuiteTraceSubject trace("render", t);
+    rendition::ofx_trace::RenderScope renderTrace(h, int(i.effect), t, in, prop);
+    checkRenderAbort(h);
     int metal = 0;
     prop->propGetInt(in, kOfxImageEffectPropMetalEnabled, 0, &metal);
     if (metal)
         throw std::runtime_error("Metal is not accepted; CPU image buffers are required");
-    auto v = values(i, t);
-    Snapshot s(i.effect, v, inputInterpretation(i, v, i.sourceProps));
     OfxRectI window;
     checked(prop->propGetIntN(in, kOfxImageEffectPropRenderWindow, 4, &window.x1));
-    Image dst(i.output, t);
+    // Acquire the host render target before parameter evaluation. In Nuke 17,
+    // snapshot-first acquisition reproducibly loses Output during Viewer updates
+    // even when abort() remains false. The snapshot and pixel equations are unchanged.
+    Image dst(i.output, t, ImageAccess::Output, false, "Output", h);
+    auto v = values(i, t);
+    const int role = interpretationRole(i, v, t);
+    Snapshot s(i.effect, v, inputInterpretation(v, i.sourceProps, role));
     std::unique_ptr<Image> src, ref;
     if (connected(i.sourceProps))
-        src = std::make_unique<Image>(i.source, t);
+        src = std::make_unique<Image>(i.source, t, ImageAccess::Input, false, "Source", h);
+    if(src && !src->handle)src->view.components=dst.view.components;
     if (src && src->view.components != dst.view.components)
         throw std::runtime_error("Source/output components differ");
     if (window.x1 < dst.view.x1 || window.x2 > dst.view.x2 || window.y1 < dst.view.y1 ||
@@ -577,14 +564,14 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
         if (!connected)
             throw std::runtime_error("Difference requires connected Reference clip");
         auto referenceSpace =
-            interpret(int(s.get("interpretation")), inputInterpretation(i, v, i.referenceProps),
+            interpret(int(s.get("interpretation")), inputInterpretation(v, i.referenceProps, role),
                       {s.get("rx"), s.get("ry"), s.get("gx"), s.get("gy"), s.get("bx"), s.get("by"),
                        s.get("wx"), s.get("wy")});
         if (referenceSpace.toXYZ.v != s.colorSpace().toXYZ.v)
             throw std::runtime_error("Reference color interpretation differs from Source");
-        ref = std::make_unique<Image>(i.reference, t);
+        ref = std::make_unique<Image>(i.reference, t, ImageAccess::Input, false, "Reference", h);
     }
-    if(i.effect==Effect::Base && s.get("localExposure")!=0 && connected(i.referenceProps))ref=std::make_unique<Image>(i.reference,t,true);
+    if(i.effect==Effect::Base && s.get("localExposure")!=0 && connected(i.referenceProps))ref=std::make_unique<Image>(i.reference,t,ImageAccess::Input,true,"Matte",h);
     double scale[2] = {1, 1}, par = 1;
     prop->propGetDoubleN(in, kOfxImageEffectPropRenderScale, 2, scale);
     prop->propGetDouble(dst.handle, kOfxImagePropPixelAspectRatio, 0, &par);
@@ -611,7 +598,9 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
     else
         worker(0, 1, &job);
     if (job.failure)
-        std::rethrow_exception(job.failure);
+        std::rethrow_exception(job.failure); // Genuine errors remain fatal.
+    if (job.cancelled) cancelRender();
+    checkRenderAbort(h);
     if (msg) {
         msg->clearPersistentMessage(h);
         if(i.effect==Effect::Palette) {
@@ -624,6 +613,7 @@ OfxStatus render(OfxImageEffectHandle h, OfxPropertySetHandle in) {
 }
 OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHandle in,
                  OfxPropertySetHandle out) {
+    SuiteTraceAction trace(e, act, handle);
     try {
         if (std::getenv("RENDITION_TRACE"))
             std::fprintf(stderr, "Rendition action %s\n", act);
@@ -654,9 +644,11 @@ OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHa
             auto &i = *instance(h);
             double t;
             checked(prop->propGetDouble(in, kOfxPropTime, 0, &t));
+            SuiteTraceSubject trace("identity", t);
             try {
                 auto v = values(i, t);
-                Snapshot s(e, v, inputInterpretation(i, v, i.sourceProps));
+                const int role = interpretationRole(i, v, t);
+                Snapshot s(e, v, inputInterpretation(v, i.sourceProps, role));
                 // A successful semantic revalidation clears a previous recoverable render error.
                 // Some hosts query identity before dispatching their deferred change notification.
                 if (msg)
@@ -680,7 +672,8 @@ OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHa
                 auto v = values(i, 0);
                 int interpretation = int(v.at("interpretation"));
                 if (interpretation == 0) {
-                    const auto role = inputInterpretation(i, v, i.sourceProps);
+                    // This action has no time argument in the pinned colour API.
+                    const auto role = inputInterpretation(v, i.sourceProps, interpretationRole(i,v,0));
                     if (role == "Linear Rec.2020") interpretation = 1;
                     else if (role == "ACEScg") interpretation = 2;
                     else if (role == "Linear Rec.709") interpretation = 3;
@@ -726,6 +719,8 @@ OfxStatus action(Effect e, const char *act, const void *handle, OfxPropertySetHa
             return kOfxStatOK;
         }
         return kOfxStatReplyDefault;
+    } catch (const RenderCancelled &) {
+        return kOfxStatOK; // OFX interrupted-render pattern; RAII has unwound.
     } catch (const std::bad_alloc &) {
         return kOfxStatErrMemory;
     } catch (const std::exception &x) {

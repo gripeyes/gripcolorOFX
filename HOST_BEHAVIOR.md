@@ -20,6 +20,10 @@ Normal user installation and main-menu creation of all eight effects were verifi
 
 Pending: artist ergonomics/acceptance, complex real-media workloads, full animation/model compatibility matrix, host tile/PAR/proxy edge cases, and actual OFX Metal buffers/queue/error behavior.
 
+## Nuke 17 interactive Output acquisition correction (2026-10-05)
+
+Real Exposure dragging reproduced an Output `clipGetImage` status-1 failure with abort false on both samples. Controlled connected-Viewer tests rejected disabling frame subdivision, tiles, or both. Acquiring Output before timed snapshot construction passed two 96-update runs; reverting to the old order reproduced 18 failures. The shared adapter now acquires Output first, retaining the original scheduling declarations and all grading equations. Palette, Material and Advanced Scene also passed representative background Viewer updates. See [OFX_OUTPUT_ACQUISITION_FIX.md](docs/OFX_OUTPUT_ACQUISITION_FIX.md) for exact evidence, rejected experiments, installed binary and the remaining continuous-mouse acceptance limitation. Flame/Metal acceptance is unchanged.
+
 ## Flame — early Gate C pending
 
 Flame was not found in standard local installation locations. No Flame behavior is claimed verified. Gate C and production Gate H remain pending, even though independent Nuke/research work proceeds.

@@ -13,4 +13,7 @@ for i,name in enumerate(names):
  for d in c.parameters(i):mapping.setdefault(d['group'],[]).append(d['id'])
  mapping['Expert'].append('semanticReference')
  groups['OFXorg.gripcolor.rendition.'+name+'_v1']=mapping
-Path('integrations/nuke/artist-groups.json').write_text(json.dumps(groups,indent=2)+'\n')
+schema=json.loads(Path('presentation/control_system.json').read_text())
+if groups!=schema['groups']:raise SystemExit('Parameter groups differ from presentation contract; review schema explicitly')
+from generate_presentation import generate
+generate()
