@@ -56,6 +56,10 @@ inline std::string uiPage(Effect e,const Parameter &d) {
   if(d.id=="localCenter")return "Dodge-Burn";
   if(d.id=="localSoftness")return "Dodge-Burn";
   if(d.id=="localChroma")return "Dodge-Burn";
+  if(d.id=="temperature")return "Tonal Colour / Ranges";
+  if(d.id=="illuminantTint")return "Tonal Colour / Ranges";
+  if(d.id=="illuminantAdaptation")return "Tonal Colour / Ranges";
+  if(d.id=="illuminantVersion")return "Input / Compatibility";
  }
  if(e==Effect::Palette) {
   if(d.id=="interpretation")return "Input / Compatibility";
@@ -413,6 +417,10 @@ template<class Value> bool presentationEnabled(Effect e,const std::string &id,Va
   if(id=="localChroma")return (!(false) && (value("localExposure",0)!=0));
   if(id=="semanticReference")return false;
   if(id=="enableFullControls")return (false && !((value("modelVersion",0)==2)));
+  if(id=="temperature")return true;
+  if(id=="illuminantTint")return true;
+  if(id=="illuminantAdaptation")return ((value("temperature",6504)!=6504) || (value("illuminantTint",0)!=0));
+  if(id=="illuminantVersion")return false;
  }
  if(e==Effect::Palette) {
   if(id=="interpretation")return true;
@@ -775,6 +783,10 @@ template<class Value> bool presentationSecret(Effect e,const std::string &id,Val
   if(id=="localChroma")return false;
   if(id=="semanticReference")return false;
   if(id=="enableFullControls")return true;
+  if(id=="temperature")return false;
+  if(id=="illuminantTint")return false;
+  if(id=="illuminantAdaptation")return false;
+  if(id=="illuminantVersion")return true;
  }
  if(e==Effect::Palette) {
   if(id=="interpretation")return false;

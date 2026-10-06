@@ -26,6 +26,11 @@ std::vector<Parameter> artistParameters(Effect e) {
   add("localCenter","Protection center",3,-20,20,"Local exposure","stops relative to 0.18");
   add("localSoftness","Protection softness",1,.25,8,"Local exposure","stops");
   add("localChroma","Preserve chroma magnitude",0,0,1,"Local exposure","fraction; 0 scales RGB, 1 scales Y only");
+  // Append only: historical Base IDs, ordering and defaults remain unchanged.
+  add("temperature","Illuminant (daylight)",6504,4000,25000,"Illuminant","K; source estimate, 6504 neutral; lower cools correction, higher warms");
+  add("illuminantTint","Illuminant tint",0,-.02,.02,"Illuminant","CIE 1960 v offset; distinct from creative Tint");
+  p.push_back({"illuminantAdaptation","Illuminant adaptation","Illuminant","",0,0,2,{"Bradford","CAT16","XYZ scaling"}});
+  p.push_back({"illuminantVersion","Illuminant compatibility","Expert","",1,0,1,{"Historical daylight approximation","CIE daylight"}});
  } else if(e==Effect::Palette) {
   add("separation","Separation",0,-1,1);add("compression","Compression",0,0,1);
   add("contamination","Contamination",0,-1,1);add("accent","Protected red accent",0,0,1);

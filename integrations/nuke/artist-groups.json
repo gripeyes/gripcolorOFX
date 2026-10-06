@@ -20,6 +20,7 @@
       "lookDomain",
       "adaptation",
       "cdlDomain",
+      "illuminantVersion",
       "semanticReference"
     ],
     "Artist": [
@@ -216,6 +217,7 @@
     "Expert": [
       "modelVersion",
       "adapterVersion",
+      "illuminantVersion",
       "semanticReference"
     ],
     "Artist": [
@@ -262,6 +264,11 @@
       "localCenter",
       "localSoftness",
       "localChroma"
+    ],
+    "Illuminant": [
+      "temperature",
+      "illuminantTint",
+      "illuminantAdaptation"
     ]
   },
   "OFXorg.gripcolor.rendition.Palette_v1": {

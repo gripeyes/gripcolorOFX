@@ -65,6 +65,8 @@ std::vector<Parameter> parameters(Effect e) {
             add(std::string(c) + "Power", std::string(c) + " signed power", 1, .05, 8, "SOP", "exponent");
         }
         add("saturation", "Saturation", 1, 0, 4, "SOP", "factor");
+        add("illuminantVersion", "Illuminant compatibility", 0, 0, 1, "Expert", "",
+            {"Historical daylight approximation", "CIE daylight"});
     }
     if (e == Effect::Tone) {
         add("exposure", "Exposure", 0, -20, 20, "Artist", "stops");
@@ -370,10 +372,22 @@ Snapshot::Snapshot(Effect e, const Values &v, const std::string &metadata)
         if(get("toeStart")>get("shoulderStart") || get("shadowRange")>get("highlightRange"))throw std::invalid_argument("Base range centers reversed");
         for(auto &d:artistParameters(e)) {
           if(d.id=="localExposure") { changed(d.id,0);continue; }
-          if(d.id.find("Softness")!=std::string::npos || d.id.find("Range")!=std::string::npos || d.id.find("Start")!=std::string::npos || d.id.find("Hue")!=std::string::npos || d.id=="pivot" || d.group=="Local exposure")continue;
+          if(d.id.find("Softness")!=std::string::npos || d.id.find("Range")!=std::string::npos || d.id.find("Start")!=std::string::npos || d.id.find("Hue")!=std::string::npos || d.id=="pivot" || d.id=="temperature" || d.id=="illuminantTint" || d.id=="illuminantAdaptation" || d.id=="illuminantVersion" || d.group=="Local exposure")continue;
           changed(d.id,d.value);
         }
         primaries=std::make_shared<const PrimariesModel>(*this,baseValues(values),true);
+        if(get("temperature")!=6504 || get("illuminantTint")!=0) {
+            Values illuminant;
+            for(auto id:{"interpretation","rx","ry","gx","gy","bx","by","wx","wy"})illuminant[id]=values.at(id);
+            illuminant["temperature"]=values.at("temperature");
+            illuminant["tint"]=values.at("illuminantTint");
+            illuminant["adaptation"]=values.at("illuminantAdaptation");
+            illuminant["illuminantVersion"]=values.at("illuminantVersion");
+            // Shared Scene CAT, explicit illuminant generation, before Base tone/colour.
+            illuminantStage=std::make_shared<const Snapshot>(Effect::Scene,illuminant,metadata);
+            if(identity)primaries.reset(); // Pure illuminant correction stays exactly Scene.
+            identity=false;
+        }
     }
     if(e==Effect::Palette || e==Effect::Material) {
         for(auto &stage:artistStages(e,values)) {
@@ -402,6 +416,7 @@ Vec3 Snapshot::apply(Vec3 rgb) const {
         rgb=rgb*float(1-weight)+source*float(weight);
       }
       return rgb;}
+    if(illuminantStage) {rgb=illuminantStage->apply(rgb);if(!primaries)return rgb;}
     if(primaries) return isIdentity()?rgb:primaries->apply(rgb);
     if(diagnosticProbe) return differentialView(differential(*diagnosticProbe,rgb,get("probeStep")),int(get("mode")));
     return kernelApply(*this, rgb);
@@ -552,7 +567,7 @@ Semantic semantics(Effect e, const Values &v) {
       s.domain=e==Effect::Base?"Scene Linear / monotone stop tone":e==Effect::Palette?"Shared Volume / Crossover / zero-Y tint":"Shared Density / Strip / Crosstalk";
       s.reference="Scene-compatible authorship; no DRT";s.exposure="Conditioned";s.invertibility="Combined inverse not claimed";s.gamut="Unbounded";s.negative="Existing signed adapters / residual preservation";s.hdr="Exposure-conditioned";s.status=std::string(name(e))+" v1 CPU artist candidate";
       s.neutralAxis="Configuration-dependent; explicit tint may colour neutrals";s.neutralMagnitude="Identity only";
-      s.gamutDependence=e==Effect::Base?"Colorimetric fixed D65 XYZ": "Colorimetric Volume/Crossover/spectral/tint; explicit Crosstalk gamut-relative";
+      s.gamutDependence=e==Effect::Base?"Colorimetric illuminant CAT then fixed D65 XYZ": "Colorimetric Volume/Crossover/spectral/tint; explicit Crosstalk gamut-relative";
       s.limitations=e==Effect::Base?"Scalar tone monotone; no global chromatic inverse. No host Metal acceptance":"Underlying Volume folds and Density/Strip baseline superiority unresolved; no automatic repair";
     }
     return s;

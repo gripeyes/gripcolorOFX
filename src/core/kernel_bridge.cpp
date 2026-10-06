@@ -9,8 +9,9 @@ rendition_kernel::M3 convert(const Mat3 &m) {
         k.a[i] = float(m.v[i]);
     return k;
 }
-std::pair<double, double> daylight(double t) {
-    double x = t <= 7000 ? -.4e9 / (t * t * t) + .7e6 / (t * t) + .289e3 / t + .266
+std::pair<double, double> daylight(double t, int version) {
+    double x = t <= 7000 ? (version==0 ? -.4e9 / (t * t * t) + .7e6 / (t * t) + .289e3 / t + .266
+                                       : -4.6070e9 / (t * t * t) + 2.9678e6 / (t * t) + .09911e3 / t + .244063)
                          : -2.0064e9 / (t * t * t) + 1.9018e6 / (t * t) + .24748e3 / t + .23704;
     return {x, -3 * x * x + 2.87 * x - .275};
 }
@@ -33,15 +34,23 @@ rendition_kernel::Parameters kernelParameters(const Snapshot &s) {
     k.whiteBalance = convert(Mat3{});
     k.inverseRecord = convert(Mat3{});
     if (s.effectId() == Effect::Scene && (s.get("temperature") != 6504 || s.get("tint") != 0)) {
-        auto xy = daylight(s.get("temperature")), base = daylight(6504);
-        xy.first += s.colorSpace().wx - base.first;
-        xy.second += s.colorSpace().wy - base.second;
+        int version=int(s.get("illuminantVersion"));
+        auto xy = daylight(s.get("temperature"),version), base = daylight(6504,version);
+        xy.first += (version==0?s.colorSpace().wx:.3127) - base.first;
+        xy.second += (version==0?s.colorSpace().wy:.3290) - base.second;
         double den = -2 * xy.first + 12 * xy.second + 3, u = 4 * xy.first / den,
                v = 6 * xy.second / den + s.get("tint"), D = 2 * u - 8 * v + 4, x = 3 * u / D, y = 2 * v / D;
-        k.whiteBalance =
-            convert(s.colorSpace().fromXYZ *
-                    adaptation(x, y, s.colorSpace().wx, s.colorSpace().wy, int(s.get("adaptation"))) *
-                    s.colorSpace().toXYZ);
+        if(version==0) {
+            // Frozen historical Scene mapping, including its lower polynomial.
+            k.whiteBalance=convert(s.colorSpace().fromXYZ *
+                adaptation(x,y,s.colorSpace().wx,s.colorSpace().wy,int(s.get("adaptation"))) * s.colorSpace().toXYZ);
+        } else {
+            // Corrected daylight in common D65 coordinates; input gamut only
+            // determines conversion, not a different illuminant trajectory.
+            k.whiteBalance=convert(s.colorSpace().fromXYZ * s.fromReferenceWhite() *
+                adaptation(x,y,.3127,.3290,int(s.get("adaptation"))) *
+                s.toReferenceWhite() * s.colorSpace().toXYZ);
+        }
     }
     if (s.effectId() == Effect::Strip && s.get("mode") == 2 && !s.isIdentity())
         k.inverseRecord = convert(s.effectiveMatrix().inverse());

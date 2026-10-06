@@ -849,6 +849,10 @@ Observed Nuke limitations are host-specific, not a claim that OFX universally la
 | Literal historical Primaries black offset or its reversal-prone tone equations copied into Base | Historical Advanced nodes preserve them; Base has different permanent semantics |
 | Film stocks, negative/print/scanner processes, grain, halation, optical/spatial controls | SpektraFilm/Pigment ownership; not restored colour-control depth |
 
+## Subsequent illuminant restoration — 2026-10-07
+
+The inventories above remain the historical 0.32 snapshot. Four controls now append to Base without changing existing IDs/defaults/order: `temperature` (6504 K; 4000…25000), `illuminantTint` (0; −0.02…+0.02 CIE v), `illuminantAdaptation` (Bradford default; CAT16/XYZ scaling), and hidden `illuminantVersion` (1). The three editable controls are linked directly under Tonal Colour / Ranges; Main remains thirteen controls. The new common-D65 CIE daylight stage precedes Base tone/colour; neutral defaults bypass it exactly. Scene appends hidden `illuminantVersion` default 0, preserving its historical approximation. See [restoration contract](ILLUMINANT_RESTORATION.md) for the measured 7000 K deficiency, correction and regression evidence. This is an explicitly requested additive capability, not a reinterpretation of the 0.32 controls.
+
 ## Subsequent P0 closure — 2026-10-05
 
 The systemic Nuke `OFX suite operation failed: 1` investigation is closed by the accepted shared runtime correction. Render now preserves **Render context → Output acquisition/ownership → timed parameter evaluation → immutable snapshot → input acquisition → processing**. Output must not move after snapshot construction. Opt-in `RENDITION_SUITE_TRACE` remains diagnostic only. All grading equations, IDs, defaults, generations and original scheduling declarations are unchanged.

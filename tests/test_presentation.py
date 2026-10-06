@@ -14,7 +14,10 @@ import rendition_presentation as policy
 
 def test_parameters_and_rendered_bits_unchanged():
     baseline=json.loads((ROOT/'tests/fixtures/accepted-0.32.json').read_text())
-    for effect,definitions in baseline['parameters'].items():assert core.parameters(int(effect))==definitions
+    for effect,definitions in baseline['parameters'].items():
+        current=core.parameters(int(effect))
+        assert current[:len(definitions)]==definitions
+        assert [d['id'] for d in current[len(definitions):]]==(['temperature','illuminantTint','illuminantAdaptation','illuminantVersion'] if int(effect)==9 else ['illuminantVersion'] if int(effect)==0 else [])
     x=np.array(baseline['input'],np.float32)
     for case in baseline['cases']:
         actual=core.process(case['effect'],x,case['parameters'])
@@ -85,7 +88,9 @@ def test_layout_dependencies_and_direct_editors_match_032(name,adapters):
     effect=next(e for e in policy.SCHEMA['effects'].values() if e['name']==name)
     a,b=Node(effect),Node(effect)
     old.refresh(a);new.refresh(b)
-    assert a.summary()==b.summary()
+    additions={'temperature','illuminantTint','illuminantAdaptation','illuminantVersion','Illuminant'} if name=='Base' else set()
+    def original_summary(node):return [row for row in node.summary() if row[0] not in additions and row[0].removeprefix('renditionUi_') not in additions]
+    assert original_summary(a)==original_summary(b)
     rng=np.random.default_rng(33)
     watched=policy.watched(effect)
     for version in (0,1,2):
@@ -100,7 +105,7 @@ def test_layout_dependencies_and_direct_editors_match_032(name,adapters):
                 a[c['id']].v=b[c['id']].v=value
             before={k:v.v for k,v in b.k.items() if not k.startswith('renditionUi')}
             old.update(a);new.update(b)
-            assert a.summary()==b.summary(),(name,version)
+            assert original_summary(a)==original_summary(b),(name,version)
             assert a['renditionUi_compatibility'].v==b['renditionUi_compatibility'].v
             assert {k:v.v for k,v in b.k.items() if k in before}==before
     host=sys.modules['nuke']

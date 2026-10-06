@@ -32,6 +32,7 @@ class Snapshot {
     bool identity;
     std::shared_ptr<const Snapshot> diagnosticProbe;
     std::shared_ptr<const PrimariesModel> primaries;
+    std::shared_ptr<const Snapshot> illuminantStage;
     std::vector<std::shared_ptr<const Snapshot>> stages;
     std::shared_ptr<const rendition_kernel::Parameters> kernel;
 

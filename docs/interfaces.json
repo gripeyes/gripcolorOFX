@@ -453,6 +453,19 @@
           "min": 0.0,
           "max": 4.0,
           "choices": []
+        },
+        {
+          "id": "illuminantVersion",
+          "label": "Illuminant compatibility",
+          "group": "Expert",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Historical daylight approximation",
+            "CIE daylight"
+          ]
         }
       ],
       "semantics": {
@@ -5194,6 +5207,53 @@
           "min": 0.0,
           "max": 1.0,
           "choices": []
+        },
+        {
+          "id": "temperature",
+          "label": "Illuminant (daylight)",
+          "group": "Illuminant",
+          "unit": "K; source estimate, 6504 neutral; lower cools correction, higher warms",
+          "default": 6504.0,
+          "min": 4000.0,
+          "max": 25000.0,
+          "choices": []
+        },
+        {
+          "id": "illuminantTint",
+          "label": "Illuminant tint",
+          "group": "Illuminant",
+          "unit": "CIE 1960 v offset; distinct from creative Tint",
+          "default": 0.0,
+          "min": -0.02,
+          "max": 0.02,
+          "choices": []
+        },
+        {
+          "id": "illuminantAdaptation",
+          "label": "Illuminant adaptation",
+          "group": "Illuminant",
+          "unit": "",
+          "default": 0.0,
+          "min": 0.0,
+          "max": 2.0,
+          "choices": [
+            "Bradford",
+            "CAT16",
+            "XYZ scaling"
+          ]
+        },
+        {
+          "id": "illuminantVersion",
+          "label": "Illuminant compatibility",
+          "group": "Expert",
+          "unit": "",
+          "default": 1.0,
+          "min": 0.0,
+          "max": 1.0,
+          "choices": [
+            "Historical daylight approximation",
+            "CIE daylight"
+          ]
         }
       ],
       "semantics": {
@@ -5206,7 +5266,7 @@
         "hdr": "Exposure-conditioned",
         "neutral_axis": "Configuration-dependent; explicit tint may colour neutrals",
         "neutral_magnitude": "Identity only",
-        "gamut_dependence": "Colorimetric fixed D65 XYZ",
+        "gamut_dependence": "Colorimetric illuminant CAT then fixed D65 XYZ",
         "status": "Base v1 CPU artist candidate",
         "limitations": "Scalar tone monotone; no global chromatic inverse. No host Metal acceptance"
       }
